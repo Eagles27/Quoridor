@@ -1,9 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "jeu.h"
+
 
 int main()
 {
-    int i = 0;
-    printf("Hello world!\n");
+    int mat[17][17];
     return 0;
 }
