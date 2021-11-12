@@ -5,9 +5,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 
 ///Proto
+
+void setup(int nbrj,int tab[17][17]);
 
 
 

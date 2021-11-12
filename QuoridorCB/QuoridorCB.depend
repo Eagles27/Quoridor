@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1636715462 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main.c
+	"jeu.h"
+
+1636715462 c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\jeu.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1636716671 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\setup.c
+	"jeu.h"
+
+1636715504 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\deplacement.c
+	"jeu.h"
+
