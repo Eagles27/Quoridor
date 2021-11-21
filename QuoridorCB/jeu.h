@@ -11,6 +11,8 @@
 ///Proto
 
 void setup(int nbrj,int tab[17][17]);
+void affichage(int mat[17][17]);
+
 
 
 
