@@ -12,7 +12,7 @@ void affiche(int tab[17][17])
     for (i = 0 ; i<17 ; i++) printf("%c  ", 'A'+i);
     printf("\n\n");
 
-    // affichage des lignes
+    // affichage du tableau
     for(int i=0; i<17; i++)
     {
         printf("%c   ",'a'+i);
