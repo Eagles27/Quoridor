@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1638182510 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
+	<stdio.h>
+	<stdlib.h>
+
