@@ -1,6 +1,7 @@
+#include "header_adrien.h"
+
 void genematrice()
 {
-
     int i;
     int j;
 
@@ -36,11 +37,6 @@ void genematrice()
             }
         }
     }
-
 //affichage du tableau
 affiche(tab);
-
-
-
-
 }

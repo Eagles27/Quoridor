@@ -1,9 +1,16 @@
 # depslib dependency file v1.0
-1638189189 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\main.c
-	<stdio.h>
-	<stdlib.h>
+1638189960 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\main.c
+	"header_adrien.h"
 
 1638177795 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\testpremier.c
 
-1638189263 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\initialisationmatriceordi.c
+1638189960 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\initialisationmatriceordi.c
+	"header_adrien.h"
+
+1638189820 c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\header_adrien.h
+	<stdio.h>
+	<stdlib.h>
+
+1638189960 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\affich_mat_avec_coord.c
+	"header_adrien.h"
 
