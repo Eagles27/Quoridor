@@ -31,14 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="affichage.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="deplacement.c">
+		<Unit filename="choix_j.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="jeu.h" />
 		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main_menu.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="setup.c">
