@@ -1,5 +1,12 @@
 # depslib dependency file v1.0
-1638182510 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
+1638190582 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
+	"Header_Pierre.h"
+
+1638190376 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
+	<windows.h>
 	<stdio.h>
 	<stdlib.h>
+
+1638192010 source:d:\pierr\documents\algo\quoridor\quoridorcb\déplacement.c
+	"Header_Pierre.h"
 
