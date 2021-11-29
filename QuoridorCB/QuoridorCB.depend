@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1638189960 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\main.c
+1638190701 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\main.c
 	"header_adrien.h"
 
 1638177795 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\testpremier.c
@@ -12,5 +12,8 @@
 	<stdlib.h>
 
 1638189960 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\affich_mat_avec_coord.c
+	"header_adrien.h"
+
+1638192449 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\choix_nbre_joueur.c
 	"header_adrien.h"
 
