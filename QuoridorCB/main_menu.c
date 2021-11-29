@@ -4,11 +4,12 @@ void main_menu()
 {
     int choix;
     int sortie = 0;
+    int debut;
 
     do
     {
         system("cls");
-        printf("1. Nouvelle Partie\n2. Charger Partie\n3. Afficher les règles\n4. Quitter\n");
+        printf("1. Nouvelle Partie\n2. Charger Partie\n3. Afficher les regles\n4. Quitter\n");
         scanf("%d",&choix);
 
         switch(choix)
@@ -18,6 +19,10 @@ void main_menu()
 
             system("cls");
             printf("Lancement de la partie\n");
+            genematrice();
+            debut = choix_j(2);
+            printf("%d\n",debut);
+            system("PAUSE");
             break;
         }
         case 2:

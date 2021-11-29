@@ -7,9 +7,7 @@ int main()
     int joueur = 4;
     int debut = 0;
 
-    //setup(joueur,mat);
-    debut = choix(4);
-    printf("%d",debut);
+    main_menu();
 
     return 0;
 }

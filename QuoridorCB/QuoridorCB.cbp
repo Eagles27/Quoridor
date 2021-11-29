@@ -31,6 +31,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Affich_mat_avec_coord.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="InitialisationMatriceOrdi.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="choix_j.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -1,22 +1,28 @@
 # depslib dependency file v1.0
-1638182272 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main.c
+1638203919 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main.c
 	"jeu.h"
 
-1638182239 c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\jeu.h
+1638204227 c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\jeu.h
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<windows.h>
 
-1638178896 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\setup.c
+1638203514 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\setup.c
 	"jeu.h"
 
 1637048961 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\deplacement.c
 	"jeu.h"
 
-1638181662 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main_menu.c
+1638203686 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main_menu.c
 	"jeu.h"
 
-1638182260 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\choix_j.c
+1638204227 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\choix_j.c
+	"jeu.h"
+
+1638203686 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\affich_mat_avec_coord.c
+	"jeu.h"
+
+1638203686 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\initialisationmatriceordi.c
 	"jeu.h"
 

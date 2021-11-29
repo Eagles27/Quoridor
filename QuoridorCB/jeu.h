@@ -13,7 +13,9 @@
 
 void setup(int nbrj,int tab[17][17]);
 void main_menu();
-int choix(int nombre);
+int choix_j(int nombre);
+void affiche(int tab[17][17]);
+void genematrice();
 
 
 

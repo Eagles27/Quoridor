@@ -1,6 +1,6 @@
 #include "jeu.h"
 
-int choix(int nombre)
+int choix_j(int nombre)
 {
     int joueur = 0;
     srand(time(NULL));
