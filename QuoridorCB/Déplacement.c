@@ -10,7 +10,7 @@ d'atterissage alors il ira à droite ou à gauche.
 
 #include "Header_Pierre.h"
 
-void deplacement(int *dep)//, int *matrice)
+void deplacement(int *dep, int *matrice)
 {
     /// 0. DDV
     char choix;
@@ -38,7 +38,7 @@ void deplacement(int *dep)//, int *matrice)
             }
         }
         printf("choix termine\n");
-        if(((choix=='h')||(choix=='H'))&&(dep[1]!=0))//&&((matrice[dep[0][dep[1]-1]!=2)||(matrice[dep[0][dep[1]-1]!=3)))
+        if(((choix=='h')||(choix=='H'))&&(dep[1]!=0)&&((matrice[dep[0]][dep[1]-1]!=2)||(matrice[dep[0]][dep[1]-1]!=3)))
         {
             dep[1] -= 2;
             valid_dep = 0;

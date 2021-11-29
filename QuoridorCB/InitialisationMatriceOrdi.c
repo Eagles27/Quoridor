@@ -1,6 +1,6 @@
-#include "header_adrien.h"
+#include "Header_Pierre.h"
 
-void genematrice()
+int *genematrice()
 {
     int i;
     int j;
@@ -17,18 +17,18 @@ void genematrice()
     }
 
     //Remplissage de 1 sur les lignes et les colonnes impaires
-    for(i=0;i<17;i++)
+    for(i=0; i<17; i++)
     {
         if((i%2)!=0)
         {
-            for(j=0;j<17;j++)
+            for(j=0; j<17; j++)
             {
                 tab[i][j]=1;
             }
         }
         else
         {
-            for(j=0;j<17;j++)
+            for(j=0; j<17; j++)
             {
                 if((j%2)!=0)
                 {
@@ -37,6 +37,7 @@ void genematrice()
             }
         }
     }
-//affichage du tableau
-affiche(tab);
+    //affichage du tableau
+    //affiche(tab);
+    return tab;
 }
