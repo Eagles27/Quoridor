@@ -3,6 +3,6 @@
 
 int main()
 {
-    printf("Vive l electro\n");
+    printf("Ntm\n");
     return 0;
 }
