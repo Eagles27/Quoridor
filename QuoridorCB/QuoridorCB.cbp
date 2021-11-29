@@ -31,7 +31,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+<<<<<<< Updated upstream
 		<Unit filename="InitialisationMatriceOrdi.c">
+=======
+		<Unit filename="TestPremier.c">
+>>>>>>> Stashed changes
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.c">
