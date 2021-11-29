@@ -1,7 +1,9 @@
 # depslib dependency file v1.0
-1638177665 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\main.c
+1638189189 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\main.c
 	<stdio.h>
 	<stdlib.h>
 
 1638177795 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\testpremier.c
+
+1638189263 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\initialisationmatriceordi.c
 

@@ -30,7 +30,7 @@ void affiche(int tab[17][17]  )
 
 
 
-
+/* ANCIEN SOUS PROG DE GENE DE MATRICE INTIALE
 void presmatrice()
 {
 
@@ -49,7 +49,7 @@ void presmatrice()
     }
 
     //Reste à mettre les 1 sur impairs
-/*
+
     //Setup de 1ere ligne et 1ere colonne //Et espacage de 1 de plus pour i>9
     for(i=0;i<19;i++)
     {
@@ -58,17 +58,18 @@ void presmatrice()
         tab[0][i]=i;
 
     }
-*/
+
 
 affiche(tab);
 
 
 
 
-}
+
+}*/
 
 
 int main()
 {
-    presmatrice();
+    genematrice();
 }
