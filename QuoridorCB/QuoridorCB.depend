@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1638196134 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\main.c
+1638205368 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\main.c
 	"header_adrien.h"
 
 1638177795 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\testpremier.c
@@ -7,13 +7,17 @@
 1638196134 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\initialisationmatriceordi.c
 	"header_adrien.h"
 
-1638196134 c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\header_adrien.h
+1638205368 c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\header_adrien.h
 	<stdio.h>
 	<stdlib.h>
+	<windows.h>
 
-1638196134 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\affich_mat_avec_coord.c
+1638203308 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\affich_mat_avec_coord.c
 	"header_adrien.h"
 
 1638196134 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\choix_nbre_joueur.c
+	"header_adrien.h"
+
+1638205368 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\affiregles.c
 	"header_adrien.h"
 

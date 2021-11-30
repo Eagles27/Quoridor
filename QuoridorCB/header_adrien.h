@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <windows.h>
 
 
 void affiche(int tab[17][17]);

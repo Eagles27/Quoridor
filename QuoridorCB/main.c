@@ -5,4 +5,5 @@ int main()
 {
     nbre_joueurs();
     genematrice();
+    affiregles();
 }
