@@ -1,11 +1,11 @@
 #include "Header_Pierre.h"
 
-int *genematrice()
+void genematrice(int tab[17][17])
 {
     int i;
     int j;
 
-    int tab[17][17];
+
 
     //Remplissage de 0
     for(i=0; i<17; i++)
@@ -39,5 +39,4 @@ int *genematrice()
     }
     //affichage du tableau
     //affiche(tab);
-    return tab;
 }
