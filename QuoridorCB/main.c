@@ -3,20 +3,21 @@
 int main()
 {
     ///0. DDV
-    int depla[3] = {4, 2};
+    int depla[3] = {4, 4};
     int tab[17][17];
+    int depla_org[3];
 
     ///1. Test
     genematrice(tab);
-    tab[2][2]=5;
-    tab[1][2]=2;
-    tab[2][1]=2;
     tab[depla[1]][depla[0]]=4;
     affiche(tab);
     system("PAUSE");
-    tab[depla[1]][depla[0]]=0;
+    depla_org[0] = depla[0];
+    depla_org[1] = depla[1];
     deplacement(depla, tab, 2);
-    //printf("%d, %d\n",depla[0], depla[1]);
+    tab[depla_org[1]][depla_org[0]]=0;
     tab[depla[1]][depla[0]]=4;
+    //printf("%d, %d\n",depla[0], depla[1]);
+    //system("cls");
     affiche(tab);
 }

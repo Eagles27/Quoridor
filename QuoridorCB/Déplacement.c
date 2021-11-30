@@ -82,15 +82,16 @@ void deplacement(int dep[3], int matrice[17][17], int nombrejoueur)
         }
         else
         {
-            if(((choix=='h')||(choix=='H'))&&(dep[1]!=0)&&(((matrice[dep[1]-1][dep[0]])!=2)||((matrice[dep[1]-1][dep[0]])!=3)))
+            if(((choix=='h')||(choix=='H'))&&(dep[1]!=0)&&((matrice[dep[1]-1][dep[0]])!=2)&&((matrice[dep[1]-1][dep[0]])!=3))
             {
                 if(matrice[dep[1]-2][dep[0]]==0)
                 {
                     dep[1] -= 2;
                     valid_dep = 0;
                 }
-                else if((valid_dep == 1)&&(matrice[dep[1]-4][dep[0]]==0)){
-
+                else if((valid_dep == 1)&&(matrice[dep[1]-4][dep[0]]==0)&&((matrice[dep[1]-3][dep[0]])!=2)&&((matrice[dep[1]-3][dep[0]])!=3)){
+                    dep[1] -= 4;
+                    valid_dep = 0;
                 }
                 else
                 {
@@ -99,7 +100,8 @@ void deplacement(int dep[3], int matrice[17][17], int nombrejoueur)
                         while(validation_choix(choix_decalage, 'g', 'd')==1)
                         {
                             system("cls");
-                            printf("Vous ne pouvez pas sauter le deuxième mur,\nSouhaitez vous aller à gauche (g) ou a droite (d) ?\n");
+                            affiche(matrice);
+                            printf("Vous ne pouvez pas sauter le deuxième mur,\nSouhaitez vous aller a gauche (g) ou a droite (d) ?\n");
                             scanf("%c", &choix_decalage);
                         }
                         if(choix_decalage == 'd')
@@ -108,11 +110,13 @@ void deplacement(int dep[3], int matrice[17][17], int nombrejoueur)
                             {
                                 printf("Vous etes face a une barriere\nVotre piont va faire un decalage a gauche\n");
                                 dep[0]-=2;
+                                dep[1]-=2;
                                 valid_dep = 0;
                             }
                             else
                             {
                                 dep[0]+=2;
+                                dep[1]-=2;
                                 valid_dep = 0;
                             }
                         }
@@ -122,21 +126,27 @@ void deplacement(int dep[3], int matrice[17][17], int nombrejoueur)
                             {
                                 printf("Vous etes face a une barriere\nVotre piont va faire un decalage a droite\n");
                                 dep[0]+=2;
+                                dep[1]-=2;
                                 valid_dep = 0;
                             }
                             else
                             {
                                 dep[0]-=2;
+                                dep[1]-=2;
                                 valid_dep = 0;
                             }
                         }
                     }
                 }
             }
-            else if(((choix=='b')||(choix=='B'))&&(dep[1]!=16)&&(((matrice[dep[1]+1][dep[0]])!=2)||((matrice[dep[1]+1][dep[0]])!=3)))
+            else if(((choix=='b')||(choix=='B'))&&(dep[1]!=16)&&((matrice[dep[1]+1][dep[0]])!=2)&&((matrice[dep[1]+1][dep[0]])!=3))
             {
-                if(matrice[dep[1]+4][dep[0]]==0)
+                if(matrice[dep[1]+2][dep[0]]==0)
                 {
+                    dep[1] += 2;
+                    valid_dep = 0;
+                }
+                else if((valid_dep == 1)&&(matrice[dep[1]+4][dep[0]]==0)&&((matrice[dep[1]+3][dep[0]])!=2)&&((matrice[dep[1]+3][dep[0]])!=3)){
                     dep[1] += 4;
                     valid_dep = 0;
                 }
@@ -147,6 +157,7 @@ void deplacement(int dep[3], int matrice[17][17], int nombrejoueur)
                         while(validation_choix(choix_decalage, 'g', 'd')==1)
                         {
                             system("cls");
+                            affiche(matrice);
                             printf("Vous ne pouvez pas sauter le deuxième mur,\nSouhaitez vous aller a gauche (g) ou a droite (d) ?\n");
                             scanf("%c", &choix_decalage);
                         }
@@ -156,11 +167,13 @@ void deplacement(int dep[3], int matrice[17][17], int nombrejoueur)
                             {
                                 printf("Vous etes face a une barriere\nVotre piont va faire un decalage a gauche\n");
                                 dep[0]-=2;
+                                dep[1]+=2;
                                 valid_dep = 0;
                             }
                             else
                             {
                                 dep[0]+=2;
+                                dep[1]+=2;
                                 valid_dep = 0;
                             }
                         }
@@ -170,72 +183,137 @@ void deplacement(int dep[3], int matrice[17][17], int nombrejoueur)
                             {
                                 printf("Vous etes face a une barriere\nVotre piont va faire un decalage a droite\n");
                                 dep[0]+=2;
+                                dep[1]+=2;
                                 valid_dep = 0;
                             }
                             else
                             {
                                 dep[0]-=2;
+                                dep[1]+=2;
                                 valid_dep = 0;
                             }
                         }
                     }
                 }
             }
-            else if(((choix=='g')||(choix=='G'))&&(dep[0]!=0)&&(((matrice[dep[1]][dep[0]-1])!=2)||((matrice[dep[1]][dep[0]-1])!=3)))
+            else if(((choix=='g')||(choix=='G'))&&(dep[0]!=0)&&((matrice[dep[1]][dep[0]-1])!=2)&&((matrice[dep[1]][dep[0]-1])!=3))
             {
-                if(matrice[dep[1]+4][dep[0]]==0)
+                if(matrice[dep[1]][dep[0]-2]==0)
                 {
-                    dep[1] -= 4;
+                    dep[0] -= 2;
+                    valid_dep = 0;
+                }
+                else if((valid_dep == 1)&&(matrice[dep[1]][dep[0]-4]==0)&&((matrice[dep[1]][dep[0]-3])!=2)&&((matrice[dep[1]][dep[0]-3])!=3)){
+                    dep[0] -= 4;
                     valid_dep = 0;
                 }
                 else
                 {
-                    if((matrice[dep[1]+3][dep[0]]==2)||(matrice[dep[1]+3][dep[0]]==3))
+                    if((matrice[dep[1]][dep[0]-3]==2)||(matrice[dep[1]][dep[0]-3]==3))
                     {
                         while(validation_choix(choix_decalage, 'h', 'b')==1)
                         {
                             system("cls");
+                            affiche(matrice);
                             printf("Vous ne pouvez pas sauter le deuxième mur,\nSouhaitez vous aller en haut (h) ou en bas (b) ?\n");
                             scanf("%c", &choix_decalage);
                         }
-                        if(choix_decalage == 'h')
+                        if(choix_decalage == 'b')
                         {
-                            if((matrice[dep[1]+2][dep[0]+1]==2)||(matrice[dep[1]+2][dep[0]+1]==3))
+                            if((matrice[dep[1]+1][dep[0]-2]==2)||(matrice[dep[1]+1][dep[0]-2]==3))
                             {
-                                printf("Vous etes face a une barriere\nVotre piont va faire un decalage en bas\n");
+                                printf("Vous etes face a une barriere\nVotre piont va faire un decalage en haut\n");
                                 dep[0]-=2;
+                                dep[1]-=2;
                                 valid_dep = 0;
                             }
                             else
                             {
-                                dep[0]+=2;
+                                dep[0]-=2;
+                                dep[1]+=2;
                                 valid_dep = 0;
                             }
                         }
                         else
                         {
-                            if((matrice[dep[1]+2][dep[0]-1]==2)||(matrice[dep[1]+2][dep[0]-1]==3))
+                            if((matrice[dep[1]-1][dep[0]-2]==2)||(matrice[dep[1]-1][dep[0]-2]==3))
                             {
-                                printf("Vous etes face a une barriere\nVotre piont va faire un decalage en haut\n");
-                                dep[0]+=2;
+                                printf("Vous etes face a une barriere\nVotre piont va faire un decalage en bas\n");
+                                dep[0]-=2;
+                                dep[1]+=2;
                                 valid_dep = 0;
                             }
                             else
                             {
                                 dep[0]-=2;
+                                dep[1]-=2;
                                 valid_dep = 0;
                             }
                         }
                     }
                 }
             }
-            else if(((choix=='d')||(choix=='D'))&&(dep[0]!=16)&&(((matrice[dep[1]][dep[0]+1])!=2)||((matrice[dep[1]][dep[0]+1])!=3)))
+            else if(((choix=='d')||(choix=='D'))&&(dep[0]!=16)&&((matrice[dep[1]][dep[0]+1])!=2)&&((matrice[dep[1]][dep[0]+1])!=3))
             {
-                dep[0]+=2;
-                valid_dep = 0;
+                if(matrice[dep[1]][dep[0]+2]==0)
+                {
+                    dep[0] += 2;
+                    valid_dep = 0;
+                }
+                else if((valid_dep == 1)&&(matrice[dep[1]][dep[0]+4]==0)&&((matrice[dep[1]][dep[0]+3])!=2)&&((matrice[dep[1]][dep[0]+3])!=3)){
+                    dep[0] += 4;
+                    valid_dep = 0;
+                }
+                else
+                {
+                    if((matrice[dep[1]][dep[0]+3]==2)||(matrice[dep[1]][dep[0]+3]==3))
+                    {
+                        while(validation_choix(choix_decalage, 'h', 'b')==1)
+                        {
+                            system("cls");
+                            affiche(matrice);
+                            printf("Vous ne pouvez pas sauter le deuxième mur,\nSouhaitez vous aller en haut (h) ou en bas (b) ?\n");
+                            scanf("%c", &choix_decalage);
+                        }
+                        if(choix_decalage == 'b')
+                        {
+                            if((matrice[dep[1]+1][dep[0]+2]==2)||(matrice[dep[1]+1][dep[0]+2]==3))
+                            {
+                                printf("Vous etes face a une barriere\nVotre piont va faire un decalage en haut\n");
+                                dep[0]+=2;
+                                dep[1]-=2;
+                                valid_dep = 0;
+                            }
+                            else
+                            {
+                                dep[0]+=2;
+                                dep[1]+=2;
+                                valid_dep = 0;
+                            }
+                        }
+                        else
+                        {
+                            if((matrice[dep[1]-1][dep[0]+2]==2)||(matrice[dep[1]-1][dep[0]+2]==3))
+                            {
+                                printf("Vous etes face a une barriere\nVotre piont va faire un decalage en bas\n");
+                                dep[0]+=2;
+                                dep[1]+=2;
+                                valid_dep = 0;
+                            }
+                            else
+                            {
+                                dep[0]+=2;
+                                dep[1]-=2;
+                                valid_dep = 0;
+                            }
+                        }
+                    }
+                }
             }
             else
             {
+                printf("Deplacement impossible\n");
+                system("PAUSE");
                 valid_choix = 1;
             }
         }
