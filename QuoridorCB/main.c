@@ -3,13 +3,14 @@
 int main()
 {
     ///0. DDV
-    int depla[3] = {4, 4};
+    int depla[3] = {14, 16};
     int tab[17][17];
     int depla_org[3];
 
     ///1. Test
     genematrice(tab);
     tab[depla[1]][depla[0]]=4;
+    tab[16][16]=5;
     affiche(tab);
     system("PAUSE");
     depla_org[0] = depla[0];
