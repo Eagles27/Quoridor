@@ -11,12 +11,14 @@
 
 ///Proto
 
-void setup(int nbrj,int tab[17][17]);
-void main_menu();
+void main_menu(int* PbarJ1,int* PbarJ2,int* PbarJ3,int* PbarJ4,int* Pnombre_joueur,int mat[17][17]);
 int choix_j(int nombre);
 void affiche(int tab[17][17]);
-void genematrice();
-
+void genematrice(int tab[17][17]);
+void distributio_barriere(int *PbarJ1,int *PbarJ2, int *PbarJ3, int *PbarJ4, int *nombrejoueur);
+int nombre_joueur();
+void gotoligcol( int lig, int col );
+void affiche(int tab[17][17]);
 
 
 

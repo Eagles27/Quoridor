@@ -1,11 +1,10 @@
 #include "jeu.h"
 
-void genematrice()
+void genematrice(int tab[17][17])
 {
     int i;
     int j;
 
-    int tab[17][17];
 
     //Remplissage de 0
     for(i=0; i<17; i++)
@@ -38,5 +37,5 @@ void genematrice()
         }
     }
 //affichage du tableau
-affiche(tab);
+//affiche(tab);
 }

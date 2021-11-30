@@ -1,25 +1,47 @@
 #include "jeu.h"
 
-void setup(int nbrj,int tab[17][17])
+void setup(int *nombrejouer, int debut, int mat[17][17])
 {
-    int j_commence;
-    int c_j1,l_j1;
-    int c_j2,l_j2;
-    int c_j3,l_j3;
-    int c_j4,l_j4;
-    int nbjoueur = nbrj;
-
-    srand(time(NULL));  // Reset de l'horloge intenr
-
-    j_commence = rand()%(nbrj-1+1)+1;
-    printf("C'est au joueur %d\n",j_commence);
-
-    //Placement des pions en début de partie
-
-    while(nbjoueur!=0)
+    int cJ1,cJ2,cJ3,cJ4;
+    if(*nombrejouer == 2)
     {
+        printf("Joueur %d:\nPlacer votre Pion sur la premiere ligne\n",debut);
+        if (debut == 1)
+        {
+            printf("Choisir une ligne A --> I\n");
+            scanf("%d",&cJ1);
+            mat[0][cJ1] = 5;
+            affiche(mat);
+
+            printf("Joueur 2:\nPlacer votre Pion sur la premiere ligne\n");
+            printf("Choisir une ligne A --> I\n");
+            scanf("%d",&cJ2);
+            mat[16][cJ2] = 7;
+            affiche(mat);
+
+        }
+
+        else
+        {
+            printf("Choisir une ligne A --> I\n");
+            scanf("%d",&cJ2);
+            mat[16][cJ2] = 7;
+            affiche(mat);
+
+
+            printf("Joueur 1:\nPlacer votre Pion sur la premiere ligne\n");
+            printf("Choisir une ligne A --> I\n");
+            scanf("%d",&cJ1);
+            mat[0][cJ1] = 5;
+            affiche(mat);
+
+
+        }
 
     }
+
+    else
+    {
+        printf("Non dispo\n");
+    }
 }
-
-

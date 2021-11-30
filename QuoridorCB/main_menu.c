@@ -1,6 +1,6 @@
 #include "jeu.h"
 
-void main_menu()
+void main_menu(int* PbarJ1,int* PbarJ2,int* PbarJ3,int* PbarJ4,int* Pnombre_joueur, int mat[17][17])
 {
     int choix;
     int sortie = 0;
@@ -18,10 +18,13 @@ void main_menu()
         {
 
             system("cls");
-            printf("Lancement de la partie\n");
-            genematrice();
-            debut = choix_j(2);
-            printf("%d\n",debut);
+            *Pnombre_joueur = nombre_joueur();  //Lancement du SSPG pour jouer à 2 ou 4
+            affiche(mat);
+            debut = choix_j(*Pnombre_joueur);   //SSPG pour déterminer qui commence
+            printf("%d\n\n",debut);
+            distributio_barriere(PbarJ1,PbarJ2,PbarJ3,PbarJ4,Pnombre_joueur);
+            printf("Nombre barriere J1 : %d, Nombre Barriere J3 : %d\n",*PbarJ1,*PbarJ3);
+            setup(Pnombre_joueur,debut,mat);
             system("PAUSE");
             break;
         }
