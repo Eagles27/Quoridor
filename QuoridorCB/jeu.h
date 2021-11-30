@@ -19,6 +19,7 @@ void distributio_barriere(int *PbarJ1,int *PbarJ2, int *PbarJ3, int *PbarJ4, int
 int nombre_joueur();
 void gotoligcol( int lig, int col );
 void affiche(int tab[17][17]);
+void affiregles();
 
 
 
