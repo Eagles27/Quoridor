@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1638363456 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
+	"Header_Pierre.h"
+
+1638362652 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+
+1638361276 source:d:\pierr\documents\algo\quoridor\quoridorcb\déplacement.c
+	"Header_Pierre.h"
+
+1638361276 source:d:\pierr\documents\algo\quoridor\quoridorcb\affich_mat_avec_coord.c
+	"Header_Pierre.h"
+
+1638361276 source:d:\pierr\documents\algo\quoridor\quoridorcb\initialisationmatriceordi.c
+	"Header_Pierre.h"
+
+1638361276 source:d:\pierr\documents\algo\quoridor\quoridorcb\sauvegarde-charger.c
+	"Header_Pierre.h"
+
+1638361276 source:d:\pierr\documents\algo\quoridor\quoridorcb\matrice_visible.c
+	"Header_Pierre.h"
+
+1638363180 source:d:\pierr\documents\algo\quoridor\quoridorcb\placer_barriere.c
+	"Header_Pierre.h"
+
