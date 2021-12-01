@@ -40,6 +40,9 @@
 		<Unit filename="Choix_nbre_joueur.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Gotolicol.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="InitialisationMatriceOrdi.c">
 			<Option compilerVar="CC" />
 		</Unit>
