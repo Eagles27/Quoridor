@@ -21,5 +21,6 @@ void affiche(int tab[17][17]);
 void charger(int tab[17][17]);
 void sauver(int tab[17][17]);
 void matrice_propre(int tab2[17][17]);
+void placer_barriere(int tab[17][17], int place1[2], int place2[2]);
 
 #endif // HEADER_PIERRE_H_INCLUDED

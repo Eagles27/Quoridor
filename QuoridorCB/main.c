@@ -3,11 +3,11 @@
 int main()
 {
     ///0. DDV
-    int depla[3] = {14, 16};
+    //int depla[3] = {14, 16};
     int tab[17][17];
-    int depla_org[3];
-    char lettre = '0';
-    int chiffre;
+    //int depla_org[3];
+    //char lettre = '0';
+    //int chiffre;
 
     ///1. Test deplacement
     /*genematrice(tab);
@@ -31,7 +31,7 @@ int main()
     affiche(tab);*/
 
     ///3. Test affiche propre
-    genematrice(tab);
+    /*genematrice(tab);
     tab[1][0]=3;
     tab[1][1]=3;
     tab[0][1]=3;
@@ -40,5 +40,15 @@ int main()
     tab[0][4]=9;
     tab[0][6]=11;
     //tab[1][2]=3;
-    matrice_propre(tab);
+    matrice_propre(tab);*/
+
+    ///4. Test barriere
+    genematrice(tab);
+    affiche(tab);
+    system("PAUSE");
+    system("cls");
+    int place1[2] = {1,0};
+    int place2[2] = {1,1};
+    placer_barriere(tab,place1,place2);
+    affiche(tab);
 }
