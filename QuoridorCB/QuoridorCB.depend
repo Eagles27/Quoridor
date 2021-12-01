@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1638309084 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\main.c
+1638355114 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\main.c
 	"header_adrien.h"
 
 1638177795 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\testpremier.c
@@ -7,11 +7,12 @@
 1638196134 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\initialisationmatriceordi.c
 	"header_adrien.h"
 
-1638309084 c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\header_adrien.h
+1638354588 c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\header_adrien.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 	<string.h>
+	<time.h>
 
 1638203308 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\affich_mat_avec_coord.c
 	"header_adrien.h"
@@ -22,6 +23,9 @@
 1638205887 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\affiregles.c
 	"header_adrien.h"
 
-1638309166 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\gotolicol.c
+1638350390 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\gotolicol.c
+	"header_adrien.h"
+
+1638355114 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\choixpion.c
 	"header_adrien.h"
 
