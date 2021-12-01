@@ -23,7 +23,7 @@ int validation_choix(char chx, char choix1, char choix2)
     else return 0;
 }
 
-void deplacement(int dep[3], int matrice[17][17], int nombrejoueur)
+void deplacement(int dep[3], int matrice[17][17], int* nombrejoueur)
 {
     /// 0. DDV
     char choix;
@@ -54,7 +54,7 @@ void deplacement(int dep[3], int matrice[17][17], int nombrejoueur)
         }
         //printf("choix termine\n");
     ///2.1. Début déplacement à 4 joueurs
-        if(nombrejoueur==4)
+        if(*nombrejoueur==4)
         {
             ///2.1.1. En haut
             if(((choix=='h')||(choix=='H'))&&(dep[1]!=0)&&(((matrice[dep[1]-1][dep[0]])!=2)||((matrice[dep[1]-1][dep[0]])!=3))&&(matrice[dep[1]-2][dep[0]]==0))
