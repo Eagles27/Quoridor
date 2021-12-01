@@ -25,20 +25,8 @@ int main()
     affiche(tab);*/
 
     ///2. Test save-DL
-    /*for(int i=0; i<17; i++)
-        for(int j=0; j<17; j++)
-        {
-            tab[i][j]=0;
-        }*/
-    //genematrice(tab);
+    genematrice(tab);
     //sauver(tab);
     charger(tab);
-    /*for(int i=0; i<17; i++){
-        for(int j=0; j<17; j++)
-        {
-            printf("%c", tab[i][j]);
-        }
-        printf("\n");
-    }*/
-    //affiche(tab);
+    affiche(tab);
 }

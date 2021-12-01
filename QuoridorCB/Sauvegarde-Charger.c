@@ -29,7 +29,8 @@ void charger(int tab[17][17])
 {
     ///0. DDV
     FILE* fic;
-    int i,j;
+    int i=0;
+    int j=0;
     char info;
     int chiffre;
 
@@ -42,16 +43,16 @@ void charger(int tab[17][17])
         ///2. Récupération du plateau
         while(!(feof(fic)))
         {
-            for(i=0; i<17; i++)
-            {
-                for(j=0; j<17; j++)
-                {
-                    info = fgetc(fic);
-                    printf("%c", info);
-                    //printf("%d", info-48);
-                }
+            info = fgetc(fic);
+            //printf("%c", info);
+            chiffre = info - 48;
+            //printf("%d", chiffre);
+            tab[i][j] = chiffre;
+            j++;
+            if(j==17){
+                j = 0;
+                i++;
             }
-            printf("\n");
         }
         fclose(fic);
     }
