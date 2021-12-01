@@ -23,6 +23,7 @@ void main_menu(int* PbarJ1,int* PbarJ2,int* PbarJ3,int* PbarJ4,int* Pnombre_joue
             debut = choix_j(*Pnombre_joueur);   //SSPG pour déterminer qui commence
             system("cls");
             affiche(mat);
+            menu_game();
             distributio_barriere(PbarJ1,PbarJ2,PbarJ3,PbarJ4,Pnombre_joueur);
             printf("\nNombre barriere J1 : %d, Nombre Barriere J3 : %d\n",*PbarJ1,*PbarJ3);
             setup(Pnombre_joueur,debut,mat);

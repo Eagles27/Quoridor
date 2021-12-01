@@ -56,6 +56,9 @@
 		<Unit filename="main_menu.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="menu_game.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="nombre_joueur.c">
 			<Option compilerVar="CC" />
 		</Unit>

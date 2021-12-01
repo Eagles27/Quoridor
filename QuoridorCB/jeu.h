@@ -20,6 +20,7 @@ int nombre_joueur();
 void gotoligcol( int lig, int col );
 void affiche(int tab[17][17]);
 void affiregles();
+void menu_game();
 
 
 
