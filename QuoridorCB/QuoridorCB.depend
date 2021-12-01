@@ -1,43 +1,49 @@
 # depslib dependency file v1.0
-1638273874 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main.c
+1638350345 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main.c
 	"jeu.h"
 
-1638349408 c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\jeu.h
+1638351068 c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\jeu.h
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<windows.h>
 
-1638291129 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\setup.c
+1638350345 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\setup.c
 	"jeu.h"
 
 1637048961 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\deplacement.c
 	"jeu.h"
 
-1638349408 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main_menu.c
+1638353038 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main_menu.c
 	"jeu.h"
 
-1638273874 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\choix_j.c
+1638350345 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\choix_j.c
 	"jeu.h"
 
-1638273874 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\affich_mat_avec_coord.c
+1638350345 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\affich_mat_avec_coord.c
 	"jeu.h"
 
-1638273874 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\initialisationmatriceordi.c
+1638350345 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\initialisationmatriceordi.c
 	"jeu.h"
 
-1638273874 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\distribution_barriere.c
+1638350345 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\distribution_barriere.c
 	"jeu.h"
 
-1638273874 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\nombre_joueur.c
+1638350345 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\nombre_joueur.c
 	"jeu.h"
 
-1638273874 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\gotoligcol.c
+1638350345 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\gotoligcol.c
 	"jeu.h"
 
-1638285086 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\affiregles.c
+1638350345 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\affiregles.c
 	"jeu.h"
 
-1638287090 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\traduction.c
+1638350345 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\traduction.c
+	"jeu.h"
+
+1638352927 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\déplacement.c
+	"jeu.h"
+
+1638353004 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\menu_game.c
 	"jeu.h"
 

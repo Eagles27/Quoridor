@@ -20,7 +20,8 @@ int nombre_joueur();
 void gotoligcol( int lig, int col );
 void affiche(int tab[17][17]);
 void affiregles();
-void menu_game();
+void menu_game(int mat[17][17],int* Pnombrejoueur);
+void deplacement(int dep[3], int matrice[17][17], int* nombrejoueur);
 
 
 

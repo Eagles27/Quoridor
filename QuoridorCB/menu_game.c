@@ -1,8 +1,10 @@
 #include "jeu.h"
 
-void menu_game()
+void menu_game(int mat[17][17],int* Pnombrejoueur)
 {
     int choix;
+    int dep[3];
+    char temp;
 
     do
     {
@@ -16,6 +18,18 @@ void menu_game()
         case 1:
             {
                ///Mettre programme de pierre
+
+               dep[0] = 0;
+               dep[1] = 0;
+
+               deplacement(dep,mat,Pnombrejoueur);
+               mat[dep[1]][dep[0]] = 5; // Attention coordonnées inversées
+               printf("%d,%d",dep[0],dep[1]);
+
+               system("cls");
+               affiche(mat);
+               system("PAUSE");
+
             break;
             }
         case 2:
