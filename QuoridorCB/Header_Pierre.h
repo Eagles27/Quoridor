@@ -25,7 +25,7 @@ void affiche(int tab[17][17]);
 void charger(int tab[17][17]);
 void sauver(int tab[17][17]);
 void matrice_propre(int tab2[17][17]);
-void placer_barriere(int tab[17][17], int place1[2], int place2[2]);
+int placer_barriere(int tab[17][17], int place1[2], int place2[2]);
 void menucote(int lig,int col,int nombreJoueur, t_joueur jugador[4]);
 void choixPion(t_joueur jugador[4],int numeroJ);
 void main_menu(int* PbarJ1,int* PbarJ2,int* PbarJ3,int* PbarJ4,int* Pnombre_joueur,int mat[17][17]);
@@ -34,7 +34,7 @@ void distributio_barriere(int *PbarJ1,int *PbarJ2, int *PbarJ3, int *PbarJ4, int
 int nombre_joueur();
 void gotoligcol( int lig, int col );
 void affiregles();
-void menu_game(int mat[17][17],int* Pnombrejoueur);
+int menu_game(int mat[17][17],int* Pnombrejoueur,int* PbarJ1,int* PbarJ2,int* PbarJ3,int* PbarJ4);
 void saisie_coord(int saisie[2]);
 int traduction(char entree);
 

@@ -1,6 +1,6 @@
 #include "Header_Pierre.h"
 
-void placer_barriere(int tab[17][17], int place1[2], int place2[2])
+int placer_barriere(int tab[17][17], int place1[2], int place2[2])
 {
     ///0. DDV
     int x,y;
@@ -10,13 +10,16 @@ void placer_barriere(int tab[17][17], int place1[2], int place2[2])
         {
             tab[place1[1]][place1[0]]=3;
             tab[place2[1]][place2[0]]=3;
+            return 1;
         }
         else
         {
             printf("Les deux parties de la barriere\nDoivent etre cote a cote\n");
+            return -1;
         }
     }
     else{
         printf("Le placement n'est pas valide\n");
+        return -1;
     }
 }

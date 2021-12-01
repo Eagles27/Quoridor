@@ -1,4 +1,4 @@
-#include "jeu.h"
+#include "Header_Pierre.h"
 
 void main_menu(int* PbarJ1,int* PbarJ2,int* PbarJ3,int* PbarJ4,int* Pnombre_joueur, int mat[17][17])
 {
@@ -22,11 +22,11 @@ void main_menu(int* PbarJ1,int* PbarJ2,int* PbarJ3,int* PbarJ4,int* Pnombre_joue
             affiche(mat);
             debut = choix_j(*Pnombre_joueur);   //SSPG pour déterminer qui commence
             system("cls");
-            affiche(mat);
+            matrice_propre(mat);
             distributio_barriere(PbarJ1,PbarJ2,PbarJ3,PbarJ4,Pnombre_joueur);
             printf("\nNombre barriere J1 : %d, Nombre Barriere J3 : %d\n",*PbarJ1,*PbarJ3);
             setup(Pnombre_joueur,debut,mat);
-            menu_game(mat,Pnombre_joueur);
+            tour_par_tour(* Pnombre_joueur,mat,* PbarJ1,* PbarJ2,* PbarJ3,* PbarJ4);
             break;
         }
         case 2:
