@@ -50,6 +50,9 @@
 		<Unit filename="Placer_barriere.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Saisie_coord.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Sauvegarde-Charger.c">
 			<Option compilerVar="CC" />
 		</Unit>

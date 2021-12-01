@@ -7,6 +7,7 @@
 #include <time.h>
 #include <string.h>
 
+///Structure
 typedef struct joueur{
 
     char nomJ[50];
@@ -17,6 +18,7 @@ typedef struct joueur{
 
 }t_joueur;
 
+///Prototype
 void deplacement(int dep[3], int matrice[17][17], int* nombrejoueur);
 void genematrice(int tab[17][17]);
 void affiche(int tab[17][17]);
@@ -33,5 +35,7 @@ int nombre_joueur();
 void gotoligcol( int lig, int col );
 void affiregles();
 void menu_game(int mat[17][17],int* Pnombrejoueur);
+void saisie_coord(int saisie[2]);
+int traduction(char entree);
 
 #endif // HEADER_PIERRE_H_INCLUDED

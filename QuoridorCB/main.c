@@ -9,7 +9,7 @@ int main()
     //char lettre = '0';
     //int chiffre;
 
-    ///1. Test deplacement
+    ///1.1 Test deplacement
     /*genematrice(tab);
     tab[depla[1]][depla[0]]=4;
     tab[16][16]=5;
@@ -24,13 +24,13 @@ int main()
     //system("cls");
     affiche(tab);*/
 
-    ///2. Test save-DL
+    ///1.2. Test save-DL
     /*genematrice(tab);
     sauver(tab);
     charger(tab);
     affiche(tab);*/
 
-    ///3. Test affiche propre
+    ///1.3. Test affiche propre
     /*genematrice(tab);
     tab[1][0]=3;
     tab[1][1]=3;
@@ -42,7 +42,7 @@ int main()
     //tab[1][2]=3;
     matrice_propre(tab);*/
 
-    ///4. Test barriere
+    ///1.4. Test barriere
     /*genematrice(tab);
     affiche(tab);
     system("PAUSE");
@@ -52,7 +52,7 @@ int main()
     placer_barriere(tab,place1,place2);
     matrice_propre(tab);*/
 
-    ///5. Main max
+    ///2. Main max
     int mat[17][17];
     int nombre_joueur = 0;
 

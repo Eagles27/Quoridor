@@ -27,7 +27,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur)
                printf("%d,%d",dep[0],dep[1]);
 
                system("cls");
-               affiche(mat);
+               matrice_propre(mat);
                system("PAUSE");
 
             break;
@@ -35,6 +35,8 @@ void menu_game(int mat[17][17],int* Pnombrejoueur)
         case 2:
             {
                 ///PPG Barriere
+                matrice_propre(mat);
+                //ss prg : demande saisit utilisateur
                 break;
             }
         case 3 :
