@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1638293698 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
+1638317478 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
 	"Header_Pierre.h"
 
-1638262174 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
+1638311948 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
 	<windows.h>
 	<stdio.h>
 	<stdlib.h>
@@ -14,5 +14,8 @@
 	"Header_Pierre.h"
 
 1638261838 source:d:\pierr\documents\algo\quoridor\quoridorcb\initialisationmatriceordi.c
+	"Header_Pierre.h"
+
+1638317446 source:d:\pierr\documents\algo\quoridor\quoridorcb\sauvegarde-charger.c
 	"Header_Pierre.h"
 

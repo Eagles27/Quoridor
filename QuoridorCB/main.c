@@ -6,19 +6,39 @@ int main()
     int depla[3] = {14, 16};
     int tab[17][17];
     int depla_org[3];
+    char lettre = '0';
+    int chiffre;
 
-    ///1. Test
-    genematrice(tab);
-    tab[depla[1]][depla[0]]=4;
+    ///1. Test deplacement
+    //genematrice(tab);
+    /*tab[depla[1]][depla[0]]=4;
     tab[16][16]=5;
     affiche(tab);
     system("PAUSE");
     depla_org[0] = depla[0];
     depla_org[1] = depla[1];
-    deplacement(depla, tab, 2);
-    tab[depla_org[1]][depla_org[0]]=0;
+    //deplacement(depla, tab, 2);
+    //tab[depla_org[1]][depla_org[0]]=0;
     tab[depla[1]][depla[0]]=4;
     //printf("%d, %d\n",depla[0], depla[1]);
     //system("cls");
-    affiche(tab);
+    affiche(tab);*/
+
+    ///2. Test save-DL
+    /*for(int i=0; i<17; i++)
+        for(int j=0; j<17; j++)
+        {
+            tab[i][j]=0;
+        }*/
+    //genematrice(tab);
+    //sauver(tab);
+    charger(tab);
+    /*for(int i=0; i<17; i++){
+        for(int j=0; j<17; j++)
+        {
+            printf("%c", tab[i][j]);
+        }
+        printf("\n");
+    }*/
+    //affiche(tab);
 }

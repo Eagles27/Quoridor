@@ -8,5 +8,7 @@
 void deplacement(int dep[3], int matrice[17][17], int nombrejoueur);
 void genematrice(int tab[17][17]);
 void affiche(int tab[17][17]);
+void charger(int tab[17][17]);
+void sauver(int tab[17][17]);
 
 #endif // HEADER_PIERRE_H_INCLUDED
