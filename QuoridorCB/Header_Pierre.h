@@ -34,7 +34,7 @@ void distributio_barriere(int *PbarJ1,int *PbarJ2, int *PbarJ3, int *PbarJ4, int
 int nombre_joueur();
 void gotoligcol( int lig, int col );
 void affiregles();
-int menu_game(int mat[17][17],int* Pnombrejoueur,int* PbarJ1,int* PbarJ2,int* PbarJ3,int* PbarJ4);
+void menu_game(int mat[17][17],int* Pnombrejoueur,int* PbarJ1,int* PbarJ2,int* PbarJ3,int* PbarJ4);
 void saisie_coord(int saisie[2]);
 int traduction(char entree);
 

@@ -1,6 +1,6 @@
 #include "Header_Pierre.h"
 
-int menu_game(int mat[17][17],int* Pnombrejoueur,int* PbarJ1,int* PbarJ2,int* PbarJ3,int* PbarJ4)
+void menu_game(int mat[17][17],int* Pnombrejoueur,int* PbarJ1,int* PbarJ2,int* PbarJ3,int* PbarJ4)
 {
     int choix;
     int dep[3];
@@ -32,7 +32,6 @@ int menu_game(int mat[17][17],int* Pnombrejoueur,int* PbarJ1,int* PbarJ2,int* Pb
             system("cls");
             matrice_propre(mat);
             system("PAUSE");
-            return 1;
 
             break;
         }
@@ -55,28 +54,24 @@ int menu_game(int mat[17][17],int* Pnombrejoueur,int* PbarJ1,int* PbarJ2,int* Pb
             matrice_propre(mat);
             system("PAUSE");
 
-            return 2;
             break;
         }
         case 3 :
         {
             ///PPG passer son tour
 
-            return 3;
             break;
         }
         case 4 :
         {
             ///PPG annuler l'action
 
-            return 4;
             break;
         }
         case 5 :
         {
             main_menu(PbarJ1,PbarJ2,PbarJ3,PbarJ4,Pnombrejoueur,mat);
 
-            return 5;
             break;
         }
         default :

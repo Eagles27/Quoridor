@@ -54,7 +54,7 @@ void matrice_propre(int tab[17][17])
             {
                 if(tab[i][j]==0)
                 {
-                    printf(" %c ", '0');
+                    printf("   ");
                 }
                 else if(tab[i][j]==5){
                     printf(" %c ", caractereJ[0]);

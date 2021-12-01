@@ -120,7 +120,7 @@ void deplacement(int dep[3], int matrice[17][17], int* nombrejoueur)
                         while(validation_choix(choix_decalage, 'g', 'd')==1)
                         {
                             system("cls");
-                            affiche(matrice);
+                            matrice_propre(matrice);
                             printf("Vous ne pouvez pas sauter le deuxième mur,\nSouhaitez vous aller a gauche (g) ou a droite (d) ?\n");
                             scanf("%c", &choix_decalage);
                         }
@@ -185,7 +185,7 @@ void deplacement(int dep[3], int matrice[17][17], int* nombrejoueur)
                         while(validation_choix(choix_decalage, 'g', 'd')==1)
                         {
                             system("cls");
-                            affiche(matrice);
+                            matrice_propre(matrice);
                             printf("Vous ne pouvez pas sauter le deuxième mur,\nSouhaitez vous aller a gauche (g) ou a droite (d) ?\n");
                             scanf("%c", &choix_decalage);
                         }
@@ -250,7 +250,7 @@ void deplacement(int dep[3], int matrice[17][17], int* nombrejoueur)
                         while(validation_choix(choix_decalage, 'h', 'b')==1)
                         {
                             system("cls");
-                            affiche(matrice);
+                            matrice_propre(matrice);
                             printf("Vous ne pouvez pas sauter le deuxième mur,\nSouhaitez vous aller en haut (h) ou en bas (b) ?\n");
                             scanf("%c", &choix_decalage);
                         }
@@ -315,7 +315,7 @@ void deplacement(int dep[3], int matrice[17][17], int* nombrejoueur)
                         while(validation_choix(choix_decalage, 'h', 'b')==1)
                         {
                             system("cls");
-                            affiche(matrice);
+                            matrice_propre(matrice);
                             printf("Vous ne pouvez pas sauter le deuxième mur,\nSouhaitez vous aller en haut (h) ou en bas (b) ?\n");
                             scanf("%c", &choix_decalage);
                         }

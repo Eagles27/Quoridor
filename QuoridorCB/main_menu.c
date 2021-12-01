@@ -19,7 +19,7 @@ void main_menu(int* PbarJ1,int* PbarJ2,int* PbarJ3,int* PbarJ4,int* Pnombre_joue
 
             system("cls");
             *Pnombre_joueur = nombre_joueur();  //Lancement du SSPG pour jouer à 2 ou 4
-            affiche(mat);
+            //matrice_propre(mat);
             debut = choix_j(*Pnombre_joueur);   //SSPG pour déterminer qui commence
             system("cls");
             matrice_propre(mat);
@@ -27,6 +27,7 @@ void main_menu(int* PbarJ1,int* PbarJ2,int* PbarJ3,int* PbarJ4,int* Pnombre_joue
             printf("\nNombre barriere J1 : %d, Nombre Barriere J3 : %d\n",*PbarJ1,*PbarJ3);
             setup(Pnombre_joueur,debut,mat);
             tour_par_tour(* Pnombre_joueur,mat,* PbarJ1,* PbarJ2,* PbarJ3,* PbarJ4);
+            menu_game(mat,* Pnombre_joueur,* PbarJ1,* PbarJ2,* PbarJ3,* PbarJ4);
             break;
         }
         case 2:

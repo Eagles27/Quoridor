@@ -1,4 +1,4 @@
-#include "jeu.h"
+#include "Header_Pierre.h"
 
 void setup(int *nombrejouer, int debut, int mat[17][17])
 {
@@ -19,11 +19,11 @@ void setup(int *nombrejouer, int debut, int mat[17][17])
 
             EcJ1 = traduction(cJ1);;
             mat[0][EcJ1] = 5;
-            affiche(mat);
+            matrice_propre(mat);
 
 
             system("cls");
-            affiche(mat);
+            matrice_propre(mat);
 
             printf("\nJoueur 2:\nPlacer votre Pion sur la premiere ligne\n");
 
@@ -37,7 +37,7 @@ void setup(int *nombrejouer, int debut, int mat[17][17])
             EcJ2 = traduction(cJ2);
             mat[16][EcJ2] = 7;
             system("cls");
-            affiche(mat);
+            matrice_propre(mat);
 
         }
 
@@ -53,10 +53,10 @@ void setup(int *nombrejouer, int debut, int mat[17][17])
 
             EcJ2 = traduction(cJ2);
             mat[16][EcJ2] = 7;
-            affiche(mat);
+            matrice_propre(mat);
 
             system("cls");
-            affiche(mat);
+            matrice_propre(mat);
             printf("\nJoueur 1:\nPlacer votre Pion sur la premiere ligne\n");
 
             do
@@ -69,7 +69,7 @@ void setup(int *nombrejouer, int debut, int mat[17][17])
             EcJ1 = traduction(cJ1);
             mat[0][EcJ1] = 5;
             system("cls");
-            affiche(mat);
+            matrice_propre(mat);
 
 
         }

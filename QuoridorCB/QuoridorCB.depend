@@ -2,14 +2,14 @@
 1638364902 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
 	"Header_Pierre.h"
 
-1638369284 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
+1638383258 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
 	<windows.h>
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<string.h>
 
-1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\déplacement.c
+1638383630 source:d:\pierr\documents\algo\quoridor\quoridorcb\déplacement.c
 	"Header_Pierre.h"
 
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\affich_mat_avec_coord.c
@@ -21,7 +21,7 @@
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\sauvegarde-charger.c
 	"Header_Pierre.h"
 
-1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\matrice_visible.c
+1638383864 source:d:\pierr\documents\algo\quoridor\quoridorcb\matrice_visible.c
 	"Header_Pierre.h"
 
 1638367532 source:d:\pierr\documents\algo\quoridor\quoridorcb\placer_barriere.c
@@ -45,17 +45,17 @@
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\gotoligcol.c
 	"jeu.h"
 
-1638368752 source:d:\pierr\documents\algo\quoridor\quoridorcb\main_menu.c
+1638383956 source:d:\pierr\documents\algo\quoridor\quoridorcb\main_menu.c
 	"Header_Pierre.h"
 
-1638369272 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_game.c
+1638384404 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_game.c
 	"Header_Pierre.h"
 
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\nombre_joueur.c
 	"jeu.h"
 
-1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\setup.c
-	"jeu.h"
+1638383784 source:d:\pierr\documents\algo\quoridor\quoridorcb\setup.c
+	"Header_Pierre.h"
 
 1638368332 source:d:\pierr\documents\algo\quoridor\quoridorcb\traduction.c
 	"Header_Pierre.h"
@@ -66,6 +66,6 @@
 1638368050 source:d:\pierr\documents\algo\quoridor\quoridorcb\saisie_coord.c
 	"Header_Pierre.h"
 
-1638369306 source:d:\pierr\documents\algo\quoridor\quoridorcb\tour_par_tour.c
+1638383430 source:d:\pierr\documents\algo\quoridor\quoridorcb\tour_par_tour.c
 	"Header_Pierre.h"
 
