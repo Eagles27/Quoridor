@@ -31,10 +31,25 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Affich_mat_avec_coord.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Déplacement.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Header_Pierre.h" />
+		<Unit filename="InitialisationMatriceOrdi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Matrice_visible.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Placer_barriere.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Sauvegarde-Charger.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
