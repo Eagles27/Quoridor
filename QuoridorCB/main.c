@@ -43,12 +43,12 @@ int main()
     matrice_propre(tab);*/
 
     ///4. Test barriere
-    genematrice(tab);
+    /*genematrice(tab);
     affiche(tab);
     system("PAUSE");
     system("cls");
     int place1[2] = {1,0};
     int place2[2] = {1,1};
     placer_barriere(tab,place1,place2);
-    affiche(tab);
+    matrice_propre(tab);*/
 }
