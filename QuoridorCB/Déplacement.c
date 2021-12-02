@@ -37,6 +37,7 @@ void deplacement(int dep[3], int matrice[17][17], int* nombrejoueur)
         while(valid_choix == 1)
         {
             system("cls");
+            matrice_propre(matrice);
             printf("Direction de deplacement (h, b, g, d) :\n");
             scanf("%c", &choix);
             if((choix=='h')||(choix=='b')||(choix=='g')||(choix=='d')||(choix=='H')||(choix=='B')||(choix=='G')||(choix=='D'))

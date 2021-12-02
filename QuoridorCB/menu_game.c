@@ -1,6 +1,6 @@
 #include "Header_Pierre.h"
 
-void menu_game(int mat[17][17],int* Pnombrejoueur,int* PbarJ1,int* PbarJ2,int* PbarJ3,int* PbarJ4)
+void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int tour)
 {
     int choix;
     int dep[3];
@@ -31,6 +31,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,int* PbarJ1,int* PbarJ2,int* P
 
             system("cls");
             matrice_propre(mat);
+            menu_cote(tour,Pnombrejoueur,player);
             system("PAUSE");
 
             break;
@@ -70,16 +71,18 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,int* PbarJ1,int* PbarJ2,int* P
         }
         case 5 :
         {
-            main_menu(PbarJ1,PbarJ2,PbarJ3,PbarJ4,Pnombrejoueur,mat);
-
+            main_menu(Pnombrejoueur,mat,player);
             break;
         }
         default :
         {
-            printf("Saisie Erronée");
+            printf("Saisie Erronee\n\n");
+            system("PAUSE");
+            system("cls");
+            matrice_propre(mat);
             break;
         }
         }
     }
-    while((choix!=1)&&(choix!=2)&&(choix!=3)&&(choix!=4));
+    while((choix!=1)||(choix!=2)||(choix!=3)||(choix!=4)||(choix!=5));
 }

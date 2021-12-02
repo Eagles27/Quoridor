@@ -1,6 +1,6 @@
 #include "Header_Pierre.h"
 
-void setup(int *nombrejouer, int debut, int mat[17][17])
+void setup(int *nombrejouer, int debut, int mat[17][17],t_joueur player[4], int tour)
 {
     char cJ1,cJ2,cJ3,cJ4;
     int EcJ1,EcJ2,EcJ3,EcJ4;
@@ -24,6 +24,7 @@ void setup(int *nombrejouer, int debut, int mat[17][17])
 
             system("cls");
             matrice_propre(mat);
+            menu_cote(tour,nombrejouer,player);
 
             printf("\nJoueur 2:\nPlacer votre Pion sur la premiere ligne\n");
 
@@ -38,6 +39,7 @@ void setup(int *nombrejouer, int debut, int mat[17][17])
             mat[16][EcJ2] = 7;
             system("cls");
             matrice_propre(mat);
+            menu_cote(tour,nombrejouer,player);
 
         }
 
@@ -57,6 +59,7 @@ void setup(int *nombrejouer, int debut, int mat[17][17])
 
             system("cls");
             matrice_propre(mat);
+            menu_cote(tour,nombrejouer,player);
             printf("\nJoueur 1:\nPlacer votre Pion sur la premiere ligne\n");
 
             do
@@ -64,11 +67,13 @@ void setup(int *nombrejouer, int debut, int mat[17][17])
                 printf("Choisir une ligne A --> Q\n");
                 fflush(stdin);
                 scanf("%c",&cJ1);
-            }while ((cJ1!='A')&&(cJ1!='C')&&(cJ1!='E')&&(cJ1!='G')&&(cJ1!='I')&&(cJ1!='K')&&(cJ1!='M')&&(cJ1!='O')&&(cJ1!='Q'));
+            }
+            while ((cJ1!='A')&&(cJ1!='C')&&(cJ1!='E')&&(cJ1!='G')&&(cJ1!='I')&&(cJ1!='K')&&(cJ1!='M')&&(cJ1!='O')&&(cJ1!='Q'));
 
             EcJ1 = traduction(cJ1);
             mat[0][EcJ1] = 5;
             system("cls");
+            menu_cote(tour,nombrejouer,player);
             matrice_propre(mat);
 
 
