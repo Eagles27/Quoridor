@@ -20,14 +20,13 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int tour)
         {
         case 1:
         {
+            fflush(stdin);
             ///Mettre programme de pierre
-
-            dep[0] = 0;
-            dep[1] = 0;
-
+            printf("%d,%d\n", dep[0], dep[1]);
+            system("PAUSE");
             deplacement(dep,mat,Pnombrejoueur);
             mat[dep[1]][dep[0]] = 5; // Attention coordonnées inversées
-            printf("%d,%d",dep[0],dep[1]);
+            //printf("%d,%d",dep[0],dep[1]);
 
             system("cls");
             matrice_propre(mat);
@@ -49,7 +48,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int tour)
                 saisie_coord(saisie2);
                 bool_barriere = placer_barriere(mat, saisie1, saisie2);
             }
-            while(placer_barriere(mat, saisie1, saisie2));
+            while(bool_barriere == -1);
             system("PAUSE");
             system("cls");
             matrice_propre(mat);
@@ -84,5 +83,5 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int tour)
         }
         }
     }
-    while((choix!=1)||(choix!=2)||(choix!=3)||(choix!=4)||(choix!=5));
+    while(choix!=5);
 }

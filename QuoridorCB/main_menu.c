@@ -76,8 +76,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             setup(Pnombre_joueur,debut,mat,player,tour);
             tour_par_tour(Pnombre_joueur,mat,player,tour);
 
-            ///Do While
-            menu_game(mat,Pnombre_joueur,player,tour);
+            //menu_game(mat,Pnombre_joueur,player,tour);
             break;
         }
         case 2:
