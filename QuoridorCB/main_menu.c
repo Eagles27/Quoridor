@@ -7,7 +7,13 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
     int debut;
 
     /// Test
+
+    int gagne = 0;
+
+
+
     int tour = 1;
+    int* Ptour = &tour;
 
     do
     {
@@ -23,6 +29,8 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
 
             system("cls");
             *Pnombre_joueur = nombre_joueur();  //Lancement du SSPG pour jouer à 2 ou 4
+
+
 
             ///Remplissage des donnees de la strcuture pour 4 J
 
@@ -71,13 +79,19 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             debut = choix_j(*Pnombre_joueur);   //SSPG pour déterminer qui commence
             system("cls");
             distribution_barriere(player,Pnombre_joueur);
-            matrice_propre(mat);
-            menu_cote(tour,Pnombre_joueur,player);
-            setup(Pnombre_joueur,debut,mat,player,tour);
-            tour_par_tour(Pnombre_joueur,mat,player,tour);
 
-            ///Do While
-            menu_game(mat,Pnombre_joueur,player,tour);
+            setup(Pnombre_joueur,debut,mat,player,Ptour);
+            tour_par_tour(Pnombre_joueur,mat,player,Ptour);
+
+            do
+            {
+                system("cls");
+                matrice_propre(mat);
+                menu_cote(Ptour,Pnombre_joueur,player);
+                menu_game(mat,Pnombre_joueur,player,tour);
+
+            }while(gagne == 0);
+
             break;
         }
         case 2:
