@@ -5,6 +5,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
     int choix;
     int sortie = 0;
     int debut;
+    int cord[3];
 
     /// Test
     int tour = 1;

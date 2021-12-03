@@ -22,8 +22,6 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int tour)
         {
             fflush(stdin);
             ///Mettre programme de pierre
-            printf("%d,%d\n", dep[0], dep[1]);
-            system("PAUSE");
             deplacement(dep,mat,Pnombrejoueur);
             mat[dep[1]][dep[0]] = 5; // Attention coordonnées inversées
             //printf("%d,%d",dep[0],dep[1]);
