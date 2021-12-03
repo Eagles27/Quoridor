@@ -1,8 +1,8 @@
 #include "Header_Pierre.h"
 
-void menu_cote(int tour,int* PnombreJoeur, t_joueur player[4])
+void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4])
 {
-    if(tour == 1)
+    if(*Ptour == 1)
     {
 
         gotoligcol(3,60);
@@ -26,7 +26,7 @@ void menu_cote(int tour,int* PnombreJoeur, t_joueur player[4])
     }
 
 
-    else if(tour == 2)
+    else if(*Ptour == 2)
     {
 
         gotoligcol(3,60);
@@ -49,7 +49,7 @@ void menu_cote(int tour,int* PnombreJoeur, t_joueur player[4])
 
     }
 
-    else if(tour == 3)
+    else if(*Ptour == 3)
     {
         gotoligcol(3,60);
         printf("Nombre de Joueur : %d",*PnombreJoeur);
@@ -74,7 +74,7 @@ void menu_cote(int tour,int* PnombreJoeur, t_joueur player[4])
     }
 
 
-    else if(tour == 4)
+    else if(*Ptour == 4)
     {
         gotoligcol(3,60);
         printf("Nombre de Joueur : %d",*PnombreJoeur);

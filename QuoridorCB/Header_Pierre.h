@@ -16,6 +16,8 @@ typedef struct joueur
     char jetonJ;
     int barrieresR;
     int numeroJ;
+    int coordonneX;
+    int coordonneY;
 
 } t_joueur;
 
@@ -25,7 +27,7 @@ typedef struct joueur
 ///MENU
 void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int tour); /// Variable tour pour Test non fonctionnel
 void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4]);
-void menu_cote(int tour,int* PnombreJoeur, t_joueur player[4]);
+void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4]);
 
 ///Actions
 void deplacement(int dep[3], int matrice[17][17], int* nombrejoueur);
@@ -43,13 +45,12 @@ void matrice_propre(int tab2[17][17]);
 int traduction(char entree);
 void saisie_coord(int saisie[2]);
 void gotoligcol( int lig, int col );
-void tour_par_tour(int* Pnombre_joueur, int mat[17][17], t_joueur player[4],int tour);
+void tour_par_tour(int* Pnombre_joueur, int mat[17][17], t_joueur player[4],int* Ptour);
 
 ///SetUp
 void distribution_barriere(t_joueur player[4],int *nombrejoueur);
 int nombre_joueur();
-void setup(int *nombrejouer, int debut, int mat[17][17],t_joueur player[4], int tour);
-
+void setup(int *Pnombrejoueur, int debut, int mat[17][17],t_joueur player[4], int* Ptour);
 
 
 
