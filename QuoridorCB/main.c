@@ -33,12 +33,12 @@ int main()
     Jugador[3].barrieresR=3;
 
 
-    //genematrice();
+    genematrice();
 
 
     choixPion(Jugador,numeroJ);
 
 
 
-    //menucote(3,70,nombreJ,Jugador);
+    menucote(3,70,nombreJ,Jugador);
 }

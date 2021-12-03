@@ -28,6 +28,7 @@ void choixPion(t_joueur jugador[4],int numeroJ)
 
         if(aleaCorresp==1){
             jugador[numeroJ].jetonJ='*';
+            printf("J'ai mis *");
         }
 
         if(aleaCorresp==2){
