@@ -20,7 +20,8 @@ int validation_choix(char chx, char choix1, char choix2)
     }
 
     if(valid_chx==1) return 1;
-    else return 0;
+    else
+        return 0;
 }
 
 void deplacement(int dep[3], int matrice[17][17], int* nombrejoueur)
