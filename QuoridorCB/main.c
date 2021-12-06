@@ -4,7 +4,7 @@ int main()
 
 {
     int nombreJ=2;
-    int numeroJ=1;
+    int numeroPlayer=1;
 
     t_joueur Jugador[4];
 
@@ -32,13 +32,14 @@ int main()
     //Jugador[3].jetonJ='&';
     Jugador[3].barrieresR=3;
 
+    /*------------------------------------------------*/
 
-    genematrice();
+    /*------------------------------------------------*/
 
+    genematrice(); //Affiche la matrice
 
-    choixPion(Jugador,numeroJ);
+    choixPion(Jugador,numeroPlayer);//Prend la structure et le numero du token du joueur à set
 
+    menucote(3,70,nombreJ,Jugador,numeroPlayer); //Affiche le menu dynamique sur le coté
 
-
-    menucote(3,70,nombreJ,Jugador);
 }
