@@ -25,7 +25,7 @@ typedef struct joueur
 
 
 ///MENU
-void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int tour); /// Variable tour pour Test non fonctionnel
+void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour);
 void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4]);
 void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4]);
 

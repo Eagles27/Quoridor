@@ -8,7 +8,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
 
     /// Test
 
-    int gagne = 0;
+    int gagne = 1;
 
 
 
@@ -81,16 +81,18 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             distribution_barriere(player,Pnombre_joueur);
 
             setup(Pnombre_joueur,debut,mat,player,Ptour);
-            tour_par_tour(Pnombre_joueur,mat,player,Ptour);
+
 
             do
             {
+                tour_par_tour(Pnombre_joueur,mat,player,Ptour);
                 system("cls");
                 matrice_propre(mat);
                 menu_cote(Ptour,Pnombre_joueur,player);
-                menu_game(mat,Pnombre_joueur,player,tour);
+                menu_game(mat,Pnombre_joueur,player,Ptour);
 
-            }while(gagne == 0);
+            }
+            while(gagne == 0);
 
             break;
         }
