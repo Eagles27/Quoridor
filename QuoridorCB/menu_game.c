@@ -4,9 +4,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int tour)
 {
     int choix;
     int dep[3];
-    char temp;
     int saisie1[2];
-    int saisie2[2];
     int bool_barriere;
 
     do

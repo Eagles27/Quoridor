@@ -1,9 +1,5 @@
 #include "Header_Pierre.h"
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////    /!\ Ne marche que pour les barrières    /////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////
-
 void saisie_coord(int saisie[2])
 {
     ///0. DDV
@@ -33,6 +29,8 @@ void saisie_coord(int saisie[2])
     }
     while(!((saisie_clavier=='a')||(saisie_clavier=='b')||(saisie_clavier=='c')||(saisie_clavier=='d')||(saisie_clavier=='e')||(saisie_clavier=='f')||(saisie_clavier=='g')||(saisie_clavier=='h')||(saisie_clavier=='i')||(saisie_clavier=='j')||(saisie_clavier=='k')||(saisie_clavier=='l')||(saisie_clavier=='m')||(saisie_clavier=='n')||(saisie_clavier=='o')||(saisie_clavier=='p')||(saisie_clavier=='q')));
 }
+
+
 
 int saisie_dir(){
     ///0. DDV
