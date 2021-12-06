@@ -3,6 +3,7 @@
 void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour)
 {
     int choix;
+    int sortie = 1;
     int dep[3];
     int org[3];
     char temp;
@@ -12,14 +13,15 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour)
 
 
 
+do
+{
+
+
+
     gotoligcol(20,0);
     printf("Actions Possibles:\n1-Deplacer son pion\n2-Poser une barriere\n3-Passer son tour\n4-Annuler la derniere action\n5-Revenir au menu precedent\n\nSaisie de l'action du joueur:\n");
     fflush(stdin);
     scanf("%d",&choix);
-
-
-
-
 
     switch(choix)
     {
@@ -27,17 +29,12 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour)
     {
         ///Mettre programme de pierre
 
-
-
-
         dep[0] =  player[*Ptour-1].coordonneX;
         dep[1] = player[*Ptour-1].coordonneY;
         org[0] =  player[*Ptour-1].coordonneX;
         org[1] = player[*Ptour-1].coordonneY;
 
-
-
-        deplacement(dep,mat,Pnombrejoueur);
+        deplacement(dep,mat,Pnombrejoueur,Ptour,player);
 
         player[*Ptour-1].coordonneX = dep[0];
         player[*Ptour-1].coordonneY = dep[1];
@@ -60,7 +57,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour)
         }
 
         system("cls");
-        matrice_propre(mat);
+        matrice_propre(mat,player);
         menu_cote(Ptour,Pnombrejoueur,player);
         system("PAUSE");
 
@@ -73,14 +70,17 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour)
         while(bool_barriere==-1)
         {
             system("cls");
-            matrice_propre(mat);
+            matrice_propre(mat,player);
+            menu_cote(Ptour,Pnombrejoueur,player);
             saisie_coord(saisie1);
 
             bool_barriere = placer_barriere(mat, saisie1, saisie_dir());
         }
 
         system("cls");
-        matrice_propre(mat);
+        player[*Ptour-1].barrieresR --; ///On décremente le nombre de barriere une fois posée
+        matrice_propre(mat,player);
+        menu_cote(Ptour,Pnombrejoueur,player);
         system("PAUSE");
 
         break;
@@ -92,7 +92,6 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour)
         //tour_par_tour(Pnombrejoueur,mat,player,Ptour);
 
         *Ptour ++;
-
 
         break;
     }
@@ -107,15 +106,20 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour)
         main_menu(Pnombrejoueur,mat,player);
         break;
     }
+
     default :
     {
+        choix = 0;
         printf("Saisie Erronee\n\n");
         system("PAUSE");
         system("cls");
-        matrice_propre(mat);
+        matrice_propre(mat,player);
+        menu_cote(Ptour,Pnombrejoueur,player);
         break;
     }
     }
+
+    }while(choix == 0);
 
 
 }

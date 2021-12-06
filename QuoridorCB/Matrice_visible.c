@@ -10,10 +10,17 @@
 - rond : 0x09
 */
 
-void matrice_propre(int tab[17][17])
+void matrice_propre(int tab[17][17], t_joueur player[4])
 {
     ///0.0. DDV temporaire
-    char caractereJ[8] = {'@', '*', '#', '&', '%', '?', '£', '$'};
+    char caractereJ[4];
+
+    /// Attribution des tokens pour chaques joueurs
+
+    for(int i=0;i<4;i++)
+    {
+        caractereJ[i] = player[i].jetonJ;
+    }
 
     ///0. DDV
     int i,j;

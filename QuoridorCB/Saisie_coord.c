@@ -9,7 +9,7 @@ void saisie_coord(int saisie[2])
     ///1. Saisi abscisse
     do
     {
-        printf("Saisir l'abscisse :\n");
+        printf("\nSaisir l'abscisse :\n");
         fflush(stdin);
         scanf("%c", &saisie_clavier);
         coord = traduction(saisie_clavier);
@@ -21,7 +21,7 @@ void saisie_coord(int saisie[2])
     ///2. Saisi ordonnee
     do
     {
-        printf("Saisir l'ordonnee :\n");
+        printf("\nSaisir l'ordonnee :\n");
         fflush(stdin);
         scanf("%c", &saisie_clavier);
         coord = traduction(saisie_clavier);
@@ -38,7 +38,7 @@ int saisie_dir(){
 
 
     do{
-        printf("Saisir direction :\n");
+        printf("\nSaisir direction :\n");
         fflush(stdin);
         scanf("%c", &saisie);
     }while(!((saisie!='h')||(saisie!='H')||(saisie!='b')||(saisie!='B')||(saisie!='g')||(saisie!='G')||(saisie!='d')||(saisie!='D')));

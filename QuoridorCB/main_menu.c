@@ -30,6 +30,12 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             system("cls");
             *Pnombre_joueur = nombre_joueur();  //Lancement du SSPG pour jouer à 2 ou 4
 
+/// RESET DES TOKENS
+            for(int i=0; i<4; i++)
+            {
+                player[i].jetonJ = '1';     // Valeur donnée arbitrairement
+            }
+
 
 
             ///Remplissage des donnees de la strcuture pour 4 J
@@ -87,7 +93,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             while(gagne == 1)
             {
                 system("cls");
-                matrice_propre(mat);
+                matrice_propre(mat,player);
                 menu_cote(Ptour,Pnombre_joueur,player);
                 menu_game(mat,Pnombre_joueur,player,Ptour);
                 tour_par_tour(Pnombre_joueur,mat,player,Ptour);

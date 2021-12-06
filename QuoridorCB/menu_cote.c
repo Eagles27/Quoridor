@@ -12,7 +12,7 @@ void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4])
         printf("Joueur : %s",player[0].nomJ);
 
         gotoligcol(7,60);
-        printf("Score Patie : %d",player[0].scoreP);
+        printf("Score Partie : %d",player[0].scoreP);
 
         gotoligcol(9,60);
         printf("Jeton : %c",player[0].jetonJ);
