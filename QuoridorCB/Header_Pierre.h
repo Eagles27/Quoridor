@@ -34,7 +34,7 @@ void deplacement(int dep[3], int matrice[17][17], int* nombrejoueur);
 void charger(int tab[17][17]);
 void sauver(int tab[17][17]);
 void choixPion(t_joueur jugador[4],int numeroJ);
-int placer_barriere(int tab[17][17], int place1[2], int place2[2]);
+int placer_barriere(int tab[17][17], int place[2], char saisie);
 int choix_j(int nombre);
 void affiregles();
 

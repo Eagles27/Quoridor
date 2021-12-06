@@ -1,15 +1,15 @@
 # depslib dependency file v1.0
-1638364902 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
+1638536750 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
 	"Header_Pierre.h"
 
-1638383258 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
+1638823842 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
 	<windows.h>
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<string.h>
 
-1638383630 source:d:\pierr\documents\algo\quoridor\quoridorcb\déplacement.c
+1638823754 source:d:\pierr\documents\algo\quoridor\quoridorcb\déplacement.c
 	"Header_Pierre.h"
 
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\affich_mat_avec_coord.c
@@ -24,7 +24,7 @@
 1638383864 source:d:\pierr\documents\algo\quoridor\quoridorcb\matrice_visible.c
 	"Header_Pierre.h"
 
-1638367532 source:d:\pierr\documents\algo\quoridor\quoridorcb\placer_barriere.c
+1638809704 source:d:\pierr\documents\algo\quoridor\quoridorcb\placer_barriere.c
 	"Header_Pierre.h"
 
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\affiregles.c
@@ -39,22 +39,22 @@
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\choix_j.c
 	"jeu.h"
 
-1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\distribution_barriere.c
-	"jeu.h"
+1638536750 source:d:\pierr\documents\algo\quoridor\quoridorcb\distribution_barriere.c
+	"Header_Pierre.h"
 
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\gotoligcol.c
 	"jeu.h"
 
-1638383956 source:d:\pierr\documents\algo\quoridor\quoridorcb\main_menu.c
+1638823754 source:d:\pierr\documents\algo\quoridor\quoridorcb\main_menu.c
 	"Header_Pierre.h"
 
-1638384404 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_game.c
+1638823754 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_game.c
 	"Header_Pierre.h"
 
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\nombre_joueur.c
 	"jeu.h"
 
-1638383784 source:d:\pierr\documents\algo\quoridor\quoridorcb\setup.c
+1638793296 source:d:\pierr\documents\algo\quoridor\quoridorcb\setup.c
 	"Header_Pierre.h"
 
 1638368332 source:d:\pierr\documents\algo\quoridor\quoridorcb\traduction.c
@@ -63,10 +63,10 @@
 1638365750 source:d:\pierr\documents\algo\quoridor\quoridorcb\saisit_barriere.c
 	"Header_Pierre.h"
 
-1638368050 source:d:\pierr\documents\algo\quoridor\quoridorcb\saisie_coord.c
+1638823754 source:d:\pierr\documents\algo\quoridor\quoridorcb\saisie_coord.c
 	"Header_Pierre.h"
 
-1638383430 source:d:\pierr\documents\algo\quoridor\quoridorcb\tour_par_tour.c
+1638793296 source:d:\pierr\documents\algo\quoridor\quoridorcb\tour_par_tour.c
 	"Header_Pierre.h"
 
 1638364549 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\affich_mat_avec_coord.c
@@ -137,5 +137,8 @@
 	"Header_Pierre.h"
 
 1638546350 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\menu_cote.c
+	"Header_Pierre.h"
+
+1638556728 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_cote.c
 	"Header_Pierre.h"
 
