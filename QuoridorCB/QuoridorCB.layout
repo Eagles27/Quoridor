@@ -2,79 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="choix_j.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+	<File name="menu_game.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="2" />
-		</Cursor>
-	</File>
-	<File name="gotoligcol.c" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Tour_par_tour.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="250" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="menu_cote.c" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="26" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Saisie_coord.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1056" topLine="2" />
-		</Cursor>
-	</File>
-	<File name="Sauvegarde-Charger.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Matrice_visible.c" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1371" topLine="18" />
-		</Cursor>
-	</File>
-	<File name="main.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="73" topLine="41" />
-		</Cursor>
-	</File>
-	<File name="InitialisationMatriceOrdi.c" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="722" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="Header_Pierre.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1428" topLine="28" />
-		</Cursor>
-	</File>
-	<File name="nombre_joueur.c" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="18" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Placer_barriere.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="822" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Déplacement.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="962" topLine="22" />
-		</Cursor>
-	</File>
-	<File name="main_menu.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2214" topLine="66" />
-		</Cursor>
-	</File>
-	<File name="setup.c" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="114" topLine="0" />
+			<Cursor1 position="1311" topLine="33" />
 		</Cursor>
 	</File>
 	<File name="traduction.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -82,19 +12,94 @@
 			<Cursor1 position="26" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="Placer_barriere.c" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="122" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Déplacement.c" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="962" topLine="22" />
+		</Cursor>
+	</File>
+	<File name="main.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="73" topLine="32" />
+		</Cursor>
+	</File>
+	<File name="main_menu.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Header_Pierre.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="975" topLine="32" />
+		</Cursor>
+	</File>
+	<File name="Matrice_visible.c" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1371" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="Tour_par_tour.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="250" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Fin de jeu.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="515" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Saisie_coord.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1993" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="InitialisationMatriceOrdi.c" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="722" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="setup.c" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="114" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="gotoligcol.c" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="nombre_joueur.c" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="18" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="distribution_barriere.c" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="462" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="menu_game.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="menu_cote.c" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="489" topLine="0" />
+			<Cursor1 position="26" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Affich_mat_avec_coord.c" open="1" top="1" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Affich_mat_avec_coord.c" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="79" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="choix_j.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="2" />
+		</Cursor>
+	</File>
+	<File name="Sauvegarde-Charger.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

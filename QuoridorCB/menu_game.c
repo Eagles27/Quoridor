@@ -43,8 +43,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int tour)
                 matrice_propre(mat);
                 saisie_coord(saisie1);
                 system("PAUSE");
-                saisie_coord(saisie2);
-                bool_barriere = placer_barriere(mat, saisie1, saisie2);
+                bool_barriere = placer_barriere(mat, saisie1, saisie_dir());
             }
             while(bool_barriere == -1);
             system("PAUSE");

@@ -40,6 +40,9 @@
 		<Unit filename="Déplacement.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Fin de jeu.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Header_Pierre.h" />
 		<Unit filename="InitialisationMatriceOrdi.c">
 			<Option compilerVar="CC" />
