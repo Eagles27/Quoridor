@@ -1,6 +1,6 @@
 #include "Header_Pierre.h"
 
-/*int gagner(t_joueur player[4], int* Pnombrejoueur)
+int gagner(t_joueur player, int* Pnombrejoueur)
 {
     if(*Pnombrejoueur == 2)
     {
@@ -14,11 +14,11 @@
         }
         else if((player.coordonneY_org == 16)&&(player.coordonneY_org == 0))
         {
-            return 1
+            return 1;
         }
         else
         {
             return -1;
         }
     }
-}*/
+}

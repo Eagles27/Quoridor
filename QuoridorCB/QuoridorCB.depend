@@ -2,7 +2,7 @@
 1638536750 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
 	"Header_Pierre.h"
 
-1638805536 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
+1638808784 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
 	<windows.h>
 	<stdio.h>
 	<stdlib.h>
@@ -142,6 +142,6 @@
 1638556728 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_cote.c
 	"Header_Pierre.h"
 
-1638803446 source:d:\pierr\documents\algo\quoridor\quoridorcb\fin de jeu.c
+1638808752 source:d:\pierr\documents\algo\quoridor\quoridorcb\fin de jeu.c
 	"Header_Pierre.h"
 

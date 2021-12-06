@@ -39,6 +39,7 @@ void choixPion(t_joueur jugador[4],int numeroJ);
 int placer_barriere(int tab[17][17], int place1[2], char saisie);
 int choix_j(int nombre);
 void affiregles();
+int gagner(t_joueur player, int* Pnombrejoueur);
 
 ///Back
 void genematrice(int tab[17][17]);
