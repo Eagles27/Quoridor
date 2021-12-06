@@ -2,14 +2,14 @@
 1638536750 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
 	"Header_Pierre.h"
 
-1638823842 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
+1638824048 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
 	<windows.h>
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<string.h>
 
-1638823754 source:d:\pierr\documents\algo\quoridor\quoridorcb\déplacement.c
+1638823992 source:d:\pierr\documents\algo\quoridor\quoridorcb\déplacement.c
 	"Header_Pierre.h"
 
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\affich_mat_avec_coord.c
@@ -45,10 +45,10 @@
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\gotoligcol.c
 	"jeu.h"
 
-1638823754 source:d:\pierr\documents\algo\quoridor\quoridorcb\main_menu.c
+1638823992 source:d:\pierr\documents\algo\quoridor\quoridorcb\main_menu.c
 	"Header_Pierre.h"
 
-1638823754 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_game.c
+1638824048 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_game.c
 	"Header_Pierre.h"
 
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\nombre_joueur.c
@@ -63,7 +63,7 @@
 1638365750 source:d:\pierr\documents\algo\quoridor\quoridorcb\saisit_barriere.c
 	"Header_Pierre.h"
 
-1638823754 source:d:\pierr\documents\algo\quoridor\quoridorcb\saisie_coord.c
+1638823960 source:d:\pierr\documents\algo\quoridor\quoridorcb\saisie_coord.c
 	"Header_Pierre.h"
 
 1638793296 source:d:\pierr\documents\algo\quoridor\quoridorcb\tour_par_tour.c

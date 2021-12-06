@@ -172,6 +172,5 @@ int traduction(char entree)
         return 16;
     }
 
-
-
+    return -1;
 }

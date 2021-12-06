@@ -76,7 +76,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour)
             matrice_propre(mat);
             saisie_coord(saisie1);
 
-            //bool_barriere = placer_barriere(mat, saisie1, saisie_dir());
+            bool_barriere = placer_barriere(mat, saisie1, saisie_dir());
         }
 
         system("cls");
