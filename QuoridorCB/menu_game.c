@@ -4,10 +4,11 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour)
 {
     int choix;
     int dep[3];
+    int org[3];
     char temp;
     int saisie1[2];
     int saisie2[2];
-    int bool_barriere;
+    int bool_barriere = -1;
 
 
 
@@ -18,26 +19,29 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour)
 
 
 
+
+
     switch(choix)
     {
     case 1:
     {
         ///Mettre programme de pierre
 
-        printf("%d",*Ptour);
-         system("PAUSE");
+
 
 
         dep[0] =  player[*Ptour-1].coordonneX;
         dep[1] = player[*Ptour-1].coordonneY;
+        org[0] =  player[*Ptour-1].coordonneX;
+        org[1] = player[*Ptour-1].coordonneY;
 
 
-        printf("%d,%d",dep[0],dep[1]);
-        system("PAUSE");
 
         deplacement(dep,mat,Pnombrejoueur);
+
         player[*Ptour-1].coordonneX = dep[0];
         player[*Ptour-1].coordonneY = dep[1];
+        mat[org[1]][org[0]]=0;
 
         if(*Pnombrejoueur == 2)
         {
@@ -66,17 +70,16 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour)
     {
         ///PPG Barriere
 
-        do
+        while(bool_barriere==-1)
         {
             system("cls");
             matrice_propre(mat);
             saisie_coord(saisie1);
-            system("PAUSE");
+
             saisie_coord(saisie2);
             bool_barriere = placer_barriere(mat, saisie1, saisie2);
         }
-        while(placer_barriere(mat, saisie1, saisie2));
-        system("PAUSE");
+
         system("cls");
         matrice_propre(mat);
         system("PAUSE");
@@ -86,6 +89,11 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour)
     case 3 :
     {
         ///PPG passer son tour
+
+        //tour_par_tour(Pnombrejoueur,mat,player,Ptour);
+
+        *Ptour ++;
+
 
         break;
     }
