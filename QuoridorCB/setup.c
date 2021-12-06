@@ -30,6 +30,9 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
                 scanf("%c",&cJ1);
                 player[0].coordonneX = traduction(cJ1);
                 player[0].coordonneY = 0;
+
+                player[0].coordonneX_org = traduction(cJ1);
+                player[0].coordonneY_org = 0;
             }
             while ((cJ1!='A')&&(cJ1!='C')&&(cJ1!='E')&&(cJ1!='G')&&(cJ1!='I')&&(cJ1!='K')&&(cJ1!='M')&&(cJ1!='O')&&(cJ1!='Q'));
 
@@ -55,6 +58,9 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
                 scanf("%c",&cJ2);
                 player[1].coordonneX = traduction(cJ2);
                 player[1].coordonneY = 16;
+
+                player[1].coordonneX_org = traduction(cJ2);
+                player[1].coordonneY_org = 16;
             }
             while ((cJ2!='A')&&(cJ2!='C')&&(cJ2!='E')&&(cJ2!='G')&&(cJ2!='I')&&(cJ2!='K')&&(cJ2!='M')&&(cJ2!='O')&&(cJ2!='Q'));
 
@@ -84,6 +90,9 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
                 scanf("%c",&cJ2);
                 player[1].coordonneX = traduction(cJ2);
                 player[1].coordonneY = 16;
+
+                player[1].coordonneX_org = traduction(cJ2);
+                player[1].coordonneY_org = 16;
             }
             while ((cJ2!='A')&&(cJ2!='C')&&(cJ2!='E')&&(cJ2!='G')&&(cJ2!='I')&&(cJ2!='K')&&(cJ2!='M')&&(cJ2!='O')&&(cJ2!='Q'));
 
@@ -108,6 +117,9 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
                 scanf("%c",&cJ1);
                 player[0].coordonneX = traduction(cJ1);
                 player[0].coordonneY = 0;
+
+                player[0].coordonneX_org = traduction(cJ1);
+                player[0].coordonneY_org = 0;
 
             }
             while ((cJ1!='A')&&(cJ1!='C')&&(cJ1!='E')&&(cJ1!='G')&&(cJ1!='I')&&(cJ1!='K')&&(cJ1!='M')&&(cJ1!='O')&&(cJ1!='Q'));

@@ -18,6 +18,9 @@ typedef struct joueur
     int numeroJ;
     int coordonneX;
     int coordonneY;
+    int coordonneX_org;
+    int coordonneY_org;
+
 
 } t_joueur;
 
