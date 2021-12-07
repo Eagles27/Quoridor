@@ -8,12 +8,14 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
 
     /// Test
 
-    int gagne = 1;
+    int gagne = -1;
 
-
+    int tour_test;
 
     int tour = 1;
     int* Ptour = &tour;
+
+
 
     do
     {
@@ -26,15 +28,21 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
         {
         case 1:
         {
+            genematrice(mat);
 
             system("cls");
             *Pnombre_joueur = nombre_joueur();  //Lancement du SSPG pour jouer à 2 ou 4
 
 /// RESET DES TOKENS
+
+
             for(int i=0; i<4; i++)
             {
                 player[i].jetonJ = '1';     // Valeur donnée arbitrairement
+
             }
+
+
 
 
 
@@ -45,14 +53,12 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                 for(int i=0; i<4; i++)
                 {
                     system("cls");
-                    printf("Saisissez votre nom :\n");
+                    printf("Joueur %d : Saisissez votre nom :\n",i+1);
                     fflush(stdin);
                     scanf("%s",player[i].nomJ);
 
-                    system("cls");
-                    printf("Choisissez votre pion parmis les suivants:\n\n'*','&','@','#'\n");
-                    fflush(stdin);
-                    scanf("%c",&player[i].jetonJ);
+                    choixPion(player,i);
+
 
                     player[i].numeroJ = i+1;
 
@@ -67,22 +73,19 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                 for(int i=0; i<2; i++)
                 {
                     system("cls");
-                    printf("Saisissez votre nom :\n");
+                    printf("Joueur %d : Saisissez votre nom :\n",i+1);
                     fflush(stdin);
                     scanf("%s",player[i].nomJ);
 
-                    system("cls");
-                    printf("Choisissez votre pion parmis les suivants:\n\n'*','&','@','#'\n");
-                    fflush(stdin);
-                    scanf("%c",&player[i].jetonJ);
 
+                    choixPion(player,i);
                     player[i].numeroJ = i+1;
 
                 }
             }
 
 
-            debut = choix_j(*Pnombre_joueur);   //SSPG pour déterminer qui commence
+            debut = choix_j(*Pnombre_joueur); //SSPG pour déterminer qui commence
             system("cls");
             distribution_barriere(player,Pnombre_joueur);
 
@@ -90,14 +93,50 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             tour_par_tour(Pnombre_joueur,mat,player,Ptour);
 
 
-            while(gagne == 1)
+
+
+            do
             {
+
                 system("cls");
                 matrice_propre(mat,player);
                 menu_cote(Ptour,Pnombre_joueur,player);
                 menu_game(mat,Pnombre_joueur,player,Ptour);
+
+                if(*Ptour == 1){
+                    tour_test = *Ptour-1;
+                }
+                else if(*Ptour == 2){
+                    tour_test = 1;
+                }
                 tour_par_tour(Pnombre_joueur,mat,player,Ptour);
+
+
             }
+            while(gagner(player,Pnombre_joueur,tour_test) == -1);
+
+
+            ///Test fin de partie car joueur qui atteint la fin
+            if (gagner(player,Pnombre_joueur,tour_test) == 1)
+            {
+                system("cls");
+                printf("Gagne!!!");
+                system("PAUSE");
+            }
+
+
+            ///Test fin de partie car joueur n'a plus de barrières
+
+            else if(gagner(player,Pnombre_joueur,tour_test) == 2)
+            {
+                system("cls");
+                matrice_propre(mat,player);
+                printf("\n\n%s n'a plus de barriere\n",player[tour_test].nomJ);
+
+                system("PAUSE");
+
+            }
+
 
             break;
         }
