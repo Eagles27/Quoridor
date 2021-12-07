@@ -3,6 +3,7 @@
 int main()
 
 {
+    int i=0;
     int nombreJ=2;
     int numeroPlayer=1;
 
@@ -38,8 +39,15 @@ int main()
 
     genematrice(); //Affiche la matrice
 
-    choixPion(Jugador,numeroPlayer);//Prend la structure et le numero du token du joueur à set
+    for(i=0;i<4;i++){
 
-    menucote(3,70,nombreJ,Jugador,numeroPlayer); //Affiche le menu dynamique sur le coté
+        choixPion(Jugador,i); //Prend la structure et le numero du token du joueur à set
+
+        menucote(3,70,2,Jugador,i); //Affiche le menu dynamique sur le coté
+        system("PAUSE");
+
+    }
+
+
 
 }
