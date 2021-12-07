@@ -89,6 +89,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                 matrice_propre(mat);
                 menu_cote(Ptour,Pnombre_joueur,player);
                 menu_game(mat,Pnombre_joueur,player,tour);
+                //sauver(mat);
 
             }while(gagne == 0);
 
