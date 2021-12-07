@@ -6,7 +6,7 @@ int gagner(t_joueur player, int* Pnombrejoueur)
     {
         if(player.barrieresR == 0)
         {
-            return 1;
+            return 2;
         }
         else if((player.coordonneY_org == 0)&&(player.coordonneY == 16))
         {
