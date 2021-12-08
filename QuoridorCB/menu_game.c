@@ -13,12 +13,38 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
 
     do
     {
+        int numero_ligne_action=20;//locales
+        int numero_colonne_action=3;//locales
 
-
-    gotoligcol(20,0);
-    printf("Actions Possibles:\n1-Deplacer son pion\n2-Poser une barriere\n3-Passer son tour\n4-Annuler la derniere action\n5-Revenir au menu precedent\n\nSaisie de l'action du joueur:\n");
-    fflush(stdin);
-    scanf("%d",&choix);
+        gotoligcol(numero_ligne_action,numero_colonne_action);
+        Color(15,2);
+        printf("                                    ");
+        gotoligcol(numero_ligne_action+1,numero_colonne_action);
+        printf("         Actions Possibles:         ");
+        gotoligcol(numero_ligne_action+2,numero_colonne_action);
+        printf("                                    ");
+        gotoligcol(numero_ligne_action+3,numero_colonne_action);
+        Color(15,10);
+        printf("                                    ");
+        gotoligcol(numero_ligne_action+4,numero_colonne_action);
+        printf("       1. Deplacer son pion         ");
+        gotoligcol(numero_ligne_action+5,numero_colonne_action);
+        printf("       2. Poser une barriere        ");
+        gotoligcol(numero_ligne_action+6,numero_colonne_action);
+        printf("         3. Passer son tour         ");
+        gotoligcol(numero_ligne_action+7,numero_colonne_action);
+        printf("    4. Annuler la derniere action   ");
+        gotoligcol(numero_ligne_action+8,numero_colonne_action);
+        printf("    5. Revenir au menu precedent    ");
+        gotoligcol(numero_ligne_action+9,numero_colonne_action);
+        printf("                                    ");
+        gotoligcol(numero_ligne_action+10,numero_colonne_action);
+        printf("   Saisie de l'action du joueur:    ");
+        gotoligcol(numero_ligne_action+11,numero_colonne_action);
+        printf("                                    ");
+        gotoligcol(numero_ligne_action+12,numero_colonne_action);
+        fflush(stdin);
+        scanf("%d",&choix);
 
         switch(choix)
         {
@@ -125,7 +151,8 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                             player[0].coordonneX = player[0].coordonneX_av;
                             player[0].coordonneY = player[0].coordonneY_av;
                         }
-                        else{
+                        else
+                        {
                             player[*Ptour].coordonneX = player[*Ptour].coordonneX_av;
                             player[*Ptour].coordonneY = player[*Ptour].coordonneY_av;
                         }
@@ -137,7 +164,8 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                             player[0].coordonneX = player[0].coordonneX_av;
                             player[0].coordonneY = player[0].coordonneY_av;
                         }
-                        else{
+                        else
+                        {
                             player[*Ptour].coordonneX = player[*Ptour].coordonneX_av;
                             player[*Ptour].coordonneY = player[*Ptour].coordonneY_av;
                         }

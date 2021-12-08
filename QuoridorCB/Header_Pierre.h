@@ -71,5 +71,6 @@ void sauver_joueur(t_joueur joueur[4], int *Pnombre_joueur);
 
 ///Affichage graphique
 void Color(int couleurDuTexte,int couleurDeFond);
+void Affichage_Du_Titre(int numero_ligne, int numero_colonne);
 
 #endif // HEADER_PIERRE_H_INCLUDED

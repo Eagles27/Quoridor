@@ -59,7 +59,8 @@ int main()
 
     t_joueur player[4];
 
-    TitreAffichage();
+    Affichage_Du_Titre(1,35);
+    gotoligcol(13,43);
     system("PAUSE");
     Color(15,0);
 

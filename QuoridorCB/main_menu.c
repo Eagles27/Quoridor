@@ -40,17 +40,41 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
     do
     {
         system("cls");
-        printf("1. Nouvelle Partie\n2. Charger Partie\n3. Afficher les regles\n4. Quitter\n");
+        Affichage_Du_Titre(1,35);
+
+        Color(15,2);
+        gotoligcol(10,50);
+        printf("                            ");
+        gotoligcol(11,50);
+        printf("            MENU            ");
+        gotoligcol(12,50);
+        printf("                            ");
+        Color(15,10);
+        gotoligcol(13,50);
+        printf("                            ");
+        gotoligcol(14,50);
+        printf("   1. Nouvelle Partie       ");
+        gotoligcol(15,50);
+        printf("   2. Charger Partie        ");
+        gotoligcol(16,50);
+        printf("   3. Afficher les regles   ");
+        gotoligcol(17,50);
+        printf("   4. Quitter               ");
+        gotoligcol(18,50);
+        printf("                            ");
         fflush(stdin);
+        gotoligcol(19,50);
         scanf("%d",&choix);
 
         switch(choix)
         {
         case 1:
         {
+            Color(15,0);//OK
             genematrice(mat);
 
             system("cls");
+
             *Pnombre_joueur = nombre_joueur();  //Lancement du SSPG pour jouer � 2 ou 4
 
 /// RESET DES TOKENS
@@ -72,10 +96,30 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             {
                 for(int i=0; i<4; i++)
                 {
+
+                    Affichage_Du_Titre(1,35);
+                    Color(15,0);
                     system("cls");
-                    printf("Joueur %d : Saisissez votre nom :\n",i+1);
+                    Color(15,2);
+                    gotoligcol(10,47);
+                    printf("                             ");
+                    gotoligcol(11,47);
+                    printf("         Saisie nom          ");
+                    gotoligcol(12,47);
+                    printf("                             ");
+                    Color(15,10);
+                    gotoligcol(13,47);
+                    printf("                             ");
+                    gotoligcol(14,47);
+                    printf("          Joueur %d           ",i+1);
+                    gotoligcol(15,47);
+                    printf("    Saisissez votre nom :    ");
+                    gotoligcol(16,47);
+                    printf("                             ");
                     fflush(stdin);
+                    gotoligcol(17,47);
                     scanf("%s",nom);
+                    Color(15,0);
                     majuscule(nom);
                     strcpy(player[i].nomJ,nom);
                     choixPion(player,i);
@@ -93,10 +137,29 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             {
                 for(int i=0; i<2; i++)
                 {
+                    Color(15,0);//OK
                     system("cls");
-                    printf("Joueur %d : Saisissez votre nom :\n",i+1);
+                    Affichage_Du_Titre(1,35);
+                    Color(15,2);
+                    gotoligcol(10,47);
+                    printf("                             ");
+                    gotoligcol(11,47);
+                    printf("         Saisie nom          ");
+                    gotoligcol(12,47);
+                    printf("                             ");
+                    Color(15,10);
+                    gotoligcol(13,47);
+                    printf("                             ");
+                    gotoligcol(14,47);
+                    printf("          Joueur %d           ",i+1);
+                    gotoligcol(15,47);
+                    printf("    Saisissez votre nom :    ");
+                    gotoligcol(16,47);
+                    printf("                             ");
                     fflush(stdin);
+                    gotoligcol(17,47);
                     scanf("%s",nom);
+                    Color(15,0);
                     majuscule(nom);
                     strcpy(player[i].nomJ,nom);
                     player[i].jetonJ='1';
@@ -231,7 +294,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
 
             while(gagne == 1)
             {
-                system("cls");
+                //system("cls");
                 matrice_propre(mat,player);
                 menu_cote(Ptour,Pnombre_joueur,player);
                 menu_game(mat,Pnombre_joueur,player,Ptour, mat_avant, PAction);
