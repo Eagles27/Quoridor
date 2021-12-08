@@ -1,12 +1,12 @@
 #include "Header_Pierre.h"
 
-void tour_par_tour(int* Pnombre_joueur, int mat[17][17], t_joueur player[4],int* Ptour)
+void tour_par_tour(int* Pnombre_joueur, int mat[17][17], t_joueur player[4],int* Ptour, int mat_avant[17][17], int *Action)
 {
 
     if(*Pnombre_joueur == 4)
     {
 
-            menu_game(mat,Pnombre_joueur,player,Ptour);
+            menu_game(mat,Pnombre_joueur,player,Ptour, mat_avant, Action);
 
 
     }

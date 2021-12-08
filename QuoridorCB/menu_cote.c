@@ -18,6 +18,23 @@ void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4])
     gotoligcol(11,60);
     printf("Barrieres restantes : %d",player[*Ptour-1].barrieresR);
 
+    gotoligcol(13,60);
+    if(player[*Ptour-1].A_annule == 0){
+        printf("Peut annuler le coup");
+    }
+    else{
+        printf("Ne peut plus annuler");
+    }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+///TEST
+    gotoligcol(15,60);
+    printf("(%d, %d)\n", player[*Ptour-1].coordonneX, player[*Ptour-1].coordonneY);
+
+    gotoligcol(17,60);
+    printf("av(%d, %d)\n", player[*Ptour-1].coordonneX_av, player[*Ptour-1].coordonneY_av);
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     gotoligcol(20,0);
 
 

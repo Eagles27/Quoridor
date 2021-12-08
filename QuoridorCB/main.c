@@ -4,7 +4,6 @@ int main()
 {
     ///0. DDV
     //int depla[3] = {14, 16};
-    int tab[17][17];
     //int depla_org[3];
     //char lettre = '0';
     //int chiffre;
