@@ -5,6 +5,22 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
     int choix;
     int sortie = 0;
     int debut;
+    char nom[50];
+    char liste_nom[100][50];
+    int liste_score[100];
+    /*
+    //Declaration tableau dynamique pour les scores
+    int *liste_score;
+    liste_score = (int*)malloc(100*sizeof(int));
+
+    //Declaration tableau dynamique pour les noms
+    char** liste_nom;
+    liste_score = (char**)malloc(100*sizeof(char*));
+    if(liste_nom != NULL){
+        for(int i = 0; i<100; i++){
+            liste_nom[i] = (char*)malloc(50*sizeof(char));
+        }
+    }*/
 
     /// Test
 
@@ -47,7 +63,9 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                     system("cls");
                     printf("Saisissez votre nom :\n");
                     fflush(stdin);
-                    scanf("%s",player[i].nomJ);
+                    scanf("%s",nom);
+                    majuscule(nom);
+                    strcpy(player[i].nomJ,nom);
 
                     system("cls");
                     printf("Choisissez votre pion parmis les suivants:\n\n'*','&','@','#'\n");
@@ -69,7 +87,9 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                     system("cls");
                     printf("Saisissez votre nom :\n");
                     fflush(stdin);
-                    scanf("%s",player[i].nomJ);
+                    scanf("%s",nom);
+                    majuscule(nom);
+                    strcpy(player[i].nomJ,nom);
 
                     system("cls");
                     printf("Choisissez votre pion parmis les suivants:\n\n'*','&','@','#'\n");
@@ -97,6 +117,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                 menu_cote(Ptour,Pnombre_joueur,player);
                 menu_game(mat,Pnombre_joueur,player,Ptour);
                 tour_par_tour(Pnombre_joueur,mat,player,Ptour);
+                sauver_plateau(mat);
             }
 
             break;
@@ -104,6 +125,56 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
         case 2:
         {
             printf("Chargement de la partie\n");
+            charger_plateau(mat);
+            charger_joueur(player, Pnombre_joueur);
+            charger_score(liste_nom, liste_score);
+            for(int i=0; i<100; i++)
+            {
+                if(*Pnombre_joueur == 2)
+                {
+                    if(strcmp(liste_nom[i],player[0].nomJ)==0)
+                    {
+                        player[0].scoreP = liste_score[i];
+                    }
+                    else if(strcmp(liste_nom[i],player[1].nomJ)==0)
+                    {
+                        player[1].scoreP = liste_score[i];
+                    }
+                }
+                else{
+                    if(strcmp(liste_nom[i],player[0].nomJ)==0)
+                    {
+                        player[0].scoreP = liste_score[i];
+                    }
+                    else if(strcmp(liste_nom[i],player[1].nomJ)==0)
+                    {
+                        player[1].scoreP = liste_score[i];
+                    }
+                    else if(strcmp(liste_nom[i],player[2].nomJ)==0)
+                    {
+                        player[2].scoreP = liste_score[i];
+                    }
+                    else if(strcmp(liste_nom[i],player[3].nomJ)==0)
+                    {
+                        player[3].scoreP = liste_score[i];
+                    }
+                }
+            }
+
+            system("cls");
+            tour_par_tour(Pnombre_joueur,mat,player,Ptour);
+
+
+            while(gagne == 1)
+            {
+                system("cls");
+                matrice_propre(mat,player);
+                menu_cote(Ptour,Pnombre_joueur,player);
+                menu_game(mat,Pnombre_joueur,player,Ptour);
+                tour_par_tour(Pnombre_joueur,mat,player,Ptour);
+                sauver_plateau(mat);
+            }
+
             break;
         }
 

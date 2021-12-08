@@ -174,3 +174,17 @@ int traduction(char entree)
 
     return -1;
 }
+
+void majuscule(char mot[50]){
+    ///0. DDV
+    int i = 0;
+
+    ///1.Transformation
+    while(mot[i] != '\0'){
+        ///1.1. Test si deja en Maj
+        if((mot[i] >= 'a')&&(mot[i] <= 'z')){
+            mot[i] = mot[i] - 32;
+        }
+        i ++;
+    }
+}

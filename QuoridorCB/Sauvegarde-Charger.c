@@ -1,13 +1,17 @@
 #include "Header_Pierre.h"
 
-void sauver(int tab[17][17])
+//////////////////////////////////////////////////////
+///////////////////// Sauvegarde /////////////////////
+//////////////////////////////////////////////////////
+
+void sauver_plateau(int tab[17][17])
 {
     ///0. DDV
     FILE* fp = NULL;
     int i,j;
 
     ///1. Ouvrir fichier
-    fp = fopen("Sauvegarde.txt", "w");
+    fp = fopen("Sauvegarde_plateau.txt", "w");
 
     if (fp == NULL) printf("\nerreur fichier\n");
     else
@@ -25,7 +29,58 @@ void sauver(int tab[17][17])
     }
 }
 
-void charger(int tab[17][17])
+void sauver_joueur(t_joueur joueur[4], int *Pnombre_joueur)
+{
+    ///0. DDV
+    FILE* fp = NULL;
+
+    ///1. Ouvrir fichier
+    fp = fopen("Sauvegarde_info.txt", "w");
+
+    if (fp == NULL) printf("\nerreur fichier\n");
+    else
+    {
+        fprintf(fp, "%d", *Pnombre_joueur);
+        for(int i = 0; i<*Pnombre_joueur; i++)
+        {
+            fprintf(fp, "%s\n", joueur[i].nomJ);
+            fprintf(fp, "%c\n", joueur[i].jetonJ);
+            fprintf(fp, "%d\n", joueur[i].numeroJ);
+            fprintf(fp, "%d\n", joueur[i].coordonneX);
+            fprintf(fp, "%d\n", joueur[i].coordonneY);
+            fprintf(fp, "%d\n", joueur[i].coordonneX_org);
+            fprintf(fp, "%d\n", joueur[i].coordonneY_org);
+        }
+        fclose(fp);
+    }
+}
+
+void sauver_score(t_joueur joueur[4], int *Pnombre_joueur)
+{
+    ///0. DDV
+    FILE* fp = NULL;
+
+    ///1. Ouvrir fichier
+    fp = fopen("Sauvegarde_score.txt", "w");
+
+    if (fp == NULL) printf("\nerreur fichier\n");
+    else
+    {
+        fprintf(fp, "%d", *Pnombre_joueur);
+        for(int i = 0; i<*Pnombre_joueur; i++)
+        {
+            fprintf(fp, "%s\n", joueur[i].nomJ);
+            fprintf(fp, "%d\n", joueur[i].scoreP);
+        }
+        fclose(fp);
+    }
+}
+
+//////////////////////////////////////////////////////
+///////////////////// Chargement /////////////////////
+//////////////////////////////////////////////////////
+
+void charger_plateau(int tab[17][17])
 {
     ///0. DDV
     FILE* fic;
@@ -35,7 +90,7 @@ void charger(int tab[17][17])
     int chiffre;
 
     ///1. Ouvrir fichier
-    fic = fopen("Sauvegarde.txt", "r");
+    fic = fopen("Sauvegarde_plateau.txt", "r");
 
     if (fic == NULL) printf("\nerreur fichier\n");
     else
@@ -49,11 +104,64 @@ void charger(int tab[17][17])
             //printf("%d", chiffre);
             tab[i][j] = chiffre;
             j++;
-            if(j==17){
+            if(j==17)
+            {
                 j = 0;
                 i++;
             }
         }
         fclose(fic);
+    }
+}
+
+void charger_joueur(t_joueur joueur[4], int * Pnombre_joueur)
+{
+    ///0. DDV
+    FILE* fp;
+
+    ///1. Ouvrir fichier
+    fp = fopen("Sauvegarde_joueur.txt", "r");
+
+    if (fp == NULL) printf("\nerreur fichier\n");
+    else
+    {
+        fscanf(fp, "%d", Pnombre_joueur);
+        while(!(feof(fp)))
+        {
+            for(int i = 0; i< *Pnombre_joueur; i++)
+            {
+                fscanf(fp, "%s", joueur[i].nomJ);
+                fscanf(fp, "%c", &(joueur[i].jetonJ));
+                fscanf(fp, "%d", &(joueur[i].numeroJ));
+                fscanf(fp, "%d", &(joueur[i].coordonneX));
+                fscanf(fp, "%d", &(joueur[i].coordonneY));
+                fscanf(fp, "%d", &(joueur[i].coordonneX_org));
+                fscanf(fp, "%d", &(joueur[i].coordonneY_org));
+            }
+        }
+        fclose(fp);
+    }
+}
+
+void charger_score(char liste_nom[100][50], int liste_score[100])
+{
+    ///0. DDV
+    FILE* fp;
+
+    ///1. Ouvrir fichier
+    fp = fopen("Sauvegarde_score.txt", "r");
+
+    if (fp == NULL) printf("\nerreur fichier\n");
+    else
+    {
+        while(!(feof(fp)))
+        {
+            for(int i = 0; i<100; i++)
+            {
+                fscanf(fp, "%s", liste_nom[i]);
+                fscanf(fp, "%d", &(liste_score[i]));
+            }
+        }
+        fclose(fp);
     }
 }

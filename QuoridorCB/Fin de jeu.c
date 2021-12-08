@@ -21,4 +21,5 @@ int gagner(t_joueur player, int* Pnombrejoueur)
             return -1;
         }
     }
+    return -1;
 }
