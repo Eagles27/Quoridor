@@ -175,7 +175,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
         {
             sortie = -1;
             system("cls");
-            printf("Deconexion...\n");
+            printf("Deconnexion...\n");
             ExitProcess(0); ///Permet la sortie du process et l'interruption de l'ensemble des SPPG en cours
             break;
         }
