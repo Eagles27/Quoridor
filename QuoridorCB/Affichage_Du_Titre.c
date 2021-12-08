@@ -2,8 +2,9 @@
 
 void Affichage_Du_Titre(int numero_ligne, int numero_colonne)
 {
-    Color(10,0);
+
     gotoligcol(numero_ligne,numero_colonne);
+    Color(10,0);
     printf("                                                           \n");
     gotoligcol(numero_ligne+1,numero_colonne);
     printf("                                 %c       %c                 \n",0x6F,0xBA);

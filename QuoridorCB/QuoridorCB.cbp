@@ -37,7 +37,13 @@
 		<Unit filename="Affich_mat_avec_coord.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Affichage_Du_Titre.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="ChoixPion.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Colors.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Déplacement.c">

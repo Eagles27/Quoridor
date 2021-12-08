@@ -178,7 +178,7 @@
 	<time.h>
 	<string.h>
 
-1638951959 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\affiregles.c
+1638994936 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\affiregles.c
 	"header_adrien.h"
 
 1638970764 c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\header_adrien.h
@@ -215,13 +215,13 @@
 1638982274 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\main.c
 	"Header_Pierre.h"
 
-1638989231 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\main_menu.c
+1638993083 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\main_menu.c
 	"Header_Pierre.h"
 
 1638989039 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\matrice_visible.c
 	"Header_Pierre.h"
 
-1638991434 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\menu_cote.c
+1638992501 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\menu_cote.c
 	"Header_Pierre.h"
 
 1638991257 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\menu_game.c
@@ -257,7 +257,7 @@
 1638971286 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\titreaffichage.c
 	"Header_Pierre.h"
 
-1638981608 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\affichage_du_titre.c
+1638993083 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\affichage_du_titre.c
 	"header_Pierre.h"
 
 1638979120 source:c:\users\adrie\desktop\ece paris\algo\projet informatique s5\gith\quoridor\quoridorcb\colors.c

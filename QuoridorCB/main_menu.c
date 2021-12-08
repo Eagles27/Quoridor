@@ -307,6 +307,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
 
         case 3:
         {
+            Color(15,0);
             system("cls");
             affiregles();
             break;
