@@ -1,24 +1,24 @@
 # depslib dependency file v1.0
-1638949164 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
+1638950600 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
 	"Header_Pierre.h"
 
-1638949382 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
+1638950654 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
 	<windows.h>
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<string.h>
 
-1638950056 source:d:\pierr\documents\algo\quoridor\quoridorcb\déplacement.c
+1638950654 source:d:\pierr\documents\algo\quoridor\quoridorcb\déplacement.c
 	"Header_Pierre.h"
 
-1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\affich_mat_avec_coord.c
+1638950654 source:d:\pierr\documents\algo\quoridor\quoridorcb\affich_mat_avec_coord.c
 	"Header_Pierre.h"
 
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\initialisationmatriceordi.c
 	"Header_Pierre.h"
 
-1638902762 source:d:\pierr\documents\algo\quoridor\quoridorcb\sauvegarde-charger.c
+1638950654 source:d:\pierr\documents\algo\quoridor\quoridorcb\sauvegarde-charger.c
 	"Header_Pierre.h"
 
 1638895530 source:d:\pierr\documents\algo\quoridor\quoridorcb\matrice_visible.c
@@ -27,8 +27,8 @@
 1638809704 source:d:\pierr\documents\algo\quoridor\quoridorcb\placer_barriere.c
 	"Header_Pierre.h"
 
-1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\affiregles.c
-	"jeu.h"
+1638950654 source:d:\pierr\documents\algo\quoridor\quoridorcb\affiregles.c
+	"header_adrien.h"
 
 1638364644 d:\pierr\documents\algo\quoridor\quoridorcb\jeu.h
 	<stdio.h>
@@ -45,10 +45,10 @@
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\gotoligcol.c
 	"jeu.h"
 
-1638949744 source:d:\pierr\documents\algo\quoridor\quoridorcb\main_menu.c
+1638951378 source:d:\pierr\documents\algo\quoridor\quoridorcb\main_menu.c
 	"Header_Pierre.h"
 
-1638895530 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_game.c
+1638950654 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_game.c
 	"Header_Pierre.h"
 
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\nombre_joueur.c
@@ -57,7 +57,7 @@
 1638895530 source:d:\pierr\documents\algo\quoridor\quoridorcb\setup.c
 	"Header_Pierre.h"
 
-1638899472 source:d:\pierr\documents\algo\quoridor\quoridorcb\traduction.c
+1638950654 source:d:\pierr\documents\algo\quoridor\quoridorcb\traduction.c
 	"Header_Pierre.h"
 
 1638365750 source:d:\pierr\documents\algo\quoridor\quoridorcb\saisit_barriere.c
@@ -155,9 +155,16 @@
 	<string.h>
 	<time.h>
 
-1638949164 source:d:\pierr\documents\algo\quoridor\quoridorcb\choixpion.c
+1638950654 source:d:\pierr\documents\algo\quoridor\quoridorcb\choixpion.c
+	"header_adrien.h"
+
+1638950654 source:d:\pierr\documents\algo\quoridor\quoridorcb\fin de jeu.c
 	"Header_Pierre.h"
 
-1638949164 source:d:\pierr\documents\algo\quoridor\quoridorcb\fin de jeu.c
-	"Header_Pierre.h"
+1638950346 d:\pierr\documents\algo\quoridor\quoridorcb\header_adrien.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
 

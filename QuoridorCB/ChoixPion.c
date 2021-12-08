@@ -31,6 +31,8 @@ void choixPion(t_joueur jugador[4],int numeroPlayer)
 
     do
     {
+        printf("%c, %d", jugador[numeroPlayer].jetonJ, numeroPlayer);
+        system("PAUSE");
         aleaCorresp=rand()%8;
         //printf("aleaCorresp : %d\n\n", aleaCorresp);
 
@@ -103,7 +105,7 @@ void choixPion(t_joueur jugador[4],int numeroPlayer)
         //printf("%s joue avec %c\n\n",jugador[numeroPlayer].nomJ,jugador[numeroPlayer].jetonJ);
 
     }
-    while(((jugador[numeroPlayer].jetonJ==1)||((jugador[0].jetonJ==jugador[1].jetonJ)||(jugador[0].jetonJ==jugador[2].jetonJ)||(jugador[0].jetonJ==jugador[3].jetonJ)||(jugador[1].jetonJ==jugador[2].jetonJ)||(jugador[1].jetonJ==jugador[3].jetonJ)||(jugador[2].jetonJ==jugador[3].jetonJ))));
+    while(((jugador[numeroPlayer].jetonJ=='1')||((jugador[0].jetonJ==jugador[1].jetonJ)||(jugador[0].jetonJ==jugador[2].jetonJ)||(jugador[0].jetonJ==jugador[3].jetonJ)||(jugador[1].jetonJ==jugador[2].jetonJ)||(jugador[1].jetonJ==jugador[3].jetonJ)||(jugador[2].jetonJ==jugador[3].jetonJ))));
 
 }
 

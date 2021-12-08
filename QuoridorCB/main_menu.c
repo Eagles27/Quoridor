@@ -54,7 +54,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
 
             for(int i=0; i<4; i++)
             {
-                player[i].jetonJ = '1';     // Valeur donn�e arbitrairement
+                player[i].jetonJ = '1';     // Valeur donnee arbitrairement
 
             }
 
@@ -74,7 +74,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                     scanf("%s",nom);
                     majuscule(nom);
                     strcpy(player[i].nomJ,nom);
-
                     choixPion(player,i);
 
 
@@ -96,11 +95,8 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                     scanf("%s",nom);
                     majuscule(nom);
                     strcpy(player[i].nomJ,nom);
-
-
                     choixPion(player,i);
                     player[i].numeroJ = i+1;
-
                 }
             }
 
