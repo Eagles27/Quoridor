@@ -78,13 +78,13 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                     scanf("%s",nom);
                     majuscule(nom);
                     strcpy(player[i].nomJ,nom);
-                    choixPion(player,i);
 
 
                     player[i].numeroJ = i+1;
 
 
                 }
+                choixPion(player,Pnombre_joueur);
             }
 
             ///Remplissage des donnees de la strcuture pour 2 J
@@ -99,10 +99,9 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                     scanf("%s",nom);
                     majuscule(nom);
                     strcpy(player[i].nomJ,nom);
-                    player[i].jetonJ='1';
-                    choixPion(player,i);
                     player[i].numeroJ = i+1;
                 }
+                choixPion(player,Pnombre_joueur);
             }
 
 

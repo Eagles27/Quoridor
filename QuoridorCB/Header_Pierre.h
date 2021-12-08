@@ -37,7 +37,7 @@ void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4]);
 
 ///Actions
 void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,t_joueur player[4]);
-void choixPion(t_joueur jugador[4],int numeroPlayer);
+void choixPion(t_joueur jugador[4], int *PnbJ);
 int placer_barriere(int tab[17][17], int place[2], char saisie);
 int choix_j(int nombre);
 void affiregles();
