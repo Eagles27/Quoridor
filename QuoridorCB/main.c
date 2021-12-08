@@ -61,8 +61,8 @@ int main()
     t_joueur player[4];
 
 
-
     genematrice(mat);
+
     main_menu(Pnombre_joueur, mat, player);
 
     return 0;

@@ -34,7 +34,7 @@ void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4]);
 
 ///Actions
 void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,t_joueur player[4]);
-void choixPion(t_joueur jugador[4],int numeroJ);
+void choixPion(t_joueur jugador[4],int numeroPlayer);
 int placer_barriere(int tab[17][17], int place[2], char saisie);
 int choix_j(int nombre);
 void affiregles();
@@ -49,6 +49,7 @@ int traduction(char entree);
 void saisie_coord(int saisie[2]);
 void gotoligcol( int lig, int col );
 void tour_par_tour(int* Pnombre_joueur, int mat[17][17], t_joueur player[4],int* Ptour);
+int gagner(t_joueur player[4], int* Pnombrejoueur, int tour);
 
 ///SetUp
 void distribution_barriere(t_joueur player[4],int *nombrejoueur);
