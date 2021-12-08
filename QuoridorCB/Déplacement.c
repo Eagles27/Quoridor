@@ -99,7 +99,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
         else
         {
             ///3.1. Deplacment en haut
-            if(((choix=='h')||(choix=='H'))&&(dep[1]!=0))//&&((matrice[dep[1]-1][dep[0]])!=2)&&((matrice[dep[1]-1][dep[0]])!=3))
+            if(((choix=='h')||(choix=='H'))&&(dep[1]!=0)&&((matrice[dep[1]-1][dep[0]])!=2)&&((matrice[dep[1]-1][dep[0]])!=3))
             {
                 if(matrice[dep[1]-2][dep[0]]==0)
                 {
@@ -165,7 +165,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             }
 
             ///3.2. Deplacment en bas
-            else if(((choix=='b')||(choix=='B'))&&(dep[1]!=16))//&&((matrice[dep[1]+2][dep[0]])!=2)&&((matrice[dep[1]+2][dep[0]])!=3))
+            else if(((choix=='b')||(choix=='B'))&&(dep[1]!=16)&&((matrice[dep[1]+2][dep[0]])!=2)&&((matrice[dep[1]+2][dep[0]])!=3))
             {
                 if(matrice[dep[1]+2][dep[0]]==0)
                 {
@@ -237,7 +237,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             }
 
             ///3.3. Deplacment a gauche
-            else if(((choix=='g')||(choix=='G'))&&(dep[0]!=0))//&&((matrice[dep[1]][dep[0]-1])!=2)&&((matrice[dep[1]][dep[0]-1])!=3))
+            else if(((choix=='g')||(choix=='G'))&&(dep[0]!=0)&&((matrice[dep[1]][dep[0]-1])!=2)&&((matrice[dep[1]][dep[0]-1])!=3))
             {
                 if(matrice[dep[1]][dep[0]-2]==0)
                 {
@@ -303,7 +303,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             }
 
             ///3.4. Deplacment a droite
-            else if(((choix=='d')||(choix=='D'))&&(dep[0]!=16))//&&((matrice[dep[1]][dep[0]+1])!=2)&&((matrice[dep[1]][dep[0]+1])!=3))
+            else if(((choix=='d')||(choix=='D'))&&(dep[0]!=16)&&((matrice[dep[1]][dep[0]+1])!=2)&&((matrice[dep[1]][dep[0]+1])!=3))
             {
                 if(matrice[dep[1]][dep[0]+2]==0)
                 {
