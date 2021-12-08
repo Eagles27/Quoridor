@@ -2,12 +2,14 @@
 
 void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
 {
+    int Action = -1;
     int choix;
     int sortie = 0;
     int debut;
     char nom[50];
     char liste_nom[100][50];
     int liste_score[100];
+    int mat_avant[17][17];
     /*
     //Declaration tableau dynamique pour les scores
     int *liste_score;
@@ -22,6 +24,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
         }
     }*/
 
+
     /// Test
 
     int gagne = -1;
@@ -30,6 +33,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
 
     int tour = 1;
     int* Ptour = &tour;
+    int *PAction = &Action;
 
 
 
@@ -97,8 +101,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                     strcpy(player[i].nomJ,nom);
                     player[i].jetonJ='1';
                     choixPion(player,i);
-                    printf("test");
-                    system("PAUSE");
                     player[i].numeroJ = i+1;
                 }
             }
@@ -108,19 +110,28 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             system("cls");
             distribution_barriere(player,Pnombre_joueur);
 
+
+
             setup(Pnombre_joueur,debut,mat,player,Ptour);
-            tour_par_tour(Pnombre_joueur,mat,player,Ptour);
+            tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction);
 
 
 
 
             do
             {
+                for(int i = 0; i<17; i++){
+                    for(int j = 0; j<17; j++){
+                        mat_avant[i][j] = mat[i][j];
+                    }
+                }
 
                 system("cls");
                 matrice_propre(mat,player);
                 menu_cote(Ptour,Pnombre_joueur,player);
-                menu_game(mat,Pnombre_joueur,player,Ptour);
+                player[*Ptour-1].coordonneX_av = player[*Ptour-1].coordonneX;
+                player[*Ptour-1].coordonneY_av = player[*Ptour-1].coordonneY;
+                menu_game(mat,Pnombre_joueur,player,Ptour, mat_avant, PAction);
 
                 if(*Ptour == 1){
                     tour_test = *Ptour-1;
@@ -128,9 +139,9 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                 else if(*Ptour == 2){
                     tour_test = 1;
                 }
-                tour_par_tour(Pnombre_joueur,mat,player,Ptour);
-                sauver_plateau(mat);
 
+                tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction);
+                sauver_plateau(mat_avant);
 
             }
             while(gagner(player,Pnombre_joueur,tour_test) == -1);
@@ -151,9 +162,25 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             {
                 system("cls");
                 matrice_propre(mat,player);
-                printf("\n\n%s n'a plus de barriere\n",player[tour_test].nomJ);
+                printf("\n\n%s n'a plus de barriere\n\n",player[tour_test].nomJ);
+
+
+
+                if(gagner_barriere(player) == -1)
+                {
+                    printf("Les 2 jouers ont gagnes car ils sont autant avances\n");
+                    system("PAUSE");
+                }
+
+                else
+                {
+
+                printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player)].nomJ);
 
                 system("PAUSE");
+
+                }
+
             }
 
 
@@ -199,7 +226,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             }
 
             system("cls");
-            tour_par_tour(Pnombre_joueur,mat,player,Ptour);
+            tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction);
 
 
             while(gagne == 1)
@@ -207,8 +234,8 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                 system("cls");
                 matrice_propre(mat,player);
                 menu_cote(Ptour,Pnombre_joueur,player);
-                menu_game(mat,Pnombre_joueur,player,Ptour);
-                tour_par_tour(Pnombre_joueur,mat,player,Ptour);
+                menu_game(mat,Pnombre_joueur,player,Ptour, mat_avant, PAction);
+                tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction);
                 sauver_plateau(mat);
             }
 
@@ -226,7 +253,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
         {
             sortie = -1;
             system("cls");
-            printf("Deconexion...\n");
+            printf("Deconnexion...\n");
             ExitProcess(0); ///Permet la sortie du process et l'interruption de l'ensemble des SPPG en cours
             break;
         }

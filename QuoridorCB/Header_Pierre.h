@@ -18,8 +18,11 @@ typedef struct joueur
     int numeroJ;
     int coordonneX;
     int coordonneY;
+    int coordonneX_av;
+    int coordonneY_av;
     int coordonneX_org;
     int coordonneY_org;
+    int A_annule;
 
 
 } t_joueur;
@@ -28,7 +31,7 @@ typedef struct joueur
 
 
 ///MENU
-void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour);
+void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour, int mat_avant[17][17], int *Action);
 void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4]);
 void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4]);
 
@@ -48,8 +51,9 @@ void matrice_propre(int tab[17][17],t_joueur player[4]);
 int traduction(char entree);
 void saisie_coord(int saisie[2]);
 void gotoligcol( int lig, int col );
-void tour_par_tour(int* Pnombre_joueur, int mat[17][17], t_joueur player[4],int* Ptour);
+void tour_par_tour(int* Pnombre_joueur, int mat[17][17], t_joueur player[4],int* Ptour, int mat_avant[17][17], int *Action);
 int gagner(t_joueur player[4], int* Pnombrejoueur, int tour);
+int gagner_barriere(t_joueur player[4]);
 
 ///SetUp
 void distribution_barriere(t_joueur player[4],int *nombrejoueur);

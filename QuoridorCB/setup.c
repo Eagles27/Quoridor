@@ -10,6 +10,8 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
     for(int i=0; i<4; i++)
     {
         player[i].scoreP = 0;
+         ///Reset booléen annulation
+         player[i].A_annule = 0;
     }
 
 

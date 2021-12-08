@@ -71,6 +71,9 @@
 		<Unit filename="distribution_barriere.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="gagner_barriere.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="gotoligcol.c">
 			<Option compilerVar="CC" />
 		</Unit>
