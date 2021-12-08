@@ -17,7 +17,6 @@ do
 {
 
 
-
     gotoligcol(20,0);
     printf("Actions Possibles:\n1-Deplacer son pion\n2-Poser une barriere\n3-Passer son tour\n4-Annuler la derniere action\n5-Revenir au menu precedent\n\nSaisie de l'action du joueur:\n");
     fflush(stdin);
