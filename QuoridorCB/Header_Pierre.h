@@ -51,6 +51,7 @@ void saisie_coord(int saisie[2]);
 void gotoligcol( int lig, int col );
 void tour_par_tour(int* Pnombre_joueur, int mat[17][17], t_joueur player[4],int* Ptour);
 int gagner(t_joueur player[4], int* Pnombrejoueur, int tour);
+int gagner_barriere(t_joueur player[4]);
 
 ///SetUp
 void distribution_barriere(t_joueur player[4],int *nombrejoueur);

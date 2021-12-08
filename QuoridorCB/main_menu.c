@@ -6,6 +6,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
     int sortie = 0;
     int debut;
 
+
     /// Test
 
     int gagne = -1;
@@ -89,6 +90,8 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             system("cls");
             distribution_barriere(player,Pnombre_joueur);
 
+
+
             setup(Pnombre_joueur,debut,mat,player,Ptour);
             tour_par_tour(Pnombre_joueur,mat,player,Ptour);
 
@@ -131,9 +134,24 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             {
                 system("cls");
                 matrice_propre(mat,player);
-                printf("\n\n%s n'a plus de barriere\n",player[tour_test].nomJ);
+                printf("\n\n%s n'a plus de barriere\n\n",player[tour_test].nomJ);
+
+
+
+                if(gagner_barriere(player) == -1)
+                {
+                    printf("Les 2 jouers ont gagnes car ils sont autant avances\n");
+                    system("PAUSE");
+                }
+
+                else
+                {
+
+                printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player)].nomJ);
 
                 system("PAUSE");
+
+                }
 
             }
 

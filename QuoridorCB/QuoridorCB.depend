@@ -72,7 +72,7 @@
 1638894271 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\affich_mat_avec_coord.c
 	"Header_Pierre.h"
 
-1638904645 c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\header_pierre.h
+1638949419 c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\header_pierre.h
 	<windows.h>
 	<stdio.h>
 	<stdlib.h>
@@ -112,7 +112,7 @@
 1638897232 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main.c
 	"Header_Pierre.h"
 
-1638907621 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main_menu.c
+1638950812 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main_menu.c
 	"Header_Pierre.h"
 
 1638894271 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\matrice_visible.c
@@ -154,4 +154,7 @@
 	<windows.h>
 	<string.h>
 	<time.h>
+
+1638952043 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\gagner_barriere.c
+	"Header_Pierre.h"
 
