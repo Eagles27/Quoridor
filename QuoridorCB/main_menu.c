@@ -52,9 +52,9 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
 /// RESET DES TOKENS
 
 
-            for(int i=0; i<4; i++)
+            //for(int i=0; i<4; i++)
             {
-                player[i].jetonJ = '1';     // Valeur donnee arbitrairement
+               // player[i].jetonJ = '1';     // Valeur donnee arbitrairement
 
             }
 
@@ -95,7 +95,10 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                     scanf("%s",nom);
                     majuscule(nom);
                     strcpy(player[i].nomJ,nom);
+                    player[i].jetonJ='1';
                     choixPion(player,i);
+                    printf("test");
+                    system("PAUSE");
                     player[i].numeroJ = i+1;
                 }
             }
