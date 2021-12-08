@@ -40,17 +40,59 @@
 		<Unit filename="ChoixPion.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Choix_nbre_joueur.c">
+		<Unit filename="Déplacement.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Gotolicol.c">
+		<Unit filename="Fin de jeu.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Header_Pierre.h" />
 		<Unit filename="InitialisationMatriceOrdi.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="header_adrien.h" />
+		<Unit filename="Matrice_visible.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Placer_barriere.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Saisie_coord.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Sauvegarde-Charger.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Tour_par_tour.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="choix_j.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distribution_barriere.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="gotoligcol.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main_menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="menu_cote.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="menu_game.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="nombre_joueur.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="setup.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="traduction.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions />

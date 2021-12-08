@@ -26,9 +26,8 @@ typedef struct joueur{
 void affiche(int tab[17][17]);
 void genematrice();
 //void gotoligcol(int lig,int col,int nombreJoueur,char nomJoueur[50],int scorePartie, char jetonJoueur,int barrieresRestantes);
-void menucote(int lig,int col,int nombreJoueur, t_joueur jugador[4],int numeroPlayer);
-void choixPion(t_joueur jugador[4],int numeroPlayer);
-void Color(int couleurDuTexte,int couleurDeFond);
+void menucote(int lig,int col,int nombreJoueur, t_joueur jugador[4]);
+void choixPion(t_joueur jugador[4],int numeroJ);
 
 
 #endif // HEADER_ADRIEN_H_INCLUDED
