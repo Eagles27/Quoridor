@@ -6,7 +6,28 @@ void tour_par_tour(int* Pnombre_joueur, int mat[17][17], t_joueur player[4],int*
     if(*Pnombre_joueur == 4)
     {
 
-            menu_game(mat,Pnombre_joueur,player,Ptour, mat_avant, Action);
+        if(*Ptour%4 == 1)
+        {
+            *Ptour = 2;
+
+
+        }
+
+        else if(*Ptour%4 == 2)
+        {
+            *Ptour = 3;
+
+        }
+
+        else if(*Ptour%4 == 3)
+        {
+            *Ptour = 4;
+        }
+
+        else
+        {
+            *Ptour = 1;
+        }
 
 
     }
