@@ -99,16 +99,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
             {
                 ///PPG annuler l'action
                 charger_plateau(mat_avant);
-                /*system("cls");
-                for(int i = 0; i<17; i++)
-                {
-                    for(int j = 0; j<17; j++)
-                    {
-                        printf("%d", mat_avant[i][j]);
-                    }
-                    printf("\n");
-                }
-                system("PAUSE");*/
+
                 for(int i = 0; i<17; i++)
                 {
                     for(int j = 0; j<17; j++)
@@ -147,10 +138,8 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
 
                     player[*Ptour-1].A_annule = 1;
 
-                    //mat[player[*Ptour].coordonneY][player[*Ptour].coordonneX] = player[*Ptour].numeroJ;
                 }
-                //printf("(%d, %d)\n", player[*Ptour-1].coordonneX, player[*Ptour-1].coordonneY);
-                //system("PAUSE");
+
 
                 *Action = 4;
                 *Ptour ++;
@@ -159,6 +148,9 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
             {
                 printf("Cette action ne peut etre fait qu'une fois\n");
                 system("PAUSE");
+                system("cls");
+                matrice_propre(mat,player);
+                menu_cote(Ptour,Pnombrejoueur,player);
                 choix = 0;
             }
 
