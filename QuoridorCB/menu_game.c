@@ -88,9 +88,6 @@ do
     case 3 :
     {
         ///PPG passer son tour
-
-        //tour_par_tour(Pnombrejoueur,mat,player,Ptour);
-
         *Ptour ++;
 
         break;
@@ -98,6 +95,8 @@ do
     case 4 :
     {
         ///PPG annuler l'action
+        charger_plateau(mat);
+        *Ptour ++;
 
         break;
     }
