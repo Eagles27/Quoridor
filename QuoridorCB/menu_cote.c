@@ -26,15 +26,6 @@ void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4])
         printf("Ne peut plus annuler");
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-///TEST
-    gotoligcol(15,60);
-    printf("(%d, %d)\n", player[*Ptour-1].coordonneX, player[*Ptour-1].coordonneY);
-
-    gotoligcol(17,60);
-    printf("av(%d, %d)\n", player[*Ptour-1].coordonneX_av, player[*Ptour-1].coordonneY_av);
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     gotoligcol(20,0);
 
 
