@@ -88,13 +88,15 @@ void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4])
     printf("      Vous pouvez annuler le coup        ");
     Color(15,0);
     gotoligcol(numero_ligne_cote+11,numero_colonne_cote);
+    Color(15,10);
     printf("                                         ");
     Color(15,0);
     }
     else{
     printf("   Vous ne pouvez pas annuler le coup  ");
-    Color(15,0);
+    Color(15,10);
     gotoligcol(numero_ligne_cote+11,numero_colonne_cote);
+    Color(15,10);
     printf("                                         ");
     Color(15,0);
     }

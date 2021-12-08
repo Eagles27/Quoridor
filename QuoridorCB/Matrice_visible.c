@@ -26,6 +26,8 @@ void matrice_propre(int tab[17][17], t_joueur player[4]) //Programme graphique O
     int i,j;
 
     printf("    ");
+
+
     for (i = 0 ; i<17 ; i++) {
             if (i%2==0){
                 Color(15,0);
@@ -42,6 +44,7 @@ void matrice_propre(int tab[17][17], t_joueur player[4]) //Programme graphique O
 
     for(i=0; i<17; i++)
     {
+
         if(i%2==0)
         {
             Color(15,0);

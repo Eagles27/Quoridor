@@ -32,16 +32,49 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
     int valid_choix = 1;
     int valid_dep = 1;
 
+    int numero_ligne=20;
+    int numero_colonne=3;
+
     ///1. Affichage utilisateur
     while(valid_dep == 1)
     {
         while(valid_choix == 1)
         {
+            Color(15,0);
             system("cls");
             matrice_propre(matrice,player);
             menu_cote(Ptour,Pnombre_joueur,player);
-            printf("Direction de deplacement (h, b, g, d) :\n");
+
+
+
+            gotoligcol(numero_ligne,numero_colonne);
+            Color(15,2);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(numero_ligne+1,numero_colonne);
+            Color(15,2);
+            printf("                DEPLACEMENT                ");
+            Color(15,0);
+            gotoligcol(numero_ligne+2,numero_colonne);
+            Color(15,2);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(numero_ligne+3,numero_colonne);
+            Color(15,10);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(numero_ligne+4,numero_colonne);
+            Color(15,10);
+            printf("  Direction de deplacement (h, b, g, d) ?  ");
+            Color(15,0);
+            gotoligcol(numero_ligne+5,numero_colonne);
+            Color(15,10);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(numero_ligne+6,numero_colonne);
             scanf("%c", &choix);
+
+
             if((choix=='h')||(choix=='b')||(choix=='g')||(choix=='d')||(choix=='H')||(choix=='B')||(choix=='G')||(choix=='D'))
             {
                 //printf("valid choix");
@@ -125,7 +158,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                             system("cls");
                             matrice_propre(matrice,player);
                             menu_cote(Ptour,Pnombre_joueur,player);
-                            printf("Vous ne pouvez pas sauter le deuxi�me mur,\nSouhaitez vous aller a gauche (g) ou a droite (d) ?\n");
+                            printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller a gauche (g) ou a droite (d) ?\n");
                             scanf("%c", &choix_decalage);
                         }
                         if(choix_decalage == 'd')
@@ -193,7 +226,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                             system("cls");
                             matrice_propre(matrice,player);
                             menu_cote(Ptour,Pnombre_joueur,player);
-                            printf("Vous ne pouvez pas sauter le deuxi�me mur,\nSouhaitez vous aller a gauche (g) ou a droite (d) ?\n");
+                            printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller a gauche (g) ou a droite (d) ?\n");
                             scanf("%c", &choix_decalage);
                         }
                         if(choix_decalage == 'd')
@@ -325,7 +358,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                             system("cls");
                             matrice_propre(matrice,player);
                             menu_cote(Ptour,Pnombre_joueur,player);
-                            printf("Vous ne pouvez pas sauter le deuxi�me mur,\nSouhaitez vous aller en haut (h) ou en bas (b) ?\n");
+                            printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller en haut (h) ou en bas (b) ?\n");
                             scanf("%c", &choix_decalage);
                         }
                         if(choix_decalage == 'b')

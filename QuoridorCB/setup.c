@@ -3,7 +3,8 @@
 void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], int* Ptour)
 {
     char cJ1,cJ2,cJ3,cJ4;
-
+    int numero_lig=20;
+    int numero_col=3;
 
     ///Reset Point de la partie
 
@@ -26,9 +27,34 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
                 system("cls");
                 matrice_propre(mat,player);
                 menu_cote(Ptour,Pnombre_joueur,player);
-                printf("%s:\n\n",player[0].nomJ);
-                printf("Choisissez une ligne A --> Q\n");
+
+
+                Color(15,0);
+                gotoligcol(numero_lig,numero_col);
+                Color(15,2);
+                printf("                                      ");
+                Color(15,0);
+                gotoligcol(numero_lig+1,numero_col);
+                Color(15,2);
+                printf("                %s                     ",player[0].nomJ);
+                Color(15,0);
+                ///Effacage de ce qui dépasse
+                gotoligcol(numero_lig+1,numero_col+38);
+                printf("             ");
+                gotoligcol(numero_lig+2,numero_col);
+                Color(15,10);
+                printf("                                      ");
+                Color(15,0);
+                gotoligcol(numero_lig+3,numero_col);
+                Color(15,10);
+                printf("     Choisissez une ligne A --> Q     ");
+                Color(15,0);
+                gotoligcol(numero_lig+4,numero_col);
+                Color(15,10);
+                printf("                                      ");
                 fflush(stdin);
+                Color(15,0);
+                gotoligcol(numero_lig+5,numero_col);
                 scanf("%c",&cJ1);
                 player[0].coordonneX = traduction(cJ1);
                 player[0].coordonneY = 0;
@@ -54,10 +80,36 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
                 system("cls");
                 matrice_propre(mat,player);
                 menu_cote(Ptour,Pnombre_joueur,player);
-                printf("%s:\n\n",player[1].nomJ);
-                printf("Choisissez une ligne A --> Q\n");
+
+
+                Color(15,0);
+                gotoligcol(numero_lig,numero_col);
+                Color(15,2);
+                printf("                                      ");
+                Color(15,0);
+                gotoligcol(numero_lig+1,numero_col);
+                Color(15,2);
+                printf("                %s                     ",player[1].nomJ);
+                Color(15,0);
+                ///Effacage de ce qui dépasse
+                gotoligcol(numero_lig+1,numero_col+38);
+                printf("             ");
+                gotoligcol(numero_lig+2,numero_col);
+                Color(15,10);
+                printf("                                      ");
+                Color(15,0);
+                gotoligcol(numero_lig+3,numero_col);
+                Color(15,10);
+                printf("     Choisissez une ligne A --> Q     ");
+                Color(15,0);
+                gotoligcol(numero_lig+4,numero_col);
+                Color(15,10);
+                printf("                                      ");
                 fflush(stdin);
+                Color(15,0);
+                gotoligcol(numero_lig+5,numero_col);
                 scanf("%c",&cJ2);
+
                 player[1].coordonneX = traduction(cJ2);
                 player[1].coordonneY = 16;
 
@@ -86,10 +138,35 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
                 system("cls");
                 matrice_propre(mat,player);
                 menu_cote(Ptour,Pnombre_joueur,player);
-                printf("%s:\n\n",player[1].nomJ);
-                printf("Choisissez une ligne A --> Q\n");
+
+                Color(15,0);
+                gotoligcol(numero_lig,numero_col);
+                Color(15,2);
+                printf("                                      ");
+                Color(15,0);
+                gotoligcol(numero_lig+1,numero_col);
+                Color(15,2);
+                printf("                %s                     ",player[1].nomJ);
+                Color(15,0);
+                ///Effacage de ce qui dépasse
+                gotoligcol(numero_lig+1,numero_col+38);
+                printf("             ");
+                gotoligcol(numero_lig+2,numero_col);
+                Color(15,10);
+                printf("                                      ");
+                Color(15,0);
+                gotoligcol(numero_lig+3,numero_col);
+                Color(15,10);
+                printf("     Choisissez une ligne A --> Q     ");
+                Color(15,0);
+                gotoligcol(numero_lig+4,numero_col);
+                Color(15,10);
+                printf("                                      ");
                 fflush(stdin);
+                Color(15,0);
+                gotoligcol(numero_lig+5,numero_col);
                 scanf("%c",&cJ2);
+
                 player[1].coordonneX = traduction(cJ2);
                 player[1].coordonneY = 16;
 
@@ -113,10 +190,38 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
                 system("cls");
                 matrice_propre(mat,player);
                 menu_cote(Ptour,Pnombre_joueur,player);
-                printf("%s:\n\n",player[0].nomJ);
-                printf("Choisissez une ligne A --> Q\n");
+
+
+
+                Color(15,0);
+                gotoligcol(numero_lig,numero_col);
+                Color(15,2);
+                printf("                                      ");
+                Color(15,0);
+                gotoligcol(numero_lig+1,numero_col);
+                Color(15,2);
+                printf("                %s                     ",player[0].nomJ);
+                Color(15,0);
+                ///Effacage de ce qui dépasse
+                gotoligcol(numero_lig+1,numero_col+38);
+                printf("             ");
+                gotoligcol(numero_lig+2,numero_col);
+                Color(15,10);
+                printf("                                      ");
+                Color(15,0);
+                gotoligcol(numero_lig+3,numero_col);
+                Color(15,10);
+                printf("     Choisissez une ligne A --> Q     ");
+                Color(15,0);
+                gotoligcol(numero_lig+4,numero_col);
+                Color(15,10);
+                printf("                                      ");
                 fflush(stdin);
+                Color(15,0);
+                gotoligcol(numero_lig+5,numero_col);
                 scanf("%c",&cJ1);
+
+
                 player[0].coordonneX = traduction(cJ1);
                 player[0].coordonneY = 0;
 

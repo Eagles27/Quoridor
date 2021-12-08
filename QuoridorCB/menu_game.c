@@ -78,11 +78,10 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
 
 
             }
-
             system("cls");
             matrice_propre(mat,player);
             menu_cote(Ptour,Pnombrejoueur,player);
-            system("PAUSE");
+            //system("PAUSE");
 
             *Action = 1;
 
@@ -94,6 +93,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
 
             while(bool_barriere==-1)
             {
+
                 system("cls");
                 matrice_propre(mat,player);
                 menu_cote(Ptour,Pnombrejoueur,player);
@@ -106,7 +106,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
             player[*Ptour-1].barrieresR --; ///On d�cremente le nombre de barriere une fois pos�e
             matrice_propre(mat,player);
             menu_cote(Ptour,Pnombrejoueur,player);
-            system("PAUSE");
+            //system("PAUSE");
             *Action = 2;
 
             break;

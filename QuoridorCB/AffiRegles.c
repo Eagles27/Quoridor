@@ -127,6 +127,7 @@ void affiregles()
     Color(15,10);
     printf("                                                                                                                             ");
     Color(15,0);
+    gotoligcol(numero_l+28,numero_c);
     system("PAUSE");
     system("cls");
 }
