@@ -1,69 +1,53 @@
-#include "Header_Pierre.h"
+#include "header_adrien.h"
 
 int main()
+
 {
-    ///0. DDV
-    //int depla[3] = {14, 16};
-    int tab[17][17];
-    //int depla_org[3];
-    //char lettre = '0';
-    //int chiffre;
+    int i=0;
+    int nombreJ=2;
+    int numeroPlayer=1;
 
-    ///1.1 Test deplacement
-    /*genematrice(tab);
-    tab[depla[1]][depla[0]]=4;
-    tab[16][16]=5;
-    affiche(tab);
-    system("PAUSE");
-    depla_org[0] = depla[0];
-    depla_org[1] = depla[1];
-    deplacement(depla, tab, 2);
-    tab[depla_org[1]][depla_org[0]]=0;
-    tab[depla[1]][depla[0]]=4;
-    //printf("%d, %d\n",depla[0], depla[1]);
-    //system("cls");
-    affiche(tab);*/
+    t_joueur Jugador[4];
 
-    ///1.2. Test save-DL
-    /*genematrice(tab);
-    sauver(tab);
-    charger(tab);
-    affiche(tab);*/
+    ///1
+    strcpy(Jugador[0].nomJ,"Pierre");
+    Jugador[0].scoreP=0;
+    //Jugador[0].jetonJ='@';
+    Jugador[0].barrieresR=0;
 
-    ///1.3. Test affiche propre
-    /*genematrice(tab);
-    tab[1][0]=3;
-    tab[1][1]=3;
-    tab[0][1]=3;
-    tab[0][0]=5;
-    tab[0][2]=7;
-    tab[0][4]=9;
-    tab[0][6]=11;
-    //tab[1][2]=3;
-    matrice_propre(tab);*/
+    ///2
+    strcpy(Jugador[1].nomJ,"Maxime");
+    Jugador[1].scoreP=1;
+    //Jugador[1].jetonJ='*';
+    Jugador[1].barrieresR=1;
 
-    ///1.4. Test barriere
-    /*genematrice(tab);
-    affiche(tab);
-    system("PAUSE");
-    system("cls");
-    int place1[2] = {1,0};
-    int place2[2] = {1,1};
-    placer_barriere(tab,place1,place2);
-    matrice_propre(tab);*/
+    ///3
+    strcpy(Jugador[2].nomJ,"Adrien");
+    Jugador[2].scoreP=2;
+    //Jugador[2].jetonJ='#';
+    Jugador[2].barrieresR=2;
 
-    ///2. Main max
-    int mat[17][17];
-    int nombre_joueur = 0;
+    ///4
+    strcpy(Jugador[3].nomJ,"Ravaut");
+    Jugador[3].scoreP=3;
+    //Jugador[3].jetonJ='&';
+    Jugador[3].barrieresR=3;
 
-    int *Pnombre_joueur = &nombre_joueur;
+    /*------------------------------------------------*/
 
-    t_joueur player[4];
+    /*------------------------------------------------*/
+
+    genematrice(); //Affiche la matrice
+
+    for(i=0;i<4;i++){
+
+        choixPion(Jugador,i); //Prend la structure et le numero du token du joueur à set
+
+        menucote(3,70,2,Jugador,i); //Affiche le menu dynamique sur le coté
+        system("PAUSE");
+
+    }
 
 
-    genematrice(mat);
 
-    main_menu(Pnombre_joueur, mat, player);
-
-    return 0;
 }
