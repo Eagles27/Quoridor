@@ -60,6 +60,9 @@ int main()
 
     t_joueur player[4];
 
+    TitreAffichage();
+    system("PAUSE");
+    Color(15,0);
 
     genematrice(mat);
 
