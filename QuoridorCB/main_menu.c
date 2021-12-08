@@ -110,16 +110,10 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             system("cls");
             distribution_barriere(player,Pnombre_joueur);
 
-            printf("%d",debut);
-            system("PAUSE");
 
 
             setup(Pnombre_joueur,debut,mat,player,Ptour);
             tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction);
-
-            printf("%d",*Ptour);
-            system("PAUSE");
-
 
 
 
