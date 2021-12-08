@@ -58,7 +58,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
 
             //for(int i=0; i<4; i++)
             {
-               // player[i].jetonJ = '1';     // Valeur donnee arbitrairement
+                // player[i].jetonJ = '1';     // Valeur donnee arbitrairement
 
             }
 
@@ -106,22 +106,30 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             }
 
 
-            debut = choix_j(*Pnombre_joueur); //SSPG pour d�terminer qui commence
+            debut = choix_j(*Pnombre_joueur); //SSPG pour déterminer qui commence
             system("cls");
             distribution_barriere(player,Pnombre_joueur);
 
+            printf("%d",debut);
+            system("PAUSE");
 
 
             setup(Pnombre_joueur,debut,mat,player,Ptour);
             tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction);
+
+            printf("%d",*Ptour);
+            system("PAUSE");
+
 
 
 
 
             do
             {
-                for(int i = 0; i<17; i++){
-                    for(int j = 0; j<17; j++){
+                for(int i = 0; i<17; i++)
+                {
+                    for(int j = 0; j<17; j++)
+                    {
                         mat_avant[i][j] = mat[i][j];
                     }
                 }
@@ -133,12 +141,19 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                 player[*Ptour-1].coordonneY_av = player[*Ptour-1].coordonneY;
                 menu_game(mat,Pnombre_joueur,player,Ptour, mat_avant, PAction);
 
-                if(*Ptour == 1){
-                    tour_test = *Ptour-1;
+                if(*Pnombre_joueur == 2)
+                {
+                    if(*Ptour == 1)
+                    {
+                        tour_test = *Ptour-1;
+                    }
+                    else if(*Ptour == 2)
+                    {
+                        tour_test = 1;
+                    }
                 }
-                else if(*Ptour == 2){
-                    tour_test = 1;
-                }
+
+
 
                 tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction);
                 sauver_plateau(mat_avant);
@@ -156,7 +171,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             }
 
 
-            ///Test fin de partie car joueur n'a plus de barri�res
+            ///Test fin de partie car joueur n'a plus de barrieres
 
             else if(gagner(player,Pnombre_joueur,tour_test) == 2)
             {
@@ -175,9 +190,9 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                 else
                 {
 
-                printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player)].nomJ);
+                    printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player)].nomJ);
 
-                system("PAUSE");
+                    system("PAUSE");
 
                 }
 
@@ -205,7 +220,8 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                         player[1].scoreP = liste_score[i];
                     }
                 }
-                else{
+                else
+                {
                     if(strcmp(liste_nom[i],player[0].nomJ)==0)
                     {
                         player[0].scoreP = liste_score[i];

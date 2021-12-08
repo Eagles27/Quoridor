@@ -1,4 +1,4 @@
-#include "jeu.h"
+#include "Header_Pierre.h"
 
 int nombre_joueur()
 {
