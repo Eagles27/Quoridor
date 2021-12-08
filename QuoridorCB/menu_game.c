@@ -15,11 +15,10 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
     {
 
 
-
-        gotoligcol(20,0);
-        printf("Actions Possibles:\n1-Deplacer son pion\n2-Poser une barriere\n3-Passer son tour\n4-Annuler la derniere action\n5-Revenir au menu precedent\n\nSaisie de l'action du joueur:\n");
-        fflush(stdin);
-        scanf("%d",&choix);
+    gotoligcol(20,0);
+    printf("Actions Possibles:\n1-Deplacer son pion\n2-Poser une barriere\n3-Passer son tour\n4-Annuler la derniere action\n5-Revenir au menu precedent\n\nSaisie de l'action du joueur:\n");
+    fflush(stdin);
+    scanf("%d",&choix);
 
         switch(choix)
         {
@@ -78,7 +77,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
             }
 
             system("cls");
-            player[*Ptour-1].barrieresR --; ///On décremente le nombre de barriere une fois posée
+            player[*Ptour-1].barrieresR --; ///On dï¿½cremente le nombre de barriere une fois posï¿½e
             matrice_propre(mat,player);
             menu_cote(Ptour,Pnombrejoueur,player);
             system("PAUSE");
