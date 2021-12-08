@@ -37,17 +37,32 @@ int main()
 
     /*------------------------------------------------*/
 
-    genematrice(); //Affiche la matrice
 
-    for(i=0;i<4;i++){
+
+
+    //genematrice(); //Affiche la matrice
+
+
+
+    /*for(i=0;i<4;i++){
 
         choixPion(Jugador,i); //Prend la structure et le numero du token du joueur à set
 
         menucote(3,70,2,Jugador,i); //Affiche le menu dynamique sur le coté
         system("PAUSE");
 
-    }
+    }*/
 
-
-
+    Color(10,0);
+    printf("                                                           \n");
+    printf("                                 %c       %c                 \n",0x6F,0xBA);
+//                Q        |    U    |       O      |      R       | I |      D      |       O      |       R        |           Q                     |         U |            O                     |          R                       |  I |                 D                |                         O        |       R
+    printf(" %c%c%c%c%c%c%c %c     %c %c%c%c%c%c%c%c %c%c%c%c%c%c%c %c %c%c%c%c%c%c%c %c%c%c%c%c%c%c %c%c%c%c%c%c%c \n",0xC9,0xCD,0xCD,0xCD,0xCD,0xCD,0xBB,0xBB,0xC9,0xC9,0xCD,0xCD,0xCD,0xCD,0xCD,0xBB,0xC9,0xCD,0xCD,0xCD,0xCD,0xCD,0xCD,0xBA,0xC9,0xCD,0xCD,0xCD,0xCD,0xCD,0xB9,0xC9,0xCD,0xCD,0xCD,0xCD,0xCD,0xBB,0xC9,0xCD,0xCD,0xCD,0xCD,0xCD,0xCD);
+    printf(" %c     %c %c     %c %c     %c %c       %c %c     %c %c     %c %c       \n",0xBA,0xBA,0xBA,0xBA,0xBA,0xBA,0xBA,0xBA,0xBA,0xBA,0xBA,0xBA,0xBA);
+    printf(" %c     %c %c     %c %c     %c %c       %c %c     %c %c     %c %c       \n",0xBA,0xBA,0xBA,0xBA,0xBA,0xBA,0xBA,0xBA,0xBA,0xBA,0xBA,0xBA,0xBA);
+    printf(" %c%c%c%c%c%c%c %c%C%C%C%C%c%c %c%c%c%c%c%c%c %c       %c %c%c%c%c%c%c%c %c%c%c%c%c%c%c %c       \n",0xC8,0xCD,0xCD,0xCD,0xCD,0xCD,0xB9,0xC8,0xCD,0xCD,0xCD,0xCD,0xCD,0xBC,0xC8,0xCD,0xCD,0xCD,0xCD,0xCD,0xBC,0xBC,0xBA,0xC8,0xCD,0xCD,0xCD,0xCD,0xCD,0xBC,0xC8,0xCD,0xCD,0xCD,0xCD,0xCD,0xBC,0xBC);
+//                Q        |    U          |       O     |   R    | I|      D       |       O      | R   |           Q                      |           U                     |            O                     | R  |  I |                 D                |                    O             |  R
+    printf("       %c                                                   \n",0xBA);
+printf("                                                           \n");
+Color(15,0);
 }
