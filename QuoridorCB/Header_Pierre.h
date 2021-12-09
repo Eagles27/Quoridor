@@ -91,7 +91,7 @@ void choixPion(t_joueur jugador[4], int *PnbJ);
 void charger_plateau(int tab[17][17]);
 void sauver_plateau(int tab[17][17]);
 void charger_score(char liste_nom[100][50], int liste_score[100]);
-void sauver_score(char liste_nom[100][50], int liste_score[100]);
+void sauver_score(t_joueur joueur[4], int *PnbJ);
 void sauver_joueur(t_joueur joueur[4], int *Pnombre_joueur);
 
 

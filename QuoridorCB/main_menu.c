@@ -183,7 +183,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                 system("cls");
                 printf("Gagne!!!");
                 player[tour_test].scoreP ++;
-                sauver_score(list_joueur, list_score);
+                sauver_score(player, Pnombre_joueur);
                 system("PAUSE");
             }
 
@@ -212,7 +212,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                 {
                     printf("Les 2 jouers ont gagnes car ils sont autant avances\n");
                     system("PAUSE");
-                    sauver_score(list_joueur, list_score);
+                    sauver_score(player, Pnombre_joueur);
                 }
 
                 else
@@ -221,7 +221,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                     printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player, Pnombre_joueur)].nomJ);
                     player[gagner_barriere(player, Pnombre_joueur)].scoreP ++;
                     system("PAUSE");
-                    sauver_score(list_joueur, list_score);
+                    sauver_score(player, Pnombre_joueur);
 
                 }
 
