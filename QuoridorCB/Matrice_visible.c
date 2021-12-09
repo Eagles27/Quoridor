@@ -81,6 +81,9 @@ void matrice_propre(int tab[17][17], t_joueur player[4])
                 else if(tab[i][j]==3){
                     printf("%c", 0xBA);
                 }
+                else if(tab[i][j]==13){
+                    printf(" %c ", 0x0F);
+                }
             }
         }
         printf("\n");

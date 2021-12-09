@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1638984676 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
+1639080212 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
 	"Header_Pierre.h"
 
-1639077746 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
+1639079298 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
 	<windows.h>
 	<stdio.h>
 	<stdlib.h>
@@ -18,10 +18,10 @@
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\initialisationmatriceordi.c
 	"Header_Pierre.h"
 
-1639077436 source:d:\pierr\documents\algo\quoridor\quoridorcb\sauvegarde-charger.c
+1639078750 source:d:\pierr\documents\algo\quoridor\quoridorcb\sauvegarde-charger.c
 	"Header_Pierre.h"
 
-1638895530 source:d:\pierr\documents\algo\quoridor\quoridorcb\matrice_visible.c
+1639080448 source:d:\pierr\documents\algo\quoridor\quoridorcb\matrice_visible.c
 	"Header_Pierre.h"
 
 1638809704 source:d:\pierr\documents\algo\quoridor\quoridorcb\placer_barriere.c
@@ -45,7 +45,7 @@
 1638984924 source:d:\pierr\documents\algo\quoridor\quoridorcb\gotoligcol.c
 	"Header_Pierre.h"
 
-1639078054 source:d:\pierr\documents\algo\quoridor\quoridorcb\main_menu.c
+1639080576 source:d:\pierr\documents\algo\quoridor\quoridorcb\main_menu.c
 	"Header_Pierre.h"
 
 1638989752 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_game.c
@@ -175,5 +175,8 @@
 	"Header_Pierre.h"
 
 1639074042 source:d:\pierr\documents\algo\quoridor\quoridorcb\score.c
+	"Header_Pierre.h"
+
+1639080576 source:d:\pierr\documents\algo\quoridor\quoridorcb\bonus.c
 	"Header_Pierre.h"
 

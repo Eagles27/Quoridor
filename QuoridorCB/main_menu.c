@@ -139,6 +139,9 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
 
             player[1].barrieresR = 1;
 
+            ///Initialisation bonus
+            case_bonus(mat);
+
             do
             {
                 for(int i = 0; i<17; i++)
