@@ -2,7 +2,7 @@
 1638984676 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
 	"Header_Pierre.h"
 
-1638983278 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
+1639074042 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
 	<windows.h>
 	<stdio.h>
 	<stdlib.h>
@@ -18,7 +18,7 @@
 1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\initialisationmatriceordi.c
 	"Header_Pierre.h"
 
-1638959982 source:d:\pierr\documents\algo\quoridor\quoridorcb\sauvegarde-charger.c
+1639077436 source:d:\pierr\documents\algo\quoridor\quoridorcb\sauvegarde-charger.c
 	"Header_Pierre.h"
 
 1638895530 source:d:\pierr\documents\algo\quoridor\quoridorcb\matrice_visible.c
@@ -27,8 +27,8 @@
 1638809704 source:d:\pierr\documents\algo\quoridor\quoridorcb\placer_barriere.c
 	"Header_Pierre.h"
 
-1638954340 source:d:\pierr\documents\algo\quoridor\quoridorcb\affiregles.c
-	"header_adrien.h"
+1638984924 source:d:\pierr\documents\algo\quoridor\quoridorcb\affiregles.c
+	"Header_Pierre.h"
 
 1638364644 d:\pierr\documents\algo\quoridor\quoridorcb\jeu.h
 	<stdio.h>
@@ -36,25 +36,25 @@
 	<time.h>
 	<windows.h>
 
-1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\choix_j.c
-	"jeu.h"
+1638984924 source:d:\pierr\documents\algo\quoridor\quoridorcb\choix_j.c
+	"Header_Pierre.h"
 
 1638536750 source:d:\pierr\documents\algo\quoridor\quoridorcb\distribution_barriere.c
 	"Header_Pierre.h"
 
-1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\gotoligcol.c
-	"jeu.h"
-
-1638984858 source:d:\pierr\documents\algo\quoridor\quoridorcb\main_menu.c
+1638984924 source:d:\pierr\documents\algo\quoridor\quoridorcb\gotoligcol.c
 	"Header_Pierre.h"
 
-1638979498 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_game.c
+1639077342 source:d:\pierr\documents\algo\quoridor\quoridorcb\main_menu.c
 	"Header_Pierre.h"
 
-1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\nombre_joueur.c
-	"jeu.h"
+1638989752 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_game.c
+	"Header_Pierre.h"
 
-1638957092 source:d:\pierr\documents\algo\quoridor\quoridorcb\setup.c
+1638984924 source:d:\pierr\documents\algo\quoridor\quoridorcb\nombre_joueur.c
+	"Header_Pierre.h"
+
+1638984924 source:d:\pierr\documents\algo\quoridor\quoridorcb\setup.c
 	"Header_Pierre.h"
 
 1638954340 source:d:\pierr\documents\algo\quoridor\quoridorcb\traduction.c
@@ -66,7 +66,7 @@
 1638895530 source:d:\pierr\documents\algo\quoridor\quoridorcb\saisie_coord.c
 	"Header_Pierre.h"
 
-1638975184 source:d:\pierr\documents\algo\quoridor\quoridorcb\tour_par_tour.c
+1638984924 source:d:\pierr\documents\algo\quoridor\quoridorcb\tour_par_tour.c
 	"Header_Pierre.h"
 
 1638977198 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\affich_mat_avec_coord.c
@@ -168,9 +168,12 @@
 1638954340 source:d:\pierr\documents\algo\quoridor\quoridorcb\fin de jeu.c
 	"Header_Pierre.h"
 
-1638984610 source:d:\pierr\documents\algo\quoridor\quoridorcb\choixpion.c
+1638984884 source:d:\pierr\documents\algo\quoridor\quoridorcb\choixpion.c
 	"Header_Pierre.h"
 
-1638979498 source:d:\pierr\documents\algo\quoridor\quoridorcb\gagner_barriere.c
+1638993878 source:d:\pierr\documents\algo\quoridor\quoridorcb\gagner_barriere.c
+	"Header_Pierre.h"
+
+1639074042 source:d:\pierr\documents\algo\quoridor\quoridorcb\score.c
 	"Header_Pierre.h"
 

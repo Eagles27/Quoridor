@@ -55,7 +55,7 @@ void sauver_joueur(t_joueur joueur[4], int *Pnombre_joueur)
     }
 }
 
-void sauver_score(t_joueur joueur[4], int *Pnombre_joueur)
+void sauver_score(char liste_nom[100][50], int liste_score[100])
 {
     ///0. DDV
     FILE* fp = NULL;
@@ -66,11 +66,11 @@ void sauver_score(t_joueur joueur[4], int *Pnombre_joueur)
     if (fp == NULL) printf("\nerreur fichier\n");
     else
     {
-        fprintf(fp, "%d", *Pnombre_joueur);
-        for(int i = 0; i<*Pnombre_joueur; i++)
-        {
-            fprintf(fp, "%s\n", joueur[i].nomJ);
-            fprintf(fp, "%d\n", joueur[i].scoreP);
+        for(int i = 0; i<100; i++){
+                for(int j = 0; j!='\0'; j++){
+                    fputc(liste_nom[i], fp);
+                }
+            fprintf(fp, "%d", liste_score[i]);
         }
         fclose(fp);
     }

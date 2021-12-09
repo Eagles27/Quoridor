@@ -159,6 +159,8 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
         case 5 :
         {
             main_menu(Pnombrejoueur,mat,player);
+            sauver_plateau(mat);
+            sauver_joueur(player, Pnombrejoueur);
             break;
         }
 

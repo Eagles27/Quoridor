@@ -62,6 +62,9 @@
 		<Unit filename="Sauvegarde-Charger.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Score.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Tour_par_tour.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -7,9 +7,21 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
     int sortie = 0;
     int debut;
     char nom[50];
-    char liste_nom[100][50];
-    int liste_score[100];
     int mat_avant[17][17];
+    int numero;
+
+    char list_joueur[100][50];
+    int list_score[100];
+    int index_score[4][2];
+
+    for(int i = 0; i<4; i++)
+    {
+        for(int j = 0; j<2; j++)
+        {
+            index_score[i][j] = -1;
+        }
+    }
+
     /*
     //Declaration tableau dynamique pour les scores
     int *liste_score;
@@ -87,6 +99,8 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                 choixPion(player,Pnombre_joueur);
             }
 
+
+
             ///Remplissage des donnees de la strcuture pour 2 J
 
             else
@@ -109,13 +123,21 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             system("cls");
             distribution_barriere(player,Pnombre_joueur);
 
+            extraction_score(player, Pnombre_joueur, list_joueur, list_score, index_score);
 
+            for(int i = 0; i<4; i++)
+            {
+                if(index_score[i][1] != -1)
+                {
+                    player[index_score[i][1]].scoreP = list_score[index_score[i][0]];
+                }
+            }
 
             setup(Pnombre_joueur,debut,mat,player,Ptour);
             tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction);
 
 
-
+            player[1].barrieresR = 1;
 
             do
             {
@@ -160,6 +182,8 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             {
                 system("cls");
                 printf("Gagne!!!");
+                player[tour_test].scoreP ++;
+                sauver_score(list_joueur, list_score);
                 system("PAUSE");
             }
 
@@ -172,24 +196,47 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
                 matrice_propre(mat,player);
                 printf("\n\n%s n'a plus de barriere\n\n",player[tour_test].nomJ);
 
+                if(player[tour_test].numeroJ == 1)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = 1;
+                }
 
 
-                if(gagner_barriere(player) == -1)
+
+
+                if(gagner_barriere(player, Pnombre_joueur) == -1)
                 {
                     printf("Les 2 jouers ont gagnes car ils sont autant avances\n");
                     system("PAUSE");
+                    sauver_score(list_joueur, list_score);
                 }
 
                 else
                 {
 
-                    printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player)].nomJ);
-
+                    printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player, Pnombre_joueur)].nomJ);
+                    player[gagner_barriere(player, Pnombre_joueur)].scoreP ++;
                     system("PAUSE");
+                    sauver_score(list_joueur, list_score);
 
                 }
 
             }
+            if(gagner(player,Pnombre_joueur,tour_test) != -1)
+            {
+                for(int i = 0; i<4; i++)
+                {
+                    if(index_score[i][1] != -1)
+                    {
+                        list_score[index_score[i][0]] = player[index_score[i][1]].scoreP;
+                    }
+                }
+            }
+
 
 
             break;
@@ -199,37 +246,18 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
             printf("Chargement de la partie\n");
             charger_plateau(mat);
             charger_joueur(player, Pnombre_joueur);
-            charger_score(liste_nom, liste_score);
-            for(int i=0; i<100; i++)
+            extraction_score(player, Pnombre_joueur, list_joueur, list_score, index_score);
+            for(int j = 0; j<*Pnombre_joueur; j++)
             {
-                if(*Pnombre_joueur == 2)
+                for(int i=0; i<100; i++)
                 {
-                    if(strcmp(liste_nom[i],player[0].nomJ)==0)
+                    if(strcmp(list_joueur[i],player[j].nomJ)==0)
                     {
-                        player[0].scoreP = liste_score[i];
+                        player[0].scoreP = list_score[i];
                     }
-                    else if(strcmp(liste_nom[i],player[1].nomJ)==0)
+                    else
                     {
-                        player[1].scoreP = liste_score[i];
-                    }
-                }
-                else
-                {
-                    if(strcmp(liste_nom[i],player[0].nomJ)==0)
-                    {
-                        player[0].scoreP = liste_score[i];
-                    }
-                    else if(strcmp(liste_nom[i],player[1].nomJ)==0)
-                    {
-                        player[1].scoreP = liste_score[i];
-                    }
-                    else if(strcmp(liste_nom[i],player[2].nomJ)==0)
-                    {
-                        player[2].scoreP = liste_score[i];
-                    }
-                    else if(strcmp(liste_nom[i],player[3].nomJ)==0)
-                    {
-                        player[3].scoreP = liste_score[i];
+                        player[j].scoreP = 0;
                     }
                 }
             }
