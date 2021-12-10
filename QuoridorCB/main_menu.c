@@ -384,7 +384,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player, Pnombre_joueur)].nomJ);
                         player[gagner_barriere(player, Pnombre_joueur)].scoreP ++;
                         system("PAUSE");
-                        sauver_score(player, Pnombre_joueur);
+                        actualisation_score(player,tour_test);
 
                     }
 
