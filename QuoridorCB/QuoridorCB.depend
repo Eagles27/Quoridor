@@ -165,7 +165,7 @@
 	<string.h>
 	<time.h>
 
-1639132252 source:d:\pierr\documents\algo\quoridor\quoridorcb\fin de jeu.c
+1639139110 source:d:\pierr\documents\algo\quoridor\quoridorcb\fin de jeu.c
 	"Header_Pierre.h"
 
 1639132252 source:d:\pierr\documents\algo\quoridor\quoridorcb\choixpion.c
@@ -180,6 +180,6 @@
 1639132252 source:d:\pierr\documents\algo\quoridor\quoridorcb\bonus.c
 	"Header_Pierre.h"
 
-1639136240 source:d:\pierr\documents\algo\quoridor\quoridorcb\ia.c
+1639139110 source:d:\pierr\documents\algo\quoridor\quoridorcb\ia.c
 	"Header_Pierre.h"
 

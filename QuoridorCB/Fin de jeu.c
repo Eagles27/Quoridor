@@ -21,6 +21,26 @@ int gagner(t_joueur player[4], int* Pnombrejoueur, int tour)
             return -1;
         }
     }
+    else{
+        if(player[0].coordonneY == 16){
+            return 1;
+        }
+        else if(player[1].coordonneX == 0){
+            return 1;
+        }
+        else if(player[2].coordonneY == 0){
+            return 1;
+        }
+        else if(player[3].coordonneX == 16){
+            return 1;
+        }
+        else if(player[tour].barrieresR == 0){
+            return 2;
+        }
+        else{
+            return -1;
+        }
+    }
     return -1;
 }
 
