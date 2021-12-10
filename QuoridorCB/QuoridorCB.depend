@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1639094970 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
+1639097168 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
 	"Header_Pierre.h"
 
-1639092322 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
+1639096458 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
 	<windows.h>
 	<stdio.h>
 	<stdlib.h>
@@ -45,7 +45,7 @@
 1638984924 source:d:\pierr\documents\algo\quoridor\quoridorcb\gotoligcol.c
 	"Header_Pierre.h"
 
-1639094672 source:d:\pierr\documents\algo\quoridor\quoridorcb\main_menu.c
+1639097884 source:d:\pierr\documents\algo\quoridor\quoridorcb\main_menu.c
 	"Header_Pierre.h"
 
 1639094774 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_game.c
@@ -54,7 +54,7 @@
 1639085094 source:d:\pierr\documents\algo\quoridor\quoridorcb\nombre_joueur.c
 	"Header_Pierre.h"
 
-1639087564 source:d:\pierr\documents\algo\quoridor\quoridorcb\setup.c
+1639097144 source:d:\pierr\documents\algo\quoridor\quoridorcb\setup.c
 	"Header_Pierre.h"
 
 1638954340 source:d:\pierr\documents\algo\quoridor\quoridorcb\traduction.c
@@ -180,6 +180,6 @@
 1639080576 source:d:\pierr\documents\algo\quoridor\quoridorcb\bonus.c
 	"Header_Pierre.h"
 
-1639093614 source:d:\pierr\documents\algo\quoridor\quoridorcb\ia.c
+1639096458 source:d:\pierr\documents\algo\quoridor\quoridorcb\ia.c
 	"Header_Pierre.h"
 

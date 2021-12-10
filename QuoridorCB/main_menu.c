@@ -12,7 +12,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
     int numero;
 
     ///0.1. DDV IA
-    int cJ1;
+    char cJ1;
     int cIA;
     int num_tour = 0;
     int org[2];
@@ -195,7 +195,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 while(gagner_ia(player, ia, num_tour) == -1);
 
                 //Victoire
-                if(gagner_ia == 1)
+                if(gagner_ia(player, ia, num_tour) == 1)
                 {
                     if(num_tour%2 == 0)
                     {
@@ -206,7 +206,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         //IA gagne
                     }
                 }
-                else if(gagner_ia == 2)
+                else if(gagner_ia(player, ia, num_tour) == 2)
                 {
                     printf("A faire");
                     system("PAUSE");
@@ -283,22 +283,36 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                 extraction_score(player, Pnombre_joueur, list_joueur, list_score, index_score);
 
-                for(int i = 0; i<4; i++)
+                /*for(int i = 0; i<4; i++)
                 {
                     if(index_score[i][1] != -1)
                     {
                         player[index_score[i][1]].scoreP = list_score[index_score[i][0]];
                     }
-                }
+                }*/
 
                 setup(Pnombre_joueur,debut,mat,player,Ptour,ia);
+
                 tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction, ia);
-
-
-                player[1].barrieresR = 1;
 
                 ///Initialisation bonus
                 case_bonus(mat);
+
+                ///TRICHE
+                for(int i = 0; i<*Pnombre_joueur; i++){
+                    if(strcmp(player[i].nomJ, "RAVAUT")==0){
+                        player[i].scoreP = 10;
+                    }
+                    else if(strcmp(player[i].nomJ, "MAXIME")==0){
+                        player[i].barrieresR += 5;
+                    }
+                    else if(strcmp(player[i].nomJ, "ADRIEN")==0){
+                        player[i].barrieresR += 5;
+                    }
+                    else if(strcmp(player[i].nomJ, "PIERRE")==0){
+                        player[i].barrieresR += 5;
+                    }
+                }
 
                 do
                 {

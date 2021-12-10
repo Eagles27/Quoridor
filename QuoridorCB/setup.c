@@ -13,7 +13,6 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
         player[i].A_annule = 0;
     }
 
-
     if(*Pnombre_joueur == 2)
     {
 
