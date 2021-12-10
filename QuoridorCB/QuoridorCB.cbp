@@ -101,6 +101,9 @@
 		<Unit filename="nombre_joueur.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="save_score.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="setup.c">
 			<Option compilerVar="CC" />
 		</Unit>

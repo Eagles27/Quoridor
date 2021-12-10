@@ -213,6 +213,13 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+                ///Reset Point de la partie + booléen annulation
+
+                for(int i=0; i<4; i++)
+                {
+                    player[i].scoreP = 0;
+                    player[i].A_annule = 0;
+                }
 
 
                 ///Remplissage des donnees de la strcuture pour 4 J
@@ -248,9 +255,10 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         printf("Joueur %d : Saisissez votre nom :\n",i+1);
                         fflush(stdin);
                         scanf("%s",nom);
-                        majuscule(nom);
+                        //majuscule(nom);
                         strcpy(player[i].nomJ,nom);
                         player[i].numeroJ = i+1;
+                        save_score(player,i);
                     }
                     choixPion(player,Pnombre_joueur);
                 }
@@ -260,16 +268,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 system("cls");
                 distribution_barriere(player,Pnombre_joueur);
 
-                extraction_score(player, Pnombre_joueur, list_joueur, list_score, index_score);
 
-
-                ///Reset Point de la partie + booléen annulation
-
-                for(int i=0; i<4; i++)
-                {
-                    player[i].scoreP = 0;
-                    player[i].A_annule = 0;
-                }
 
 
                 ///TRICHE

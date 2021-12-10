@@ -121,4 +121,11 @@ void choix_pion_ia(t_joueur jugador[4], t_IA ia);
 void menu_cote_ia(int tour, t_joueur player[4], t_IA ia);
 int gagner_ia(t_joueur player[4], t_IA ia, int tour);
 
+
+
+//////////////////TEST///////////////////////////////////////
+
+
+void save_score(t_joueur player[4],int i);
+
 #endif // HEADER_PIERRE_H_INCLUDED
