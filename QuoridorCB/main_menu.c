@@ -17,6 +17,8 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
     int num_tour = 0;
     int org[2];
     int dep_ia[2];
+    int action_ia;
+
     srand(time(NULL));
 
     char list_joueur[100][50];
@@ -181,7 +183,10 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         org[1] = ia.coordonneY;
                         dep_ia[0] = ia.coordonneX;
                         dep_ia[1] = ia.coordonneY;
-                        ia_v0(dep_ia, mat);
+                        action_ia = ia_v0(dep_ia, mat, player, ia);
+                        if(action_ia == 2){
+                            ia.barrieresR --;
+                        }
 
                         ia.coordonneX = dep_ia[0];
                         ia.coordonneY = dep_ia[1];

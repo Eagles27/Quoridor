@@ -115,7 +115,7 @@ void sauver_joueur(t_joueur joueur[4], int *Pnombre_joueur);
 ////////////////////////////////////////////////////// IA //////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void ia_v0(int dep_ia[2], int mat[17][17]);
+int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia);
 void deplacement_ia(int dep[3], t_joueur player[4], int mat[17][17], int tour, t_IA ia);
 void choix_pion_ia(t_joueur jugador[4], t_IA ia);
 void menu_cote_ia(int tour, t_joueur player[4], t_IA ia);
