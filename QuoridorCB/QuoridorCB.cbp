@@ -71,6 +71,9 @@
 		<Unit filename="Tour_par_tour.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="actualisation_score.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="bonus.c">
 			<Option compilerVar="CC" />
 		</Unit>

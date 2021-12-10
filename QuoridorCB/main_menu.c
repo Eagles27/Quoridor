@@ -255,9 +255,10 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         printf("Joueur %d : Saisissez votre nom :\n",i+1);
                         fflush(stdin);
                         scanf("%s",nom);
-                        //majuscule(nom);
+                        majuscule(nom);
                         strcpy(player[i].nomJ,nom);
                         player[i].numeroJ = i+1;
+
                         save_score(player,i);
                     }
                     choixPion(player,Pnombre_joueur);
@@ -345,8 +346,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 {
                     system("cls");
                     printf("Gagne!!!");
-                    player[tour_test].scoreP ++;
-                    sauver_score(player, Pnombre_joueur);
+                    actualisation_score(player,tour_test);
                     system("PAUSE");
                 }
 
