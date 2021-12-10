@@ -1,6 +1,7 @@
 #include "Header_Pierre.h"
 
 /*
+
 - mur verticale : 0xB3
 - mur horizontal : 0xC4
 - mur "+" : 0xC5

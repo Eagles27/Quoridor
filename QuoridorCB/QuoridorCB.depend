@@ -69,17 +69,17 @@
 1639132252 source:d:\pierr\documents\algo\quoridor\quoridorcb\tour_par_tour.c
 	"Header_Pierre.h"
 
-1638977198 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\affich_mat_avec_coord.c
+1639135199 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\affich_mat_avec_coord.c
 	"Header_Pierre.h"
 
-1638977198 c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\header_pierre.h
+1639135206 c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\header_pierre.h
 	<windows.h>
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<string.h>
 
-1638982703 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\affiregles.c
+1639135205 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\affiregles.c
 	"Header_Pierre.h"
 
 1638958776 c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\jeu.h
@@ -88,64 +88,64 @@
 	<time.h>
 	<windows.h>
 
-1638982498 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\choix_j.c
+1639135199 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\choix_j.c
 	"Header_Pierre.h"
 
-1638958776 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\distribution_barriere.c
+1639135199 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\distribution_barriere.c
 	"Header_Pierre.h"
 
-1638982670 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\gotoligcol.c
+1639135199 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\gotoligcol.c
 	"Header_Pierre.h"
 
-1638958776 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\initialisationmatriceordi.c
+1639135199 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\initialisationmatriceordi.c
 	"Header_Pierre.h"
 
-1638982498 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\nombre_joueur.c
+1639135206 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\nombre_joueur.c
 	"Header_Pierre.h"
 
-1638977198 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\sauvegarde-charger.c
+1639135206 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\sauvegarde-charger.c
 	"Header_Pierre.h"
 
-1638977198 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\déplacement.c
+1639135206 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\déplacement.c
 	"Header_Pierre.h"
 
-1638977198 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main.c
+1639135206 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main.c
 	"Header_Pierre.h"
 
-1638982757 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main_menu.c
+1639137016 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main_menu.c
 	"Header_Pierre.h"
 
-1638958776 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\matrice_visible.c
+1639136633 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\matrice_visible.c
 	"Header_Pierre.h"
 
-1638977714 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\menu_game.c
+1639135206 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\menu_game.c
 	"Header_Pierre.h"
 
-1638958776 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\placer_barriere.c
+1639135199 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\placer_barriere.c
 	"Header_Pierre.h"
 
-1638958776 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\saisie_coord.c
+1639135205 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\saisie_coord.c
 	"Header_Pierre.h"
 
-1638983676 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\setup.c
+1639137364 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\setup.c
 	"Header_Pierre.h"
 
-1638983161 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\tour_par_tour.c
+1639135206 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\tour_par_tour.c
 	"Header_Pierre.h"
 
-1638977198 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\traduction.c
+1639135199 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\traduction.c
 	"Header_Pierre.h"
 
-1638977198 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\menu_cote.c
+1639135206 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\menu_cote.c
 	"Header_Pierre.h"
 
 1639133420 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_cote.c
 	"Header_Pierre.h"
 
-1638977198 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\fin de jeu.c
+1639135206 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\fin de jeu.c
 	"Header_Pierre.h"
 
-1638977092 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\choixpion.c
+1639135206 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\choixpion.c
 	"Header_Pierre.h"
 
 1638958776 c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\header_adrien.h
@@ -155,7 +155,7 @@
 	<string.h>
 	<time.h>
 
-1638976948 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\gagner_barriere.c
+1639135206 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\gagner_barriere.c
 	"Header_Pierre.h"
 
 1638950346 d:\pierr\documents\algo\quoridor\quoridorcb\header_adrien.h
@@ -181,5 +181,14 @@
 	"Header_Pierre.h"
 
 1639145934 source:d:\pierr\documents\algo\quoridor\quoridorcb\ia.c
+	"Header_Pierre.h"
+
+1639135206 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\bonus.c
+	"Header_Pierre.h"
+
+1639135206 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\ia.c
+	"Header_Pierre.h"
+
+1639135206 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\score.c
 	"Header_Pierre.h"
 

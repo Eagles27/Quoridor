@@ -35,20 +35,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
         }
     }
 
-    /*
-    //Declaration tableau dynamique pour les scores
-    int *liste_score;
-    liste_score = (int*)malloc(100*sizeof(int));
-
-    //Declaration tableau dynamique pour les noms
-    char** liste_nom;
-    liste_score = (char**)malloc(100*sizeof(char*));
-    if(liste_nom != NULL){
-        for(int i = 0; i<100; i++){
-            liste_nom[i] = (char*)malloc(50*sizeof(char));
-        }
-    }*/
-
 
     /// Test
 
@@ -274,10 +260,12 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                 setup(Pnombre_joueur,debut,mat,player,Ptour,ia);
 
-                tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction, ia);
+                for(int i=0; i<4; i++)
+                {
+                    player[i].scoreP = 0;
+                    player[i].A_annule = 0;
+                }
 
-                ///Initialisation bonus
-                case_bonus(mat);
 
                 ///TRICHE
                 for(int i = 0; i<*Pnombre_joueur; i++)
@@ -299,6 +287,16 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         player[i].barrieresR += 5;
                     }
                 }
+
+                setup(Pnombre_joueur,debut,mat,player,Ptour,ia);
+
+                tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction, ia);
+
+
+
+                ///Initialisation bonus
+                case_bonus(mat);
+
 
                 do
                 {

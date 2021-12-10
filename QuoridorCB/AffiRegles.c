@@ -25,12 +25,12 @@ void affiregles()
     printf("Quand 2 pions se retrouvent en vis-a-vis sur 2 cases voisines non separees par une barriere,\n");
     printf("le joueur dont c'est le tour peut sauter par-dessus son adversaire et se retrouver derriere lui.\n");
     printf("\n");
-    printf("Si une barriere se trouve derrière le pion saute, le joueur peut choisir de bifurquer a droite ou a gauche du pion saute.\n");
+    printf("Si une barriere se trouve derriï¿½re le pion saute, le joueur peut choisir de bifurquer a droite ou a gauche du pion saute.\n");
     system("PAUSE");
     printf("////////////////////\n");
     printf("REGLE POUR 4 JOUEURS\n");
     printf("En debut de partie, les 4 pions sont disposes au centre de chacun des 4 cotes du plateau et chaque joueur dispose de 5 barrieres.\n");
-    printf("Les regles sont strictement identiques, mais on ne peut sauter plus d'un pion à la fois.\n");
+    printf("Les regles sont strictement identiques, mais on ne peut sauter plus d'un pion ï¿½ la fois.\n");
     system("PAUSE");
     system("cls");
 }
