@@ -56,9 +56,9 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4])
 /// RESET DES TOKENS
 
 
-            //for(int i=0; i<4; i++)
+            for(int i=0; i<4; i++)
             {
-                // player[i].jetonJ = '1';     // Valeur donnee arbitrairement
+                player[i].jetonJ = '1';     // Valeur donnee arbitrairement
 
             }
 
