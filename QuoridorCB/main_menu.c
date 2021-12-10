@@ -226,19 +226,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-/// RESET DES TOKENS
-
-
-                //for(int i=0; i<4; i++)
-                {
-                    // player[i].jetonJ = '1';     // Valeur donnee arbitrairement
-
-                }
-
-
-
-
-
                 ///Remplissage des donnees de la strcuture pour 4 J
 
                 if(*Pnombre_joueur == 4)
@@ -283,16 +270,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 debut = choix_j(*Pnombre_joueur); //SSPG pour déterminer qui commence
                 system("cls");
                 distribution_barriere(player,Pnombre_joueur);
-
-                extraction_score(player, Pnombre_joueur, list_joueur, list_score, index_score);
-
-                /*for(int i = 0; i<4; i++)
-                {
-                    if(index_score[i][1] != -1)
-                    {
-                        player[index_score[i][1]].scoreP = list_score[index_score[i][0]];
-                    }
-                }*/
 
                 setup(Pnombre_joueur,debut,mat,player,Ptour,ia);
 

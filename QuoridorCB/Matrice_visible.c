@@ -7,7 +7,7 @@
 - mur verticale double : 0xBA
 - mur horizontal double : 0xCD
 - mur "+" double : 0xCE
-- rond : 0x09
+- rond : 0x0F
 */
 
 void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)

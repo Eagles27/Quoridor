@@ -136,8 +136,6 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                 if(player[0].A_annule == 0){
                     ia.coordonneX = ia.coordonneX_av;
                     ia.coordonneY = ia.coordonneY_av;
-                    printf("DS SSPRG %d, %d", ia.coordonneX, ia.coordonneY);
-                    system("PAUSE");
 
                     player[0].A_annule = 1;
                 }

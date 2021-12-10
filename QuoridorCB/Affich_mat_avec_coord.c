@@ -13,10 +13,10 @@ void affiche(int tab[17][17])
     printf("\n\n");
 
     // affichage du tableau
-    for(int i=0; i<17; i++)
+    for(i=0; i<17; i++)
     {
         printf("%c   ",'a'+i);
-        for(int j=0; j<17; j++)
+        for(j=0; j<17; j++)
         {
             printf("%d  ", tab[i][j]);
         }
