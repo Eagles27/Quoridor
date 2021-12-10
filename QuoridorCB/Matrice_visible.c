@@ -10,7 +10,7 @@
 - rond : 0x09
 */
 
-void matrice_propre(int tab[17][17], t_joueur player[4])
+void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)
 {
     ///0.0. DDV temporaire
     char caractereJ[4];
@@ -83,6 +83,9 @@ void matrice_propre(int tab[17][17], t_joueur player[4])
                 }
                 else if(tab[i][j]==13){
                     printf(" %c ", 0x0F);
+                }
+                else if(tab[i][j]==14){
+                    printf(" %c ", ia.jeton);
                 }
             }
         }

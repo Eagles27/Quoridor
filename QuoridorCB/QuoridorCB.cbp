@@ -47,6 +47,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Header_Pierre.h" />
+		<Unit filename="IA.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="InitialisationMatriceOrdi.c">
 			<Option compilerVar="CC" />
 		</Unit>

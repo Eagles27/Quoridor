@@ -1,6 +1,6 @@
 #include "Header_Pierre.h"
 
-void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], int* Ptour)
+void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], int* Ptour, t_IA ia)
 {
     char cJ1,cJ2,cJ3,cJ4;
 
@@ -23,8 +23,8 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
             do
             {
                 system("cls");
-                matrice_propre(mat,player);
-                menu_cote(Ptour,Pnombre_joueur,player);
+                matrice_propre(mat,player,ia);
+                menu_cote(Ptour,Pnombre_joueur,player,ia);
                 printf("%s:\n\n",player[0].nomJ);
                 printf("Choisissez une ligne A --> Q\n");
                 fflush(stdin);
@@ -42,8 +42,8 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
 
 
             system("cls");
-            matrice_propre(mat,player);
-            menu_cote(Ptour,Pnombre_joueur,player);
+            matrice_propre(mat,player,ia);
+            menu_cote(Ptour,Pnombre_joueur,player,ia);
 
 
 
@@ -51,8 +51,8 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
             {
                 *Ptour = 2;
                 system("cls");
-                matrice_propre(mat,player);
-                menu_cote(Ptour,Pnombre_joueur,player);
+                matrice_propre(mat,player,ia);
+                menu_cote(Ptour,Pnombre_joueur,player,ia);
                 printf("%s:\n\n",player[1].nomJ);
                 printf("Choisissez une ligne A --> Q\n");
                 fflush(stdin);
@@ -70,8 +70,8 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
 
 
             system("cls");
-            matrice_propre(mat,player);
-            menu_cote(Ptour,Pnombre_joueur,player);
+            matrice_propre(mat,player,ia);
+            menu_cote(Ptour,Pnombre_joueur,player,ia);
 
         }
 
@@ -83,8 +83,8 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
             {
                 *Ptour = 2;
                 system("cls");
-                matrice_propre(mat,player);
-                menu_cote(Ptour,Pnombre_joueur,player);
+                matrice_propre(mat,player,ia);
+                menu_cote(Ptour,Pnombre_joueur,player,ia);
                 printf("%s:\n\n",player[1].nomJ);
                 printf("Choisissez une ligne A --> Q\n");
                 fflush(stdin);
@@ -102,16 +102,16 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
 
 
             system("cls");
-            matrice_propre(mat,player);
-            menu_cote(Ptour,Pnombre_joueur,player);
+            matrice_propre(mat,player,ia);
+            menu_cote(Ptour,Pnombre_joueur,player,ia);
 
 
             do
             {
                 *Ptour = 1;
                 system("cls");
-                matrice_propre(mat,player);
-                menu_cote(Ptour,Pnombre_joueur,player);
+                matrice_propre(mat,player,ia);
+                menu_cote(Ptour,Pnombre_joueur,player,ia);
                 printf("%s:\n\n",player[0].nomJ);
                 printf("Choisissez une ligne A --> Q\n");
                 fflush(stdin);
@@ -129,8 +129,8 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
 
             mat[player[0].coordonneY][player[0].coordonneX] = 5;
             system("cls");
-            matrice_propre(mat,player);
-            menu_cote(Ptour,Pnombre_joueur,player);
+            matrice_propre(mat,player,ia);
+            menu_cote(Ptour,Pnombre_joueur,player,ia);
 
 
         }
@@ -146,8 +146,8 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
             *Ptour = 1;
 
             system("cls");
-            matrice_propre(mat,player);
-            menu_cote(Ptour,Pnombre_joueur,player);
+            matrice_propre(mat,player,ia);
+            menu_cote(Ptour,Pnombre_joueur,player,ia);
             printf("%s:\n\n",player[0].nomJ);
             printf("Choisissez une ligne A --> Q\n");
             fflush(stdin);
@@ -169,8 +169,8 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
 
 
         system("cls");
-        matrice_propre(mat,player);
-        menu_cote(Ptour,Pnombre_joueur,player);
+        matrice_propre(mat,player,ia);
+        menu_cote(Ptour,Pnombre_joueur,player,ia);
 
         /// Joueur 2
         do
@@ -178,8 +178,8 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
             *Ptour = 2;
 
             system("cls");
-            matrice_propre(mat,player);
-            menu_cote(Ptour,Pnombre_joueur,player);
+            matrice_propre(mat,player,ia);
+            menu_cote(Ptour,Pnombre_joueur,player,ia);
             printf("%s:\n\n",player[1].nomJ);
             printf("Choisissez une ligne a --> q\n");
             fflush(stdin);
@@ -201,8 +201,8 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
 
 
         system("cls");
-        matrice_propre(mat,player);
-        menu_cote(Ptour,Pnombre_joueur,player);
+        matrice_propre(mat,player,ia);
+        menu_cote(Ptour,Pnombre_joueur,player,ia);
 
 
         /// Joueur 3
@@ -212,8 +212,8 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
             *Ptour = 3;
 
             system("cls");
-            matrice_propre(mat,player);
-            menu_cote(Ptour,Pnombre_joueur,player);
+            matrice_propre(mat,player,ia);
+            menu_cote(Ptour,Pnombre_joueur,player,ia);
             printf("%s:\n\n",player[2].nomJ);
             printf("Choisissez une ligne A --> Q\n");
             fflush(stdin);
@@ -235,8 +235,8 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
 
 
         system("cls");
-        matrice_propre(mat,player);
-        menu_cote(Ptour,Pnombre_joueur,player);
+        matrice_propre(mat,player,ia);
+        menu_cote(Ptour,Pnombre_joueur,player,ia);
 
 
         /// Joueur 4
@@ -246,8 +246,8 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
             *Ptour = 4;
 
             system("cls");
-            matrice_propre(mat,player);
-            menu_cote(Ptour,Pnombre_joueur,player);
+            matrice_propre(mat,player,ia);
+            menu_cote(Ptour,Pnombre_joueur,player,ia);
             printf("%s:\n\n",player[3].nomJ);
             printf("Choisissez une ligne a --> q\n");
             fflush(stdin);
@@ -269,8 +269,8 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
 
 
         system("cls");
-        matrice_propre(mat,player);
-        menu_cote(Ptour,Pnombre_joueur,player);
+        matrice_propre(mat,player,ia);
+        menu_cote(Ptour,Pnombre_joueur,player,ia);
 
 
         *Ptour = debut;     ///Attribution du joueur qui commence

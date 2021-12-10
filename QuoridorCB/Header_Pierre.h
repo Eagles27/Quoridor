@@ -27,21 +27,37 @@ typedef struct joueur
 
 } t_joueur;
 
+typedef struct IA
+{
+    char nom[3];
+    int score;
+    char jeton;
+    int barrieresR;
+    int numero;
+    int coordonneX;
+    int coordonneY;
+    int coordonneX_av;
+    int coordonneY_av;
+    int coordonneX_org;
+    int coordonneY_org;
+
+} t_IA;
+
                                                  ///Prototype
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////MENU//////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour, int mat_avant[17][17], int *Action);
-void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4]);
-void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4]);
+void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour, int mat_avant[17][17], int *Action, t_IA ia, int tour);
+void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia);
+void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4], t_IA ia);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////Actions/////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,t_joueur player[4]);
+void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,t_joueur player[4], t_IA ia);
 int placer_barriere(int tab[17][17], int place[2], char saisie);
 void affiregles();
 
@@ -60,7 +76,7 @@ int gagner(t_joueur player[4], int* Pnombrejoueur, int tour);
 ///Matrivce
 void genematrice(int tab[17][17]);
 void affiche(int tab[17][17]);
-void matrice_propre(int tab[17][17],t_joueur player[4]);
+void matrice_propre(int tab[17][17],t_joueur player[4], t_IA);
 
 ///Gestion entrées
 int traduction(char entree);
@@ -69,7 +85,7 @@ int saisie_dir();
 void majuscule(char mot[20]);
 
 ///Gestion joueur
-void tour_par_tour(int* Pnombre_joueur, int mat[17][17], t_joueur player[4],int* Ptour, int mat_avant[17][17], int *Action);
+void tour_par_tour(int* Pnombre_joueur, int mat[17][17], t_joueur player[4],int* Ptour, int mat_avant[17][17], int *Action, t_IA ia);
 int choix_j(int nombre);
 
 ///Habillage
@@ -81,7 +97,7 @@ void gotoligcol( int lig, int col );
 
 void distribution_barriere(t_joueur player[4],int *nombrejoueur);
 int nombre_joueur();
-void setup(int *Pnombrejoueur, int debut, int mat[17][17],t_joueur player[4], int* Ptour);
+void setup(int *Pnombrejoueur, int debut, int mat[17][17],t_joueur player[4], int* Ptour, t_IA ia);
 void choixPion(t_joueur jugador[4], int *PnbJ);
 void case_bonus(int mat[17][17]);
 
@@ -95,5 +111,14 @@ void charger_score(char liste_nom[100][50], int liste_score[100]);
 void sauver_score(t_joueur joueur[4], int *PnbJ);
 void sauver_joueur(t_joueur joueur[4], int *Pnombre_joueur);
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////// IA //////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void ia_v0(int dep_ia[2], int mat[17][17]);
+void deplacement_ia(int dep[3], t_joueur player[4], int mat[17][17], int tour, t_IA ia);
+void choix_pion_ia(t_joueur jugador[4], t_IA ia);
+void menu_cote_ia(int tour, t_joueur player[4], t_IA ia);
+int gagner_ia(t_joueur player[4], t_IA ia, int tour);
 
 #endif // HEADER_PIERRE_H_INCLUDED

@@ -83,3 +83,36 @@ void choixPion(t_joueur jugador[4], int *PnbJ)
         jugador[3].jetonJ = list_car3[index];
     }
 }
+
+///Choix Pion IA
+
+void choix_pion_ia(t_joueur jugador[4], t_IA ia)
+{
+    srand(time(NULL));
+
+    int index;
+    char list_car[8] = {0X40, 0x2A, 0x23, 0x26, 0x25, 0x3F, 0x9C, 0x24};
+    char list_car1[7];
+
+
+    index = rand()%8;
+
+    jugador[0].jetonJ = list_car[index];
+    for(int j = 0; j<8; j++)
+    {
+        if(j < index)
+        {
+            list_car1[j] = list_car[j];
+        }
+        else if(j>index)
+        {
+            list_car1[j-1] = list_car[j];
+        }
+    }
+
+    index = rand()%7;
+    ia.jeton = list_car1[index];
+    /*printf("%c", ia.jeton);
+    system("PAUSE");*/
+
+}
