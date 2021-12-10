@@ -142,7 +142,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                 /*printf("%s, %c", ia.nom, ia.jeton);
                 system("PAUSE");*/
-                mat[ia.coordonneY][ia.coordonneX] = 14;
+                mat[ia.coordonneY][ia.coordonneX] = 6;
 
                 //Initialisation bonus
                 case_bonus(mat);
@@ -182,14 +182,15 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         dep_ia[0] = ia.coordonneX;
                         dep_ia[1] = ia.coordonneY;
                         action_ia = ia_v0(dep_ia, mat, player, ia);
-                        if(action_ia == 2){
+                        if(action_ia == 2)
+                        {
                             ia.barrieresR --;
                         }
 
                         ia.coordonneX = dep_ia[0];
                         ia.coordonneY = dep_ia[1];
                         mat[org[1]][org[0]]=0;
-                        mat[ia.coordonneY][ia.coordonneX]=14;
+                        mat[ia.coordonneY][ia.coordonneX]=6;
 
                         num_tour++;
                     }
@@ -279,17 +280,22 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 case_bonus(mat);
 
                 ///TRICHE
-                for(int i = 0; i<*Pnombre_joueur; i++){
-                    if(strcmp(player[i].nomJ, "RAVAUT")==0){
+                for(int i = 0; i<*Pnombre_joueur; i++)
+                {
+                    if(strcmp(player[i].nomJ, "RAVAUT")==0)
+                    {
                         player[i].scoreP = 10;
                     }
-                    else if(strcmp(player[i].nomJ, "MAXIME")==0){
+                    else if(strcmp(player[i].nomJ, "MAXIME")==0)
+                    {
                         player[i].barrieresR += 5;
                     }
-                    else if(strcmp(player[i].nomJ, "ADRIEN")==0){
+                    else if(strcmp(player[i].nomJ, "ADRIEN")==0)
+                    {
                         player[i].barrieresR += 5;
                     }
-                    else if(strcmp(player[i].nomJ, "PIERRE")==0){
+                    else if(strcmp(player[i].nomJ, "PIERRE")==0)
+                    {
                         player[i].barrieresR += 5;
                     }
                 }
@@ -400,35 +406,121 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
             printf("Chargement de la partie\n");
             charger_plateau(mat);
             charger_joueur(player, Pnombre_joueur);
-            extraction_score(player, Pnombre_joueur, list_joueur, list_score, index_score);
-            for(int j = 0; j<*Pnombre_joueur; j++)
+            choixPion(player, Pnombre_joueur);
+
+            for(int i = 0; i<*Pnombre_joueur; i++)
             {
-                for(int i=0; i<100; i++)
+                printf("%s\n", player[i].nomJ);
+                printf("%d\n", player[i].scoreP);
+                printf("%c\n", player[i].jetonJ);
+                printf("%d\n", player[i].numeroJ);
+                printf("%d\n", player[i].coordonneX);
+                printf("%d\n", player[i].coordonneY);
+                printf("%d\n", player[i].coordonneX_org);
+                printf("%d\n", player[i].coordonneY_org);
+            }
+
+            system("PAUSE");
+            system("cls");
+
+            do
+            {
+                for(int i = 0; i<17; i++)
                 {
-                    if(strcmp(list_joueur[i],player[j].nomJ)==0)
+                    for(int j = 0; j<17; j++)
                     {
-                        player[0].scoreP = list_score[i];
+                        mat_avant[i][j] = mat[i][j];
                     }
-                    else
+                }
+
+                system("cls");
+                matrice_propre(mat,player,ia);
+                menu_cote(Ptour,Pnombre_joueur,player,ia);
+                player[*Ptour-1].coordonneX_av = player[*Ptour-1].coordonneX;
+                player[*Ptour-1].coordonneY_av = player[*Ptour-1].coordonneY;
+                menu_game(mat,Pnombre_joueur,player,Ptour, mat_avant, PAction, ia, num_tour);
+
+                if(*Pnombre_joueur == 2)
+                {
+                    if(*Ptour == 1)
                     {
-                        player[j].scoreP = 0;
+                        tour_test = *Ptour-1;
+                    }
+                    else if(*Ptour == 2)
+                    {
+                        tour_test = 1;
+                    }
+                }
+
+
+
+                tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction, ia);
+                sauver_plateau(mat_avant);
+
+            }
+            while(gagner(player,Pnombre_joueur,tour_test) == -1);
+
+
+            ///Test fin de partie car joueur qui atteint la fin
+            if (gagner(player,Pnombre_joueur,tour_test) == 1)
+            {
+                system("cls");
+                printf("Gagne!!!");
+                player[tour_test].scoreP ++;
+                sauver_score(player, Pnombre_joueur);
+                system("PAUSE");
+            }
+
+
+            ///Test fin de partie car joueur n'a plus de barrieres
+
+            else if(gagner(player,Pnombre_joueur,tour_test) == 2)
+            {
+                system("cls");
+                matrice_propre(mat,player,ia);
+                printf("\n\n%s n'a plus de barriere\n\n",player[tour_test].nomJ);
+
+                if(player[tour_test].numeroJ == 1)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = 1;
+                }
+
+
+
+
+                if(gagner_barriere(player, Pnombre_joueur) == -1)
+                {
+                    printf("Les 2 jouers ont gagnes car ils sont autant avances\n");
+                    system("PAUSE");
+                    sauver_score(player, Pnombre_joueur);
+                }
+
+                else
+                {
+
+                    printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player, Pnombre_joueur)].nomJ);
+                    player[gagner_barriere(player, Pnombre_joueur)].scoreP ++;
+                    system("PAUSE");
+                    sauver_score(player, Pnombre_joueur);
+
+                }
+
+            }
+            if(gagner(player,Pnombre_joueur,tour_test) != -1)
+            {
+                for(int i = 0; i<4; i++)
+                {
+                    if(index_score[i][1] != -1)
+                    {
+                        list_score[index_score[i][0]] = player[index_score[i][1]].scoreP;
                     }
                 }
             }
 
-            system("cls");
-            tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction, ia);
-
-
-            while(gagne == 1)
-            {
-                system("cls");
-                matrice_propre(mat,player,ia);
-                menu_cote(Ptour,Pnombre_joueur,player,ia);
-                menu_game(mat,Pnombre_joueur,player,Ptour, mat_avant, PAction, ia, num_tour);
-                tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction, ia);
-                sauver_plateau(mat);
-            }
 
             break;
         }
@@ -442,6 +534,8 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
         case 4:
         {
+            sauver_plateau(mat);
+            sauver_joueur(player, Pnombre_joueur);
             sortie = -1;
             system("cls");
             printf("Deconnexion...\n");

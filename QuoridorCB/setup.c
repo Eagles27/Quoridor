@@ -229,7 +229,7 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
         }
         while ((cJ3!='A')&&(cJ3!='C')&&(cJ3!='E')&&(cJ3!='G')&&(cJ3!='I')&&(cJ3!='K')&&(cJ3!='M')&&(cJ3!='O')&&(cJ3!='Q'));
 
-        mat[player[2].coordonneY][player[2].coordonneX] = 9;
+        mat[player[2].coordonneY][player[2].coordonneX] = 8;
 
 
 
@@ -263,7 +263,7 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
         }
         while ((cJ4!='a')&&(cJ4!='c')&&(cJ4!='e')&&(cJ4!='g')&&(cJ4!='i')&&(cJ4!='k')&&(cJ4!='m')&&(cJ4!='o')&&(cJ4!='q'));
 
-        mat[player[3].coordonneY][player[3].coordonneX] = 11;
+        mat[player[3].coordonneY][player[3].coordonneX] = 9;
 
 
 

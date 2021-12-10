@@ -4,27 +4,6 @@
 
 int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
 {
-
-    ///TEST
-    mat[13][0] = 2;
-    mat[13][1] = 2;
-    mat[13][2] = 2;
-    mat[13][3] = 2;
-    mat[13][4] = 2;
-    mat[13][5] = 2;
-    mat[13][6] = 2;
-    mat[13][7] = 2;
-    mat[13][8] = 2;
-    mat[13][9] = 2;
-    mat[13][10] = 2;
-    mat[13][11] = 2;
-    mat[13][12] = 2;
-    mat[13][13] = 2;
-    mat[13][14] = 2;
-    mat[13][15] = 2;
-    mat[13][16] = 2;
-    //mat[14][15] = 3;
-
 //Valeur suivant action IA
 //-1 si rien / 1 si bouge / 2 si barriere
 
@@ -33,12 +12,12 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
     if(mat[dep_ia[1]-1][dep_ia[0]]==1)
     {
         //La case est libre
-        if((mat[dep_ia[1]-2][dep_ia[0]]==0)||(mat[dep_ia[1]-2][dep_ia[0]]==13))
+        if((mat[dep_ia[1]-2][dep_ia[0]]==0)||(mat[dep_ia[1]-2][dep_ia[0]]==4))
         {
             dep_ia[1] -= 2;
             return 1;
         }
-        //La case est occupée par un joueur pas le saut est possible
+        //La case est occupï¿½e par un joueur pas le saut est possible
         else if(mat[dep_ia[1]-3][dep_ia[0]]==1)
         {
             dep_ia[1] -= 4;
@@ -112,7 +91,7 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                             return 2;
                         }
                     }
-                    //On met une barriere juste avant la ligne d'arrivée
+                    //On met une barriere juste avant la ligne d'arrivï¿½e
                     //On test si la premiere place est libre
                     else if((mat[15][0]==1)&&(mat[15][2]==1))
                     {
@@ -167,7 +146,7 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                     else if((mat[15][12]==1)&&(mat[15][14]==1))
                     {
                         mat[15][12] = 2;
-                        mat[15][13] = 2;
+                        mat[15][4] = 2;
                         mat[15][14] = 2;
                         return 2;
                     }
@@ -194,14 +173,14 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
 //Il y a une barriere devant
     else if((mat[dep_ia[1]-1][dep_ia[0]]==2)||(mat[dep_ia[1]-1][dep_ia[0]]==3))
     {
-        //On est pas au bord du plateau à droite et a gauche
+        //On est pas au bord du plateau ï¿½ droite et a gauche
         if((dep_ia[0]!=16)&&(dep_ia[0]!= 0))
         {
-            //Il n'y a pas de barriere à droite
+            //Il n'y a pas de barriere ï¿½ droite
             if((mat[dep_ia[1]][dep_ia[0]+1]!=2)&&(mat[dep_ia[1]][dep_ia[0]+1]!=3))
             {
                 //Il n'a y pas un joueur a droite
-                if((mat[dep_ia[1]][dep_ia[0]+2]==0)||(mat[dep_ia[1]][dep_ia[0]+2]==13))
+                if((mat[dep_ia[1]][dep_ia[0]+2]==0)||(mat[dep_ia[1]][dep_ia[0]+2]==4))
                 {
                     dep_ia[0] += 2;
                     return 1;
@@ -217,14 +196,14 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                 else
                 {
                     //On peut faire un decalage en haut
-                    if(((mat[dep_ia[1]+2][dep_ia[0]+2]==0)||(mat[dep_ia[1]+2][dep_ia[0]+2]==13))&&(mat[dep_ia[1]+1][dep_ia[0]+2]==1))
+                    if(((mat[dep_ia[1]+2][dep_ia[0]+2]==0)||(mat[dep_ia[1]+2][dep_ia[0]+2]==4))&&(mat[dep_ia[1]+1][dep_ia[0]+2]==1))
                     {
                         dep_ia[0] += 2;
                         dep_ia[1] -= 2;
                         return 1;
                     }
                     //On peut faire un saut en bas
-                    else if(((mat[dep_ia[1]+2][dep_ia[0]+2]==0)||(mat[dep_ia[1]+2][dep_ia[0]+2]==13))&&(mat[dep_ia[1]-1][dep_ia[0]+2]==1)&&(dep_ia[1]!=14))
+                    else if(((mat[dep_ia[1]+2][dep_ia[0]+2]==0)||(mat[dep_ia[1]+2][dep_ia[0]+2]==4))&&(mat[dep_ia[1]-1][dep_ia[0]+2]==1)&&(dep_ia[1]!=14))
                     {
                         dep_ia[0] += 2;
                         dep_ia[1] += 2;
@@ -275,7 +254,7 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                                     return 2;
                                 }
                             }
-                            //On met une barriere juste avant la ligne d'arrivée
+                            //On met une barriere juste avant la ligne d'arrivï¿½e
                             //On test si la premiere place est libre
                             else if((mat[15][0]==1)&&(mat[15][2]==1))
                             {
@@ -330,7 +309,7 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                             else if((mat[15][12]==1)&&(mat[15][14]==1))
                             {
                                 mat[15][12] = 2;
-                                mat[15][13] = 2;
+                                mat[15][4] = 2;
                                 mat[15][14] = 2;
                                 return 2;
                             }
@@ -358,7 +337,7 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
             else if((mat[dep_ia[1]][dep_ia[0]-1]!=2)&&(mat[dep_ia[1]][dep_ia[0]-1]!=3))
             {
                 //Il n'y a pas de joueur a gauche
-                if((mat[dep_ia[1]][dep_ia[0]-2]==0)||(mat[dep_ia[1]][dep_ia[0]-2]==13))
+                if((mat[dep_ia[1]][dep_ia[0]-2]==0)||(mat[dep_ia[1]][dep_ia[0]-2]==4))
                 {
                     dep_ia[0] -= 2;
                     return 1;
@@ -430,7 +409,7 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                                     return 2;
                                 }
                             }
-                            //On met une barriere juste avant la ligne d'arrivée
+                            //On met une barriere juste avant la ligne d'arrivï¿½e
                             //On test si la premiere place est libre
                             else if((mat[15][0]==1)&&(mat[15][2]==1))
                             {
@@ -485,7 +464,7 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                             else if((mat[15][12]==1)&&(mat[15][14]==1))
                             {
                                 mat[15][12] = 2;
-                                mat[15][13] = 2;
+                                mat[15][4] = 2;
                                 mat[15][14] = 2;
                                 return 2;
                             }
@@ -509,23 +488,23 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
             }
             ///Attention j'exclu le cas ou un joueur se trouve derriere l'ia
             //On ne peut pas se decaler alors on recule
-            else if((dep_ia[1]!=16)&&((mat[dep_ia[1]+2][dep_ia[0]]==0)||(mat[dep_ia[1]+2][dep_ia[0]]==13)))
+            else if((dep_ia[1]!=16)&&((mat[dep_ia[1]+2][dep_ia[0]]==0)||(mat[dep_ia[1]+2][dep_ia[0]]==4)))
             {
                 dep_ia[1] += 2;
                 return 1;
             }
         }
-        //On est  au bord du plateau à gauche
+        //On est  au bord du plateau ï¿½ gauche
         else if(dep_ia[0]==0)
         {
-            //Il n'y a pas de barriere à droite
+            //Il n'y a pas de barriere ï¿½ droite
             if((mat[dep_ia[1]][dep_ia[0]-1]!=2)&&(mat[dep_ia[1]][dep_ia[0]-1]!=3))
             {
                 dep_ia[0] += 2;
                 return 1;
             }
             //Il y a une barriere a droite mais on peut reculer
-            /*else if((mat[dep_ia[1]-2][dep_ia[0]]==0)&&(mat[dep_ia[1]-2][dep_ia[0]]==13)&&(mat[dep_ia[1]-1][dep_ia[0]]==1))
+            /*else if((mat[dep_ia[1]-2][dep_ia[0]]==0)&&(mat[dep_ia[1]-2][dep_ia[0]]==4)&&(mat[dep_ia[1]-1][dep_ia[0]]==1))
             {
                 dep_ia[0] -= 2;
                 return 1;
@@ -571,7 +550,7 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                         mat[player[0].coordonneY+1][player[0].coordonneX+2] = 2;
                         return 2;
                     }
-                    //On met une barriere juste avant la ligne d'arrivée
+                    //On met une barriere juste avant la ligne d'arrivï¿½e
                     //On test si la premiere place est libre
                     else if((mat[15][0]==1)&&(mat[15][2]==1))
                     {
@@ -626,7 +605,7 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                     else if((mat[15][12]==1)&&(mat[15][14]==1))
                     {
                         mat[15][12] = 2;
-                        mat[15][13] = 3;
+                        mat[15][4] = 3;
                         mat[15][14] = 2;
                         return 2;
                     }
@@ -652,7 +631,7 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
         else if(dep_ia[0]==16)
         {
             //On peut se decaler a gauche (il n'y a pas de barriere)
-            if(((mat[dep_ia[1]][dep_ia[0]-2]==0)||(mat[dep_ia[1]][dep_ia[0]-2]==13))&&(mat[dep_ia[1]][dep_ia[0]-1]==1))
+            if(((mat[dep_ia[1]][dep_ia[0]-2]==0)||(mat[dep_ia[1]][dep_ia[0]-2]==4))&&(mat[dep_ia[1]][dep_ia[0]-1]==1))
             {
                 dep_ia[0] -= 2;
                 return 1;
@@ -664,14 +643,14 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                 return 1;
             }
             //On ne peut pas sauter mais decalage en haut
-            else if(((mat[dep_ia[1]-2][dep_ia[0]-2]==0)||(mat[dep_ia[1]-2][dep_ia[0]-2]==13))&&(mat[dep_ia[1]-1][dep_ia[0]-2]==1)&&(mat[dep_ia[1]][dep_ia[0]-1]==2))
+            else if(((mat[dep_ia[1]-2][dep_ia[0]-2]==0)||(mat[dep_ia[1]-2][dep_ia[0]-2]==4))&&(mat[dep_ia[1]-1][dep_ia[0]-2]==1)&&(mat[dep_ia[1]][dep_ia[0]-1]==2))
             {
                 dep_ia[0] -= 2;
                 dep_ia[1] -= 2;
                 return 1;
             }
             //Decalage en bas
-            else if(((mat[dep_ia[1]+2][dep_ia[0]-2]==0)||(mat[dep_ia[1]+2][dep_ia[0]-2]==13))&&(mat[dep_ia[1]+1][dep_ia[0]-2]==1)&&(dep_ia[1]!=16)&&(mat[dep_ia[1]][dep_ia[0]-1]==2))
+            else if(((mat[dep_ia[1]+2][dep_ia[0]-2]==0)||(mat[dep_ia[1]+2][dep_ia[0]-2]==4))&&(mat[dep_ia[1]+1][dep_ia[0]-2]==1)&&(dep_ia[1]!=16)&&(mat[dep_ia[1]][dep_ia[0]-1]==2))
             {
                 dep_ia[0] -= 2;
                 dep_ia[1] += 2;
@@ -679,7 +658,7 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
             }
             //On ne peut pas se decaler alors on recule
             ///Je ne traite pas le cas ou il y a un pion derriere l'ia
-            /*else if(((mat[dep_ia[1]-2][dep_ia[0]]==0)||(mat[dep_ia[1]-2][dep_ia[0]]==13))&&(mat[dep_ia[1]-1][dep_ia[0]]==1))
+            /*else if(((mat[dep_ia[1]-2][dep_ia[0]]==0)||(mat[dep_ia[1]-2][dep_ia[0]]==4))&&(mat[dep_ia[1]-1][dep_ia[0]]==1))
             {
                 dep_ia[1] += 2;
                 return 1;
@@ -724,7 +703,7 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                         mat[player[0].coordonneY+1][player[0].coordonneX+2] = 2;
                         return 2;
                     }
-                    //On met une barriere juste avant la ligne d'arrivée
+                    //On met une barriere juste avant la ligne d'arrivï¿½e
                     //On test si la premiere place est libre
                     else if((mat[15][0]==1)&&(mat[15][2]==1))
                     {
@@ -779,7 +758,7 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                     else if((mat[15][12]==1)&&(mat[15][14]==1))
                     {
                         mat[15][12] = 2;
-                        mat[15][13] = 3;
+                        mat[15][4] = 3;
                         mat[15][14] = 2;
                         return 2;
                     }
@@ -843,7 +822,7 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                     mat[player[0].coordonneY+1][player[0].coordonneX+2] = 2;
                     return 2;
                 }
-                //On met une barriere juste avant la ligne d'arrivée
+                //On met une barriere juste avant la ligne d'arrivï¿½e
                 //On test si la premiere place est libre
                 else if((mat[15][0]==1)&&(mat[15][2]==1))
                 {
@@ -898,7 +877,7 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                 else if((mat[15][12]==1)&&(mat[15][14]==1))
                 {
                     mat[15][12] = 2;
-                    mat[15][13] = 3;
+                    mat[15][4] = 3;
                     mat[15][14] = 2;
                     return 2;
                 }

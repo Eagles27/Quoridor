@@ -40,11 +40,11 @@ void sauver_joueur(t_joueur joueur[4], int *Pnombre_joueur)
     if (fp == NULL) printf("\nerreur fichier\n");
     else
     {
-        fprintf(fp, "%d", *Pnombre_joueur);
+        fprintf(fp, "%d\n", *Pnombre_joueur);
         for(int i = 0; i<*Pnombre_joueur; i++)
         {
             fprintf(fp, "%s\n", joueur[i].nomJ);
-            fprintf(fp, "%c\n", joueur[i].jetonJ);
+            fprintf(fp, "%d\n", joueur[i].scoreP);
             fprintf(fp, "%d\n", joueur[i].numeroJ);
             fprintf(fp, "%d\n", joueur[i].coordonneX);
             fprintf(fp, "%d\n", joueur[i].coordonneY);
@@ -119,7 +119,7 @@ void charger_joueur(t_joueur joueur[4], int * Pnombre_joueur)
     FILE* fp;
 
     ///1. Ouvrir fichier
-    fp = fopen("Sauvegarde_joueur.txt", "r");
+    fp = fopen("Sauvegarde_info.txt", "r");
 
     if (fp == NULL) printf("\nerreur fichier\n");
     else
@@ -130,7 +130,7 @@ void charger_joueur(t_joueur joueur[4], int * Pnombre_joueur)
             for(int i = 0; i< *Pnombre_joueur; i++)
             {
                 fscanf(fp, "%s", joueur[i].nomJ);
-                fscanf(fp, "%c", &(joueur[i].jetonJ));
+                fscanf(fp, "%d", &(joueur[i].scoreP));
                 fscanf(fp, "%d", &(joueur[i].numeroJ));
                 fscanf(fp, "%d", &(joueur[i].coordonneX));
                 fscanf(fp, "%d", &(joueur[i].coordonneY));

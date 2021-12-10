@@ -20,7 +20,7 @@ void case_bonus(int mat[17][17])
         {
             if(mat[case_b[1]][case_b[0]] == 0)
             {
-                mat[case_b[1]][case_b[0]] = 13;
+                mat[case_b[1]][case_b[0]] = 4;
                 i++;
             }
         }
