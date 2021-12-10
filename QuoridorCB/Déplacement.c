@@ -60,7 +60,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
         if(*Pnombre_joueur==4)
         {
             ///2.1.1. En haut
-            if(((choix=='h')||(choix=='H'))&&(dep[1]!=0)&&(((matrice[dep[1]-1][dep[0]])!=2)||((matrice[dep[1]-1][dep[0]])!=3))&&(matrice[dep[1]-2][dep[0]]==0)&&(matrice[dep[1]-2][dep[0]]==4))
+            if(((choix=='h')||(choix=='H'))&&(dep[1]!=0)&&(((matrice[dep[1]-1][dep[0]])!=2)||((matrice[dep[1]-1][dep[0]])!=3))&&((matrice[dep[1]-2][dep[0]]==0)||(matrice[dep[1]-2][dep[0]]==4)))
             {
                 if(matrice[dep[1]-1][dep[0]]==4)
                 {
@@ -71,7 +71,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             }
 
             ///2.1.2. En bas
-            else if(((choix=='b')||(choix=='B'))&&(dep[1]!=16)&&(((matrice[dep[1]+1][dep[0]])!=2)||((matrice[dep[1]+1][dep[0]])!=3))&&(matrice[dep[1]+2][dep[0]]==0)&&(matrice[dep[1]+2][dep[0]]==4))
+            else if(((choix=='b')||(choix=='B'))&&(dep[1]!=16)&&(((matrice[dep[1]+1][dep[0]])!=2)||((matrice[dep[1]+1][dep[0]])!=3))&&((matrice[dep[1]+2][dep[0]]==0)||(matrice[dep[1]+2][dep[0]]==4)))
             {
                 if(matrice[dep[1]+2][dep[0]]==4)
                 {
@@ -82,7 +82,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             }
 
             ///2.1.3. A gauche
-            else if(((choix=='g')||(choix=='G'))&&(dep[0]!=0)&&(((matrice[dep[1]][dep[0]-1])!=2)||((matrice[dep[1]][dep[0]-1])!=3))&&(matrice[dep[1]][dep[0]-2]==0)&&(matrice[dep[1]][dep[0]-2]==4))
+            else if(((choix=='g')||(choix=='G'))&&(dep[0]!=0)&&(((matrice[dep[1]][dep[0]-1])!=2)||((matrice[dep[1]][dep[0]-1])!=3))&&((matrice[dep[1]][dep[0]-2]==0)||(matrice[dep[1]][dep[0]-2]==4)))
             {
                 if(matrice[dep[1]][dep[0]-2]==4)
                 {
@@ -93,7 +93,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             }
 
             ///2.1.4. A droite
-            else if(((choix=='d')||(choix=='D'))&&(dep[0]!=16)&&(((matrice[dep[1]][dep[0]+1])!=2)||((matrice[dep[1]][dep[0]+1])!=3))&&(matrice[dep[1]][dep[0]+2]==0)&&(matrice[dep[1]][dep[0]+2]==4))
+            else if(((choix=='d')||(choix=='D'))&&(dep[0]!=16)&&(((matrice[dep[1]][dep[0]+1])!=2)||((matrice[dep[1]][dep[0]+1])!=3))&&((matrice[dep[1]][dep[0]+2]==0)||(matrice[dep[1]][dep[0]+2]==4)))
             {
 
                 if(matrice[dep[1]][dep[0]+2]==4)

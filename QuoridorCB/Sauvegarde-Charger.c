@@ -45,11 +45,13 @@ void sauver_joueur(t_joueur joueur[4], int *Pnombre_joueur)
         {
             fprintf(fp, "%s\n", joueur[i].nomJ);
             fprintf(fp, "%d\n", joueur[i].scoreP);
+            fprintf(fp, "%d\n", joueur[i].barrieresR);
             fprintf(fp, "%d\n", joueur[i].numeroJ);
             fprintf(fp, "%d\n", joueur[i].coordonneX);
             fprintf(fp, "%d\n", joueur[i].coordonneY);
             fprintf(fp, "%d\n", joueur[i].coordonneX_org);
             fprintf(fp, "%d\n", joueur[i].coordonneY_org);
+            fprintf(fp, "%d\n", joueur[i].A_annule);
         }
         fclose(fp);
     }
@@ -131,11 +133,13 @@ void charger_joueur(t_joueur joueur[4], int * Pnombre_joueur)
             {
                 fscanf(fp, "%s", joueur[i].nomJ);
                 fscanf(fp, "%d", &(joueur[i].scoreP));
+                fscanf(fp, "%d", &(joueur[i].barrieresR));
                 fscanf(fp, "%d", &(joueur[i].numeroJ));
                 fscanf(fp, "%d", &(joueur[i].coordonneX));
                 fscanf(fp, "%d", &(joueur[i].coordonneY));
                 fscanf(fp, "%d", &(joueur[i].coordonneX_org));
                 fscanf(fp, "%d", &(joueur[i].coordonneY_org));
+                fscanf(fp, "%d", &(joueur[i].A_annule));
             }
         }
         fclose(fp);

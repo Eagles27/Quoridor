@@ -69,8 +69,28 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                         mat[dep[1]][dep[0]] = 5;
 
                     }
+                }
+                else{
+                    if(*Ptour == 4)
+                    {
+                        mat[dep[1]][dep[0]] = 9;
+                    }
 
+                    else if(*Ptour == 3)
+                    {
+                        mat[dep[1]][dep[0]] = 8;
 
+                    }
+                    else if(*Ptour == 2)
+                    {
+                        mat[dep[1]][dep[0]] = 7;
+
+                    }
+                    else
+                    {
+                        mat[dep[1]][dep[0]] = 5;
+
+                    }
                 }
 
                 /*system("cls");
@@ -116,6 +136,8 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
         }
         case 3 :
         {
+            printf("%d", *Ptour);
+            system("PAUSE");
             ///PPG passer son tour
             if(*Pnombrejoueur == 1)
             {

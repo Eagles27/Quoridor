@@ -258,7 +258,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 system("cls");
                 distribution_barriere(player,Pnombre_joueur);
 
-                setup(Pnombre_joueur,debut,mat,player,Ptour,ia);
+                //setup(Pnombre_joueur,debut,mat,player,Ptour,ia);
 
                 for(int i=0; i<4; i++)
                 {
@@ -296,7 +296,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                 ///Initialisation bonus
                 case_bonus(mat);
-
 
                 do
                 {
@@ -405,21 +404,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
             charger_plateau(mat);
             charger_joueur(player, Pnombre_joueur);
             choixPion(player, Pnombre_joueur);
-
-            for(int i = 0; i<*Pnombre_joueur; i++)
-            {
-                printf("%s\n", player[i].nomJ);
-                printf("%d\n", player[i].scoreP);
-                printf("%c\n", player[i].jetonJ);
-                printf("%d\n", player[i].numeroJ);
-                printf("%d\n", player[i].coordonneX);
-                printf("%d\n", player[i].coordonneY);
-                printf("%d\n", player[i].coordonneX_org);
-                printf("%d\n", player[i].coordonneY_org);
-            }
-
-            system("PAUSE");
-            system("cls");
 
             do
             {
