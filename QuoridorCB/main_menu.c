@@ -171,8 +171,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         player[0].coordonneX_av = player[0].coordonneX;
                         player[0].coordonneY_av = player[0].coordonneY;
 
-                        printf("%d, %d", ia.coordonneX, ia.coordonneY);
-                        system("PAUSE");
                         num_tour++;
                     }
                     else
