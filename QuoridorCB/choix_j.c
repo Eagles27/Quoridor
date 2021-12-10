@@ -1,4 +1,4 @@
-#include "jeu.h"
+#include "Header_Pierre.h"
 
 int choix_j(int nombre)
 {

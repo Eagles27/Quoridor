@@ -1,29 +1,27 @@
-#include "jeu.h"
-
+#include "Header_Pierre.h"
 
 int main()
 {
-    int mat[17][17];
+    ///0. DDV
     int nombre_joueur = 0;
-
     int *Pnombre_joueur = &nombre_joueur;
+    int mat[17][17];
 
+    ///1. Setup des entités
+    ///1.1. Setup IA
+    t_IA ia;
+    strcpy(ia.nom, "IA");
+    ia.numero = 1;
 
-    ///Barrieres
+    ///1.2. Setup IA
+    t_joueur player[4];
 
-    int barJ1 = 0;
-    int barJ2 = 0;
-    int barJ3 = 0;
-    int barJ4 = 0;
-
-    int *PbarJ1 = &barJ1;
-    int *PbarJ2 = &barJ2;
-    int *PbarJ3 = &barJ3;
-    int *PbarJ4 = &barJ4;
-
-
+    ///1.3. Setup plateau
     genematrice(mat);
-    main_menu(PbarJ1,PbarJ2,PbarJ3,PbarJ4,Pnombre_joueur,mat);
+
+    ///2. Debut du jeu
+    main_menu(Pnombre_joueur, mat, player, ia);
+
 
     return 0;
 }

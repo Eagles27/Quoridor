@@ -1,4 +1,4 @@
-#include "jeu.h"
+#include "Header_Pierre.h"
 
 int nombre_joueur()
 {
@@ -14,17 +14,20 @@ int nombre_joueur()
         }
 
             system("cls");
-            printf("1. 2 Joueurs\n2. 4 Joueurs\n");
+            printf("1. 2 Joueurs\n2. 4 Joueurs\n3. 1 joueurs avec IA\n");
             scanf("%d",&choix);
 
     }
-    while ((choix != 1)&&(choix != 2));
+    while ((choix != 1)&&(choix != 2)&&(choix != 3));
 
 
     if (choix == 1)
         return 2;
 
-    else
+    else if(choix == 2)
         return 4;
+
+    else
+        return 1;
 
 }

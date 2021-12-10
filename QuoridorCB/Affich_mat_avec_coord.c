@@ -1,4 +1,4 @@
-#include "jeu.h"
+#include "Header_Pierre.h"
 
 void affiche(int tab[17][17])
 {
