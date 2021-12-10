@@ -1,6 +1,7 @@
 #include "Header_Pierre.h"
 
 /*
+
 - mur verticale : 0xB3
 - mur horizontal : 0xC4
 - mur "+" : 0xC5
@@ -8,6 +9,7 @@
 - mur horizontal double : 0xCD
 - mur "+" double : 0xCE
 - rond : 0x09
+
 */
 
 void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)
@@ -82,7 +84,7 @@ void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)
                     printf("%c", 0xBA);
                 }
                 else if(tab[i][j]==13){
-                    printf(" %c ", 0x0F);
+                    printf(" %c ", 0x01);
                 }
                 else if(tab[i][j]==14){
                     printf(" %c ", ia.jeton);

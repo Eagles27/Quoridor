@@ -35,20 +35,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
         }
     }
 
-    /*
-    //Declaration tableau dynamique pour les scores
-    int *liste_score;
-    liste_score = (int*)malloc(100*sizeof(int));
-
-    //Declaration tableau dynamique pour les noms
-    char** liste_nom;
-    liste_score = (char**)malloc(100*sizeof(char*));
-    if(liste_nom != NULL){
-        for(int i = 0; i<100; i++){
-            liste_nom[i] = (char*)malloc(50*sizeof(char));
-        }
-    }*/
-
 
     /// Test
 
@@ -182,7 +168,8 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         dep_ia[0] = ia.coordonneX;
                         dep_ia[1] = ia.coordonneY;
                         action_ia = ia_v0(dep_ia, mat, player, ia);
-                        if(action_ia == 2){
+                        if(action_ia == 2)
+                        {
                             ia.barrieresR --;
                         }
 
@@ -224,17 +211,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////PARTIE CLASSIQUE ///////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-/// RESET DES TOKENS
-
-
-                //for(int i=0; i<4; i++)
-                {
-                    // player[i].jetonJ = '1';     // Valeur donnee arbitrairement
-
-                }
-
 
 
 
@@ -286,36 +262,46 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                 extraction_score(player, Pnombre_joueur, list_joueur, list_score, index_score);
 
-                /*for(int i = 0; i<4; i++)
+
+                ///Reset Point de la partie + booléen annulation
+
+                for(int i=0; i<4; i++)
                 {
-                    if(index_score[i][1] != -1)
+                    player[i].scoreP = 0;
+                    player[i].A_annule = 0;
+                }
+
+
+                ///TRICHE
+                for(int i = 0; i<*Pnombre_joueur; i++)
+                {
+                    if(strcmp(player[i].nomJ, "RAVAUT")==0)
                     {
-                        player[index_score[i][1]].scoreP = list_score[index_score[i][0]];
+                        player[i].scoreP = 10;
                     }
-                }*/
+                    else if(strcmp(player[i].nomJ, "MAXIME")==0)
+                    {
+                        player[i].barrieresR += 5;
+                    }
+                    else if(strcmp(player[i].nomJ, "ADRIEN")==0)
+                    {
+                        player[i].barrieresR += 5;
+                    }
+                    else if(strcmp(player[i].nomJ, "PIERRE")==0)
+                    {
+                        player[i].barrieresR += 5;
+                    }
+                }
 
                 setup(Pnombre_joueur,debut,mat,player,Ptour,ia);
 
                 tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction, ia);
 
+
+
                 ///Initialisation bonus
                 case_bonus(mat);
 
-                ///TRICHE
-                for(int i = 0; i<*Pnombre_joueur; i++){
-                    if(strcmp(player[i].nomJ, "RAVAUT")==0){
-                        player[i].scoreP = 10;
-                    }
-                    else if(strcmp(player[i].nomJ, "MAXIME")==0){
-                        player[i].barrieresR += 5;
-                    }
-                    else if(strcmp(player[i].nomJ, "ADRIEN")==0){
-                        player[i].barrieresR += 5;
-                    }
-                    else if(strcmp(player[i].nomJ, "PIERRE")==0){
-                        player[i].barrieresR += 5;
-                    }
-                }
 
                 do
                 {
