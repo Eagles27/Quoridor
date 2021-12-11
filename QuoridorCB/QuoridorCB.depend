@@ -2,7 +2,7 @@
 1639136296 source:d:\pierr\documents\algo\quoridor\quoridorcb\main.c
 	"Header_Pierre.h"
 
-1639133420 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
+1639259270 d:\pierr\documents\algo\quoridor\quoridorcb\header_pierre.h
 	<windows.h>
 	<stdio.h>
 	<stdlib.h>
@@ -27,7 +27,7 @@
 1638809704 source:d:\pierr\documents\algo\quoridor\quoridorcb\placer_barriere.c
 	"Header_Pierre.h"
 
-1639146970 source:d:\pierr\documents\algo\quoridor\quoridorcb\affiregles.c
+1639249778 source:d:\pierr\documents\algo\quoridor\quoridorcb\affiregles.c
 	"Header_Pierre.h"
 
 1638364644 d:\pierr\documents\algo\quoridor\quoridorcb\jeu.h
@@ -48,10 +48,10 @@
 1639159440 source:d:\pierr\documents\algo\quoridor\quoridorcb\main_menu.c
 	"Header_Pierre.h"
 
-1639159714 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_game.c
+1639259294 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_game.c
 	"Header_Pierre.h"
 
-1639133420 source:d:\pierr\documents\algo\quoridor\quoridorcb\nombre_joueur.c
+1639249778 source:d:\pierr\documents\algo\quoridor\quoridorcb\nombre_joueur.c
 	"Header_Pierre.h"
 
 1639146972 source:d:\pierr\documents\algo\quoridor\quoridorcb\setup.c
@@ -168,7 +168,7 @@
 1639139110 source:d:\pierr\documents\algo\quoridor\quoridorcb\fin de jeu.c
 	"Header_Pierre.h"
 
-1639132252 source:d:\pierr\documents\algo\quoridor\quoridorcb\choixpion.c
+1639249778 source:d:\pierr\documents\algo\quoridor\quoridorcb\choixpion.c
 	"Header_Pierre.h"
 
 1639140548 source:d:\pierr\documents\algo\quoridor\quoridorcb\gagner_barriere.c
@@ -177,10 +177,10 @@
 1639132252 source:d:\pierr\documents\algo\quoridor\quoridorcb\score.c
 	"Header_Pierre.h"
 
-1639145564 source:d:\pierr\documents\algo\quoridor\quoridorcb\bonus.c
+1639249778 source:d:\pierr\documents\algo\quoridor\quoridorcb\bonus.c
 	"Header_Pierre.h"
 
-1639145934 source:d:\pierr\documents\algo\quoridor\quoridorcb\ia.c
+1639249778 source:d:\pierr\documents\algo\quoridor\quoridorcb\ia.c
 	"Header_Pierre.h"
 
 1639238261 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\bonus.c
