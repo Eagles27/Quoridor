@@ -190,7 +190,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                     if(num_tour%2 == 0)
                     {
                         //Joueur gagne
-                        actualisation_score(player,0);
+                        actualisation_score(player,0);      ///A faire
                     }
                     else
                     {
@@ -199,8 +199,15 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 }
                 else if(gagner_ia(player, ia, num_tour) == 2)
                 {
-                    printf("A faire");
-                    system("PAUSE");
+                    if(player[0].coordonneY == (16 - ia.coordonneY)){
+                        //Personne ne gagne
+                    }
+                    else if(player[0].coordonneY > (16 - ia.coordonneY)){*
+                        //Je joueur[0] gagne
+                    }
+                    else if(player[0].coordonneY < (16 - ia.coordonneY)){*
+                        //L'IA gagne
+                    }
                 }
 
 
