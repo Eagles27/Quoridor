@@ -57,26 +57,6 @@ void sauver_joueur(t_joueur joueur[4], int *Pnombre_joueur)
     }
 }
 
-/*void sauver_score(t_joueur joueur[4], int * PnbJ)
-{
-    ///0. DDV
-    FILE* fp = NULL;
-
-    ///1. Ouvrir fichier
-    fp = fopen("Sauvegarde_score.txt", "w");
-
-    if (fp == NULL) printf("\nerreur fichier\n");
-    else
-    {
-        for(int i = 0; i<*PnbJ; i++){
-            fprintf(fp, "%s", joueur[i].nomJ);
-            fprintf(fp, " : ");
-            fprintf(fp, "%d\n", joueur[i].scoreP);
-        }
-        fclose(fp);
-    }
-}*/
-
 //////////////////////////////////////////////////////
 ///////////////////// Chargement /////////////////////
 //////////////////////////////////////////////////////
@@ -145,26 +125,3 @@ void charger_joueur(t_joueur joueur[4], int * Pnombre_joueur)
         fclose(fp);
     }
 }
-
-/*void charger_score(char liste_nom[100][50], int liste_score[100])
-{
-    ///0. DDV
-    FILE* fp;
-
-    ///1. Ouvrir fichier
-    fp = fopen("Sauvegarde_score.txt", "r");
-
-    if (fp == NULL) printf("\nerreur fichier\n");
-    else
-    {
-        while(!(feof(fp)))
-        {
-            for(int i = 0; i<100; i++)
-            {
-                fscanf(fp, "%s", liste_nom[i]);
-                fscanf(fp, "%d", &(liste_score[i]));
-            }
-        }
-        fclose(fp);
-    }
-}*/
