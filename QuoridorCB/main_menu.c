@@ -354,17 +354,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                     matrice_propre(mat,player,ia);
                     printf("\n\n%s n'a plus de barriere\n\n",player[tour_test].nomJ);
 
-                    if(player[tour_test].numeroJ == 1)
-                    {
-                        numero = 0;
-                    }
-                    else
-                    {
-                        numero = 1;
-                    }
-
-
-
 
                     if(gagner_barriere(player, Pnombre_joueur) == -1)
                     {
@@ -383,16 +372,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                     }
 
-                }
-                if(gagner(player,Pnombre_joueur,tour_test) != -1)
-                {
-                    for(int i = 0; i<4; i++)
-                    {
-                        if(index_score[i][1] != -1)
-                        {
-                            list_score[index_score[i][0]] = player[index_score[i][1]].scoreP;
-                        }
-                    }
                 }
             }
 
