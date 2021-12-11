@@ -13,7 +13,7 @@ int main()
     strcpy(ia.nom, "IA");
     ia.numero = 1;
 
-    ///1.2. Setup IA
+    ///1.2. Setup Joueur
     t_joueur player[4];
 
     ///1.3. Setup plateau

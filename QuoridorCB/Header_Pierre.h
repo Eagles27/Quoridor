@@ -51,7 +51,7 @@ typedef struct IA
 
 void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour, int mat_avant[17][17], int *Action, t_IA ia, int tour);
 void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia);
-void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4], t_IA ia);
+void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4]);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////Actions/////////////////////////////////////////////////////////////////////
@@ -79,12 +79,12 @@ void matrice_propre(int tab[17][17],t_joueur player[4], t_IA);
 
 ///Gestion entrées
 int traduction(char entree);
-void saisie_coord(int saisie[2]);
-int saisie_dir();
+void saisie_coord(int saisie[2],int*Ptour,int*PnombreJ,t_joueur player[4],int mat[17][17],t_IA ia);
+int saisie_dir(int*Ptour,int*PnombreJ,t_joueur player[4],int mat[17][17],t_IA ia);
 void majuscule(char mot[20]);
 
 ///Gestion joueur
-void tour_par_tour(int* Pnombre_joueur, int mat[17][17], t_joueur player[4],int* Ptour, int mat_avant[17][17], int *Action, t_IA ia);
+void tour_par_tour(int* Pnombre_joueur, int mat[17][17], t_joueur player[4],int* Ptour, int mat_avant[17][17]);
 int choix_j(int nombre);
 
 ///Habillage
@@ -96,7 +96,7 @@ void gotoligcol( int lig, int col );
 
 void distribution_barriere(t_joueur player[4],int *nombrejoueur);
 int nombre_joueur();
-void setup(int *Pnombrejoueur, int debut, int mat[17][17],t_joueur player[4], int* Ptour, t_IA ia);
+void setup(int *Pnombrejoueur, int debut, int mat[17][17],t_joueur player[4], int* Ptour,t_IA ia);
 void choixPion(t_joueur jugador[4], int *PnbJ);
 void case_bonus(int mat[17][17]);
 

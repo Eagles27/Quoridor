@@ -310,7 +310,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                 setup(Pnombre_joueur,debut,mat,player,Ptour,ia);
 
-                tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction, ia);
+                tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant);
 
 
 
@@ -329,7 +329,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                     system("cls");
                     matrice_propre(mat,player,ia);
-                    menu_cote(Ptour,Pnombre_joueur,player,ia);
+                    menu_cote(Ptour,Pnombre_joueur,player);
                     player[*Ptour-1].coordonneX_av = player[*Ptour-1].coordonneX;
                     player[*Ptour-1].coordonneY_av = player[*Ptour-1].coordonneY;
                     menu_game(mat,Pnombre_joueur,player,Ptour, mat_avant, PAction, ia, num_tour);
@@ -370,7 +370,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
 
 
-                    tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction, ia);
+                    tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant);
                     sauver_plateau(mat_avant);
 
                 }
@@ -583,7 +583,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                 system("cls");
                 matrice_propre(mat,player,ia);
-                menu_cote(Ptour,Pnombre_joueur,player,ia);
+                menu_cote(Ptour,Pnombre_joueur,player);
                 player[*Ptour-1].coordonneX_av = player[*Ptour-1].coordonneX;
                 player[*Ptour-1].coordonneY_av = player[*Ptour-1].coordonneY;
                 menu_game(mat,Pnombre_joueur,player,Ptour, mat_avant, PAction, ia, num_tour);
@@ -602,7 +602,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
 
 
-                tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction, ia);
+                tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant);
                 sauver_plateau(mat_avant);
 
             }

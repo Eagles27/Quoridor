@@ -1,6 +1,6 @@
 #include "Header_Pierre.h"
 
-void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4], t_IA ia)
+void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4])
 {
 
     gotoligcol(3,60);

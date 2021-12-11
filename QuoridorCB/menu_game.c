@@ -8,6 +8,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
     int org[3];
     char temp;
     int saisie1[2];
+    char saisie_direction;
     int bool_barriere = -1;
 
 
@@ -107,10 +108,11 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
             {
                 system("cls");
                 matrice_propre(mat,player,ia);
-                menu_cote(Ptour,Pnombrejoueur,player,ia);
-                saisie_coord(saisie1);
+                menu_cote(Ptour,Pnombrejoueur,player);
+                saisie_coord(saisie1,Ptour,Pnombrejoueur,player,mat,ia);
+                saisie_direction = saisie_dir(Ptour,Pnombrejoueur,player,mat,ia);
 
-                bool_barriere = placer_barriere(mat, saisie1, saisie_dir());
+                bool_barriere = placer_barriere(mat, saisie1, saisie_dir);
             }
 
             system("cls");
@@ -124,7 +126,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
             }
 
             matrice_propre(mat,player,ia);
-            menu_cote(Ptour,Pnombrejoueur,player,ia);
+            menu_cote(Ptour,Pnombrejoueur,player);
 
             *Action = 2;
 
@@ -220,7 +222,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                     system("PAUSE");
                     system("cls");
                     matrice_propre(mat,player,ia);
-                    menu_cote(Ptour,Pnombrejoueur,player,ia);
+                    menu_cote(Ptour,Pnombrejoueur,player);
                     choix = 0;
                 }
             }
@@ -242,7 +244,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
             system("PAUSE");
             system("cls");
             matrice_propre(mat,player,ia);
-            menu_cote(Ptour,Pnombrejoueur,player,ia);
+            menu_cote(Ptour,Pnombrejoueur,player);
             break;
         }
         }

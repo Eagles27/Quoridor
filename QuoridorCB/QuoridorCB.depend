@@ -72,7 +72,7 @@
 1639137916 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\affich_mat_avec_coord.c
 	"Header_Pierre.h"
 
-1639250345 c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\header_pierre.h
+1639253658 c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\header_pierre.h
 	<windows.h>
 	<stdio.h>
 	<stdlib.h>
@@ -106,37 +106,37 @@
 1639238261 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\sauvegarde-charger.c
 	"Header_Pierre.h"
 
-1639238261 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\déplacement.c
+1639252476 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\déplacement.c
 	"Header_Pierre.h"
 
-1639244729 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main.c
+1639252250 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main.c
 	"Header_Pierre.h"
 
-1639250885 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main_menu.c
+1639252610 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\main_menu.c
 	"Header_Pierre.h"
 
 1639238261 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\matrice_visible.c
 	"Header_Pierre.h"
 
-1639239735 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\menu_game.c
+1639254151 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\menu_game.c
 	"Header_Pierre.h"
 
 1639137898 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\placer_barriere.c
 	"Header_Pierre.h"
 
-1639137898 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\saisie_coord.c
+1639253809 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\saisie_coord.c
 	"Header_Pierre.h"
 
-1639239252 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\setup.c
+1639252658 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\setup.c
 	"Header_Pierre.h"
 
-1639239252 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\tour_par_tour.c
+1639252618 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\tour_par_tour.c
 	"Header_Pierre.h"
 
 1639138018 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\traduction.c
 	"Header_Pierre.h"
 
-1639137899 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\menu_cote.c
+1639252579 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\menu_cote.c
 	"Header_Pierre.h"
 
 1639133420 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_cote.c
