@@ -112,7 +112,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                 saisie_coord(saisie1,Ptour,Pnombrejoueur,player,mat,ia);
                 saisie_direction = saisie_dir(Ptour,Pnombrejoueur,player,mat,ia);
 
-                bool_barriere = placer_barriere(mat, saisie1, saisie_dir);
+                bool_barriere = placer_barriere(mat, saisie1, saisie_direction);
             }
 
             system("cls");
