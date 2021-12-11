@@ -21,6 +21,30 @@ void saisietaille(int*Ptaille)
 }
 
 
+void trierB(t_joueur player[150],int*Ptaille)
+{
+    int temp;
+    char nom[30];
+
+    for(int i=0; i<*Ptaille; i++)
+    {
+        for(int j=0; j<*Ptaille-1; j++)
+        {
+            if (player[j].scoreP < player[j+1].scoreP)
+            {
+                temp = player[j].scoreP;
+                strcpy(nom,player[j].nomJ);
+                player[j].scoreP = player[j+1].scoreP;
+                strcpy(player[j].nomJ,player[j+1].nomJ);
+                player[j+1].scoreP = temp;
+                strcpy(player[j+1].nomJ,nom);
+
+            }
+        }
+    }
+}
+
+
 void tableau_score(t_joueur player[150])
 {
     int taille = 0;
@@ -44,6 +68,8 @@ void tableau_score(t_joueur player[150])
             fscanf(fp, "%s\n%d",player[i].nomJ,&(player[i].scoreP));
 
         }
+
+        trierB(player,Ptaille);
 
 
         for(int i = 0; i<taille; i++)

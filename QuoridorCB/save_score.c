@@ -27,7 +27,6 @@ void save_score(t_joueur player[4],int i)
 
             if(strcmp(tempN,player[i].nomJ)==0)
             {
-
                 player[i].scoreP = tempS;
                 sortie = 1;
             }
@@ -39,11 +38,11 @@ void save_score(t_joueur player[4],int i)
         if(sortie == 0)
         {
             fseek(fic,0,SEEK_SET);
-            fscanf(fic,"%d",&nombre);
+            fscanf(fic,"%d\n",&nombre);
             nombre ++;
 
             fseek(fic,0,SEEK_SET);
-            fprintf(fic,"%d\n",nombre);
+            fprintf(fic,"%d",nombre);
 
             fseek(fic,0,SEEK_END);
             fprintf(fic,"%s\n%d\n",player[i].nomJ,player[i].scoreP);

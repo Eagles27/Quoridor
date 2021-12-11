@@ -662,6 +662,8 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
         {
             t_joueur playeraffichage[150];
 
+            system("cls");
+
             tableau_score(playeraffichage);
             break;
         }
