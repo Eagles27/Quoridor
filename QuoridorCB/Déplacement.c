@@ -60,9 +60,9 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
         if(*Pnombre_joueur==4)
         {
             ///2.1.1. En haut
-            if(((choix=='h')||(choix=='H'))&&(dep[1]!=0)&&(((matrice[dep[1]-1][dep[0]])!=2)||((matrice[dep[1]-1][dep[0]])!=3))&&(matrice[dep[1]-2][dep[0]]==0)&&(matrice[dep[1]-2][dep[0]]==13))
+            if(((choix=='h')||(choix=='H'))&&(dep[1]!=0)&&(((matrice[dep[1]-1][dep[0]])!=2)||((matrice[dep[1]-1][dep[0]])!=3))&&((matrice[dep[1]-2][dep[0]]==0)||(matrice[dep[1]-2][dep[0]]==4)))
             {
-                if(matrice[dep[1]-1][dep[0]]==13)
+                if(matrice[dep[1]-1][dep[0]]==4)
                 {
                     player[*Ptour-1].scoreP ++;
                 }
@@ -71,9 +71,9 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             }
 
             ///2.1.2. En bas
-            else if(((choix=='b')||(choix=='B'))&&(dep[1]!=16)&&(((matrice[dep[1]+1][dep[0]])!=2)||((matrice[dep[1]+1][dep[0]])!=3))&&(matrice[dep[1]+2][dep[0]]==0)&&(matrice[dep[1]+2][dep[0]]==13))
+            else if(((choix=='b')||(choix=='B'))&&(dep[1]!=16)&&(((matrice[dep[1]+1][dep[0]])!=2)||((matrice[dep[1]+1][dep[0]])!=3))&&((matrice[dep[1]+2][dep[0]]==0)||(matrice[dep[1]+2][dep[0]]==4)))
             {
-                if(matrice[dep[1]+2][dep[0]]==13)
+                if(matrice[dep[1]+2][dep[0]]==4)
                 {
                     player[*Ptour-1].scoreP ++;
                 }
@@ -82,9 +82,9 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             }
 
             ///2.1.3. A gauche
-            else if(((choix=='g')||(choix=='G'))&&(dep[0]!=0)&&(((matrice[dep[1]][dep[0]-1])!=2)||((matrice[dep[1]][dep[0]-1])!=3))&&(matrice[dep[1]][dep[0]-2]==0)&&(matrice[dep[1]][dep[0]-2]==13))
+            else if(((choix=='g')||(choix=='G'))&&(dep[0]!=0)&&(((matrice[dep[1]][dep[0]-1])!=2)||((matrice[dep[1]][dep[0]-1])!=3))&&((matrice[dep[1]][dep[0]-2]==0)||(matrice[dep[1]][dep[0]-2]==4)))
             {
-                if(matrice[dep[1]][dep[0]-2]==13)
+                if(matrice[dep[1]][dep[0]-2]==4)
                 {
                     player[*Ptour-1].scoreP ++;
                 }
@@ -93,10 +93,10 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             }
 
             ///2.1.4. A droite
-            else if(((choix=='d')||(choix=='D'))&&(dep[0]!=16)&&(((matrice[dep[1]][dep[0]+1])!=2)||((matrice[dep[1]][dep[0]+1])!=3))&&(matrice[dep[1]][dep[0]+2]==0)&&(matrice[dep[1]][dep[0]+2]==13))
+            else if(((choix=='d')||(choix=='D'))&&(dep[0]!=16)&&(((matrice[dep[1]][dep[0]+1])!=2)||((matrice[dep[1]][dep[0]+1])!=3))&&((matrice[dep[1]][dep[0]+2]==0)||(matrice[dep[1]][dep[0]+2]==4)))
             {
 
-                if(matrice[dep[1]][dep[0]+2]==13)
+                if(matrice[dep[1]][dep[0]+2]==4)
                 {
                     player[*Ptour-1].scoreP ++;
                 }
@@ -118,9 +118,9 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             ///3.1. Deplacment en haut
             if(((choix=='h')||(choix=='H'))&&(dep[1]!=0)&&((matrice[dep[1]-1][dep[0]])!=2)&&((matrice[dep[1]-1][dep[0]])!=3))
             {
-                if((matrice[dep[1]-2][dep[0]]==0)||(matrice[dep[1]-2][dep[0]]==13))
+                if((matrice[dep[1]-2][dep[0]]==0)||(matrice[dep[1]-2][dep[0]]==4))
                 {
-                    if(matrice[dep[1]-2][dep[0]]==13)
+                    if(matrice[dep[1]-2][dep[0]]==4)
                     {
                         player[*Ptour-1].scoreP ++;
                     }
@@ -134,9 +134,9 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                     printf("Impossible de sortir du plateau\n");
                     system("PAUSE");
                 }
-                else if((valid_dep == 1)&&((matrice[dep[1]-4][dep[0]]==0)||(matrice[dep[1]-4][dep[0]]==13))&&((matrice[dep[1]-3][dep[0]])!=2)&&((matrice[dep[1]-3][dep[0]])!=3))
+                else if((valid_dep == 1)&&((matrice[dep[1]-4][dep[0]]==0)||(matrice[dep[1]-4][dep[0]]==4))&&((matrice[dep[1]-3][dep[0]])!=2)&&((matrice[dep[1]-3][dep[0]])!=3))
                 {
-                    if(matrice[dep[1]-4][dep[0]]==13)
+                    if(matrice[dep[1]-4][dep[0]]==4)
                     {
                         player[*Ptour-1].scoreP ++;
                     }
@@ -159,7 +159,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         {
                             if((matrice[dep[1]-2][dep[0]+1]==2)||(matrice[dep[1]-2][dep[0]+1]==3))
                             {
-                                if(matrice[dep[1]-2][dep[0]-2]==13)
+                                if(matrice[dep[1]-2][dep[0]-2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
@@ -171,7 +171,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                             }
                             else
                             {
-                                if(matrice[dep[1]-2][dep[0]+2]==13)
+                                if(matrice[dep[1]-2][dep[0]+2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
@@ -184,7 +184,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         {
                             if((matrice[dep[1]-2][dep[0]-1]==2)||(matrice[dep[1]-2][dep[0]-1]==3))
                             {
-                                if(matrice[dep[1]-2][dep[0]+2]==13)
+                                if(matrice[dep[1]-2][dep[0]+2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
@@ -195,7 +195,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                             }
                             else
                             {
-                                if(matrice[dep[1]-2][dep[0]-2]==13)
+                                if(matrice[dep[1]-2][dep[0]-2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
@@ -211,9 +211,9 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             ///3.2. Deplacment en bas
             else if(((choix=='b')||(choix=='B'))&&(dep[1]!=16)&&((matrice[dep[1]+1][dep[0]])!=2)&&((matrice[dep[1]+1][dep[0]])!=3))
             {
-                if((matrice[dep[1]+2][dep[0]]==0)||(matrice[dep[1]+2][dep[0]]==13))
+                if((matrice[dep[1]+2][dep[0]]==0)||(matrice[dep[1]+2][dep[0]]==4))
                 {
-                    if(matrice[dep[1]+2][dep[0]]==13)
+                    if(matrice[dep[1]+2][dep[0]]==4)
                     {
                         player[*Ptour-1].scoreP ++;
                     }
@@ -227,9 +227,9 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                     printf("Impossible de sortir du plateau\n");
                     system("PAUSE");
                 }
-                else if((valid_dep == 1)&&((matrice[dep[1]+4][dep[0]]==0)||(matrice[dep[1]+4][dep[0]]==13))&&((matrice[dep[1]+3][dep[0]])!=2)&&((matrice[dep[1]+3][dep[0]])!=3))
+                else if((valid_dep == 1)&&((matrice[dep[1]+4][dep[0]]==0)||(matrice[dep[1]+4][dep[0]]==4))&&((matrice[dep[1]+3][dep[0]])!=2)&&((matrice[dep[1]+3][dep[0]])!=3))
                 {
-                    if(matrice[dep[1]+4][dep[0]]==13)
+                    if(matrice[dep[1]+4][dep[0]]==4)
                     {
                         player[*Ptour-1].scoreP ++;
                     }
@@ -252,7 +252,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         {
                             if((matrice[dep[1]+2][dep[0]+1]==2)||(matrice[dep[1]+2][dep[0]+1]==3))
                             {
-                                if(matrice[dep[1]+2][dep[0]-2]==13)
+                                if(matrice[dep[1]+2][dep[0]-2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
@@ -263,7 +263,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                             }
                             else
                             {
-                                if(matrice[dep[1]+2][dep[0]+2]==13)
+                                if(matrice[dep[1]+2][dep[0]+2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
@@ -276,7 +276,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         {
                             if((matrice[dep[1]+2][dep[0]-1]==2)||(matrice[dep[1]+2][dep[0]-1]==3))
                             {
-                                if(matrice[dep[1]+2][dep[0]+2]==13)
+                                if(matrice[dep[1]+2][dep[0]+2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
@@ -287,7 +287,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                             }
                             else
                             {
-                                if(matrice[dep[1]+2][dep[0]-2]==13)
+                                if(matrice[dep[1]+2][dep[0]-2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
@@ -303,9 +303,9 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             ///3.3. Deplacment a gauche
             else if(((choix=='g')||(choix=='G'))&&(dep[0]!=0)&&((matrice[dep[1]][dep[0]-1])!=2)&&((matrice[dep[1]][dep[0]-1])!=3))
             {
-                if((matrice[dep[1]][dep[0]-2]==0)||(matrice[dep[1]][dep[0]-2]==13))
+                if((matrice[dep[1]][dep[0]-2]==0)||(matrice[dep[1]][dep[0]-2]==4))
                 {
-                    if(matrice[dep[1]][dep[0]-2]==13)
+                    if(matrice[dep[1]][dep[0]-2]==4)
                     {
                         player[*Ptour-1].scoreP ++;
                     }
@@ -319,9 +319,9 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                     printf("Impossible de sortir du plateau\n");
                     system("PAUSE");
                 }
-                else if((valid_dep == 1)&&((matrice[dep[1]][dep[0]-4]==0)||(matrice[dep[1]][dep[0]-4]==13))&&((matrice[dep[1]][dep[0]-3])!=2)&&((matrice[dep[1]][dep[0]-3])!=3))
+                else if((valid_dep == 1)&&((matrice[dep[1]][dep[0]-4]==0)||(matrice[dep[1]][dep[0]-4]==4))&&((matrice[dep[1]][dep[0]-3])!=2)&&((matrice[dep[1]][dep[0]-3])!=3))
                 {
-                    if(matrice[dep[1]][dep[0]-4]==13)
+                    if(matrice[dep[1]][dep[0]-4]==4)
                     {
                         player[*Ptour-1].scoreP ++;
                     }
@@ -344,7 +344,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         {
                             if((matrice[dep[1]+1][dep[0]-2]==2)||(matrice[dep[1]+1][dep[0]-2]==3))
                             {
-                                if(matrice[dep[1]-2][dep[0]-2]==13)
+                                if(matrice[dep[1]-2][dep[0]-2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
@@ -355,7 +355,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                             }
                             else
                             {
-                                if(matrice[dep[1]+2][dep[0]-2]==13)
+                                if(matrice[dep[1]+2][dep[0]-2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
@@ -368,7 +368,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         {
                             if((matrice[dep[1]-1][dep[0]-2]==2)||(matrice[dep[1]-1][dep[0]-2]==3))
                             {
-                                if(matrice[dep[1]+2][dep[0]-2]==13)
+                                if(matrice[dep[1]+2][dep[0]-2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
@@ -379,7 +379,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                             }
                             else
                             {
-                                if(matrice[dep[1]-2][dep[0]-2]==13)
+                                if(matrice[dep[1]-2][dep[0]-2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
@@ -395,9 +395,9 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             ///3.4. Deplacment a droite
             else if(((choix=='d')||(choix=='D'))&&(dep[0]!=16)&&((matrice[dep[1]][dep[0]+1])!=2)&&((matrice[dep[1]][dep[0]+1])!=3))
             {
-                if((matrice[dep[1]][dep[0]+2]==0)||(matrice[dep[1]][dep[0]+2]==13))
+                if((matrice[dep[1]][dep[0]+2]==0)||(matrice[dep[1]][dep[0]+2]==4))
                 {
-                    if(matrice[dep[1]][dep[0]+2]==13)
+                    if(matrice[dep[1]][dep[0]+2]==4)
                     {
                         player[*Ptour-1].scoreP ++;
                     }
@@ -411,9 +411,9 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                     printf("Impossible de sortir du plateau\n");
                     system("PAUSE");
                 }
-                else if((valid_dep == 1)&&((matrice[dep[1]][dep[0]+4]==0)||(matrice[dep[1]][dep[0]+4]==13))&&(matrice[dep[1]][dep[0]+4]==13)&&((matrice[dep[1]][dep[0]+3])!=2)&&((matrice[dep[1]][dep[0]+3])!=3))
+                else if((valid_dep == 1)&&((matrice[dep[1]][dep[0]+4]==0)||(matrice[dep[1]][dep[0]+4]==4))&&(matrice[dep[1]][dep[0]+4]==4)&&((matrice[dep[1]][dep[0]+3])!=2)&&((matrice[dep[1]][dep[0]+3])!=3))
                 {
-                    if(matrice[dep[1]][dep[0]+4]==13)
+                    if(matrice[dep[1]][dep[0]+4]==4)
                     {
                         player[*Ptour-1].scoreP ++;
                     }
@@ -436,7 +436,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         {
                             if(((matrice[dep[1]+1][dep[0]+2]==2)||(matrice[dep[1]+1][dep[0]+2]==3)))
                             {
-                                if(matrice[dep[1]-2][dep[0]+2]==13)
+                                if(matrice[dep[1]-2][dep[0]+2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
@@ -447,7 +447,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                             }
                             else
                             {
-                                if(matrice[dep[1]+2][dep[0]+2]==13)
+                                if(matrice[dep[1]+2][dep[0]+2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
@@ -460,7 +460,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         {
                             if((matrice[dep[1]-1][dep[0]+2]==2)||(matrice[dep[1]-1][dep[0]+2]==3))
                             {
-                                if(matrice[dep[1]+2][dep[0]+2]==13)
+                                if(matrice[dep[1]+2][dep[0]+2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
@@ -471,7 +471,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                             }
                             else
                             {
-                                if(matrice[dep[1]-2][dep[0]+2]==13)
+                                if(matrice[dep[1]-2][dep[0]+2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
@@ -529,9 +529,9 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
         ///3.1. Deplacment en haut
         if(((choix=='h')||(choix=='H'))&&(dep[1]!=0)&&((matrice[dep[1]-1][dep[0]])!=2)&&((matrice[dep[1]-1][dep[0]])!=3))
         {
-            if((matrice[dep[1]-2][dep[0]]==0)||(matrice[dep[1]-2][dep[0]]==13))
+            if((matrice[dep[1]-2][dep[0]]==0)||(matrice[dep[1]-2][dep[0]]==4))
             {
-                if(matrice[dep[1]-2][dep[0]]==13)
+                if(matrice[dep[1]-2][dep[0]]==4)
                 {
                     player[0].scoreP ++;
                 }
@@ -545,9 +545,9 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                 printf("Impossible de sortir du plateau\n");
                 system("PAUSE");
             }
-            else if((valid_dep == 1)&&((matrice[dep[1]-4][dep[0]]==0)||(matrice[dep[1]-4][dep[0]]==13))&&((matrice[dep[1]-3][dep[0]])!=2)&&((matrice[dep[1]-3][dep[0]])!=3))
+            else if((valid_dep == 1)&&((matrice[dep[1]-4][dep[0]]==0)||(matrice[dep[1]-4][dep[0]]==4))&&((matrice[dep[1]-3][dep[0]])!=2)&&((matrice[dep[1]-3][dep[0]])!=3))
             {
-                if(matrice[dep[1]-4][dep[0]]==13)
+                if(matrice[dep[1]-4][dep[0]]==4)
                 {
                     player[0].scoreP ++;
                 }
@@ -570,7 +570,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                     {
                         if((matrice[dep[1]-2][dep[0]+1]==2)||(matrice[dep[1]-2][dep[0]+1]==3))
                         {
-                            if(matrice[dep[1]-2][dep[0]-2]==13)
+                            if(matrice[dep[1]-2][dep[0]-2]==4)
                             {
                                 player[0].scoreP ++;
                             }
@@ -582,7 +582,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                         }
                         else
                         {
-                            if(matrice[dep[1]-2][dep[0]+2]==13)
+                            if(matrice[dep[1]-2][dep[0]+2]==4)
                             {
                                 player[0].scoreP ++;
                             }
@@ -595,7 +595,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                     {
                         if((matrice[dep[1]-2][dep[0]-1]==2)||(matrice[dep[1]-2][dep[0]-1]==3))
                         {
-                            if(matrice[dep[1]-2][dep[0]+2]==13)
+                            if(matrice[dep[1]-2][dep[0]+2]==4)
                             {
                                 player[0].scoreP ++;
                             }
@@ -606,7 +606,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                         }
                         else
                         {
-                            if(matrice[dep[1]-2][dep[0]-2]==13)
+                            if(matrice[dep[1]-2][dep[0]-2]==4)
                             {
                                 player[0].scoreP ++;
                             }
@@ -622,9 +622,9 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
         ///3.2. Deplacment en bas
         else if(((choix=='b')||(choix=='B'))&&(dep[1]!=16)&&((matrice[dep[1]+1][dep[0]])!=2)&&((matrice[dep[1]+1][dep[0]])!=3))
         {
-            if((matrice[dep[1]+2][dep[0]]==0)||(matrice[dep[1]+2][dep[0]]==13))
+            if((matrice[dep[1]+2][dep[0]]==0)||(matrice[dep[1]+2][dep[0]]==4))
             {
-                if(matrice[dep[1]+2][dep[0]]==13)
+                if(matrice[dep[1]+2][dep[0]]==4)
                 {
                     player[0].scoreP ++;
                 }
@@ -638,9 +638,9 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                 printf("Impossible de sortir du plateau\n");
                 system("PAUSE");
             }
-            else if((valid_dep == 1)&&((matrice[dep[1]+4][dep[0]]==0)||(matrice[dep[1]+4][dep[0]]==13))&&((matrice[dep[1]+3][dep[0]])!=2)&&((matrice[dep[1]+3][dep[0]])!=3))
+            else if((valid_dep == 1)&&((matrice[dep[1]+4][dep[0]]==0)||(matrice[dep[1]+4][dep[0]]==4))&&((matrice[dep[1]+3][dep[0]])!=2)&&((matrice[dep[1]+3][dep[0]])!=3))
             {
-                if(matrice[dep[1]+4][dep[0]]==13)
+                if(matrice[dep[1]+4][dep[0]]==4)
                 {
                     player[0].scoreP ++;
                 }
@@ -663,7 +663,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                     {
                         if((matrice[dep[1]+2][dep[0]+1]==2)||(matrice[dep[1]+2][dep[0]+1]==3))
                         {
-                            if(matrice[dep[1]+2][dep[0]-2]==13)
+                            if(matrice[dep[1]+2][dep[0]-2]==4)
                             {
                                 player[0].scoreP ++;
                             }
@@ -674,7 +674,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                         }
                         else
                         {
-                            if(matrice[dep[1]+2][dep[0]+2]==13)
+                            if(matrice[dep[1]+2][dep[0]+2]==4)
                             {
                                 player[0].scoreP ++;
                             }
@@ -687,7 +687,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                     {
                         if((matrice[dep[1]+2][dep[0]-1]==2)||(matrice[dep[1]+2][dep[0]-1]==3))
                         {
-                            if(matrice[dep[1]+2][dep[0]+2]==13)
+                            if(matrice[dep[1]+2][dep[0]+2]==4)
                             {
                                 player[0].scoreP ++;
                             }
@@ -698,7 +698,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                         }
                         else
                         {
-                            if(matrice[dep[1]+2][dep[0]-2]==13)
+                            if(matrice[dep[1]+2][dep[0]-2]==4)
                             {
                                 player[0].scoreP ++;
                             }
@@ -714,9 +714,9 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
         ///3.3. Deplacment a gauche
         else if(((choix=='g')||(choix=='G'))&&(dep[0]!=0)&&((matrice[dep[1]][dep[0]-1])!=2)&&((matrice[dep[1]][dep[0]-1])!=3))
         {
-            if((matrice[dep[1]][dep[0]-2]==0)||(matrice[dep[1]][dep[0]-2]==13))
+            if((matrice[dep[1]][dep[0]-2]==0)||(matrice[dep[1]][dep[0]-2]==4))
             {
-                if(matrice[dep[1]][dep[0]-2]==13)
+                if(matrice[dep[1]][dep[0]-2]==4)
                 {
                     player[0].scoreP ++;
                 }
@@ -730,9 +730,9 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                 printf("Impossible de sortir du plateau\n");
                 system("PAUSE");
             }
-            else if((valid_dep == 1)&&((matrice[dep[1]][dep[0]-4]==0)||(matrice[dep[1]][dep[0]-4]==13))&&((matrice[dep[1]][dep[0]-3])!=2)&&((matrice[dep[1]][dep[0]-3])!=3))
+            else if((valid_dep == 1)&&((matrice[dep[1]][dep[0]-4]==0)||(matrice[dep[1]][dep[0]-4]==4))&&((matrice[dep[1]][dep[0]-3])!=2)&&((matrice[dep[1]][dep[0]-3])!=3))
             {
-                if(matrice[dep[1]][dep[0]-4]==13)
+                if(matrice[dep[1]][dep[0]-4]==4)
                 {
                     player[0].scoreP ++;
                 }
@@ -755,7 +755,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                     {
                         if((matrice[dep[1]+1][dep[0]-2]==2)||(matrice[dep[1]+1][dep[0]-2]==3))
                         {
-                            if(matrice[dep[1]-2][dep[0]-2]==13)
+                            if(matrice[dep[1]-2][dep[0]-2]==4)
                             {
                                 player[0].scoreP ++;
                             }
@@ -766,7 +766,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                         }
                         else
                         {
-                            if(matrice[dep[1]+2][dep[0]-2]==13)
+                            if(matrice[dep[1]+2][dep[0]-2]==4)
                             {
                                 player[0].scoreP ++;
                             }
@@ -779,7 +779,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                     {
                         if((matrice[dep[1]-1][dep[0]-2]==2)||(matrice[dep[1]-1][dep[0]-2]==3))
                         {
-                            if(matrice[dep[1]+2][dep[0]-2]==13)
+                            if(matrice[dep[1]+2][dep[0]-2]==4)
                             {
                                 player[0].scoreP ++;
                             }
@@ -790,7 +790,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                         }
                         else
                         {
-                            if(matrice[dep[1]-2][dep[0]-2]==13)
+                            if(matrice[dep[1]-2][dep[0]-2]==4)
                             {
                                 player[0].scoreP ++;
                             }
@@ -806,9 +806,9 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
         ///3.4. Deplacment a droite
         else if(((choix=='d')||(choix=='D'))&&(dep[0]!=16)&&((matrice[dep[1]][dep[0]+1])!=2)&&((matrice[dep[1]][dep[0]+1])!=3))
         {
-            if((matrice[dep[1]][dep[0]+2]==0)||(matrice[dep[1]][dep[0]+2]==13))
+            if((matrice[dep[1]][dep[0]+2]==0)||(matrice[dep[1]][dep[0]+2]==4))
             {
-                if(matrice[dep[1]][dep[0]+2]==13)
+                if(matrice[dep[1]][dep[0]+2]==4)
                 {
                     player[0].scoreP ++;
                 }
@@ -822,9 +822,9 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                 printf("Impossible de sortir du plateau\n");
                 system("PAUSE");
             }
-            else if((valid_dep == 1)&&((matrice[dep[1]][dep[0]+4]==0)||(matrice[dep[1]][dep[0]+4]==13))&&(matrice[dep[1]][dep[0]+4]==13)&&((matrice[dep[1]][dep[0]+3])!=2)&&((matrice[dep[1]][dep[0]+3])!=3))
+            else if((valid_dep == 1)&&((matrice[dep[1]][dep[0]+4]==0)||(matrice[dep[1]][dep[0]+4]==4))&&(matrice[dep[1]][dep[0]+4]==4)&&((matrice[dep[1]][dep[0]+3])!=2)&&((matrice[dep[1]][dep[0]+3])!=3))
             {
-                if(matrice[dep[1]][dep[0]+4]==13)
+                if(matrice[dep[1]][dep[0]+4]==4)
                 {
                     player[0].scoreP ++;
                 }
@@ -847,7 +847,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                     {
                         if(((matrice[dep[1]+1][dep[0]+2]==2)||(matrice[dep[1]+1][dep[0]+2]==3)))
                         {
-                            if(matrice[dep[1]-2][dep[0]+2]==13)
+                            if(matrice[dep[1]-2][dep[0]+2]==4)
                             {
                                 player[0].scoreP ++;
                             }
@@ -858,7 +858,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                         }
                         else
                         {
-                            if(matrice[dep[1]+2][dep[0]+2]==13)
+                            if(matrice[dep[1]+2][dep[0]+2]==4)
                             {
                                 player[0].scoreP ++;
                             }
@@ -871,7 +871,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                     {
                         if((matrice[dep[1]-1][dep[0]+2]==2)||(matrice[dep[1]-1][dep[0]+2]==3))
                         {
-                            if(matrice[dep[1]+2][dep[0]+2]==13)
+                            if(matrice[dep[1]+2][dep[0]+2]==4)
                             {
                                 player[0].scoreP ++;
                             }
@@ -882,7 +882,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                         }
                         else
                         {
-                            if(matrice[dep[1]-2][dep[0]+2]==13)
+                            if(matrice[dep[1]-2][dep[0]+2]==4)
                             {
                                 player[0].scoreP ++;
                             }

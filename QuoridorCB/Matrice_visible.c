@@ -8,8 +8,7 @@
 - mur verticale double : 0xBA
 - mur horizontal double : 0xCD
 - mur "+" double : 0xCE
-- rond : 0x09
-
+- rond : 0x0F
 */
 
 void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)
@@ -71,10 +70,10 @@ void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)
                 else if(tab[i][j]==7){
                     printf(" %c ", caractereJ[1]);
                 }
-                else if(tab[i][j]==9){
+                else if(tab[i][j]==8){
                     printf(" %c ", caractereJ[2]);
                 }
-                else if(tab[i][j]==11){
+                else if(tab[i][j]==9){
                     printf(" %c ", caractereJ[3]);
                 }
                 else if(tab[i][j]==1){
@@ -83,10 +82,10 @@ void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)
                 else if(tab[i][j]==3){
                     printf("%c", 0xBA);
                 }
-                else if(tab[i][j]==13){
-                    printf(" %c ", 0x01);
+                else if(tab[i][j]==4){
+                    printf(" %c ", 0x0F);
                 }
-                else if(tab[i][j]==14){
+                else if(tab[i][j]==6){
                     printf(" %c ", ia.jeton);
                 }
             }

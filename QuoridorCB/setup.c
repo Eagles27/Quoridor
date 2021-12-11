@@ -174,7 +174,7 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
         player[2].coordonneX_org = traduction(cJ3);
         player[2].coordonneY_org = 16;
 
-        mat[player[2].coordonneY][player[2].coordonneX] = 9;
+        mat[player[2].coordonneY][player[2].coordonneX] = 8;
 
 
 
@@ -191,7 +191,7 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
         player[3].coordonneX_org = 0;
         player[3].coordonneY_org = traduction(cJ4);
 
-        mat[player[3].coordonneY][player[3].coordonneX] = 11;
+        mat[player[3].coordonneY][player[3].coordonneX] = 9;
 
 
 
