@@ -92,7 +92,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                 //Initialisation score
                 ia.score = 0;
-                player[0].scoreP = 0;
+                save_score(player,0);
 
                 //Initialisation booleen annulation
                 player[0].A_annule = 0;
@@ -102,7 +102,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 {
                     system("cls");
                     matrice_propre(mat,player,ia);
-                    menu_cote(Ptour,Pnombre_joueur,player,ia);
+                    menu_cote_ia(num_tour,player,ia);
                     printf("%s:\n\n",player[0].nomJ);
                     printf("Choisissez une ligne A --> Q\n");
                     fflush(stdin);
@@ -190,6 +190,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                     if(num_tour%2 == 0)
                     {
                         //Joueur gagne
+                        actualisation_score(player,0);
                     }
                     else
                     {
@@ -205,6 +206,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
 
             }
+
             else
             {
 
@@ -292,6 +294,8 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                     }
                 }
 
+                player[0].barrieresR = 1;
+
                 setup(Pnombre_joueur,debut,mat,player,Ptour,ia);
 
                 tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction, ia);
@@ -357,21 +361,10 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                     matrice_propre(mat,player,ia);
                     printf("\n\n%s n'a plus de barriere\n\n",player[tour_test].nomJ);
 
-                    if(player[tour_test].numeroJ == 1)
-                    {
-                        numero = 0;
-                    }
-                    else
-                    {
-                        numero = 1;
-                    }
-
-
-
 
                     if(gagner_barriere(player, Pnombre_joueur) == -1)
                     {
-                        printf("Les 2 jouers ont gagnes car ils sont autant avances\n");
+                        printf("Les %d joueursj ont gagnes car ils sont autant avances\n",*Pnombre_joueur);
                         system("PAUSE");
                     }
 
@@ -441,9 +434,8 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
             {
                 system("cls");
                 printf("Gagne!!!");
-                player[tour_test].scoreP ++;
-                sauver_score(player, Pnombre_joueur);
-                system("PAUSE");
+                actualisation_score(player,tour_test);
+
             }
 
 
@@ -455,15 +447,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 matrice_propre(mat,player,ia);
                 printf("\n\n%s n'a plus de barriere\n\n",player[tour_test].nomJ);
 
-                if(player[tour_test].numeroJ == 1)
-                {
-                    numero = 0;
-                }
-                else
-                {
-                    numero = 1;
-                }
-
 
 
 
@@ -471,31 +454,19 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 {
                     printf("Les 2 jouers ont gagnes car ils sont autant avances\n");
                     system("PAUSE");
-                    sauver_score(player, Pnombre_joueur);
+
                 }
 
                 else
                 {
 
                     printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player, Pnombre_joueur)].nomJ);
-                    player[gagner_barriere(player, Pnombre_joueur)].scoreP ++;
                     system("PAUSE");
-                    sauver_score(player, Pnombre_joueur);
+                    actualisation_score(player,tour_test);
 
                 }
 
             }
-            if(gagner(player,Pnombre_joueur,tour_test) != -1)
-            {
-                for(int i = 0; i<4; i++)
-                {
-                    if(index_score[i][1] != -1)
-                    {
-                        list_score[index_score[i][0]] = player[index_score[i][1]].scoreP;
-                    }
-                }
-            }
-
 
             break;
         }

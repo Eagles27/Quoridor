@@ -83,7 +83,7 @@ void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)
                     printf("%c", 0xBA);
                 }
                 else if(tab[i][j]==4){
-                    printf(" %c ", 0x0F);
+                    printf(" %c ", 0x01);
                 }
                 else if(tab[i][j]==6){
                     printf(" %c ", ia.jeton);

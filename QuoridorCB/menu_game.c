@@ -93,11 +93,6 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                     }
                 }
 
-                /*system("cls");
-                matrice_propre(mat,player,ia);
-                menu_cote(Ptour,Pnombrejoueur,player,ia);
-                system("PAUSE");*/
-
                 *Action = 1;
             }
 
@@ -136,8 +131,6 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
         }
         case 3 :
         {
-            printf("%d", *Ptour);
-            system("PAUSE");
             ///PPG passer son tour
             if(*Pnombrejoueur == 1)
             {
