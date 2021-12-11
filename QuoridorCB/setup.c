@@ -132,9 +132,6 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
     {
 
         /// Joueur 1
-
-
-
         cJ1 = 'I';
 
         player[0].coordonneX = traduction(cJ1);
@@ -148,9 +145,6 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
 
 
         /// Joueur 2
-
-
-
         cJ2 = 'i';
 
         player[1].coordonneX = 16;
@@ -180,8 +174,6 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
 
 
         /// Joueur 4
-
-
 
         cJ4 = 'i';
 

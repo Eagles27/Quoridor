@@ -59,64 +59,77 @@ int gagner_barriere(t_joueur player[4], int *Pnombre_joueur)
         placement_4 = player[3].coordonneX;
 
         //Tous les joueurs sont a egalite
-        if((placement_1 == placement_2)&&(placement_1 == placement_3)&&(placement_1 == placement_4)&&(placement_2 == placement_3)&&(placement_2 == placement_4)&&(placement_3 == placement_4)){
+        if((placement_1 == placement_2)&&(placement_1 == placement_3)&&(placement_1 == placement_4)&&(placement_2 == placement_3)&&(placement_2 == placement_4)&&(placement_3 == placement_4))
+        {
             return -1;
         }
         //1, 2 et 3 sont a egalité devant
-        else if((placement_4 < placement_1)&&(placement_1 == placement_2)&&(placement_1==placement_3)&&(placement_2==placement_3)){
+        else if((placement_4 < placement_1)&&(placement_1 == placement_2)&&(placement_1==placement_3)&&(placement_2==placement_3))
+        {
             return 123;
         }
         //1, 2 et 4 sont a egalité devant
-        else if((placement_3 < placement_1)&&(placement_1 == placement_2)&&(placement_1==placement_4)&&(placement_2==placement_4)){
+        else if((placement_3 < placement_1)&&(placement_1 == placement_2)&&(placement_1==placement_4)&&(placement_2==placement_4))
+        {
             return 124;
         }
         //1, 3 et 4 sont a egalité devant
-        else if((placement_2 < placement_1)&&(placement_1 == placement_3)&&(placement_1==placement_4)&&(placement_3==placement_4)){
+        else if((placement_2 < placement_1)&&(placement_1 == placement_3)&&(placement_1==placement_4)&&(placement_3==placement_4))
+        {
             return 134;
         }
         //3, 2 et 4 sont a egalité devant
-        else if((placement_1 < placement_1)&&(placement_2 == placement_3)&&(placement_2==placement_4)&&(placement_3==placement_4)){
+        else if((placement_1 < placement_1)&&(placement_2 == placement_3)&&(placement_2==placement_4)&&(placement_3==placement_4))
+        {
             return 234;
         }
         //1, 2 sont a egalite devant
-        else if((placement_3<placement_1)&&(placement_4<placement_1)&&(placement_1==placement_2)){
+        else if((placement_3<placement_1)&&(placement_4<placement_1)&&(placement_1==placement_2))
+        {
             return 12;
         }
         //2, 3 sont a egalite devant
-        else if((placement_1<placement_2)&&(placement_4<placement_2)&&(placement_3==placement_2)){
+        else if((placement_1<placement_2)&&(placement_4<placement_2)&&(placement_3==placement_2))
+        {
             return 23;
         }
         //3, 4 sont a egalite devant
-        else if((placement_1<placement_3)&&(placement_2<placement_3)&&(placement_3==placement_4)){
+        else if((placement_1<placement_3)&&(placement_2<placement_3)&&(placement_3==placement_4))
+        {
             return 34;
         }
         //1, 4 sont a egalite devant
-        else if((placement_3<placement_1)&&(placement_2<placement_1)&&(placement_1==placement_4)){
+        else if((placement_3<placement_1)&&(placement_2<placement_1)&&(placement_1==placement_4))
+        {
             return 14;
         }
         //1 Gagne
-        else if((placement_2<placement_1)&&(placement_3<placement_1)&&(placement_4<placement_1)){
+        else if((placement_2<placement_1)&&(placement_3<placement_1)&&(placement_4<placement_1))
+        {
             return 1;
         }
         //2 Gagne
-        else if((placement_1<placement_2)&&(placement_3<placement_2)&&(placement_4<placement_2)){
+        else if((placement_1<placement_2)&&(placement_3<placement_2)&&(placement_4<placement_2))
+        {
             return 2;
         }
         //3 Gagne
-        else if((placement_2<placement_3)&&(placement_1<placement_3)&&(placement_4<placement_3)){
+        else if((placement_2<placement_3)&&(placement_1<placement_3)&&(placement_4<placement_3))
+        {
             return 3;
         }
         //4 Gagne
-        else if((placement_2<placement_4)&&(placement_3<placement_4)&&(placement_1<placement_4)){
+        else if((placement_2<placement_4)&&(placement_3<placement_4)&&(placement_1<placement_4))
+        {
             return 4;
         }
-        else{
-            return -1;
+        else
+        {
+            return 0;
         }
     }
 
-
-
+    return 0;
 
 }
 

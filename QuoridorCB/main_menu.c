@@ -236,9 +236,9 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         scanf("%s",nom);
                         majuscule(nom);
                         strcpy(player[i].nomJ,nom);
-
-
                         player[i].numeroJ = i+1;
+
+                        save_score(player,i);
 
 
                     }
@@ -294,8 +294,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                     }
                 }
 
-                player[0].barrieresR = 1;
-
                 setup(Pnombre_joueur,debut,mat,player,Ptour,ia);
 
                 tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction, ia);
@@ -334,6 +332,28 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         }
                     }
 
+                    else
+                    {
+                        if(*Ptour == 1)
+                        {
+                            tour_test = *Ptour-1;
+                        }
+                        else if(*Ptour == 2)
+                        {
+                            tour_test = *Ptour-1;
+                        }
+
+                        else if(*Ptour == 3)
+                        {
+                            tour_test = *Ptour-1;
+                        }
+
+                        else
+                        {
+                            tour_test = 3;
+                        }
+                    }
+
 
 
                     tour_par_tour(Pnombre_joueur,mat,player,Ptour, mat_avant, PAction, ia);
@@ -359,23 +379,169 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 {
                     system("cls");
                     matrice_propre(mat,player,ia);
-                    printf("\n\n%s n'a plus de barriere\n\n",player[tour_test].nomJ);
+                    printf("\n\n%s n'a plus de barrieres\n\n",player[tour_test].nomJ);
 
-
-                    if(gagner_barriere(player, Pnombre_joueur) == -1)
+                    if(*Pnombre_joueur == 2)
                     {
-                        printf("Les %d joueursj ont gagnes car ils sont autant avances\n",*Pnombre_joueur);
-                        system("PAUSE");
+
+                        if(gagner_barriere(player, Pnombre_joueur) == -1)
+                        {
+                            printf("Les %d joueurs ont gagnes car ils sont autant avances\n",*Pnombre_joueur);
+                            system("PAUSE");
+                        }
+
+                        else
+                        {
+
+                            printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player, Pnombre_joueur)].nomJ);
+                            player[gagner_barriere(player, Pnombre_joueur)].scoreP ++;
+                            system("PAUSE");
+                            actualisation_score(player,tour_test);
+
+                        }
+
                     }
 
                     else
                     {
+                        if(gagner_barriere(player, Pnombre_joueur) == -1)
+                        {
+                            printf("Les %d joueurs ont gagnes car ils sont autant avances\n",*Pnombre_joueur);
+                            system("PAUSE");
+                        }
 
-                        printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player, Pnombre_joueur)].nomJ);
-                        player[gagner_barriere(player, Pnombre_joueur)].scoreP ++;
-                        system("PAUSE");
-                        actualisation_score(player,tour_test);
+                        else if(gagner_barriere(player, Pnombre_joueur) == 123)
+                        {
+                            printf("%s,%s,%s ont gagne !!!",player[0].nomJ,player[1].nomJ,player[2].nomJ);
+                            system("PAUSE");
 
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+
+                        }
+
+                        else if(gagner_barriere(player, Pnombre_joueur) == 123)
+                        {
+                            printf("%s,%s,%s ont gagne !!!",player[0].nomJ,player[1].nomJ,player[2].nomJ);
+                            system("PAUSE");
+
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+
+                        }
+
+                        else if(gagner_barriere(player, Pnombre_joueur) == 124)
+                        {
+                            printf("%s,%s,%s ont gagne !!!",player[0].nomJ,player[1].nomJ,player[3].nomJ);
+                            system("PAUSE");
+
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,3);
+
+                        }
+
+                        else if(gagner_barriere(player, Pnombre_joueur) == 134)
+                        {
+                            printf("%s,%s,%s ont gagne !!!",player[0].nomJ,player[2].nomJ,player[3].nomJ);
+                            system("PAUSE");
+
+                            actualisation_score(player,0);
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
+
+                        }
+
+                        else if(gagner_barriere(player, Pnombre_joueur) == 234)
+                        {
+                            printf("%s,%s,%s ont gagne !!!",player[1].nomJ,player[2].nomJ,player[3].nomJ);
+                            system("PAUSE");
+
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
+
+                        }
+
+                        else if(gagner_barriere(player, Pnombre_joueur) == 12)
+                        {
+                            printf("%s,%s ont gagne !!!",player[0].nomJ,player[1].nomJ);
+                            system("PAUSE");
+
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+
+                        }
+
+                        else if(gagner_barriere(player, Pnombre_joueur) == 23)
+                        {
+                            printf("%s,%s ont gagne !!!",player[1].nomJ,player[2].nomJ);
+                            system("PAUSE");
+
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+
+
+                        }
+
+                        else if(gagner_barriere(player, Pnombre_joueur) == 34)
+                        {
+                            printf("%s,%s ont gagne !!!",player[2].nomJ,player[3].nomJ);
+                            system("PAUSE");
+
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
+
+                        }
+
+                        else if(gagner_barriere(player, Pnombre_joueur) == 14)
+                        {
+                            printf("%s,%s ont gagne !!!",player[0].nomJ,player[3].nomJ);
+                            system("PAUSE");
+
+                            actualisation_score(player,0);
+                            actualisation_score(player,3);
+
+                        }
+
+                        else if(gagner_barriere(player, Pnombre_joueur) == 1)
+                        {
+                            printf("%s a gagne !!!",player[0].nomJ);
+                            system("PAUSE");
+
+                            actualisation_score(player,0);
+
+                        }
+
+                        else if(gagner_barriere(player, Pnombre_joueur) == 2)
+                        {
+                            printf("%s a gagne !!!",player[1].nomJ);
+                            system("PAUSE");
+
+                            actualisation_score(player,1);
+
+                        }
+
+                        else if(gagner_barriere(player, Pnombre_joueur) == 3)
+                        {
+                            printf("%s a gagne !!!",player[2].nomJ);
+                            system("PAUSE");
+
+                            actualisation_score(player,2);
+
+
+                        }
+
+                        else if(gagner_barriere(player, Pnombre_joueur) == 4)
+                        {
+                            printf("%s a gagne !!!",player[3].nomJ);
+                            system("PAUSE");
+
+                            actualisation_score(player,3);
+
+                        }
                     }
 
                 }

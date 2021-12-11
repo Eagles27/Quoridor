@@ -70,7 +70,8 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
 
                     }
                 }
-                else{
+                else
+                {
                     if(*Ptour == 4)
                     {
                         mat[dep[1]][dep[0]] = 9;
@@ -124,7 +125,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
 
             matrice_propre(mat,player,ia);
             menu_cote(Ptour,Pnombrejoueur,player,ia);
-            //system("PAUSE");
+
             *Action = 2;
 
             break;
@@ -132,14 +133,8 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
         case 3 :
         {
             ///PPG passer son tour
-            if(*Pnombrejoueur == 1)
-            {
-                tour ++;
-            }
-            else
-            {
-                *Ptour ++;
-            }
+
+            *Ptour ++;
             *Action = 3;
 
             break;
@@ -148,7 +143,8 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
         {
             if(*Pnombrejoueur == 1)
             {
-                if(player[0].A_annule == 0){
+                if(player[0].A_annule == 0)
+                {
                     ia.coordonneX = ia.coordonneX_av;
                     ia.coordonneY = ia.coordonneY_av;
 
@@ -253,6 +249,5 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
 
     }
     while(choix == 0);
-
 
 }

@@ -10,7 +10,6 @@ void tour_par_tour(int* Pnombre_joueur, int mat[17][17], t_joueur player[4],int*
         {
             *Ptour = 2;
 
-
         }
 
         else if(*Ptour%4 == 2)
