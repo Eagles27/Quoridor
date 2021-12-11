@@ -21,7 +21,6 @@ int main()
 
     ///2. Debut du jeu
 
-
     main_menu(Pnombre_joueur, mat, player, ia);
 
 

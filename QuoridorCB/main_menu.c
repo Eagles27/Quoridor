@@ -51,7 +51,11 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
     do
     {
         system("cls");
-        printf("1. Nouvelle Partie\n2. Charger Partie\n3. Afficher les regles\n4. Quitter\n");
+        printf("1. Nouvelle Partie\n");
+        printf("2. Charger Partie\n");
+        printf("3. Afficher les regles\n");
+        printf("4. Affichage des scores\n");
+        printf("5. Quitter\n");
         fflush(stdin);
         scanf("%d",&choix);
 
@@ -199,13 +203,16 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 }
                 else if(gagner_ia(player, ia, num_tour) == 2)
                 {
-                    if(player[0].coordonneY == (16 - ia.coordonneY)){
+                    if(player[0].coordonneY == (16 - ia.coordonneY))
+                    {
                         //Personne ne gagne
                     }
-                    else if(player[0].coordonneY > (16 - ia.coordonneY)){*
+                    else if(player[0].coordonneY > (16 - ia.coordonneY))
+                    {
                         //Je joueur[0] gagne
                     }
-                    else if(player[0].coordonneY < (16 - ia.coordonneY)){*
+                    else if(player[0].coordonneY < (16 - ia.coordonneY))
+                    {
                         //L'IA gagne
                     }
                 }
@@ -652,6 +659,14 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
         }
 
         case 4:
+        {
+            t_joueur playeraffichage[150];
+
+            tableau_score(playeraffichage);
+            break;
+        }
+
+        case 5:
         {
             sauver_plateau(mat);
             sauver_joueur(player, Pnombre_joueur);

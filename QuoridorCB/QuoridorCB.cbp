@@ -104,6 +104,9 @@
 		<Unit filename="setup.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="tableau_score.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="traduction.c">
 			<Option compilerVar="CC" />
 		</Unit>

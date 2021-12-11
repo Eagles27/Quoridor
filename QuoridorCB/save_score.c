@@ -7,6 +7,7 @@ void save_score(t_joueur player[4],int i)
     char tempN[50];
     int tempS;
     int sortie = 0;
+    int nombre;
 
 
     fic = fopen("score.txt","r+");
@@ -37,6 +38,13 @@ void save_score(t_joueur player[4],int i)
 
         if(sortie == 0)
         {
+            fseek(fic,0,SEEK_SET);
+            fscanf(fic,"%d",&nombre);
+            nombre ++;
+
+            fseek(fic,0,SEEK_SET);
+            fprintf(fic,"%d\n",nombre);
+
             fseek(fic,0,SEEK_END);
             fprintf(fic,"%s\n%d\n",player[i].nomJ,player[i].scoreP);
 
