@@ -57,7 +57,7 @@ void sauver_joueur(t_joueur joueur[4], int *Pnombre_joueur)
     }
 }
 
-void sauver_score(t_joueur joueur[4], int * PnbJ)
+/*void sauver_score(t_joueur joueur[4], int * PnbJ)
 {
     ///0. DDV
     FILE* fp = NULL;
@@ -75,7 +75,7 @@ void sauver_score(t_joueur joueur[4], int * PnbJ)
         }
         fclose(fp);
     }
-}
+}*/
 
 //////////////////////////////////////////////////////
 ///////////////////// Chargement /////////////////////
@@ -146,7 +146,7 @@ void charger_joueur(t_joueur joueur[4], int * Pnombre_joueur)
     }
 }
 
-void charger_score(char liste_nom[100][50], int liste_score[100])
+/*void charger_score(char liste_nom[100][50], int liste_score[100])
 {
     ///0. DDV
     FILE* fp;
@@ -167,4 +167,4 @@ void charger_score(char liste_nom[100][50], int liste_score[100])
         }
         fclose(fp);
     }
-}
+}*/
