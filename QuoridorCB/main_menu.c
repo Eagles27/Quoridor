@@ -375,7 +375,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                     {
                         printf("Les 2 jouers ont gagnes car ils sont autant avances\n");
                         system("PAUSE");
-                        sauver_score(player, Pnombre_joueur);
                     }
 
                     else
