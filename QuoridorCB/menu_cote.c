@@ -4,22 +4,22 @@ void menu_cote(int* Ptour,int* PnombreJoeur, t_joueur player[4])
 {
 
     gotoligcol(3,60);
-    printf("Nombre de Joueur : %d",*PnombreJoeur);
+    printf("Nombre de Joueur : %d",*PnombreJoeur);//Affi du nombre de j
 
     gotoligcol(5,60);
-    printf("Joueur : %s",player[*Ptour-1].nomJ);
+    printf("Joueur : %s",player[*Ptour-1].nomJ);//Affi du nom
 
     gotoligcol(7,60);
-    printf("Score Partie : %d",player[*Ptour-1].scoreP);
+    printf("Score Partie : %d",player[*Ptour-1].scoreP);//Affi du score sauvegardé
 
     gotoligcol(9,60);
-    printf("Jeton : %c",player[*Ptour-1].jetonJ);
+    printf("Jeton : %c",player[*Ptour-1].jetonJ);//Affi du jeton du j
 
     gotoligcol(11,60);
-    printf("Barrieres restantes : %d",player[*Ptour-1].barrieresR);
+    printf("Barrieres restantes : %d",player[*Ptour-1].barrieresR);//Affi le nbre de bar restantes pour cette partie
 
     gotoligcol(13,60);
-    if(player[*Ptour-1].A_annule == 0)
+    if(player[*Ptour-1].A_annule == 0)//Affichage du token d'utilisation de l'annulation de coup
     {
         printf("Peut annuler le coup");
     }

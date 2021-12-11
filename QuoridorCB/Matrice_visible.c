@@ -11,9 +11,9 @@
 - rond : 0x0F
 */
 
-void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)
+void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)//Comm OK
 {
-    ///0.0. DDV temporaire
+    ///0.0.pr�-DDV
     char caractereJ[4];
 
     /// Attribution des tokens pour chaques joueurs
@@ -33,6 +33,8 @@ void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)
     for (i = 0 ; i<17 ; i++) printf(" %c", 'A'+i);
     printf("\n\n");
 
+
+    ///2. Affichage des lettres verticales
     for(i=0; i<17; i++)
     {
         ///1.2. Affichage colonne coordonnees ordonnees
@@ -47,10 +49,10 @@ void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)
                 if(j%2==1) //Si impair alors croix simple ou double
                 {
                     if(tab[i][j]==3){
-                        printf("%c", 0xCE);
+                        printf("%c", 0xCE);//Mur croisement double
                     }
                     else{
-                        printf("%c", 0xC5);
+                        printf("%c", 0xC5);//Mur croisement simple
                     }
                 }
 
@@ -58,10 +60,10 @@ void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)
                 {
                     if(tab[i][j]==1){
                         //printf("j%2==0");
-                        printf("%c%c%c", 0xC4, 0xC4, 0xC4);
+                        printf("%c%c%c", 0xC4, 0xC4, 0xC4);//Mur horizontal
                     }
                     else{
-                        printf("%c%c%c", 0xCD, 0xCD, 0xCD);
+                        printf("%c%c%c", 0xCD, 0xCD, 0xCD);//Mur horizontal double
                     }
                 }
             }
@@ -70,7 +72,7 @@ void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)
             {
                 if(tab[i][j]==0) //0 = case vide
                 {
-                    printf("   ");
+                    printf("   ");//Rien dans la case
                 }
                 else if(tab[i][j]==5){ //1 = Pion joueur 1
                     printf(" %c ", caractereJ[0]);
@@ -85,12 +87,12 @@ void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)
                     printf(" %c ", caractereJ[3]);
                 }
                 else if(tab[i][j]==1){
-                    printf("%c", 0xB3);
+                    printf("%c", 0xB3);//Mur vertical
                 }
-                else if(tab[i][j]==3){ //3 = barriere simple
+                else if(tab[i][j]==3){ //3 = barriere double
                     printf("%c", 0xBA);
                 }
-                else if(tab[i][j]==4){ //4 = barriere double
+                else if(tab[i][j]==4){ //4 = case bonus
                     printf(" %c ", 0x01);
                 }
                 else if(tab[i][j]==6){ //6 = Pion IA
@@ -98,6 +100,6 @@ void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)
                 }
             }
         }
-        printf("\n");
+        printf("\n");//Va disparaitre soooooon <3
     }
 }

@@ -2,6 +2,8 @@
 
 void genematrice(int tab[17][17])
 {
+
+    //0.DDV
     int i;
     int j;
 
