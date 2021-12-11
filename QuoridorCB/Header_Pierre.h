@@ -75,7 +75,6 @@ int gagner(t_joueur player[4], int* Pnombrejoueur, int tour);
 
 ///Matrice
 void genematrice(int tab[17][17]);
-void affiche(int tab[17][17]);
 void matrice_propre(int tab[17][17],t_joueur player[4], t_IA);
 
 ///Gestion entrées

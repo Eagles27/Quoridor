@@ -388,16 +388,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                     }
 
                 }
-                if(gagner(player,Pnombre_joueur,tour_test) != -1)
-                {
-                    for(int i = 0; i<4; i++)
-                    {
-                        if(index_score[i][1] != -1)
-                        {
-                            list_score[index_score[i][0]] = player[index_score[i][1]].scoreP;
-                        }
-                    }
-                }
+
             }
 
             break;
