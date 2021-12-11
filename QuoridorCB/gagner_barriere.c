@@ -111,9 +111,10 @@ int gagner_barriere(t_joueur player[4], int *Pnombre_joueur)
             return 4;
         }
         else{
-            return -1;
+            return 0;
         }
     }
+    return 0;
 
 
 
