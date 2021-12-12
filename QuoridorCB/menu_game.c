@@ -143,12 +143,25 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
             ///3.1. Placement de la barriere
             while(bool_barriere==-1)
             {
-                Color(15,0);
-                system("cls");
-                matrice_propre(mat,player,ia);
-                menu_cote(Ptour,Pnombrejoueur,player);
-                saisie_coord(saisie1,Ptour,Pnombrejoueur,player,mat,ia);
-                saisie_direction = saisie_dir(Ptour,Pnombrejoueur,player,mat,ia);
+                if(*Pnombrejoueur == 1)
+                {
+                    Color(15,0);
+                    system("cls");
+                    matrice_propre(mat,player,ia);
+                    menu_cote_ia(2, player, ia);
+                    saisie_coord(saisie1,Ptour,Pnombrejoueur,player,mat,ia);
+                    saisie_direction = saisie_dir(Ptour,Pnombrejoueur,player,mat,ia);
+                }
+                else
+                {
+                    Color(15,0);
+                    system("cls");
+                    matrice_propre(mat,player,ia);
+                    menu_cote(Ptour,Pnombrejoueur,player);
+                    saisie_coord(saisie1,Ptour,Pnombrejoueur,player,mat,ia);
+                    saisie_direction = saisie_dir(Ptour,Pnombrejoueur,player,mat,ia);
+                }
+
 
                 bool_barriere = placer_barriere(mat, saisie1, saisie_direction);
             }
@@ -165,8 +178,18 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                 player[*Ptour-1].barrieresR --; //On decremente le nombre de barriere une fois posee
             }
 
-            matrice_propre(mat,player,ia);
-            menu_cote(Ptour,Pnombrejoueur,player);
+            if(*Pnombrejoueur==1)
+            {
+                matrice_propre(mat,player,ia);
+                menu_cote_ia(2, player, ia);
+            }
+            else
+            {
+                matrice_propre(mat,player,ia);
+                menu_cote(Ptour,Pnombrejoueur,player);
+            }
+
+
 
             *Action = 2;
 
@@ -201,21 +224,21 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                 {
                     ///5.1.3. Le joueur a deja annule une action, il ne peut plus le refaire
 
-                        Color(15,0);
-                        gotoligcol(33,3);
-                        Color(15,10);
-                        printf("                                                           ");
-                        Color(15,0);
-                        gotoligcol(34,3);
-                        Color(15,10);
-                        printf("        Cette action ne peut etre faite qu'une fois        ");
+                    Color(15,0);
+                    gotoligcol(33,3);
+                    Color(15,10);
+                    printf("                                                           ");
+                    Color(15,0);
+                    gotoligcol(34,3);
+                    Color(15,10);
+                    printf("        Cette action ne peut etre faite qu'une fois        ");
 
-                        Color(15,0);
-                        gotoligcol(35,3);
-                        Color(15,10);
-                        printf("                                                           ");
-                        Color(15,0);
-                        gotoligcol(36,3);
+                    Color(15,0);
+                    gotoligcol(35,3);
+                    Color(15,10);
+                    printf("                                                           ");
+                    Color(15,0);
+                    gotoligcol(36,3);
 
 
                     system("PAUSE");
@@ -283,20 +306,20 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                 ///5.2.4. Le joueur a deja annulé un tour
                 else
                 {
-                        Color(15,0);
-                        gotoligcol(33,3);
-                        Color(15,10);
-                        printf("                                                           ");
-                        Color(15,0);
-                        gotoligcol(34,3);
-                        Color(15,10);
-                        printf("        Cette action ne peut etre faite qu'une fois        ");
-                        Color(15,0);
-                        gotoligcol(35,3);
-                        Color(15,10);
-                        printf("                                                           ");
-                        Color(15,0);
-                        gotoligcol(36,3);
+                    Color(15,0);
+                    gotoligcol(33,3);
+                    Color(15,10);
+                    printf("                                                           ");
+                    Color(15,0);
+                    gotoligcol(34,3);
+                    Color(15,10);
+                    printf("        Cette action ne peut etre faite qu'une fois        ");
+                    Color(15,0);
+                    gotoligcol(35,3);
+                    Color(15,10);
+                    printf("                                                           ");
+                    Color(15,0);
+                    gotoligcol(36,3);
 
                     system("PAUSE");
                     system("cls");
@@ -322,18 +345,18 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
         default :
         {
             choix = 0;
-                        Color(15,0);
-                        gotoligcol(33,3);
-                        Color(15,10);
-                        printf("                              ");
-                        Color(15,0);
-                        gotoligcol(34,3);
-                        Color(15,10);
-                        printf("        Saisie erronee        ");
-                        Color(15,0);
-                        gotoligcol(35,3);
-                        Color(15,10);
-                        printf("                              ");
+            Color(15,0);
+            gotoligcol(33,3);
+            Color(15,10);
+            printf("                              ");
+            Color(15,0);
+            gotoligcol(34,3);
+            Color(15,10);
+            printf("        Saisie erronee        ");
+            Color(15,0);
+            gotoligcol(35,3);
+            Color(15,10);
+            printf("                              ");
             system("PAUSE");
             system("cls");
             matrice_propre(mat,player,ia);

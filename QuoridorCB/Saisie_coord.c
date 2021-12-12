@@ -12,10 +12,19 @@ void saisie_coord(int saisie[2],int*Ptour,int*PnombreJ,t_joueur player[4],int ma
     ///1. Saisie abscisse
     do//Blindage
     {
-        Color(15,0);
+        if(*PnombreJ == 1){
+            Color(15,0);
+        system("cls");
+        matrice_propre(mat,player,ia);//Traduit et affiche la matrice ordi
+        menu_cote_ia(2, player, ia);//Affiche le menu sur le coté (info)
+        }
+        else{
+            Color(15,0);
         system("cls");
         matrice_propre(mat,player,ia);//Traduit et affiche la matrice ordi
         menu_cote(Ptour,PnombreJ,player);//Affiche le menu sur le coté (info)
+        }
+
 
         gotoligcol(numero_ligne,numero_colonne);
         Color(15,2);
