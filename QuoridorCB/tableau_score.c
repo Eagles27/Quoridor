@@ -101,7 +101,7 @@ void tableau_score(t_joueur player[150])
         printf("                        ");
         Color(15,0);
 
-        for(int i = 0; i<15; i++)
+        for(int i = 0; i<taille; i++)
         {
 
             Color(15,0);
