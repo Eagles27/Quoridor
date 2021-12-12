@@ -260,7 +260,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         system("cls");
                         Affichage_Du_Titre(1,35);
                         Color(15,2);
-                        gotoligcol(10,50);
+                        gotoligcol(10,45);
                         printf("                                     ");
                         Color(15,0);
                         gotoligcol(nl+1,nc);
@@ -754,7 +754,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                             Color(15,0);
                             gotoligcol(nl+7,nc);
                             Color(15,10);
-                            printf("         Les %d joueurs ont gagnes          ",*Pnombre_joueur);
+                            printf("         Les %d joueurs ont perdus          ",*Pnombre_joueur);
                             Color(15,0);
                             gotoligcol(nl+8,nc);
                             Color(15,10);
