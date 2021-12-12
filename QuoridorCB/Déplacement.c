@@ -213,10 +213,10 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                             //printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller a gauche (g) ou a droite (d) ?\n");
                             scanf("%c", &choix_decalage);
                         }
-                        if(choix_decalage == 'd')
+                        if((choix_decalage == 'd')&&(dep[0]!=16))
                         {
                             //Si le decalage est impossible alors on fait celui de l'autre cote
-                            if(((matrice[dep[1]-2][dep[0]+1]==2)||(matrice[dep[1]-2][dep[0]+1]==3))&&(dep[0]!=0))
+                            if((matrice[dep[1]-2][dep[0]+1]==2)||(matrice[dep[1]-2][dep[0]+1]==3))
                             {
                                 if(matrice[dep[1]-2][dep[0]-2]==4)
                                 {
@@ -241,7 +241,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
 
                             }
                             //Sinon on applique le decalage voulu
-                            else if(dep[0]!=16)
+                            else
                             {
                                 if(matrice[dep[1]-2][dep[0]+2]==4)
                                 {
@@ -251,15 +251,11 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[1]-=2;
                                 valid_dep = 0;
                             }
-                            else
-                            {
-                                valid_dep = 1;
-                            }
                         }
-                        else
+                        else if(dep[0]!=0)
                         {
                             //Si le decalage est impossible alors on fait celui de l'autre cote
-                            if(((matrice[dep[1]-2][dep[0]-1]==2)||(matrice[dep[1]-2][dep[0]-1]==3))&&(dep[0]!=16))
+                            if((matrice[dep[1]-2][dep[0]-1]==2)||(matrice[dep[1]-2][dep[0]-1]==3))
                             {
                                 if(matrice[dep[1]-2][dep[0]+2]==4)
                                 {
@@ -281,7 +277,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 valid_dep = 0;
                             }
                             //Sinon on applique le decalage voulu
-                            else if(dep[0]!=0)
+                            else
                             {
                                 if(matrice[dep[1]-2][dep[0]-2]==4)
                                 {
@@ -291,10 +287,9 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[1]-=2;
                                 valid_dep = 0;
                             }
-                            else
-                            {
-                                valid_dep = 1;
-                            }
+                        }
+                        else{
+                            valid_dep = 1;
                         }
                     }
                 }
@@ -365,7 +360,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
 
                             scanf("%c", &choix_decalage);
                         }
-                        if(choix_decalage == 'd')
+                        if((choix_decalage == 'd')&&(dep[0]!=16))
                         {
                             //Si le decalage est impossible alors on fait celui de l'autre cote
                             if(((matrice[dep[1]+2][dep[0]+1]==2)||(matrice[dep[1]+2][dep[0]+1]==3))&&(dep[0]!=0))
@@ -391,7 +386,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 valid_dep = 0;
                             }
                             //Sinon on applique le decalage voulu
-                            else if(dep[0]!=16)
+                            else
                             {
                                 if(matrice[dep[1]+2][dep[0]+2]==4)
                                 {
@@ -401,12 +396,8 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[1]+=2;
                                 valid_dep = 0;
                             }
-                            else
-                            {
-                                valid_dep = 1;
-                            }
                         }
-                        else
+                        else if(dep[0]!=0)
                         {
                             //Si le decalage est impossible alors on fait celui de l'autre cote
                             if(((matrice[dep[1]+2][dep[0]-1]==2)||(matrice[dep[1]+2][dep[0]-1]==3))&&(dep[0]!=16))
@@ -430,7 +421,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 valid_dep = 0;
                             }
                             //Sinon on applique le decalage voulu
-                            else if(dep[0]!=0)
+                            else
                             {
                                 if(matrice[dep[1]+2][dep[0]-2]==4)
                                 {
@@ -440,10 +431,9 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[1]+=2;
                                 valid_dep = 0;
                             }
-                            else
-                            {
-                                valid_dep = 1;
-                            }
+                        }
+                        else{
+                            valid_dep = 1;
                         }
                     }
                 }
@@ -512,10 +502,10 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                             //printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller en haut (h) ou en bas (b) ?\n");
                             scanf("%c", &choix_decalage);
                         }
-                        if(choix_decalage == 'b')
+                        if((choix_decalage == 'b')&&(dep[1]!=16))
                         {
                             //Si le decalage est impossible alors on fait celui de l'autre cote
-                            if(((matrice[dep[1]+1][dep[0]-2]==2)||(matrice[dep[1]+1][dep[0]-2]==3))&&(dep[1]!=0))
+                            if((matrice[dep[1]+1][dep[0]-2]==2)||(matrice[dep[1]+1][dep[0]-2]==3))
                             {
                                 if(matrice[dep[1]-2][dep[0]-2]==4)
                                 {
@@ -539,7 +529,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 valid_dep = 0;
                             }
                             //Sinon on applique le decalage voulu
-                            else if(dep[1]!=16)
+                            else
                             {
                                 if(matrice[dep[1]+2][dep[0]-2]==4)
                                 {
@@ -549,15 +539,11 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[1]+=2;
                                 valid_dep = 0;
                             }
-                            else
-                            {
-                                valid_dep = 1;
-                            }
                         }
-                        else
+                        else if(dep[1]!=0)
                         {
                             //Si le decalage est impossible alors on fait celui de l'autre cote
-                            if(((matrice[dep[1]-1][dep[0]-2]==2)||(matrice[dep[1]-1][dep[0]-2]==3))&&(dep[1]!=16))
+                            if((matrice[dep[1]-1][dep[0]-2]==2)||(matrice[dep[1]-1][dep[0]-2]==3))
                             {
                                 if(matrice[dep[1]+2][dep[0]-2]==4)
                                 {
@@ -581,7 +567,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 valid_dep = 0;
                             }
                             //Sinon on applique le decalage voulu
-                            else if(dep[1]!=0)
+                            else
                             {
                                 if(matrice[dep[1]-2][dep[0]-2]==4)
                                 {
@@ -591,10 +577,9 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[1]-=2;
                                 valid_dep = 0;
                             }
-                            else
-                            {
-                                valid_dep = 1;
-                            }
+                        }
+                        else{
+                            valid_dep = 1;
                         }
                     }
                 }
@@ -665,7 +650,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
 
                             scanf("%c", &choix_decalage);
                         }
-                        if(choix_decalage == 'b')
+                        if((choix_decalage == 'b')&&(dep[1]!=16))
                         {
                             //Si le decalage est impossible alors on fait celui de l'autre cote
                             if(((matrice[dep[1]+1][dep[0]+2]==2)||(matrice[dep[1]+1][dep[0]+2]==3))&&(dep[1]!=0))
@@ -691,7 +676,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 valid_dep = 0;
                             }
                             //Sinon on applique le decalage voulu
-                            else if(dep[1]!=16)
+                            else
                             {
                                 if(matrice[dep[1]+2][dep[0]+2]==4)
                                 {
@@ -701,15 +686,11 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[1]+=2;
                                 valid_dep = 0;
                             }
-                            else
-                            {
-                                valid_dep = 1;
-                            }
                         }
-                        else
+                        else if(dep[1]!=0)
                         {
                             //Si le decalage est impossible alors on fait celui de l'autre cote
-                            if(((matrice[dep[1]-1][dep[0]+2]==2)||(matrice[dep[1]-1][dep[0]+2]==3))&&(dep[1]!=16))
+                            if((matrice[dep[1]-1][dep[0]+2]==2)||(matrice[dep[1]-1][dep[0]+2]==3))
                             {
                                 if(matrice[dep[1]+2][dep[0]+2]==4)
                                 {
@@ -733,7 +714,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 valid_dep = 0;
                             }
                             //Sinon on applique le decalage voulu
-                            else if(dep[1]!=0)
+                            else
                             {
                                 if(matrice[dep[1]-2][dep[0]+2]==4)
                                 {
@@ -743,10 +724,9 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[1]-=2;
                                 valid_dep = 0;
                             }
-                            else
-                            {
-                                valid_dep = 1;
-                            }
+                        }
+                        else{
+                            valid_dep = 1;
                         }
                     }
                 }
