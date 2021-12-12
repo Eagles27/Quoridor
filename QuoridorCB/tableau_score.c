@@ -1,10 +1,12 @@
 #include "Header_Pierre.h"
 
-
+///Recupere le nombre de joueur enregistré avec leur score
 void saisietaille(int*Ptaille)
 {
+    ///0. DDV
     FILE* fic;
 
+    ///1. Ouverture fichier
     fic = fopen("score.txt","r");
 
     if(fic == NULL)
@@ -20,12 +22,14 @@ void saisietaille(int*Ptaille)
     }
 }
 
-
+///Tri dans l'ordre decroissant chaque joueur en fonction de son score
 void trierB(t_joueur player[150],int*Ptaille)
 {
+    ///0. DDV
     int temp;
     char nom[30];
 
+    ///1. Tri a bulle sur les scores des joueurs
     for(int i=0; i<*Ptaille; i++)
     {
         for(int j=0; j<*Ptaille-1; j++)
@@ -44,15 +48,18 @@ void trierB(t_joueur player[150],int*Ptaille)
     }
 }
 
-
+///Affiche le tableau des scores
 void tableau_score(t_joueur player[150])
 {
+    ///0. DDV
     int taille = 0;
     int *Ptaille = &taille;
     FILE *fp;
 
+    ///1. Determine le nombre de joueur dont nous avons sauvegardé le score
     saisietaille(Ptaille);
 
+    ///2. Ouverture fichier
     fp = fopen("score.txt","r");
 
     if(fp == NULL)
@@ -62,6 +69,7 @@ void tableau_score(t_joueur player[150])
 
     else
     {
+        ///2.1. Lecture de tous les joueurs
         fseek(fp,2,SEEK_SET);
         for(int i = 0; i<taille; i++)
         {
@@ -69,9 +77,11 @@ void tableau_score(t_joueur player[150])
 
         }
 
+        ///2.2. Tri des joueurs selon leur score
         trierB(player,Ptaille);
 
 
+        ///3. Affichage des scores
         for(int i = 0; i<taille; i++)
         {
             printf("%s: %dpts\n", player[i].nomJ,player[i].scoreP);

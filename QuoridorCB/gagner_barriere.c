@@ -1,5 +1,7 @@
 #include "Header_Pierre.h"
 
+
+///Fonction retournant le gagnant si la victoire est parce qu'un joueur n'a plus de barrieres
 int gagner_barriere(t_joueur player[4], int *Pnombre_joueur)
 {
     /*
