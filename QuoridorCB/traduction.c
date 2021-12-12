@@ -1,7 +1,9 @@
 #include "Header_Pierre.h"
 
+///Transforme chaque entree sous forme de caractere en chiffre
 int traduction(char entree)
 {
+    ///On test pour savoir de qu'elle lettre il s'agit puis on renvoie le chiffre correspondant
     if (entree == 'A')
     {
         return 0;
@@ -175,6 +177,7 @@ int traduction(char entree)
     return -1;
 }
 
+///Transforme chaque mot entré en majuscule
 void majuscule(char mot[50]){
     ///0. DDV
     int i = 0;
