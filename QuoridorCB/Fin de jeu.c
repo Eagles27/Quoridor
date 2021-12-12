@@ -51,20 +51,25 @@ int gagner(t_joueur player[4], int* Pnombrejoueur, int tour)
     return -1;
 }
 
+///Determine si un  joueur lors d'une partie avec une IA
 int gagner_ia(t_joueur player[4], t_IA ia, int tour)
 {
+    ///1. Test si victoire car plus de barriere
     if((player[0].barrieresR == 0)||(ia.barrieresR==0))
     {
         return 2;
     }
+    ///2. Test si l'IA est arrivee au bout du plateau
     else if(ia.coordonneY == 0)
     {
         return 1;
     }
+    ///3. Test si le joueur est arrive au bout du plateau
     else if(player[0].coordonneY == 16)
     {
         return 1;
     }
+    ///4. Personne n'a gagne
     else
     {
         return -1;
