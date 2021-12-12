@@ -119,7 +119,7 @@ void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)//Comm OK
                     printf("%c", 0xBA);
                 }
                 else if(tab[i][j]==4){ //4 = case bonus
-                    Color(5, 0);
+                    Color(12, 0);
                     printf(" %c ", 0x01);
                 }
                 else if(tab[i][j]==6){ //6 = Pion IA

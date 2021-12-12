@@ -18,8 +18,38 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
     {
 
         ///1.1. Affichage des choix
-        gotoligcol(20,0);
-        printf("Actions Possibles:\n1-Deplacer son pion\n2-Poser une barriere\n3-Passer son tour\n4-Annuler la derniere action\n5-Revenir au menu precedent\n\nSaisie de l'action du joueur:\n");
+
+        int numero_ligne_action=20;//locales
+        int numero_colonne_action=3;//locales
+
+        gotoligcol(numero_ligne_action,numero_colonne_action);
+        Color(15,2);
+        printf("                                    ");
+        gotoligcol(numero_ligne_action+1,numero_colonne_action);
+        printf("         Actions Possibles:         ");
+        gotoligcol(numero_ligne_action+2,numero_colonne_action);
+        printf("                                    ");
+        gotoligcol(numero_ligne_action+3,numero_colonne_action);
+        Color(15,10);
+        printf("                                    ");
+        gotoligcol(numero_ligne_action+4,numero_colonne_action);
+        printf("       1. Deplacer son pion         ");
+        gotoligcol(numero_ligne_action+5,numero_colonne_action);
+        printf("       2. Poser une barriere        ");
+        gotoligcol(numero_ligne_action+6,numero_colonne_action);
+        printf("         3. Passer son tour         ");
+        gotoligcol(numero_ligne_action+7,numero_colonne_action);
+        printf("    4. Annuler la derniere action   ");
+        gotoligcol(numero_ligne_action+8,numero_colonne_action);
+        printf("    5. Revenir au menu precedent    ");
+        gotoligcol(numero_ligne_action+9,numero_colonne_action);
+        printf("                                    ");
+        gotoligcol(numero_ligne_action+10,numero_colonne_action);
+        printf("   Saisie de l'action du joueur:    ");
+        gotoligcol(numero_ligne_action+11,numero_colonne_action);
+        printf("                                    ");
+        gotoligcol(numero_ligne_action+12,numero_colonne_action);
+        Color(15,0);
         fflush(stdin);
         scanf("%d",&choix);
 
@@ -113,6 +143,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
             ///3.1. Placement de la barriere
             while(bool_barriere==-1)
             {
+                Color(15,0);
                 system("cls");
                 matrice_propre(mat,player,ia);
                 menu_cote(Ptour,Pnombrejoueur,player);
@@ -121,7 +152,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
 
                 bool_barriere = placer_barriere(mat, saisie1, saisie_direction);
             }
-
+            Color(15,0);
             system("cls");
 
             ///3.2. Decrement du nombre de barriere du joueur
@@ -169,7 +200,11 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                 else
                 {
                     ///5.1.3. Le joueur a deja annule une action, il ne peut plus le refaire
-                    printf("Cette action ne peut etre fait qu'une fois\n");
+
+                    Color(15,0);
+                    gotoligcol(26,3);
+
+                    printf("Cette action ne peut etre faite qu'une fois\n");
                     system("PAUSE");
                     system("cls");
                     matrice_propre(mat,player,ia);
