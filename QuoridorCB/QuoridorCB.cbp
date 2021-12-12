@@ -37,6 +37,9 @@
 		<Unit filename="ChoixPion.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Color.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Déplacement.c">
 			<Option compilerVar="CC" />
 		</Unit>

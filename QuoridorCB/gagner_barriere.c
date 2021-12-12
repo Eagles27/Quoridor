@@ -85,7 +85,7 @@ int gagner_barriere(t_joueur player[4], int *Pnombre_joueur)
             return 134;
         }
         //3, 2 et 4 sont a egalité devant
-        else if((placement_1 < placement_1)&&(placement_2 == placement_3)&&(placement_2==placement_4)&&(placement_3==placement_4))
+        else if((placement_1 < placement_4)&&(placement_2 == placement_3)&&(placement_2==placement_4)&&(placement_3==placement_4))
         {
             return 234;
         }
