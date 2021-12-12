@@ -6,14 +6,30 @@ void saisie_coord(int saisie[2],int*Ptour,int*PnombreJ,t_joueur player[4],int ma
     ///0. DDV
     char saisie_clavier;
     int coord;
+    int numero_ligne=20;
+    int numero_colonne=3;
 
     ///1. Saisie abscisse
     do//Blindage
     {
+        Color(15,0);
         system("cls");
         matrice_propre(mat,player,ia);//Traduit et affiche la matrice ordi
         menu_cote(Ptour,PnombreJ,player);//Affiche le menu sur le coté (info)
-        printf("\nSaisir l'abscisse :\n");
+
+        gotoligcol(numero_ligne,numero_colonne);
+        Color(15,2);
+        printf("                               ");
+        Color(15,0);
+        gotoligcol(numero_ligne+1,numero_colonne);
+        Color(15,2);
+        printf("       Saisir l'abscisse       ");
+        Color(15,0);
+        gotoligcol(numero_ligne+2,numero_colonne);
+        Color(15,2);
+        printf("                               ");
+        Color(15,0);
+        gotoligcol(numero_ligne+3,numero_colonne);
         fflush(stdin);//Liberation du scanf
         scanf("%c", &saisie_clavier);//
         coord = traduction(saisie_clavier);//Passage de lettres de coords à coords reeles (en chiffres)
@@ -25,10 +41,25 @@ void saisie_coord(int saisie[2],int*Ptour,int*PnombreJ,t_joueur player[4],int ma
     ///2. Saisie ordonnee
     do//Blindage
     {
+        Color(15,0);
         system("cls");
         matrice_propre(mat,player,ia);
         menu_cote(Ptour,PnombreJ,player);
-        printf("\nSaisir l'ordonnee :\n");
+
+        gotoligcol(numero_ligne,numero_colonne);
+        Color(15,2);
+        printf("                               ");
+        Color(15,0);
+        gotoligcol(numero_ligne+1,numero_colonne);
+        Color(15,2);
+        printf("       Saisir l'ordonee        ");
+        Color(15,0);
+        gotoligcol(numero_ligne+2,numero_colonne);
+        Color(15,2);
+        printf("                               ");
+        Color(15,0);
+        gotoligcol(numero_ligne+3,numero_colonne);
+
         fflush(stdin);
         scanf("%c", &saisie_clavier);
         coord = traduction(saisie_clavier);
@@ -43,6 +74,8 @@ int saisie_dir(int*Ptour,int*PnombreJ,t_joueur player[4],int mat[17][17],t_IA ia
 {
     ///0. DDV
     char saisie;
+    int numero_ligne=20;
+    int numero_colonne=3;
 
     ///1. Saisie
     do//Blindage de saisie
@@ -50,7 +83,21 @@ int saisie_dir(int*Ptour,int*PnombreJ,t_joueur player[4],int mat[17][17],t_IA ia
         system("cls");
         matrice_propre(mat,player,ia);
         menu_cote(Ptour,PnombreJ,player);
-        printf("\nSaisir direction(h,b,g,d) :\n");
+
+        gotoligcol(numero_ligne,numero_colonne);
+        Color(15,2);
+        printf("                               ");
+        Color(15,0);
+        gotoligcol(numero_ligne+1,numero_colonne);
+        Color(15,2);
+        printf("     Saisir la direction       ");
+        Color(15,0);
+        gotoligcol(numero_ligne+2,numero_colonne);
+        Color(15,2);
+        printf("                               ");
+        Color(15,0);
+        gotoligcol(numero_ligne+3,numero_colonne);
+
         fflush(stdin);
         scanf("%c", &saisie);
     }
