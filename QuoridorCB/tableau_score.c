@@ -11,6 +11,8 @@ void saisietaille(int*Ptaille)
 
     if(fic == NULL)
     {
+        printf("Erreur lecture du fichier\n");
+        system("PAUSE");
         exit(1);
     }
 
