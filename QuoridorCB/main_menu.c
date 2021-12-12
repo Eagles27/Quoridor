@@ -427,16 +427,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                         }
 
-                        else if(gagner_barriere(player, Pnombre_joueur) == 123)
-                        {
-                            printf("%s,%s,%s ont gagne !!!",player[0].nomJ,player[1].nomJ,player[2].nomJ);
-                            system("PAUSE");
-
-                            actualisation_score(player,0);
-                            actualisation_score(player,1);
-                            actualisation_score(player,2);
-
-                        }
 
                         else if(gagner_barriere(player, Pnombre_joueur) == 124)
                         {
@@ -693,16 +683,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                     }
 
-                    else if(gagner_barriere(player, Pnombre_joueur) == 123)
-                    {
-                        printf("%s,%s,%s ont gagne !!!",player[0].nomJ,player[1].nomJ,player[2].nomJ);
-                        system("PAUSE");
-
-                        actualisation_score(player,0);
-                        actualisation_score(player,1);
-                        actualisation_score(player,2);
-
-                    }
 
                     else if(gagner_barriere(player, Pnombre_joueur) == 124)
                     {
