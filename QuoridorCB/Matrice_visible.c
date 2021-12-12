@@ -13,7 +13,7 @@
 
 void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)//Comm OK
 {
-    ///0.0.pr�-DDV
+    ///0.0.pre-DDV
     char caractereJ[4];
 
     /// Attribution des tokens pour chaques joueurs
@@ -119,9 +119,11 @@ void matrice_propre(int tab[17][17], t_joueur player[4], t_IA ia)//Comm OK
                     printf("%c", 0xBA);
                 }
                 else if(tab[i][j]==4){ //4 = case bonus
+                    Color(5, 0);
                     printf(" %c ", 0x01);
                 }
                 else if(tab[i][j]==6){ //6 = Pion IA
+                    Color(6,0);
                     printf(" %c ", ia.jeton);
                 }
             }
