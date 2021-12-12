@@ -85,12 +85,18 @@ void tableau_score(t_joueur player[150])
 
         ///3. Affichage des scores
         Color(15,0);
+
         gotoligcol(no_l,no_c);
-        Color(15,2);
-        printf("             ");
+        Color(15,10);
+        printf("                        ");
+        Color(15,0);
+        gotoligcol(no_l+1,no_c);
+        Color(15,10);
+
+
         Color(15,10);
         gotoligcol(no_l,no_c+10);
-        printf(" LEADERBOARD ");
+        printf("LEADERBOARD");
         gotoligcol(no_l+2,no_c);
         for(int i = 0; i<taille; i++)
         {
