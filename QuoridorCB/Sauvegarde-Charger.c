@@ -40,7 +40,9 @@ void sauver_joueur(t_joueur joueur[4], int *Pnombre_joueur)
     if (fp == NULL) printf("\nerreur fichier\n");
     else
     {
+        ///1.1. Ecriture du nombre de joueur
         fprintf(fp, "%d\n", *Pnombre_joueur);
+        ///1.2. Ecritur des infos de chacun des joueurs
         for(int i = 0; i<*Pnombre_joueur; i++)
         {
             fprintf(fp, "%s\n", joueur[i].nomJ);
@@ -79,13 +81,11 @@ void charger_plateau(int tab[17][17])
         ///2. Récupération du plateau
         while(!(feof(fic)))
         {
-            info = fgetc(fic);
-            //printf("%c", info);
-            chiffre = info - 48;
-            //printf("%d", chiffre);
-            tab[i][j] = chiffre;
+            info = fgetc(fic); //recuperation du caractere
+            chiffre = (int)info - 48; //Transformation en chiffre (0 en ascii = 48, 1 = 49,...)
+            tab[i][j] = chiffre; //Ajout de la valeur de la case dans le tableau
             j++;
-            if(j==17)
+            if(j==17) //Retour la la ligne suivante
             {
                 j = 0;
                 i++;
@@ -106,9 +106,11 @@ void charger_joueur(t_joueur joueur[4], int * Pnombre_joueur)
     if (fp == NULL) printf("\nerreur fichier\n");
     else
     {
+        ///1.2. Lecture nombre de joueur
         fscanf(fp, "%d", Pnombre_joueur);
         while(!(feof(fp)))
         {
+            ///1.3. lecture des infos de chacun des joueurs
             for(int i = 0; i< *Pnombre_joueur; i++)
             {
                 fscanf(fp, "%s", joueur[i].nomJ);
