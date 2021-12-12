@@ -10,9 +10,11 @@ d'atterissage alors il ira a droite ou a gauche.
 
 #include "Header_Pierre.h"
 
+///Sous programme qui verifie si la saisie est conforme à l'entree saisie en parametre
 int validation_choix(char chx, char choix1, char choix2)
 {
-    int valid_chx = 1;
+    ///0. DDV
+    int valid_chx = 1; //Booleen
 
     if((chx==choix1)||(chx==choix2))
     {
@@ -23,6 +25,7 @@ int validation_choix(char chx, char choix1, char choix2)
     else
         return 0;
 }
+
 
 void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,t_joueur player[4], t_IA ia)
 {
@@ -35,6 +38,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
     ///1. Affichage utilisateur
     while(valid_dep == 1)
     {
+        ///1.1. Saisie direction deplacement
         while(valid_choix == 1)
         {
             system("cls");
@@ -44,22 +48,15 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             scanf("%c", &choix);
             if((choix=='h')||(choix=='b')||(choix=='g')||(choix=='d')||(choix=='H')||(choix=='B')||(choix=='G')||(choix=='D'))
             {
-                //printf("valid choix");
                 valid_choix = 0;
             }
-            /*else
-            {
-                system("cls");
-                printf("Saisie erronee\n");
-                printf("Direction de deplacement (h, b, g, d) :\n");
-                scanf("%c", &choix);
-            }*/
         }
-        //printf("choix termine\n");
-        ///2.1. Dabut Deplacement a 4 joueurs
+
+        ///2.1. Debut Deplacement a 4 joueurs
         if(*Pnombre_joueur==4)
         {
             ///2.1.1. En haut
+            //On verifie que la case est libre (ou bonus) et qu'il n'y a pas de barriere sur le chemin
             if(((choix=='h')||(choix=='H'))&&(dep[1]!=0)&&(((matrice[dep[1]-1][dep[0]])!=2)||((matrice[dep[1]-1][dep[0]])!=3))&&((matrice[dep[1]-2][dep[0]]==0)||(matrice[dep[1]-2][dep[0]]==4)))
             {
                 if(matrice[dep[1]-1][dep[0]]==4)
@@ -71,6 +68,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             }
 
             ///2.1.2. En bas
+            //On verifie que la case est libre (ou bonus) et qu'il n'y a pas de barriere sur le chemin
             else if(((choix=='b')||(choix=='B'))&&(dep[1]!=16)&&(((matrice[dep[1]+1][dep[0]])!=2)||((matrice[dep[1]+1][dep[0]])!=3))&&((matrice[dep[1]+2][dep[0]]==0)||(matrice[dep[1]+2][dep[0]]==4)))
             {
                 if(matrice[dep[1]+2][dep[0]]==4)
@@ -82,6 +80,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             }
 
             ///2.1.3. A gauche
+            //On verifie que la case est libre (ou bonus) et qu'il n'y a pas de barriere sur le chemin
             else if(((choix=='g')||(choix=='G'))&&(dep[0]!=0)&&(((matrice[dep[1]][dep[0]-1])!=2)||((matrice[dep[1]][dep[0]-1])!=3))&&((matrice[dep[1]][dep[0]-2]==0)||(matrice[dep[1]][dep[0]-2]==4)))
             {
                 if(matrice[dep[1]][dep[0]-2]==4)
@@ -93,6 +92,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             }
 
             ///2.1.4. A droite
+            //On verifie que la case est libre (ou bonus) et qu'il n'y a pas de barriere sur le chemin
             else if(((choix=='d')||(choix=='D'))&&(dep[0]!=16)&&(((matrice[dep[1]][dep[0]+1])!=2)||((matrice[dep[1]][dep[0]+1])!=3))&&((matrice[dep[1]][dep[0]+2]==0)||(matrice[dep[1]][dep[0]+2]==4)))
             {
 
@@ -116,8 +116,10 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
         else
         {
             ///3.1. Deplacment en haut
+            //On verfifie qu'il n'y a pas de barriere sur le chemin
             if(((choix=='h')||(choix=='H'))&&(dep[1]!=0)&&((matrice[dep[1]-1][dep[0]])!=2)&&((matrice[dep[1]-1][dep[0]])!=3))
             {
+                //On verifie que la case est libre (ou bonus)
                 if((matrice[dep[1]-2][dep[0]]==0)||(matrice[dep[1]-2][dep[0]]==4))
                 {
                     if(matrice[dep[1]-2][dep[0]]==4)
@@ -127,6 +129,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                     dep[1] -= 2;
                     valid_dep = 0;
                 }
+                //Si notre deplacement nous fait sortir du plateau alors le booleen passe a false et on affcihera deplacement impossible
                 else if(dep[1]==2)
                 {
                     valid_dep = 1;
@@ -134,6 +137,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                     printf("Impossible de sortir du plateau\n");
                     system("PAUSE");
                 }
+                //Si un joueur se trouve sur la case d'arrivee, on verfie que la suivante et libre et qu'il n'y a pas de barriere pour sauter
                 else if((valid_dep == 1)&&((matrice[dep[1]-4][dep[0]]==0)||(matrice[dep[1]-4][dep[0]]==4))&&((matrice[dep[1]-3][dep[0]])!=2)&&((matrice[dep[1]-3][dep[0]])!=3))
                 {
                     if(matrice[dep[1]-4][dep[0]]==4)
@@ -143,10 +147,12 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                     dep[1] -= 4;
                     valid_dep = 0;
                 }
+                //Sinon on est dans le cas ou on va saute par dessus un joueur puis faire un decalage
                 else
                 {
                     if((matrice[dep[1]-3][dep[0]]==2)||(matrice[dep[1]-3][dep[0]]==3))
                     {
+                        //On demande a l'utilisateur le decalage qu'il veux faire
                         while(validation_choix(choix_decalage, 'g', 'd')==1)
                         {
                             system("cls");
@@ -157,6 +163,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         }
                         if(choix_decalage == 'd')
                         {
+                            //Si le decalage est impossible alors on fait celui de l'autre cote
                             if((matrice[dep[1]-2][dep[0]+1]==2)||(matrice[dep[1]-2][dep[0]+1]==3))
                             {
                                 if(matrice[dep[1]-2][dep[0]-2]==4)
@@ -169,6 +176,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 valid_dep = 0;
 
                             }
+                            //Sinon on applique le decalage voulu
                             else
                             {
                                 if(matrice[dep[1]-2][dep[0]+2]==4)
@@ -182,6 +190,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         }
                         else
                         {
+                            //Si le decalage est impossible alors on fait celui de l'autre cote
                             if((matrice[dep[1]-2][dep[0]-1]==2)||(matrice[dep[1]-2][dep[0]-1]==3))
                             {
                                 if(matrice[dep[1]-2][dep[0]+2]==4)
@@ -193,6 +202,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[1]-=2;
                                 valid_dep = 0;
                             }
+                            //Sinon on applique le decalage voulu
                             else
                             {
                                 if(matrice[dep[1]-2][dep[0]-2]==4)
@@ -209,8 +219,10 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             }
 
             ///3.2. Deplacment en bas
+            //On verfifie qu'il n'y a pas de barriere sur le chemin
             else if(((choix=='b')||(choix=='B'))&&(dep[1]!=16)&&((matrice[dep[1]+1][dep[0]])!=2)&&((matrice[dep[1]+1][dep[0]])!=3))
             {
+                //On verifie que la case est libre (ou bonus)
                 if((matrice[dep[1]+2][dep[0]]==0)||(matrice[dep[1]+2][dep[0]]==4))
                 {
                     if(matrice[dep[1]+2][dep[0]]==4)
@@ -220,6 +232,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                     dep[1] += 2;
                     valid_dep = 0;
                 }
+                //Si notre deplacement nous fait sortir du plateau alors le booleen passe a false et on affcihera deplacement impossible
                 else if(dep[1]==14)
                 {
                     valid_dep = 1;
@@ -227,6 +240,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                     printf("Impossible de sortir du plateau\n");
                     system("PAUSE");
                 }
+                //Si un joueur se trouve sur la case d'arrivee, on verfie que la suivante et libre et qu'il n'y a pas de barriere pour sauter
                 else if((valid_dep == 1)&&((matrice[dep[1]+4][dep[0]]==0)||(matrice[dep[1]+4][dep[0]]==4))&&((matrice[dep[1]+3][dep[0]])!=2)&&((matrice[dep[1]+3][dep[0]])!=3))
                 {
                     if(matrice[dep[1]+4][dep[0]]==4)
@@ -236,10 +250,12 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                     dep[1] += 4;
                     valid_dep = 0;
                 }
+                //Sinon on est dans le cas ou on va saute par dessus un joueur puis faire un decalage
                 else
                 {
                     if((matrice[dep[1]+3][dep[0]]==2)||(matrice[dep[1]+3][dep[0]]==3))
                     {
+                        //On demande a l'utilisateur le decalage qu'il veux faire
                         while(validation_choix(choix_decalage, 'g', 'd')==1)
                         {
                             system("cls");
@@ -250,6 +266,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         }
                         if(choix_decalage == 'd')
                         {
+                            //Si le decalage est impossible alors on fait celui de l'autre cote
                             if((matrice[dep[1]+2][dep[0]+1]==2)||(matrice[dep[1]+2][dep[0]+1]==3))
                             {
                                 if(matrice[dep[1]+2][dep[0]-2]==4)
@@ -261,6 +278,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[1]+=2;
                                 valid_dep = 0;
                             }
+                            //Sinon on applique le decalage voulu
                             else
                             {
                                 if(matrice[dep[1]+2][dep[0]+2]==4)
@@ -274,6 +292,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         }
                         else
                         {
+                            //Si le decalage est impossible alors on fait celui de l'autre cote
                             if((matrice[dep[1]+2][dep[0]-1]==2)||(matrice[dep[1]+2][dep[0]-1]==3))
                             {
                                 if(matrice[dep[1]+2][dep[0]+2]==4)
@@ -285,6 +304,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[1]+=2;
                                 valid_dep = 0;
                             }
+                            //Sinon on applique le decalage voulu
                             else
                             {
                                 if(matrice[dep[1]+2][dep[0]-2]==4)
@@ -301,8 +321,10 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             }
 
             ///3.3. Deplacment a gauche
+            //On verfifie qu'il n'y a pas de barriere sur le chemin
             else if(((choix=='g')||(choix=='G'))&&(dep[0]!=0)&&((matrice[dep[1]][dep[0]-1])!=2)&&((matrice[dep[1]][dep[0]-1])!=3))
             {
+                //On verifie que la case est libre (ou bonus)
                 if((matrice[dep[1]][dep[0]-2]==0)||(matrice[dep[1]][dep[0]-2]==4))
                 {
                     if(matrice[dep[1]][dep[0]-2]==4)
@@ -312,6 +334,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                     dep[0] -= 2;
                     valid_dep = 0;
                 }
+                //Si notre deplacement nous fait sortir du plateau alors le booleen passe a false et on affcihera deplacement impossible
                 else if(dep[0]==2)
                 {
                     valid_dep = 1;
@@ -319,6 +342,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                     printf("Impossible de sortir du plateau\n");
                     system("PAUSE");
                 }
+                //Si un joueur se trouve sur la case d'arrivee, on verfie que la suivante et libre et qu'il n'y a pas de barriere pour sauter
                 else if((valid_dep == 1)&&((matrice[dep[1]][dep[0]-4]==0)||(matrice[dep[1]][dep[0]-4]==4))&&((matrice[dep[1]][dep[0]-3])!=2)&&((matrice[dep[1]][dep[0]-3])!=3))
                 {
                     if(matrice[dep[1]][dep[0]-4]==4)
@@ -328,10 +352,12 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                     dep[0] -= 4;
                     valid_dep = 0;
                 }
+                //Sinon on est dans le cas ou on va saute par dessus un joueur puis faire un decalage
                 else
                 {
                     if((matrice[dep[1]][dep[0]-3]==2)||(matrice[dep[1]][dep[0]-3]==3))
                     {
+                        //On demande a l'utilisateur le decalage qu'il veux faire
                         while(validation_choix(choix_decalage, 'h', 'b')==1)
                         {
                             system("cls");
@@ -342,6 +368,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         }
                         if(choix_decalage == 'b')
                         {
+                            //Si le decalage est impossible alors on fait celui de l'autre cote
                             if((matrice[dep[1]+1][dep[0]-2]==2)||(matrice[dep[1]+1][dep[0]-2]==3))
                             {
                                 if(matrice[dep[1]-2][dep[0]-2]==4)
@@ -353,6 +380,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[1]-=2;
                                 valid_dep = 0;
                             }
+                            //Sinon on applique le decalage voulu
                             else
                             {
                                 if(matrice[dep[1]+2][dep[0]-2]==4)
@@ -366,6 +394,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         }
                         else
                         {
+                            //Si le decalage est impossible alors on fait celui de l'autre cote
                             if((matrice[dep[1]-1][dep[0]-2]==2)||(matrice[dep[1]-1][dep[0]-2]==3))
                             {
                                 if(matrice[dep[1]+2][dep[0]-2]==4)
@@ -377,6 +406,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[1]+=2;
                                 valid_dep = 0;
                             }
+                            //Sinon on applique le decalage voulu
                             else
                             {
                                 if(matrice[dep[1]-2][dep[0]-2]==4)
@@ -393,8 +423,10 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             }
 
             ///3.4. Deplacment a droite
+            //On verfifie qu'il n'y a pas de barriere sur le chemin
             else if(((choix=='d')||(choix=='D'))&&(dep[0]!=16)&&((matrice[dep[1]][dep[0]+1])!=2)&&((matrice[dep[1]][dep[0]+1])!=3))
             {
+                //On verifie que la case est libre (ou bonus)
                 if((matrice[dep[1]][dep[0]+2]==0)||(matrice[dep[1]][dep[0]+2]==4))
                 {
                     if(matrice[dep[1]][dep[0]+2]==4)
@@ -404,6 +436,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                     dep[0] += 2;
                     valid_dep = 0;
                 }
+                //Si notre deplacement nous fait sortir du plateau alors le booleen passe a false et on affcihera deplacement impossible
                 else if(dep[0]==14)
                 {
                     valid_dep = 1;
@@ -411,6 +444,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                     printf("Impossible de sortir du plateau\n");
                     system("PAUSE");
                 }
+                //Si un joueur se trouve sur la case d'arrivee, on verfie que la suivante et libre et qu'il n'y a pas de barriere pour sauter
                 else if((valid_dep == 1)&&((matrice[dep[1]][dep[0]+4]==0)||(matrice[dep[1]][dep[0]+4]==4))&&(matrice[dep[1]][dep[0]+4]==4)&&((matrice[dep[1]][dep[0]+3])!=2)&&((matrice[dep[1]][dep[0]+3])!=3))
                 {
                     if(matrice[dep[1]][dep[0]+4]==4)
@@ -420,10 +454,12 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                     dep[0] += 4;
                     valid_dep = 0;
                 }
+                //Sinon on est dans le cas ou on va saute par dessus un joueur puis faire un decalage
                 else
                 {
                     if((matrice[dep[1]][dep[0]+3]==2)||(matrice[dep[1]][dep[0]+3]==3))
                     {
+                        //On demande a l'utilisateur le decalage qu'il veux faire
                         while(validation_choix(choix_decalage, 'h', 'b')==1)
                         {
                             system("cls");
@@ -434,6 +470,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         }
                         if(choix_decalage == 'b')
                         {
+                            //Si le decalage est impossible alors on fait celui de l'autre cote
                             if(((matrice[dep[1]+1][dep[0]+2]==2)||(matrice[dep[1]+1][dep[0]+2]==3)))
                             {
                                 if(matrice[dep[1]-2][dep[0]+2]==4)
@@ -445,6 +482,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[1]-=2;
                                 valid_dep = 0;
                             }
+                            //Sinon on applique le decalage voulu
                             else
                             {
                                 if(matrice[dep[1]+2][dep[0]+2]==4)
@@ -458,6 +496,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         }
                         else
                         {
+                            //Si le decalage est impossible alors on fait celui de l'autre cote
                             if((matrice[dep[1]-1][dep[0]+2]==2)||(matrice[dep[1]-1][dep[0]+2]==3))
                             {
                                 if(matrice[dep[1]+2][dep[0]+2]==4)
@@ -469,6 +508,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[1]+=2;
                                 valid_dep = 0;
                             }
+                            //Sinon on applique le decalage voulu
                             else
                             {
                                 if(matrice[dep[1]-2][dep[0]+2]==4)
@@ -495,6 +535,9 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
     }
 }
 
+
+///Fonction de deplacement specifique pour la partie avec l'IA
+///Car on ne passe plus par le meme compteur pour les tours
 void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tour, t_IA ia)
 {
     /// 0. DDV
@@ -515,20 +558,14 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
             scanf("%c", &choix);
             if((choix=='h')||(choix=='b')||(choix=='g')||(choix=='d')||(choix=='H')||(choix=='B')||(choix=='G')||(choix=='D'))
             {
-                //printf("valid choix");
                 valid_choix = 0;
             }
-            /*else
-            {
-                system("cls");
-                printf("Saisie erronee\n");
-                printf("Direction de deplacement (h, b, g, d) :\n");
-                scanf("%c", &choix);
-            }*/
         }
         ///3.1. Deplacment en haut
+        //On verfifie qu'il n'y a pas de barriere sur le chemin
         if(((choix=='h')||(choix=='H'))&&(dep[1]!=0)&&((matrice[dep[1]-1][dep[0]])!=2)&&((matrice[dep[1]-1][dep[0]])!=3))
         {
+            //On verifie que la case est libre (ou bonus)
             if((matrice[dep[1]-2][dep[0]]==0)||(matrice[dep[1]-2][dep[0]]==4))
             {
                 if(matrice[dep[1]-2][dep[0]]==4)
@@ -538,6 +575,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                 dep[1] -= 2;
                 valid_dep = 0;
             }
+            //Si notre deplacement nous fait sortir du plateau alors le booleen passe a false et on affcihera deplacement impossible
             else if(dep[1]==2)
             {
                 valid_dep = 1;
@@ -545,6 +583,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                 printf("Impossible de sortir du plateau\n");
                 system("PAUSE");
             }
+            //Si un joueur se trouve sur la case d'arrivee, on verfie que la suivante et libre et qu'il n'y a pas de barriere pour sauter
             else if((valid_dep == 1)&&((matrice[dep[1]-4][dep[0]]==0)||(matrice[dep[1]-4][dep[0]]==4))&&((matrice[dep[1]-3][dep[0]])!=2)&&((matrice[dep[1]-3][dep[0]])!=3))
             {
                 if(matrice[dep[1]-4][dep[0]]==4)
@@ -554,10 +593,12 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                 dep[1] -= 4;
                 valid_dep = 0;
             }
+            //Sinon on est dans le cas ou on va saute par dessus un joueur puis faire un decalage
             else
             {
                 if((matrice[dep[1]-3][dep[0]]==2)||(matrice[dep[1]-3][dep[0]]==3))
                 {
+                    //On demande a l'utilisateur le decalage qu'il veux faire
                     while(validation_choix(choix_decalage, 'g', 'd')==1)
                     {
                         system("cls");
@@ -568,6 +609,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                     }
                     if(choix_decalage == 'd')
                     {
+                        //Si le decalage est impossible alors on fait celui de l'autre cote
                         if((matrice[dep[1]-2][dep[0]+1]==2)||(matrice[dep[1]-2][dep[0]+1]==3))
                         {
                             if(matrice[dep[1]-2][dep[0]-2]==4)
@@ -580,6 +622,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                             valid_dep = 0;
 
                         }
+                        //Sinon on applique le decalage voulu
                         else
                         {
                             if(matrice[dep[1]-2][dep[0]+2]==4)
@@ -593,6 +636,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                     }
                     else
                     {
+                        //Si le decalage est impossible alors on fait celui de l'autre cote
                         if((matrice[dep[1]-2][dep[0]-1]==2)||(matrice[dep[1]-2][dep[0]-1]==3))
                         {
                             if(matrice[dep[1]-2][dep[0]+2]==4)
@@ -604,6 +648,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                             dep[1]-=2;
                             valid_dep = 0;
                         }
+                        //Sinon on applique le decalage voulu
                         else
                         {
                             if(matrice[dep[1]-2][dep[0]-2]==4)
@@ -620,8 +665,10 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
         }
 
         ///3.2. Deplacment en bas
+        //On verfifie qu'il n'y a pas de barriere sur le chemin
         else if(((choix=='b')||(choix=='B'))&&(dep[1]!=16)&&((matrice[dep[1]+1][dep[0]])!=2)&&((matrice[dep[1]+1][dep[0]])!=3))
         {
+            //On verifie que la case est libre (ou bonus)
             if((matrice[dep[1]+2][dep[0]]==0)||(matrice[dep[1]+2][dep[0]]==4))
             {
                 if(matrice[dep[1]+2][dep[0]]==4)
@@ -631,6 +678,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                 dep[1] += 2;
                 valid_dep = 0;
             }
+            //Si notre deplacement nous fait sortir du plateau alors le booleen passe a false et on affcihera deplacement impossible
             else if(dep[1]==14)
             {
                 valid_dep = 1;
@@ -638,6 +686,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                 printf("Impossible de sortir du plateau\n");
                 system("PAUSE");
             }
+            //Si un joueur se trouve sur la case d'arrivee, on verfie que la suivante et libre et qu'il n'y a pas de barriere pour sauter
             else if((valid_dep == 1)&&((matrice[dep[1]+4][dep[0]]==0)||(matrice[dep[1]+4][dep[0]]==4))&&((matrice[dep[1]+3][dep[0]])!=2)&&((matrice[dep[1]+3][dep[0]])!=3))
             {
                 if(matrice[dep[1]+4][dep[0]]==4)
@@ -647,10 +696,12 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                 dep[1] += 4;
                 valid_dep = 0;
             }
+            //Sinon on est dans le cas ou on va saute par dessus un joueur puis faire un decalage
             else
             {
                 if((matrice[dep[1]+3][dep[0]]==2)||(matrice[dep[1]+3][dep[0]]==3))
                 {
+                    //On demande a l'utilisateur le decalage qu'il veux faire
                     while(validation_choix(choix_decalage, 'g', 'd')==1)
                     {
                         system("cls");
@@ -661,8 +712,10 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                     }
                     if(choix_decalage == 'd')
                     {
+                        //Si le decalage est impossible alors on fait celui de l'autre cote
                         if((matrice[dep[1]+2][dep[0]+1]==2)||(matrice[dep[1]+2][dep[0]+1]==3))
                         {
+                            //Si le decalage est impossible alors on fait celui de l'autre cote
                             if(matrice[dep[1]+2][dep[0]-2]==4)
                             {
                                 player[0].scoreP ++;
@@ -672,6 +725,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                             dep[1]+=2;
                             valid_dep = 0;
                         }
+                        //Sinon on applique le decalage voulu
                         else
                         {
                             if(matrice[dep[1]+2][dep[0]+2]==4)
@@ -685,6 +739,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                     }
                     else
                     {
+                        //Si le decalage est impossible alors on fait celui de l'autre cote
                         if((matrice[dep[1]+2][dep[0]-1]==2)||(matrice[dep[1]+2][dep[0]-1]==3))
                         {
                             if(matrice[dep[1]+2][dep[0]+2]==4)
@@ -696,6 +751,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                             dep[1]+=2;
                             valid_dep = 0;
                         }
+                        //Sinon on applique le decalage voulu
                         else
                         {
                             if(matrice[dep[1]+2][dep[0]-2]==4)
@@ -712,8 +768,10 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
         }
 
         ///3.3. Deplacment a gauche
+        //On verfifie qu'il n'y a pas de barriere sur le chemin
         else if(((choix=='g')||(choix=='G'))&&(dep[0]!=0)&&((matrice[dep[1]][dep[0]-1])!=2)&&((matrice[dep[1]][dep[0]-1])!=3))
         {
+            //On verifie que la case est libre (ou bonus)
             if((matrice[dep[1]][dep[0]-2]==0)||(matrice[dep[1]][dep[0]-2]==4))
             {
                 if(matrice[dep[1]][dep[0]-2]==4)
@@ -723,6 +781,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                 dep[0] -= 2;
                 valid_dep = 0;
             }
+            //Si notre deplacement nous fait sortir du plateau alors le booleen passe a false et on affcihera deplacement impossible
             else if(dep[0]==2)
             {
                 valid_dep = 1;
@@ -730,6 +789,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                 printf("Impossible de sortir du plateau\n");
                 system("PAUSE");
             }
+            //Si un joueur se trouve sur la case d'arrivee, on verfie que la suivante et libre et qu'il n'y a pas de barriere pour sauter
             else if((valid_dep == 1)&&((matrice[dep[1]][dep[0]-4]==0)||(matrice[dep[1]][dep[0]-4]==4))&&((matrice[dep[1]][dep[0]-3])!=2)&&((matrice[dep[1]][dep[0]-3])!=3))
             {
                 if(matrice[dep[1]][dep[0]-4]==4)
@@ -739,10 +799,12 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                 dep[0] -= 4;
                 valid_dep = 0;
             }
+            //Sinon on est dans le cas ou on va saute par dessus un joueur puis faire un decalage
             else
             {
                 if((matrice[dep[1]][dep[0]-3]==2)||(matrice[dep[1]][dep[0]-3]==3))
                 {
+                    //On demande a l'utilisateur le decalage qu'il veux faire
                     while(validation_choix(choix_decalage, 'h', 'b')==1)
                     {
                         system("cls");
@@ -753,6 +815,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                     }
                     if(choix_decalage == 'b')
                     {
+                        //Si le decalage est impossible alors on fait celui de l'autre cote
                         if((matrice[dep[1]+1][dep[0]-2]==2)||(matrice[dep[1]+1][dep[0]-2]==3))
                         {
                             if(matrice[dep[1]-2][dep[0]-2]==4)
@@ -764,6 +827,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                             dep[1]-=2;
                             valid_dep = 0;
                         }
+                        //Sinon on applique le decalage voulu
                         else
                         {
                             if(matrice[dep[1]+2][dep[0]-2]==4)
@@ -777,6 +841,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                     }
                     else
                     {
+                        //Si le decalage est impossible alors on fait celui de l'autre cote
                         if((matrice[dep[1]-1][dep[0]-2]==2)||(matrice[dep[1]-1][dep[0]-2]==3))
                         {
                             if(matrice[dep[1]+2][dep[0]-2]==4)
@@ -788,6 +853,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                             dep[1]+=2;
                             valid_dep = 0;
                         }
+                        //Sinon on applique le decalage voulu
                         else
                         {
                             if(matrice[dep[1]-2][dep[0]-2]==4)
@@ -804,8 +870,10 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
         }
 
         ///3.4. Deplacment a droite
+        //On verfifie qu'il n'y a pas de barriere sur le chemin
         else if(((choix=='d')||(choix=='D'))&&(dep[0]!=16)&&((matrice[dep[1]][dep[0]+1])!=2)&&((matrice[dep[1]][dep[0]+1])!=3))
         {
+            //On verifie que la case est libre (ou bonus)
             if((matrice[dep[1]][dep[0]+2]==0)||(matrice[dep[1]][dep[0]+2]==4))
             {
                 if(matrice[dep[1]][dep[0]+2]==4)
@@ -815,6 +883,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                 dep[0] += 2;
                 valid_dep = 0;
             }
+            //Si notre deplacement nous fait sortir du plateau alors le booleen passe a false et on affcihera deplacement impossible
             else if(dep[0]==14)
             {
                 valid_dep = 1;
@@ -822,6 +891,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                 printf("Impossible de sortir du plateau\n");
                 system("PAUSE");
             }
+            //Si un joueur se trouve sur la case d'arrivee, on verfie que la suivante et libre et qu'il n'y a pas de barriere pour sauter
             else if((valid_dep == 1)&&((matrice[dep[1]][dep[0]+4]==0)||(matrice[dep[1]][dep[0]+4]==4))&&(matrice[dep[1]][dep[0]+4]==4)&&((matrice[dep[1]][dep[0]+3])!=2)&&((matrice[dep[1]][dep[0]+3])!=3))
             {
                 if(matrice[dep[1]][dep[0]+4]==4)
@@ -831,10 +901,12 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                 dep[0] += 4;
                 valid_dep = 0;
             }
+            //Sinon on est dans le cas ou on va saute par dessus un joueur puis faire un decalage
             else
             {
                 if((matrice[dep[1]][dep[0]+3]==2)||(matrice[dep[1]][dep[0]+3]==3))
                 {
+                    //On demande a l'utilisateur le decalage qu'il veux faire
                     while(validation_choix(choix_decalage, 'h', 'b')==1)
                     {
                         system("cls");
@@ -845,6 +917,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                     }
                     if(choix_decalage == 'b')
                     {
+                        //Si le decalage est impossible alors on fait celui de l'autre cote
                         if(((matrice[dep[1]+1][dep[0]+2]==2)||(matrice[dep[1]+1][dep[0]+2]==3)))
                         {
                             if(matrice[dep[1]-2][dep[0]+2]==4)
@@ -856,6 +929,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                             dep[1]-=2;
                             valid_dep = 0;
                         }
+                        //Sinon on applique le decalage voulu
                         else
                         {
                             if(matrice[dep[1]+2][dep[0]+2]==4)
@@ -869,6 +943,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                     }
                     else
                     {
+                        //Si le decalage est impossible alors on fait celui de l'autre cote
                         if((matrice[dep[1]-1][dep[0]+2]==2)||(matrice[dep[1]-1][dep[0]+2]==3))
                         {
                             if(matrice[dep[1]+2][dep[0]+2]==4)
@@ -880,6 +955,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                             dep[1]+=2;
                             valid_dep = 0;
                         }
+                        //Sinon on applique le decalage voulu
                         else
                         {
                             if(matrice[dep[1]-2][dep[0]+2]==4)

@@ -40,12 +40,6 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                 dep_ia[1] -= 2;
                 return 1;
             }
-            //Le decalage n'est pas possible donc on recule
-            /*else if((mat[dep_ia[1]-1][dep_ia[0]]==1)&&(dep_ia[1] != 16))
-            {
-                dep_ia[1] -= 2;
-                return 1;
-            }*/
             //Se deplacer n'est pas possible donc on place une barriere
             else
             {
@@ -503,12 +497,6 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                 dep_ia[0] += 2;
                 return 1;
             }
-            //Il y a une barriere a droite mais on peut reculer
-            /*else if((mat[dep_ia[1]-2][dep_ia[0]]==0)&&(mat[dep_ia[1]-2][dep_ia[0]]==4)&&(mat[dep_ia[1]-1][dep_ia[0]]==1))
-            {
-                dep_ia[0] -= 2;
-                return 1;
-            }*/
             //Sinon on place une barriere
             else
             {
@@ -609,15 +597,6 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                         mat[15][14] = 2;
                         return 2;
                     }
-                    //On place pas de derniere barriere sinon plus possible de gagner
-                    /*else if((mat[15][14]==1)&&(mat[15][16]==1))
-                    {
-                        mat[15][14] = 2;
-                        mat[15][15] = 3;
-                        mat[15][16] = 2;
-                        return 2;
-                    }*/
-
                 }
                 //On a plus de barriere alors on passe le tour
                 else
@@ -656,13 +635,6 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                 dep_ia[1] += 2;
                 return 1;
             }
-            //On ne peut pas se decaler alors on recule
-            ///Je ne traite pas le cas ou il y a un pion derriere l'ia
-            /*else if(((mat[dep_ia[1]-2][dep_ia[0]]==0)||(mat[dep_ia[1]-2][dep_ia[0]]==4))&&(mat[dep_ia[1]-1][dep_ia[0]]==1))
-            {
-                dep_ia[1] += 2;
-                return 1;
-            }*/
             //On place une nbarriere
             else
             {
@@ -762,15 +734,6 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                         mat[15][14] = 2;
                         return 2;
                     }
-                    //On place pas de derniere barriere sinon plus possible de gagner
-                    /*else if((mat[15][14]==1)&&(mat[15][16]==1))
-                    {
-                        mat[15][14] = 2;
-                        mat[15][15] = 3;
-                        mat[15][16] = 2;
-                        return 2;
-                    }*/
-
                 }
                 //On a plus de barriere alors on passe le tour
                 else
@@ -881,14 +844,6 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                     mat[15][14] = 2;
                     return 2;
                 }
-                //On place pas de derniere barriere sinon plus possible de gagner
-                /*else if((mat[15][14]==1)&&(mat[15][16]==1))
-                {
-                    mat[15][14] = 2;
-                    mat[15][15] = 3;
-                    mat[15][16] = 2;
-                    return 2;
-                }*/
 
             }
             //On a plus de barriere alors on passe le tour
