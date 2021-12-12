@@ -31,13 +31,35 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
     do
     {
         system("cls");
-        printf("1. Nouvelle Partie\n");
-        printf("2. Charger Partie\n");
-        printf("3. Afficher les regles\n");
-        printf("4. Affichage des scores\n");
-        printf("5. Quitter\n");
+        Affichage_Du_Titre(1,35);
+
+        Color(15,2);
+        gotoligcol(10,50);
+        printf("                            ");
+        gotoligcol(11,50);
+        printf("            MENU            ");
+        gotoligcol(12,50);
+        printf("                            ");
+        Color(15,10);
+        gotoligcol(13,50);
+        printf("                            ");
+        gotoligcol(14,50);
+        printf("   1. Nouvelle Partie       ");
+        gotoligcol(15,50);
+        printf("   2. Charger Partie        ");
+        gotoligcol(16,50);
+        printf("   3. Afficher les regles   ");
+        gotoligcol(17,50);
+        printf("   4. Affichage des scores  ");
+        gotoligcol(18,50);
+        printf("   5. Quitter               ");
+        gotoligcol(19,50);
+        printf("                            ");
+
         fflush(stdin);
+        gotoligcol(20,50);
         scanf("%d",&choix);
+        Color(15,0);
 
         switch(choix)
         {
@@ -61,12 +83,31 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 *Ptour = 0;
 
                 ///Initialisation joueur
-                system("cls");
-                printf("Joueur %d : Saisissez votre nom :\n",1);
-                fflush(stdin);
-                scanf("%s",nom);
-                majuscule(nom);
-                strcpy(player[0].nomJ,nom);
+                    Color(15,0);
+                    system("cls");
+                    Affichage_Du_Titre(1,35);
+                    Color(15,2);
+                    gotoligcol(10,47);
+                    printf("                             ");
+                    gotoligcol(11,47);
+                    printf("         Saisie nom          ");
+                    gotoligcol(12,47);
+                    printf("                             ");
+                    Color(15,10);
+                    gotoligcol(13,47);
+                    printf("                             ");
+                    gotoligcol(14,47);
+                    printf("          Joueur %d           ",1);
+                    gotoligcol(15,47);
+                    printf("    Saisissez votre nom :    ");
+                    gotoligcol(16,47);
+                    printf("                             ");
+                    fflush(stdin);
+                    gotoligcol(17,47);
+                    scanf("%s",nom);
+                    Color(15,0);
+                    majuscule(nom);
+                    strcpy(player[0].nomJ,nom);
 
                 ///Initialisation jetons
                 choix_pion_ia(player, ia);
@@ -230,10 +271,29 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 {
                     for(int i=0; i<4; i++)
                     {
+                        Color(15,0);
                         system("cls");
-                        printf("Joueur %d : Saisissez votre nom :\n",i+1);
+                        Affichage_Du_Titre(1,35);
+                        Color(15,2);
+                        gotoligcol(10,47);
+                        printf("                             ");
+                        gotoligcol(11,47);
+                        printf("         Saisie nom          ");
+                        gotoligcol(12,47);
+                        printf("                             ");
+                        Color(15,10);
+                        gotoligcol(13,47);
+                        printf("                             ");
+                        gotoligcol(14,47);
+                        printf("          Joueur %d           ",i+1);
+                        gotoligcol(15,47);
+                        printf("    Saisissez votre nom :    ");
+                        gotoligcol(16,47);
+                        printf("                             ");
                         fflush(stdin);
+                        gotoligcol(17,47);
                         scanf("%s",nom);
+                        Color(15,0);
                         majuscule(nom);
                         strcpy(player[i].nomJ,nom);
                         player[i].numeroJ = i+1;
@@ -253,11 +313,30 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 {
                     for(int i=0; i<2; i++)
                     {
-                        system("cls");
-                        printf("Joueur %d : Saisissez votre nom :\n",i+1);
-                        fflush(stdin);
-                        scanf("%s",nom);
-                        majuscule(nom);
+                        Color(15,0);//OK
+                    system("cls");
+                    Affichage_Du_Titre(1,35);
+                    Color(15,2);
+                    gotoligcol(10,47);
+                    printf("                             ");
+                    gotoligcol(11,47);
+                    printf("         Saisie nom          ");
+                    gotoligcol(12,47);
+                    printf("                             ");
+                    Color(15,10);
+                    gotoligcol(13,47);
+                    printf("                             ");
+                    gotoligcol(14,47);
+                    printf("          Joueur %d           ",i+1);
+                    gotoligcol(15,47);
+                    printf("    Saisissez votre nom :    ");
+                    gotoligcol(16,47);
+                    printf("                             ");
+                    fflush(stdin);
+                    gotoligcol(17,47);
+                    scanf("%s",nom);
+                    Color(15,0);
+                    majuscule(nom);
                         strcpy(player[i].nomJ,nom);
                         player[i].numeroJ = i+1;
 
@@ -286,7 +365,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                     }
                     else if(strcmp(player[i].nomJ, "ADRIEN")==0)
                     {
-                        player[i].barrieresR += 5;
+                        player[i].barrieresR = 1;////////////////////////////TESSSSSST ADRRRRIEEEEN
                     }
                     else if(strcmp(player[i].nomJ, "PIERRE")==0)
                     {
@@ -369,8 +448,44 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 ///Test fin de partie car joueur traversant le plateau
                 if (gagner(player,Pnombre_joueur,tour_test) == 1)
                 {
+                    Color(15,0);
                     system("cls");
-                    printf("%s a gagne!!!",player[tour_test].nomJ);
+                    Affichage_Du_Titre(1,35);
+                    Color(15,2);
+                    gotoligcol(7,3);
+                    printf("                                     ");
+                    Color(15,0);
+                    gotoligcol(8,3);
+                    Color(15,2);
+                    printf("           PARTIE TERMINEE           ");
+                    Color(15,0);
+                    gotoligcol(9,3);
+                    Color(15,2);
+                    printf("                                     ");
+                    Color(15,0);
+                    gotoligcol(10,3);
+                    Color(15,10);
+                    printf("                                     ");
+                    Color(15,0);
+                    gotoligcol(11,3);
+                    Color(15,10);
+                    printf("            Victoire de :            ");
+                    Color(15,0);
+                    gotoligcol(12,3);
+                    Color(15,10);
+                    printf("                                     ");
+
+                    Color(15,0);
+                    gotoligcol(13,3);
+                    Color(15,10);
+                    printf("            %s",player[tour_test].nomJ);
+                    Color(15,0);
+                    gotoligcol(14,3);
+                    Color(15,10);
+                    printf("                                     ");
+                    Color(15,0);
+
+
                     actualisation_score(player,tour_test);
                     system("PAUSE");
                 }
@@ -382,7 +497,54 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 {
                     system("cls");
                     matrice_propre(mat,player,ia);
-                    printf("\n\n%s n'a plus de barrieres\n\n",player[tour_test].nomJ);
+
+                    Color(15,0);
+                    gotoligcol(20,3);
+
+                    Color(15,0);
+
+            menu_cote(Ptour,Pnombre_joueur,player);
+
+
+
+            gotoligcol(20,3);
+            Color(15,2);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(21,3);
+            Color(15,2);
+            printf("              PARTIE TERMINEE              ");
+            Color(15,0);
+            gotoligcol(22,3);
+            Color(15,2);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(23,3);
+            Color(15,10);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(24,3);
+            Color(15,10);
+
+            printf("                                           ");
+
+            Color(15,0);
+            gotoligcol(24,3);
+            Color(15,10);
+            printf("                  %s",player[tour_test].nomJ);
+
+            Color(15,0);
+            gotoligcol(25,3);
+            Color(15,10);
+            printf("           n'a plus de barrieres           ");
+
+            Color(15,0);
+            gotoligcol(26,3);
+            Color(15,10);
+            printf("                                           ");
+            Color(15,0);
+
+                    //printf("\n\n%s n'a plus de barrieres\n\n",player[tour_test].nomJ);
 
                     ///Cas pour 2J
                     if(*Pnombre_joueur == 2)
@@ -390,14 +552,47 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         ///Personne ne gagne
                         if(gagner_barriere(player, Pnombre_joueur) == -1)
                         {
-                            printf("Les %d joueurs ont gagnes car ils sont autant avances\n",*Pnombre_joueur);
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         Les %d joueurs ont gagnes          ",*Pnombre_joueur);
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("        car ils sont autant avances        ");
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                             system("PAUSE");
                         }
 
                         ///Le joueur le plus avance gagne
                         else
                         {
-                            printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player, Pnombre_joueur)].nomJ);
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+
+            printf("                  %s",player[gagner_barriere(player, Pnombre_joueur)].nomJ);
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("       gagne car ils est plus avance       ");
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
+
+                            //printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player, Pnombre_joueur)].nomJ);
                             player[gagner_barriere(player, Pnombre_joueur)].scoreP ++;
                             system("PAUSE");
                             actualisation_score(player,tour_test);
@@ -411,14 +606,45 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         ///Personne ne gagne
                         if(gagner_barriere(player, Pnombre_joueur) == -1)
                         {
-                            printf("Les %d joueurs ont gagnes car ils sont autant avances\n",*Pnombre_joueur);
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         Les %d joueurs ont gagnes         ",*Pnombre_joueur);
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("        car ils sont autant avances        ");
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                             system("PAUSE");
                         }
 
-                        ///Les 3 joueurs les plus avances gagne
+                        ///Les 3 joueurs les plus avances gagnent
                         else if(gagner_barriere(player, Pnombre_joueur) == 123)
                         {
-                            printf("%s,%s,%s ont gagne !!!",player[0].nomJ,player[1].nomJ,player[2].nomJ);
+
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         3 joueurs ont gagnes              ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("            %s,%s et %s",player[0].nomJ,player[1].nomJ,player[2].nomJ);
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                             system("PAUSE");
 
                             actualisation_score(player,0);
@@ -430,7 +656,26 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                         else if(gagner_barriere(player, Pnombre_joueur) == 124)
                         {
-                            printf("%s,%s,%s ont gagne !!!",player[0].nomJ,player[1].nomJ,player[3].nomJ);
+
+
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         3 joueurs ont gagnes              ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("            %s,%s et %s",player[0].nomJ,player[1].nomJ,player[3].nomJ);
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                             system("PAUSE");
 
                             actualisation_score(player,0);
@@ -441,7 +686,24 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                         else if(gagner_barriere(player, Pnombre_joueur) == 134)
                         {
-                            printf("%s,%s,%s ont gagne !!!",player[0].nomJ,player[2].nomJ,player[3].nomJ);
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         3 joueurs ont gagnes              ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("            %s,%s et %s",player[0].nomJ,player[1].nomJ,player[3].nomJ);
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                             system("PAUSE");
 
                             actualisation_score(player,0);
@@ -452,7 +714,24 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                         else if(gagner_barriere(player, Pnombre_joueur) == 234)
                         {
-                            printf("%s,%s,%s ont gagne !!!",player[1].nomJ,player[2].nomJ,player[3].nomJ);
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         3 joueurs ont gagnes              ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("            %s,%s et %s",player[1].nomJ,player[2].nomJ,player[3].nomJ);
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                             system("PAUSE");
 
                             actualisation_score(player,1);
@@ -461,10 +740,27 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                         }
 
-                        ///Les 2 joueurs les plus avances gagne
+                        ///Les 2 joueurs les plus avances gagnent
                         else if(gagner_barriere(player, Pnombre_joueur) == 12)
                         {
-                            printf("%s,%s ont gagne !!!",player[0].nomJ,player[1].nomJ);
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         2 joueurs ont gagnes              ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("             %s et %s",player[0].nomJ,player[1].nomJ);
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                             system("PAUSE");
 
                             actualisation_score(player,0);
@@ -474,7 +770,24 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                         else if(gagner_barriere(player, Pnombre_joueur) == 23)
                         {
-                            printf("%s,%s ont gagne !!!",player[1].nomJ,player[2].nomJ);
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         2 joueurs ont gagnes              ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("             %s et %s",player[1].nomJ,player[2].nomJ);
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                             system("PAUSE");
 
                             actualisation_score(player,1);
@@ -485,7 +798,24 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                         else if(gagner_barriere(player, Pnombre_joueur) == 34)
                         {
-                            printf("%s,%s ont gagne !!!",player[2].nomJ,player[3].nomJ);
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         2 joueurs ont gagnes              ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("             %s et %s",player[2].nomJ,player[3].nomJ);
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                             system("PAUSE");
 
                             actualisation_score(player,2);
@@ -495,7 +825,24 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                         else if(gagner_barriere(player, Pnombre_joueur) == 14)
                         {
-                            printf("%s,%s ont gagne !!!",player[0].nomJ,player[3].nomJ);
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         2 joueurs ont gagnes              ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("             %s et %s",player[0].nomJ,player[3].nomJ);
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                             system("PAUSE");
 
                             actualisation_score(player,0);
@@ -506,7 +853,26 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         ///Le joueur le plus avance gagne
                         else if(gagner_barriere(player, Pnombre_joueur) == 1)
                         {
-                            printf("%s a gagne !!!",player[0].nomJ);
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                  %s",player[0].nomJ);
+
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("              a gagne !                    ");
+
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                             system("PAUSE");
 
                             actualisation_score(player,0);
@@ -515,7 +881,26 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                         else if(gagner_barriere(player, Pnombre_joueur) == 2)
                         {
-                            printf("%s a gagne !!!",player[1].nomJ);
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                  %s",player[1].nomJ);
+
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("              a gagne !                    ");
+
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                             system("PAUSE");
 
                             actualisation_score(player,1);
@@ -524,7 +909,26 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                         else if(gagner_barriere(player, Pnombre_joueur) == 3)
                         {
-                            printf("%s a gagne !!!",player[2].nomJ);
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                  %s",player[2].nomJ);
+
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("              a gagne !                    ");
+
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                             system("PAUSE");
 
                             actualisation_score(player,2);
@@ -534,7 +938,26 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                         else if(gagner_barriere(player, Pnombre_joueur) == 4)
                         {
-                            printf("%s a gagne !!!",player[3].nomJ);
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                  %s",player[3].nomJ);
+
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("              a gagne !                    ");
+
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                             system("PAUSE");
 
                             actualisation_score(player,3);
@@ -554,7 +977,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
         case 2:
     {
             ///Chargement des ressources dans les fichiers txt
-            printf("Chargement de la partie\n");
+            //printf("Chargement de la partie\n");
             charger_plateau(mat);
             charger_joueur(player, Pnombre_joueur);
             choixPion(player, Pnombre_joueur);
@@ -625,9 +1048,43 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
             ///Test fin de partie car joueur traversant le plateau
             if (gagner(player,Pnombre_joueur,tour_test) == 1)
             {
-                system("cls");
-                printf("%s a gagne!!!",player[tour_test].nomJ);
-                actualisation_score(player,tour_test);
+Color(15,0);
+                    system("cls");
+                    Affichage_Du_Titre(1,35);
+                    Color(15,2);
+                    gotoligcol(7,3);
+                    printf("                                     ");
+                    Color(15,0);
+                    gotoligcol(8,3);
+                    Color(15,2);
+                    printf("           PARTIE TERMINEE           ");
+                    Color(15,0);
+                    gotoligcol(9,3);
+                    Color(15,2);
+                    printf("                                     ");
+                    Color(15,0);
+                    gotoligcol(10,3);
+                    Color(15,10);
+                    printf("                                     ");
+                    Color(15,0);
+                    gotoligcol(11,3);
+                    Color(15,10);
+                    printf("            Victoire de :            ");
+                    Color(15,0);
+                    gotoligcol(12,3);
+                    Color(15,10);
+                    printf("                                     ");
+
+                    Color(15,0);
+                    gotoligcol(13,3);
+                    Color(15,10);
+                    printf("            %s",player[tour_test].nomJ);
+                    Color(15,0);
+                    gotoligcol(14,3);
+                    Color(15,10);
+                    printf("                                     ");
+                    Color(15,0);
+
                 system("PAUSE");
             }
 
@@ -637,7 +1094,51 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
             {
                 system("cls");
                 matrice_propre(mat,player,ia);
-                printf("\n\n%s n'a plus de barrieres\n\n",player[tour_test].nomJ);
+                Color(15,0);
+                    gotoligcol(20,3);
+
+                    Color(15,0);
+
+            menu_cote(Ptour,Pnombre_joueur,player);
+
+
+
+            gotoligcol(20,3);
+            Color(15,2);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(21,3);
+            Color(15,2);
+            printf("              PARTIE TERMINEE              ");
+            Color(15,0);
+            gotoligcol(22,3);
+            Color(15,2);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(23,3);
+            Color(15,10);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(24,3);
+            Color(15,10);
+
+            printf("                                           ");
+
+            Color(15,0);
+            gotoligcol(24,3);
+            Color(15,10);
+            printf("                  %s",player[tour_test].nomJ);
+
+            Color(15,0);
+            gotoligcol(25,3);
+            Color(15,10);
+            printf("           n'a plus de barrieres           ");
+
+            Color(15,0);
+            gotoligcol(26,3);
+            Color(15,10);
+            printf("                                           ");
+            Color(15,0);
 
                 ///Cas pour 2J
                 if(*Pnombre_joueur == 2)
@@ -645,14 +1146,46 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                     ///Personne ne gagne
                     if(gagner_barriere(player, Pnombre_joueur) == -1)
                     {
-                        printf("Les %d joueurs ont gagnes car ils sont autant avances\n",*Pnombre_joueur);
-                        system("PAUSE");
+                        Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         Les %d joueurs ont gagnes          ",*Pnombre_joueur);
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("        car ils sont autant avances        ");
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
+                            system("PAUSE");
                     }
 
                     ///Le joueur le plus avance gagne
                     else
                     {
-                        printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player, Pnombre_joueur)].nomJ);
+                        Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+
+            printf("                  %s",player[gagner_barriere(player, Pnombre_joueur)].nomJ);
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("       gagne car ils est plus avance       ");
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
+                        //printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player, Pnombre_joueur)].nomJ);
                         player[gagner_barriere(player, Pnombre_joueur)].scoreP ++;
                         system("PAUSE");
                         actualisation_score(player,tour_test);
@@ -667,14 +1200,44 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                     ///Personne ne gagne
                     if(gagner_barriere(player, Pnombre_joueur) == -1)
                     {
-                        printf("Les %d joueurs ont gagnes car ils sont autant avances\n",*Pnombre_joueur);
+                        Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         Les %d joueurs ont gagnes         ",*Pnombre_joueur);
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("        car ils sont autant avances        ");
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                         system("PAUSE");
                     }
 
                     ///Les 3 joueurs les plus avances gagne
                     else if(gagner_barriere(player, Pnombre_joueur) == 123)
                     {
-                        printf("%s,%s,%s ont gagne !!!",player[0].nomJ,player[1].nomJ,player[2].nomJ);
+                        Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         3 joueurs ont gagnes              ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("            %s,%s et %s",player[0].nomJ,player[1].nomJ,player[2].nomJ);
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                         system("PAUSE");
 
                         actualisation_score(player,0);
@@ -686,7 +1249,24 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                     else if(gagner_barriere(player, Pnombre_joueur) == 124)
                     {
-                        printf("%s,%s,%s ont gagne !!!",player[0].nomJ,player[1].nomJ,player[3].nomJ);
+                        Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         3 joueurs ont gagnes              ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("            %s,%s et %s",player[0].nomJ,player[1].nomJ,player[3].nomJ);
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                         system("PAUSE");
 
                         actualisation_score(player,0);
@@ -697,7 +1277,24 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                     else if(gagner_barriere(player, Pnombre_joueur) == 134)
                     {
-                        printf("%s,%s,%s ont gagne !!!",player[0].nomJ,player[2].nomJ,player[3].nomJ);
+                        Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         3 joueurs ont gagnes              ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("            %s,%s et %s",player[0].nomJ,player[1].nomJ,player[3].nomJ);
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                         system("PAUSE");
 
                         actualisation_score(player,0);
@@ -708,7 +1305,24 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                     else if(gagner_barriere(player, Pnombre_joueur) == 234)
                     {
-                        printf("%s,%s,%s ont gagne !!!",player[1].nomJ,player[2].nomJ,player[3].nomJ);
+                        Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         3 joueurs ont gagnes              ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("            %s,%s et %s",player[1].nomJ,player[2].nomJ,player[3].nomJ);
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                         system("PAUSE");
 
                         actualisation_score(player,1);
@@ -720,7 +1334,24 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                     ///Les 2 joueurs les plus avances gagne
                     else if(gagner_barriere(player, Pnombre_joueur) == 12)
                     {
-                        printf("%s,%s ont gagne !!!",player[0].nomJ,player[1].nomJ);
+                        Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         2 joueurs ont gagnes              ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("             %s et %s",player[0].nomJ,player[1].nomJ);
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                         system("PAUSE");
 
                         actualisation_score(player,0);
@@ -730,7 +1361,24 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                     else if(gagner_barriere(player, Pnombre_joueur) == 23)
                     {
-                        printf("%s,%s ont gagne !!!",player[1].nomJ,player[2].nomJ);
+                        Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         2 joueurs ont gagnes              ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("             %s et %s",player[1].nomJ,player[2].nomJ);
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                         system("PAUSE");
 
                         actualisation_score(player,1);
@@ -741,7 +1389,24 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                     else if(gagner_barriere(player, Pnombre_joueur) == 34)
                     {
-                        printf("%s,%s ont gagne !!!",player[2].nomJ,player[3].nomJ);
+                        Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         2 joueurs ont gagnes              ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("             %s et %s",player[2].nomJ,player[3].nomJ);
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                         system("PAUSE");
 
                         actualisation_score(player,2);
@@ -751,7 +1416,24 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                     else if(gagner_barriere(player, Pnombre_joueur) == 14)
                     {
-                        printf("%s,%s ont gagne !!!",player[0].nomJ,player[3].nomJ);
+                        Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("         2 joueurs ont gagnes              ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("             %s et %s",player[0].nomJ,player[3].nomJ);
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                         system("PAUSE");
 
                         actualisation_score(player,0);
@@ -762,7 +1444,26 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                     ///Le joueur le plus avance gagne
                     else if(gagner_barriere(player, Pnombre_joueur) == 1)
                     {
-                        printf("%s a gagne !!!",player[0].nomJ);
+                        Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                  %s",player[0].nomJ);
+
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("              a gagne !                    ");
+
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                         system("PAUSE");
 
                         actualisation_score(player,0);
@@ -771,7 +1472,26 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                     else if(gagner_barriere(player, Pnombre_joueur) == 2)
                     {
-                        printf("%s a gagne !!!",player[1].nomJ);
+                        Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                  %s",player[1].nomJ);
+
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("              a gagne !                    ");
+
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                         system("PAUSE");
 
                         actualisation_score(player,1);
@@ -780,7 +1500,26 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                     else if(gagner_barriere(player, Pnombre_joueur) == 3)
                     {
-                        printf("%s a gagne !!!",player[2].nomJ);
+                        Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                  %s",player[2].nomJ);
+
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("              a gagne !                    ");
+
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                         system("PAUSE");
 
                         actualisation_score(player,2);
@@ -790,7 +1529,26 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                     else if(gagner_barriere(player, Pnombre_joueur) == 4)
                     {
-                        printf("%s a gagne !!!",player[3].nomJ);
+                        Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(27,3);
+                            Color(15,10);
+            printf("                  %s",player[3].nomJ);
+
+                            Color(15,0);
+                            gotoligcol(28,3);
+                            Color(15,10);
+            printf("              a gagne !                    ");
+
+                            Color(15,0);
+                            gotoligcol(29,3);
+                            Color(15,10);
+            printf("                                           ");
+                            Color(15,0);
+                            gotoligcol(30,3);
                         system("PAUSE");
 
                         actualisation_score(player,3);
@@ -835,15 +1593,67 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
             ///Sortie du jeu
             sortie = -1;
+            Color(15,0);
             system("cls");
-            printf("Deconnexion...\n");
+            gotoligcol(10,50);
+            Color(15,2);
+            printf("                                 ");
+            Color(15,0);
+            gotoligcol(11,50);
+            Color(15,2);
+            printf("           DECONNEXION           ");
+            Color(15,0);
+            gotoligcol(12,50);
+            Color(15,2);
+            printf("                                 ");
+            Color(15,0);
+            gotoligcol(13,50);
+            Color(15,10);
+            printf("                                 ");
+            Color(15,0);
+            gotoligcol(14,50);
+            Color(15,10);
+            printf("            AUREVOIR             ");
+            Color(15,0);
+            gotoligcol(15,50);
+            Color(15,10);
+            printf("                                 ");
+            Color(15,0);
+            gotoligcol(30,50);
+
             ExitProcess(0); //Permet la sortie du process et l'interruption de l'ensemble des SPPG en cours
             break;
         }
 
     default:    //Cas de mauvaise saisie
         {
-            printf("Mauvaise saisie\n");
+            Color(15,0);
+            system("cls");
+            gotoligcol(10,50);
+            Color(15,2);
+            printf("                                 ");
+            Color(15,0);
+            gotoligcol(11,50);
+            Color(15,2);
+            printf("             ERREUR              ");
+            Color(15,0);
+            gotoligcol(12,50);
+            Color(15,2);
+            printf("                                 ");
+            Color(15,0);
+            gotoligcol(13,50);
+            Color(15,10);
+            printf("                                 ");
+            Color(15,0);
+            gotoligcol(14,50);
+            Color(15,10);
+            printf("             SAISIE              ");
+            Color(15,0);
+            gotoligcol(15,50);
+            Color(15,10);
+            printf("                                 ");
+            Color(15,0);
+            gotoligcol(30,50);
             system("PAUSE");
             break;
         }

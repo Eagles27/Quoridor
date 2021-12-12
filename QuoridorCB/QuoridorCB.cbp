@@ -31,6 +31,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../../../../Adrien local/Affichage_Du_Titre.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="AffiRegles.c">
 			<Option compilerVar="CC" />
 		</Unit>
