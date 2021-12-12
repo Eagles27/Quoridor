@@ -2,6 +2,7 @@
 
 void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour, int mat_avant[17][17], int *Action, t_IA ia, int tour)
 {
+    ///0. DDV
     int choix;
     int sortie = 1;
     int dep[3];
@@ -12,10 +13,11 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
     int bool_barriere = -1;
 
 
-    do
+    ///1. Choix de l'action voulue
+    do //Blindage
     {
 
-
+        ///1.1. Affichage des choix
         gotoligcol(20,0);
         printf("Actions Possibles:\n1-Deplacer son pion\n2-Poser une barriere\n3-Passer son tour\n4-Annuler la derniere action\n5-Revenir au menu precedent\n\nSaisie de l'action du joueur:\n");
         fflush(stdin);
@@ -23,39 +25,44 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
 
         switch(choix)
         {
+        ///2. Se deplacer
         case 1:
         {
+            ///2.1. Partie avec une IA
             if(*Pnombrejoueur == 1)
             {
+                ///2.1.1. Sauvegarde des coordonnees du pion
                 dep[0] =  player[0].coordonneX;
                 dep[1] = player[0].coordonneY;
                 org[0] =  player[0].coordonneX;
                 org[1] = player[0].coordonneY;
+
+                ///2.1.2. Modification des coordonnees du pion
                 deplacement_ia(dep, player, mat,tour, ia);
 
                 player[0].coordonneX = dep[0];
                 player[0].coordonneY = dep[1];
+
+                ///2.1.3. Actualisation de la matrice
                 mat[org[1]][org[0]]=0;
-
                 mat[dep[1]][dep[0]] = 5;
-                /*
-                                matrice_propre(mat,player,ia);
-                                menu_cote_ia(tour, player, ia);
-
-                                system("PAUSE");*/
             }
+            ///2.2. Partie classique
             else
             {
-
+                ///2.2.1. Sauvegarde des coordonnees du pion
                 dep[0] =  player[*Ptour-1].coordonneX;
                 dep[1] = player[*Ptour-1].coordonneY;
                 org[0] =  player[*Ptour-1].coordonneX;
                 org[1] = player[*Ptour-1].coordonneY;
 
+                ///2.2.2. Modification des coordonnees du pion
                 deplacement(dep,mat,Pnombrejoueur,Ptour,player,ia);
 
                 player[*Ptour-1].coordonneX = dep[0];
                 player[*Ptour-1].coordonneY = dep[1];
+
+                ///2.2.3. Actualisation de la matrice
                 mat[org[1]][org[0]]=0;
 
                 if(*Pnombrejoueur == 2)
@@ -100,10 +107,10 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
 
             break;
         }
+        ///3. Poser une barriere
         case 2:
         {
-            ///PPG Barriere
-
+            ///3.1. Placement de la barriere
             while(bool_barriere==-1)
             {
                 system("cls");
@@ -116,13 +123,15 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
             }
 
             system("cls");
+
+            ///3.2. Decrement du nombre de barriere du joueur
             if(*Pnombrejoueur == 1)
             {
                 player[0].barrieresR --;
             }
             else
             {
-                player[*Ptour-1].barrieresR --; //On decremente le nombre de barriere une fois pos�e
+                player[*Ptour-1].barrieresR --; //On decremente le nombre de barriere une fois posee
             }
 
             matrice_propre(mat,player,ia);
@@ -132,28 +141,34 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
 
             break;
         }
+
+        ///4. Passer son tour
         case 3 :
         {
-            ///PPG passer son tour
-
             *Ptour ++;
             *Action = 3;
 
             break;
         }
+
+        ///5. Annuler la derniere action
         case 4 :
         {
+            ///5.1. Partie avec une ia
             if(*Pnombrejoueur == 1)
             {
+                ///5.1.1. Chargement des coordonnees de l'IA au tour precedent
                 if(player[0].A_annule == 0)
                 {
                     ia.coordonneX = ia.coordonneX_av;
                     ia.coordonneY = ia.coordonneY_av;
 
+                    ///5.1.2. Booleen passe a true : le joueur ne peut annuler l'action qu'une fois
                     player[0].A_annule = 1;
                 }
                 else
                 {
+                    ///5.1.3. Le joueur a deja annule une action, il ne peut plus le refaire
                     printf("Cette action ne peut etre fait qu'une fois\n");
                     system("PAUSE");
                     system("cls");
@@ -163,11 +178,13 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                 }
 
             }
+            ///5.2. Partie classique
             else
             {
+                ///5.2.1. Si le joueur n'a pas deja annulé un tour
                 if(player[*Ptour-1].A_annule == 0)
                 {
-                    ///PPG annuler l'action
+                    ///5.2.2. Cargement de l'ancien plateau et des anciennes coordonnees
                     charger_plateau(mat_avant);
 
                     for(int i = 0; i<17; i++)
@@ -206,8 +223,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                             }
                         }
 
-
-
+                        ///5.2.3. Passage du booleen a true
                         player[*Ptour-1].A_annule = 1;
 
                     }
@@ -216,6 +232,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                     *Action = 4;
                     *Ptour ++;
                 }
+                ///5.2.4. Le joueur a deja annulé un tour
                 else
                 {
                     printf("Cette action ne peut etre fait qu'une fois\n");
@@ -229,8 +246,11 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
 
             break;
         }
+
+        ///6. Revenir au menu precedent
         case 5 :
         {
+            ///6.1. Retour au menu precedent et sauvegarde des infos plateau et joueur
             main_menu(Pnombrejoueur,mat,player, ia);
             sauver_plateau(mat);
             sauver_joueur(player, Pnombrejoueur);
@@ -250,6 +270,6 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
         }
 
     }
-    while(choix == 0);
+    while(choix == 0); //Blindage
 
 }
