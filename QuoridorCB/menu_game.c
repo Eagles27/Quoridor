@@ -201,10 +201,23 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                 {
                     ///5.1.3. Le joueur a deja annule une action, il ne peut plus le refaire
 
-                    Color(15,0);
-                    gotoligcol(26,3);
+                        Color(15,0);
+                        gotoligcol(33,3);
+                        Color(15,10);
+                        printf("                                                           ");
+                        Color(15,0);
+                        gotoligcol(34,3);
+                        Color(15,10);
+                        printf("        Cette action ne peut etre faite qu'une fois        ");
 
-                    printf("Cette action ne peut etre faite qu'une fois\n");
+                        Color(15,0);
+                        gotoligcol(35,3);
+                        Color(15,10);
+                        printf("                                                           ");
+                        Color(15,0);
+                        gotoligcol(36,3);
+
+
                     system("PAUSE");
                     system("cls");
                     matrice_propre(mat,player,ia);
@@ -270,7 +283,21 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                 ///5.2.4. Le joueur a deja annulé un tour
                 else
                 {
-                    printf("Cette action ne peut etre fait qu'une fois\n");
+                        Color(15,0);
+                        gotoligcol(33,3);
+                        Color(15,10);
+                        printf("                                                           ");
+                        Color(15,0);
+                        gotoligcol(34,3);
+                        Color(15,10);
+                        printf("        Cette action ne peut etre faite qu'une fois        ");
+                        Color(15,0);
+                        gotoligcol(35,3);
+                        Color(15,10);
+                        printf("                                                           ");
+                        Color(15,0);
+                        gotoligcol(36,3);
+
                     system("PAUSE");
                     system("cls");
                     matrice_propre(mat,player,ia);
@@ -295,7 +322,18 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
         default :
         {
             choix = 0;
-            printf("Saisie Erronee\n\n");
+                        Color(15,0);
+                        gotoligcol(33,3);
+                        Color(15,10);
+                        printf("                              ");
+                        Color(15,0);
+                        gotoligcol(34,3);
+                        Color(15,10);
+                        printf("        Saisie erronee        ");
+                        Color(15,0);
+                        gotoligcol(35,3);
+                        Color(15,10);
+                        printf("                              ");
             system("PAUSE");
             system("cls");
             matrice_propre(mat,player,ia);
