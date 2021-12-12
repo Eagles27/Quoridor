@@ -16,7 +16,27 @@ int main()
     ///1.2. Setup Joueur
     t_joueur player[4];
 
-    ///1.3. Setup plateau
+    ///1.3 Menu de mise full screen et menu accueil
+    //1.3.1 Mise full screen
+
+    Color(15,0);
+    gotoligcol(13,43);
+    Color(15,4);
+    printf("Quand full screen OK, press any key ...");
+    Color(15,0);
+    gotoligcol(14,43);
+    system("PAUSE");
+    Color(15,0);
+
+
+    //1.3.2 Menu accueil
+    system("cls");
+    Affichage_Du_Titre(1,35);
+    gotoligcol(13,43);
+    system("PAUSE");
+    Color(15,0);
+
+    ///1.4. Setup plateau
     genematrice(mat);
 
     ///2. Debut du jeu
