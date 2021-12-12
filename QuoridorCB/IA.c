@@ -17,7 +17,7 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
             dep_ia[1] -= 2;
             return 1;
         }
-        //La case est occup�e par un joueur pas le saut est possible
+        //La case est occupee par un joueur pas de barriere le saut est possible
         else if(mat[dep_ia[1]-3][dep_ia[0]]==1)
         {
             dep_ia[1] -= 4;
@@ -167,13 +167,13 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
 //Il y a une barriere devant
     else if((mat[dep_ia[1]-1][dep_ia[0]]==2)||(mat[dep_ia[1]-1][dep_ia[0]]==3))
     {
-        //On est pas au bord du plateau � droite et a gauche
+        //On est pas au bord du plateau a droite et a gauche
         if((dep_ia[0]!=16)&&(dep_ia[0]!= 0))
         {
-            //Il n'y a pas de barriere � droite
+            //Il n'y a pas de barriere a droite
             if((mat[dep_ia[1]][dep_ia[0]+1]!=2)&&(mat[dep_ia[1]][dep_ia[0]+1]!=3))
             {
-                //Il n'a y pas un joueur a droite
+                //Il n'a y pas de joueur a droite
                 if((mat[dep_ia[1]][dep_ia[0]+2]==0)||(mat[dep_ia[1]][dep_ia[0]+2]==4))
                 {
                     dep_ia[0] += 2;
@@ -480,19 +480,12 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                     }
                 }
             }
-            ///Attention j'exclu le cas ou un joueur se trouve derriere l'ia
-            //On ne peut pas se decaler alors on recule
-            else if((dep_ia[1]!=16)&&((mat[dep_ia[1]+2][dep_ia[0]]==0)||(mat[dep_ia[1]+2][dep_ia[0]]==4)))
-            {
-                dep_ia[1] += 2;
-                return 1;
-            }
         }
-        //On est  au bord du plateau � gauche
+        //On est  au bord du plateau a gauche
         else if(dep_ia[0]==0)
         {
-            //Il n'y a pas de barriere � droite
-            if((mat[dep_ia[1]][dep_ia[0]-1]!=2)&&(mat[dep_ia[1]][dep_ia[0]-1]!=3))
+            //Il n'y a pas de barriere a droite et il y a la place
+            if((mat[dep_ia[1]][dep_ia[0]+1]!=2)&&(mat[dep_ia[1]][dep_ia[0]+1]!=3)&&((mat[dep_ia[1]][dep_ia[0]+2]==0)||(mat[dep_ia[1]][dep_ia[0]+2]==4)))
             {
                 dep_ia[0] += 2;
                 return 1;
