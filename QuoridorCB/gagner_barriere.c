@@ -3,8 +3,10 @@
 int gagner_barriere(t_joueur player[4], int *Pnombre_joueur)
 {
     /*
-    Les joueurs ayant le plus d'avance meme avec egalite marque 1 point
+    A 4joueurs, les joueurs ayant le plus d'avance meme avec egalite marque 1 point
     */
+
+    ///0. DDV
     int placement_1 = 0;
     int placement_2 = 0;
     int placement_3 = 0;
@@ -13,8 +15,10 @@ int gagner_barriere(t_joueur player[4], int *Pnombre_joueur)
     int gagne_1 = 0;
     int gagne_2 = 0;
 
+    ///1. Calcul gagnant a 2joueurs
     if(*Pnombre_joueur == 2)
     {
+        ///1.1. Initialisation du placement relatif de chacun
         for(int i = 0; i<*Pnombre_joueur; i++)
         {
             if(player[i].coordonneY_org == 0)
@@ -31,33 +35,33 @@ int gagner_barriere(t_joueur player[4], int *Pnombre_joueur)
             }
         }
 
-
-
+        ///1.2. Tests pour savoir qui gagne
+        //Personne ne gagne
         if(placement_1 == placement_2)
         {
             return -1;
         }
-
-
-
+        //J1 gagne
         else if(placement_1 > placement_2)
         {
             return gagne_1;
         }
-
-
+        //J2 gagne
         else if(placement_1 < placement_2)
         {
             return gagne_2;
         }
     }
+    ///2. Calcul gagnant a 4joueurs
     else
     {
+        ///2.1. Initialisation du placement relatif de chacun
         placement_1 = player[0].coordonneY;
         placement_2 = 16 - player[1].coordonneX;
         placement_3 = 16 - player[2].coordonneY;
         placement_4 = player[3].coordonneX;
 
+        ///2.2. Tests pour savoir qui gagne
         //Tous les joueurs sont a egalite
         if((placement_1 == placement_2)&&(placement_1 == placement_3)&&(placement_1 == placement_4)&&(placement_2 == placement_3)&&(placement_2 == placement_4)&&(placement_3 == placement_4))
         {
@@ -123,6 +127,7 @@ int gagner_barriere(t_joueur player[4], int *Pnombre_joueur)
         {
             return 4;
         }
+        //Personne ne gagne
         else
         {
             return 0;
