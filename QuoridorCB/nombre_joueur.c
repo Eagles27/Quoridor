@@ -21,7 +21,7 @@ int nombre_joueur()
             gotoligcol(10,50);
             printf("                    ");
             gotoligcol(11,50);
-            printf("   Saisir  1 ou 2   ");
+            printf("  Saisir  1,2 ou 3  ");
             gotoligcol(12,50);
             printf("                    ");
             Color(15,10);
@@ -32,8 +32,10 @@ int nombre_joueur()
             gotoligcol(15,50);
             printf("     2. 4 Joueurs   ");
             gotoligcol(16,50);
-            printf("                    ");
+            printf(" 3. 1 Joueur et IA  ");
             gotoligcol(17,50);
+            printf("                    ");
+            gotoligcol(18,50);
 
         scanf("%d",&choix);
 
