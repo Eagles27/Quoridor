@@ -450,6 +450,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 {
                     Color(15,0);
                     system("cls");
+<<<<<<< Updated upstream
                     Affichage_Du_Titre(1,35);
                     Color(15,2);
                     gotoligcol(7,3);
@@ -487,6 +488,16 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
 
                     actualisation_score(player,tour_test);
+=======
+                    printf("%s a gagne!!!",player[tour_test].nomJ);
+                    player[tour_test].scoreP += 5;
+
+                    for(int i=0; i<*Pnombre_joueur; i++)
+                    {
+                        actualisation_score(player,i);
+
+                    }
+>>>>>>> Stashed changes
                     system("PAUSE");
                 }
 
@@ -975,7 +986,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 ///1.2 Charger Partie
 
         case 2:
-    {
+        {
             ///Chargement des ressources dans les fichiers txt
             //printf("Chargement de la partie\n");
             charger_plateau(mat);
@@ -1048,6 +1059,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
             ///Test fin de partie car joueur traversant le plateau
             if (gagner(player,Pnombre_joueur,tour_test) == 1)
             {
+<<<<<<< Updated upstream
 Color(15,0);
                     system("cls");
                     Affichage_Du_Titre(1,35);
@@ -1085,6 +1097,17 @@ Color(15,0);
                     printf("                                     ");
                     Color(15,0);
 
+=======
+                system("cls");
+                printf("%s a gagne!!!",player[tour_test].nomJ);
+                player[tour_test].scoreP += 5;
+
+                for(int i=0; i<*Pnombre_joueur; i++)
+                {
+                    actualisation_score(player,i);
+
+                }
+>>>>>>> Stashed changes
                 system("PAUSE");
             }
 
@@ -1553,18 +1576,18 @@ Color(15,0);
 
                         actualisation_score(player,3);
 
-                     }
-
                     }
 
                 }
 
-        break;
+            }
+
+            break;
         }
 
 ///1.3 Affichage des regles
 
-    case 3:
+        case 3:
         {
             system("cls");
             affiregles();
@@ -1573,7 +1596,7 @@ Color(15,0);
 
 ///1.4 Affichage du tableau des scores
 
-    case 4:
+        case 4:
         {
             t_joueur playeraffichage[150];  //Definition localement d'un tableau de structure permettant l'affichage
 
@@ -1585,7 +1608,7 @@ Color(15,0);
 
 ///1.5 Quitter Partie
 
-    case 5:
+        case 5:
         {
             ///Sauvegarde de la partie
             sauver_plateau(mat);
@@ -1625,7 +1648,7 @@ Color(15,0);
             break;
         }
 
-    default:    //Cas de mauvaise saisie
+        default:    //Cas de mauvaise saisie
         {
             Color(15,0);
             system("cls");
@@ -1657,9 +1680,10 @@ Color(15,0);
             system("PAUSE");
             break;
         }
-    }
+        }
 
-    }while(sortie!=-1);
+    }
+    while(sortie!=-1);
 
 }
 

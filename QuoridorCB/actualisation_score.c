@@ -27,7 +27,7 @@ void actualisation_score(t_joueur player[4],int tour_test)
 
             if(strcmp(tempN,player[tour_test].nomJ)==0)
             {
-                player[tour_test].scoreP ++;
+                player[tour_test].scoreP;
 
                 if(player[tour_test].scoreP<10)
                 {
