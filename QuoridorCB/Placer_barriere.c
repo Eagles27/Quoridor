@@ -5,6 +5,9 @@
 ///Elle prend en entree des donnees saisies par l'utilisateur via un autre sous programme
 int placer_barriere(int tab[17][17], int place[2], char saisie)
 {
+    ///0. DDV
+    int nl=23, nc=3;
+
     ///Test si la place choisie est libre
     if(!((place[0]%2==1)&&(place[1]%2==1)))
     {
@@ -13,7 +16,11 @@ int placer_barriere(int tab[17][17], int place[2], char saisie)
             //On test si la barriere sort du plateau
             if(place[1]==0)
             {
+                Color(15,0);
+                gotoligcol(nl+6, nc);
+                Color(15, 10);
                 printf("Placement invalide\n");
+                Color(15,0);
                 system("PAUSE");
                 return -1;
             }
@@ -31,7 +38,11 @@ int placer_barriere(int tab[17][17], int place[2], char saisie)
                 else
                 {
                     //La case adjacente n'est pas libre donc on renvoie -1 pour que l'utilisateur place une barriere a nouveau
+                    Color(15,0);
+                    gotoligcol(nl+6, nc);
+                    Color(15, 10);
                     printf("Placement invalide\n");
+                    Color(15,0);
                     system("PAUSE");
                     return -1;
                 }
@@ -43,7 +54,11 @@ int placer_barriere(int tab[17][17], int place[2], char saisie)
             //On test si la barriere sort du plateau
             if(place[1]==16)
             {
+                Color(15,0);
+                gotoligcol(nl+6, nc);
+                Color(15, 10);
                 printf("Placement invalide\n");
+                Color(15,0);
                 system("PAUSE");
                 return -1;
             }
@@ -61,7 +76,11 @@ int placer_barriere(int tab[17][17], int place[2], char saisie)
                 else
                 {
                     //La case adjacente n'est pas libre donc on renvoie -1 pour que l'utilisateur place une barriere a nouveau
+                    Color(15,0);
+                    gotoligcol(nl+6, nc);
+                    Color(15, 10);
                     printf("Placement invalide\n");
+                    Color(15,0);
                     system("PAUSE");
                     return -1;
                 }
@@ -73,7 +92,11 @@ int placer_barriere(int tab[17][17], int place[2], char saisie)
             //On test si la barriere sort du plateau
             if(place[0]==0)
             {
+                Color(15,0);
+                gotoligcol(nl+6, nc);
+                Color(15, 10);
                 printf("Placement invalide\n");
+                Color(15,0);
                 system("PAUSE");
                 return -1;
             }
@@ -91,7 +114,11 @@ int placer_barriere(int tab[17][17], int place[2], char saisie)
                 else
                 {
                     //La case adjacente n'est pas libre donc on renvoie -1 pour que l'utilisateur place une barriere a nouveau
+                    Color(15,0);
+                    gotoligcol(nl+6, nc);
+                    Color(15, 10);
                     printf("Placement invalide\n");
+                    Color(15,0);
                     system("PAUSE");
                     return -1;
                 }
@@ -103,7 +130,11 @@ int placer_barriere(int tab[17][17], int place[2], char saisie)
             //On test si la barriere sort du plateau
             if(place[0]==16)
             {
+                Color(15,0);
+                gotoligcol(nl+6, nc);
+                Color(15, 10);
                 printf("Placement invalide\n");
+                Color(15,0);
                 system("PAUSE");
                 return -1;
             }
@@ -121,7 +152,11 @@ int placer_barriere(int tab[17][17], int place[2], char saisie)
                 else
                 {
                     //La case adjacente n'est pas libre donc on renvoie -1 pour que l'utilisateur place une barriere a nouveau
+                    Color(15,0);
+                    gotoligcol(nl+6, nc);
+                    Color(15, 10);
                     printf("Placement invalide\n");
+                    Color(15,0);
                     system("PAUSE");
                     return -1;
                 }
@@ -131,7 +166,11 @@ int placer_barriere(int tab[17][17], int place[2], char saisie)
     ///La place choisie n'est pas libre donc on renvoie -1 pour que l'utilisateur place une barriere a nouveau
     else
     {
+        Color(15,0);
+        gotoligcol(nl+6, nc);
+        Color(15, 10);
         printf("Placement invalide\n");
+        Color(15,0);
         system("PAUSE");
         return -1;
     }
