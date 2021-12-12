@@ -450,7 +450,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 {
                     Color(15,0);
                     system("cls");
-<<<<<<< Updated upstream
                     Affichage_Du_Titre(1,35);
                     Color(15,2);
                     gotoligcol(7,3);
@@ -486,10 +485,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                     printf("                                     ");
                     Color(15,0);
 
-
-                    actualisation_score(player,tour_test);
-=======
-                    printf("%s a gagne!!!",player[tour_test].nomJ);
                     player[tour_test].scoreP += 5;
 
                     for(int i=0; i<*Pnombre_joueur; i++)
@@ -497,7 +492,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         actualisation_score(player,i);
 
                     }
->>>>>>> Stashed changes
                     system("PAUSE");
                 }
 
@@ -1059,7 +1053,6 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
             ///Test fin de partie car joueur traversant le plateau
             if (gagner(player,Pnombre_joueur,tour_test) == 1)
             {
-<<<<<<< Updated upstream
 Color(15,0);
                     system("cls");
                     Affichage_Du_Titre(1,35);
@@ -1096,10 +1089,7 @@ Color(15,0);
                     Color(15,10);
                     printf("                                     ");
                     Color(15,0);
-
-=======
-                system("cls");
-                printf("%s a gagne!!!",player[tour_test].nomJ);
+                    
                 player[tour_test].scoreP += 5;
 
                 for(int i=0; i<*Pnombre_joueur; i++)
@@ -1107,7 +1097,6 @@ Color(15,0);
                     actualisation_score(player,i);
 
                 }
->>>>>>> Stashed changes
                 system("PAUSE");
             }
 
