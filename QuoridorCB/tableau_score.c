@@ -56,8 +56,8 @@ void tableau_score(t_joueur player[150])
     ///0. DDV
     int taille = 0;
     int *Ptaille = &taille;
-    int no_l = 4;
-    int no_c = 20;
+    int no_l = 2;
+    int no_c = 45;
     FILE *fp;
 
     ///1. Determine le nombre de joueur dont nous avons sauvegardé le score
@@ -86,24 +86,38 @@ void tableau_score(t_joueur player[150])
 
 
         ///3. Affichage des scores
-        Color(15,0);
 
+        Color(15,0);
         gotoligcol(no_l,no_c);
-        Color(15,10);
+        Color(15,2);
         printf("                        ");
         Color(15,0);
         gotoligcol(no_l+1,no_c);
-        Color(15,10);
-
-
-        Color(15,10);
-        gotoligcol(no_l,no_c+10);
-        printf("LEADERBOARD");
+        Color(15,2);
+        printf("      LEADERBOARD       ");
+        Color(15,0);
         gotoligcol(no_l+2,no_c);
-        for(int i = 0; i<taille; i++)
+        Color(15,2);
+        printf("                        ");
+        Color(15,0);
+
+        for(int i = 0; i<15; i++)
         {
 
-            printf("%s: %dpts\n", player[i].nomJ,player[i].scoreP);
+            Color(15,0);
+            gotoligcol(no_l+3+i,no_c);
+            Color(15,10);
+            printf("                        ");
+            Color(15,0);
+            gotoligcol(no_l+3+i,no_c);
+            Color(15,10);
+            printf(" %s", player[i].nomJ);
+            Color(15,0);
+            gotoligcol(no_l+3+i,no_c+18);
+            Color(15,10);
+            printf("%dpts",player[i].scoreP);
+            Color(15,0);
+            gotoligcol(no_l+4+i,no_c);
 
         }
         system("PAUSE");
