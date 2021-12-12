@@ -21,7 +21,7 @@
 1639301096 source:d:\pierr\documents\algo\quoridor\quoridorcb\sauvegarde-charger.c
 	"Header_Pierre.h"
 
-1639301798 source:d:\pierr\documents\algo\quoridor\quoridorcb\matrice_visible.c
+1639302704 source:d:\pierr\documents\algo\quoridor\quoridorcb\matrice_visible.c
 	"Header_Pierre.h"
 
 1639301096 source:d:\pierr\documents\algo\quoridor\quoridorcb\placer_barriere.c
@@ -171,7 +171,7 @@
 1639301096 source:d:\pierr\documents\algo\quoridor\quoridorcb\choixpion.c
 	"Header_Pierre.h"
 
-1639301096 source:d:\pierr\documents\algo\quoridor\quoridorcb\gagner_barriere.c
+1639302036 source:d:\pierr\documents\algo\quoridor\quoridorcb\gagner_barriere.c
 	"Header_Pierre.h"
 
 1639132252 source:d:\pierr\documents\algo\quoridor\quoridorcb\score.c
