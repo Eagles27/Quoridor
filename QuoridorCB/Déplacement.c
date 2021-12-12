@@ -34,6 +34,8 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
     char choix_decalage = 'x';
     int valid_choix = 1;
     int valid_dep = 1;
+    int numero_ligne=20;
+    int numero_colonne=3;
 
     ///1. Affichage utilisateur
     while(valid_dep == 1)
@@ -44,7 +46,33 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             system("cls");
             matrice_propre(matrice,player, ia);
             menu_cote(Ptour,Pnombre_joueur,player);
-            printf("Direction de deplacement (h, b, g, d) :\n");
+
+            gotoligcol(numero_ligne,numero_colonne);
+            Color(15,2);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(numero_ligne+1,numero_colonne);
+            Color(15,2);
+            printf("                DEPLACEMENT                ");
+            Color(15,0);
+            gotoligcol(numero_ligne+2,numero_colonne);
+            Color(15,2);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(numero_ligne+3,numero_colonne);
+            Color(15,10);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(numero_ligne+4,numero_colonne);
+            Color(15,10);
+            printf("  Direction de deplacement (h, b, g, d) ?  ");
+            Color(15,0);
+            gotoligcol(numero_ligne+5,numero_colonne);
+            Color(15,10);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(numero_ligne+6,numero_colonne);
+
             scanf("%c", &choix);
             if((choix=='h')||(choix=='b')||(choix=='g')||(choix=='d')||(choix=='H')||(choix=='B')||(choix=='G')||(choix=='D'))
             {
@@ -107,7 +135,14 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             ///2.1.5. Deplacement non valide (on demande un autre choix)
             else
             {
-                printf("Deplacement impossible\n");
+
+                Color(15,0);
+                gotoligcol(numero_ligne+7,numero_colonne);
+                Color(15,10);
+                printf("  Deplacement impossible  ");
+                Color(15,0);
+                gotoligcol(numero_ligne+8,numero_colonne);
+                system("PAUSE");
                 valid_choix = 1;
             }
         }
@@ -134,7 +169,12 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                 {
                     valid_dep = 1;
                     valid_choix = 1;
-                    printf("Impossible de sortir du plateau\n");
+                    Color(15,0);
+                    gotoligcol(numero_ligne+7,numero_colonne);
+                    Color(15,10);
+                    printf("  Impossible de sortir du plateau  ");
+                    Color(15,0);
+                    gotoligcol(numero_ligne+8,numero_colonne);
                     system("PAUSE");
                 }
                 //Si un joueur se trouve sur la case d'arrivee, on verfie que la suivante et libre et qu'il n'y a pas de barriere pour sauter
@@ -158,26 +198,50 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                             system("cls");
                             matrice_propre(matrice,player, ia);
                             menu_cote(Ptour,Pnombre_joueur,player);
-                            printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller a gauche (g) ou a droite (d) ?\n");
+
+                            Color(15,0);
+                            gotoligcol(numero_ligne+7,numero_colonne);
+                            Color(15,10);
+                            printf("       Vous ne pouvez pas sauter le deuxieme mur       ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+8,numero_colonne);
+                            Color(15,10);
+                            printf("  Souhaitez vous aller a gauche (g) ou a droite (d) ?  ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+9,numero_colonne);
+
+                            //printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller a gauche (g) ou a droite (d) ?\n");
                             scanf("%c", &choix_decalage);
                         }
                         if(choix_decalage == 'd')
                         {
                             //Si le decalage est impossible alors on fait celui de l'autre cote
-                            if((matrice[dep[1]-2][dep[0]+1]==2)||(matrice[dep[1]-2][dep[0]+1]==3))
+                            if(((matrice[dep[1]-2][dep[0]+1]==2)||(matrice[dep[1]-2][dep[0]+1]==3))&&(dep[0]!=0))
                             {
                                 if(matrice[dep[1]-2][dep[0]-2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
-                                printf("Vous etes face a une barriere\nVotre piont va faire un decalage a gauche\n");
+
+                                Color(15,0);
+                                gotoligcol(numero_ligne+7,numero_colonne);
+                                Color(15,10);
+                                printf("       Vous etes face à une barriere       ");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+8,numero_colonne);
+                                Color(15,10);
+                                printf("       Votre pion se decale a gauche       ");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+9,numero_colonne);
+
+                                //printf("Vous etes face a une barriere\nVotre pion va faire un decalage a gauche\n");
                                 dep[0]-=2;
                                 dep[1]-=2;
                                 valid_dep = 0;
 
                             }
                             //Sinon on applique le decalage voulu
-                            else
+                            else if(dep[0]!=16)
                             {
                                 if(matrice[dep[1]-2][dep[0]+2]==4)
                                 {
@@ -186,24 +250,38 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[0]+=2;
                                 dep[1]-=2;
                                 valid_dep = 0;
+                            }
+                            else
+                            {
+                                valid_dep = 1;
                             }
                         }
                         else
                         {
                             //Si le decalage est impossible alors on fait celui de l'autre cote
-                            if((matrice[dep[1]-2][dep[0]-1]==2)||(matrice[dep[1]-2][dep[0]-1]==3))
+                            if(((matrice[dep[1]-2][dep[0]-1]==2)||(matrice[dep[1]-2][dep[0]-1]==3))&&(dep[0]!=16))
                             {
                                 if(matrice[dep[1]-2][dep[0]+2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
-                                printf("Vous etes face a une barriere\nVotre piont va faire un decalage a droite\n");
+
+                                Color(15,0);
+                                gotoligcol(numero_ligne+7,numero_colonne);
+                                Color(15,10);
+                                printf("       Vous etes face à une barriere       ");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+8,numero_colonne);
+                                Color(15,10);
+                                printf("       Votre pion se decale a droite       ");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+9,numero_colonne);
                                 dep[0]+=2;
                                 dep[1]-=2;
                                 valid_dep = 0;
                             }
                             //Sinon on applique le decalage voulu
-                            else
+                            else if(dep[0]!=0)
                             {
                                 if(matrice[dep[1]-2][dep[0]-2]==4)
                                 {
@@ -212,6 +290,10 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[0]-=2;
                                 dep[1]-=2;
                                 valid_dep = 0;
+                            }
+                            else
+                            {
+                                valid_dep = 1;
                             }
                         }
                     }
@@ -237,7 +319,13 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                 {
                     valid_dep = 1;
                     valid_choix = 1;
-                    printf("Impossible de sortir du plateau\n");
+
+                    Color(15,0);
+                    gotoligcol(numero_ligne+7,numero_colonne);
+                    Color(15,10);
+                    printf("       Impossible de sortir du plateau       ");
+                    Color(15,0);
+                    gotoligcol(numero_ligne+8,numero_colonne);
                     system("PAUSE");
                 }
                 //Si un joueur se trouve sur la case d'arrivee, on verfie que la suivante et libre et qu'il n'y a pas de barriere pour sauter
@@ -261,25 +349,49 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                             system("cls");
                             matrice_propre(matrice,player, ia);
                             menu_cote(Ptour,Pnombre_joueur,player);
-                            printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller a gauche (g) ou a droite (d) ?\n");
+
+
+                            Color(15,0);
+                            gotoligcol(numero_ligne+7,numero_colonne);
+                            Color(15,10);
+                            printf("       Vous ne pouvez pas sauter le deuxieme mur       ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+8,numero_colonne);
+                            Color(15,10);
+                            printf("  Souhaitez vous aller a gauche (g) ou a droite (d) ?  ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+9,numero_colonne);
+
+
                             scanf("%c", &choix_decalage);
                         }
                         if(choix_decalage == 'd')
                         {
                             //Si le decalage est impossible alors on fait celui de l'autre cote
-                            if((matrice[dep[1]+2][dep[0]+1]==2)||(matrice[dep[1]+2][dep[0]+1]==3))
+                            if(((matrice[dep[1]+2][dep[0]+1]==2)||(matrice[dep[1]+2][dep[0]+1]==3))&&(dep[0]!=0))
                             {
                                 if(matrice[dep[1]+2][dep[0]-2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
-                                printf("Vous etes face a une barriere\nVotre piont va faire un decalage a gauche\n");
+
+                                Color(15,0);
+                                gotoligcol(numero_ligne+7,numero_colonne);
+                                Color(15,10);
+                                printf("       Vous etes face à une barriere       ");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+8,numero_colonne);
+                                Color(15,10);
+                                printf("       Votre pion se decale a gauche       ");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+9,numero_colonne);
+
                                 dep[0]-=2;
                                 dep[1]+=2;
                                 valid_dep = 0;
                             }
                             //Sinon on applique le decalage voulu
-                            else
+                            else if(dep[0]!=16)
                             {
                                 if(matrice[dep[1]+2][dep[0]+2]==4)
                                 {
@@ -288,24 +400,37 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[0]+=2;
                                 dep[1]+=2;
                                 valid_dep = 0;
+                            }
+                            else
+                            {
+                                valid_dep = 1;
                             }
                         }
                         else
                         {
                             //Si le decalage est impossible alors on fait celui de l'autre cote
-                            if((matrice[dep[1]+2][dep[0]-1]==2)||(matrice[dep[1]+2][dep[0]-1]==3))
+                            if(((matrice[dep[1]+2][dep[0]-1]==2)||(matrice[dep[1]+2][dep[0]-1]==3))&&(dep[0]!=16))
                             {
                                 if(matrice[dep[1]+2][dep[0]+2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
-                                printf("Vous etes face a une barriere\nVotre piont va faire un decalage a droite\n");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+7,numero_colonne);
+                                Color(15,10);
+                                printf("       Vous etes face à une barriere       ");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+8,numero_colonne);
+                                Color(15,10);
+                                printf("       Votre pion se decale a droite       ");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+9,numero_colonne);
                                 dep[0]+=2;
                                 dep[1]+=2;
                                 valid_dep = 0;
                             }
                             //Sinon on applique le decalage voulu
-                            else
+                            else if(dep[0]!=0)
                             {
                                 if(matrice[dep[1]+2][dep[0]-2]==4)
                                 {
@@ -314,6 +439,10 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[0]-=2;
                                 dep[1]+=2;
                                 valid_dep = 0;
+                            }
+                            else
+                            {
+                                valid_dep = 1;
                             }
                         }
                     }
@@ -339,7 +468,12 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                 {
                     valid_dep = 1;
                     valid_choix = 1;
-                    printf("Impossible de sortir du plateau\n");
+                    Color(15,0);
+                    gotoligcol(numero_ligne+7,numero_colonne);
+                    Color(15,10);
+                    printf("       Impossible de sortir du plateau       ");
+                    Color(15,0);
+                    gotoligcol(numero_ligne+8,numero_colonne);
                     system("PAUSE");
                 }
                 //Si un joueur se trouve sur la case d'arrivee, on verfie que la suivante et libre et qu'il n'y a pas de barriere pour sauter
@@ -363,25 +497,49 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                             system("cls");
                             matrice_propre(matrice,player,ia);
                             menu_cote(Ptour,Pnombre_joueur,player);
-                            printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller en haut (h) ou en bas (b) ?\n");
+
+                            Color(15,0);
+                            gotoligcol(numero_ligne+7,numero_colonne);
+                            Color(15,10);
+                            printf("       Vous ne pouvez pas sauter le deuxieme mur       ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+8,numero_colonne);
+                            Color(15,10);
+                            printf("  Souhaitez vous aller en haut (h) ou en bas (b) ?  ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+9,numero_colonne);
+
+                            //printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller en haut (h) ou en bas (b) ?\n");
                             scanf("%c", &choix_decalage);
                         }
                         if(choix_decalage == 'b')
                         {
                             //Si le decalage est impossible alors on fait celui de l'autre cote
-                            if((matrice[dep[1]+1][dep[0]-2]==2)||(matrice[dep[1]+1][dep[0]-2]==3))
+                            if(((matrice[dep[1]+1][dep[0]-2]==2)||(matrice[dep[1]+1][dep[0]-2]==3))&&(dep[1]!=0))
                             {
                                 if(matrice[dep[1]-2][dep[0]-2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
-                                printf("Vous etes face a une barriere\nVotre piont va faire un decalage en haut\n");
+
+                                Color(15,0);
+                                gotoligcol(numero_ligne+7,numero_colonne);
+                                Color(15,10);
+                                printf("       Vous etes face à une barriere       ");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+8,numero_colonne);
+                                Color(15,10);
+                                printf("        Votre pion se decale en haut        ");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+9,numero_colonne);
+
+                                //printf("Vous etes face a une barriere\nVotre piont va faire un decalage en haut\n");
                                 dep[0]-=2;
                                 dep[1]-=2;
                                 valid_dep = 0;
                             }
                             //Sinon on applique le decalage voulu
-                            else
+                            else if(dep[1]!=16)
                             {
                                 if(matrice[dep[1]+2][dep[0]-2]==4)
                                 {
@@ -390,24 +548,40 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[0]-=2;
                                 dep[1]+=2;
                                 valid_dep = 0;
+                            }
+                            else
+                            {
+                                valid_dep = 1;
                             }
                         }
                         else
                         {
                             //Si le decalage est impossible alors on fait celui de l'autre cote
-                            if((matrice[dep[1]-1][dep[0]-2]==2)||(matrice[dep[1]-1][dep[0]-2]==3))
+                            if(((matrice[dep[1]-1][dep[0]-2]==2)||(matrice[dep[1]-1][dep[0]-2]==3))&&(dep[1]!=16))
                             {
                                 if(matrice[dep[1]+2][dep[0]-2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
-                                printf("Vous etes face a une barriere\nVotre piont va faire un decalage en bas\n");
+
+                                Color(15,0);
+                                gotoligcol(numero_ligne+7,numero_colonne);
+                                Color(15,10);
+                                printf("       Vous etes face à une barriere       ");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+8,numero_colonne);
+                                Color(15,10);
+                                printf("       Votre pion se decale en bas       ");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+9,numero_colonne);
+
+                                //printf("Vous etes face a une barriere\nVotre piont va faire un decalage en bas\n");
                                 dep[0]-=2;
                                 dep[1]+=2;
                                 valid_dep = 0;
                             }
                             //Sinon on applique le decalage voulu
-                            else
+                            else if(dep[1]!=0)
                             {
                                 if(matrice[dep[1]-2][dep[0]-2]==4)
                                 {
@@ -416,6 +590,10 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[0]-=2;
                                 dep[1]-=2;
                                 valid_dep = 0;
+                            }
+                            else
+                            {
+                                valid_dep = 1;
                             }
                         }
                     }
@@ -441,7 +619,12 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                 {
                     valid_dep = 1;
                     valid_choix = 1;
-                    printf("Impossible de sortir du plateau\n");
+                    Color(15,0);
+                    gotoligcol(numero_ligne+7,numero_colonne);
+                    Color(15,10);
+                    printf("       Impossible de sortir du plateau       ");
+                    Color(15,0);
+                    gotoligcol(numero_ligne+8,numero_colonne);
                     system("PAUSE");
                 }
                 //Si un joueur se trouve sur la case d'arrivee, on verfie que la suivante et libre et qu'il n'y a pas de barriere pour sauter
@@ -462,28 +645,53 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                         //On demande a l'utilisateur le decalage qu'il veux faire
                         while(validation_choix(choix_decalage, 'h', 'b')==1)
                         {
+                            Color(15,0);
                             system("cls");
                             matrice_propre(matrice,player,ia);
                             menu_cote(Ptour,Pnombre_joueur,player);
-                            printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller en haut (h) ou en bas (b) ?\n");
+
+                            Color(15,0);
+                            gotoligcol(numero_ligne+7,numero_colonne);
+                            Color(15,10);
+                            printf("       Vous ne pouvez pas sauter le deuxieme mur       ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+8,numero_colonne);
+                            Color(15,10);
+                            printf("  Souhaitez vous aller en haut (h) ou en bas (b) ?  ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+9,numero_colonne);
+
+                            //printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller en haut (h) ou en bas (b) ?\n");
+
                             scanf("%c", &choix_decalage);
                         }
                         if(choix_decalage == 'b')
                         {
                             //Si le decalage est impossible alors on fait celui de l'autre cote
-                            if(((matrice[dep[1]+1][dep[0]+2]==2)||(matrice[dep[1]+1][dep[0]+2]==3)))
+                            if(((matrice[dep[1]+1][dep[0]+2]==2)||(matrice[dep[1]+1][dep[0]+2]==3))&&(dep[1]!=0))
                             {
                                 if(matrice[dep[1]-2][dep[0]+2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
-                                printf("Vous etes face a une barriere\nVotre piont va faire un decalage en haut\n");
+
+                                Color(15,0);
+                                gotoligcol(numero_ligne+7,numero_colonne);
+                                Color(15,10);
+                                printf("       Vous etes face à une barriere       ");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+8,numero_colonne);
+                                Color(15,10);
+                                printf("        Votre pion se decale en haut        ");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+9,numero_colonne);
+
                                 dep[0]+=2;
                                 dep[1]-=2;
                                 valid_dep = 0;
                             }
                             //Sinon on applique le decalage voulu
-                            else
+                            else if(dep[1]!=16)
                             {
                                 if(matrice[dep[1]+2][dep[0]+2]==4)
                                 {
@@ -492,24 +700,40 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[0]+=2;
                                 dep[1]+=2;
                                 valid_dep = 0;
+                            }
+                            else
+                            {
+                                valid_dep = 1;
                             }
                         }
                         else
                         {
                             //Si le decalage est impossible alors on fait celui de l'autre cote
-                            if((matrice[dep[1]-1][dep[0]+2]==2)||(matrice[dep[1]-1][dep[0]+2]==3))
+                            if(((matrice[dep[1]-1][dep[0]+2]==2)||(matrice[dep[1]-1][dep[0]+2]==3))&&(dep[1]!=16))
                             {
                                 if(matrice[dep[1]+2][dep[0]+2]==4)
                                 {
                                     player[*Ptour-1].scoreP ++;
                                 }
-                                printf("Vous etes face a une barriere\nVotre piont va faire un decalage en bas\n");
+
+                                Color(15,0);
+                                gotoligcol(numero_ligne+7,numero_colonne);
+                                Color(15,10);
+                                printf("       Vous etes face à une barriere       ");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+8,numero_colonne);
+                                Color(15,10);
+                                printf("        Votre pion se decale en bas        ");
+                                Color(15,0);
+                                gotoligcol(numero_ligne+9,numero_colonne);
+
+                                //printf("Vous etes face a une barriere\nVotre piont va faire un decalage en bas\n");
                                 dep[0]+=2;
                                 dep[1]+=2;
                                 valid_dep = 0;
                             }
                             //Sinon on applique le decalage voulu
-                            else
+                            else if(dep[1]!=0)
                             {
                                 if(matrice[dep[1]-2][dep[0]+2]==4)
                                 {
@@ -518,6 +742,10 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
                                 dep[0]+=2;
                                 dep[1]-=2;
                                 valid_dep = 0;
+                            }
+                            else
+                            {
+                                valid_dep = 1;
                             }
                         }
                     }
@@ -527,7 +755,14 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
             ///3.5. Deplacment impossible
             else
             {
-                printf("Deplacement impossible\n");
+                Color(15,0);
+                gotoligcol(numero_ligne+7,numero_colonne);
+                Color(15,10);
+                printf("       Deplacement impossible       ");
+                Color(15,0);
+                gotoligcol(numero_ligne+8,numero_colonne);
+
+                //printf("Deplacement impossible\n");
                 system("PAUSE");
                 valid_choix = 1;
             }
@@ -545,6 +780,9 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
     char choix_decalage = 'x';
     int valid_choix = 1;
     int valid_dep = 1;
+    int numero_ligne=20;
+    int numero_colonne=3;
+
 
     ///1. Affichage utilisateur
     while(valid_dep == 1)
@@ -554,7 +792,35 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
             system("cls");
             matrice_propre(matrice,player, ia);
             menu_cote_ia(tour, player, ia);
-            printf("Direction de deplacement (h, b, g, d) :\n");
+
+            gotoligcol(numero_ligne,numero_colonne);
+            Color(15,2);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(numero_ligne+1,numero_colonne);
+            Color(15,2);
+            printf("                DEPLACEMENT                ");
+            Color(15,0);
+            gotoligcol(numero_ligne+2,numero_colonne);
+            Color(15,2);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(numero_ligne+3,numero_colonne);
+            Color(15,10);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(numero_ligne+4,numero_colonne);
+            Color(15,10);
+            printf("  Direction de deplacement (h, b, g, d) ?  ");
+            Color(15,0);
+            gotoligcol(numero_ligne+5,numero_colonne);
+            Color(15,10);
+            printf("                                           ");
+            Color(15,0);
+            gotoligcol(numero_ligne+6,numero_colonne);
+
+
+            //printf("Direction de deplacement (h, b, g, d) :\n");
             scanf("%c", &choix);
             if((choix=='h')||(choix=='b')||(choix=='g')||(choix=='d')||(choix=='H')||(choix=='B')||(choix=='G')||(choix=='D'))
             {
@@ -580,7 +846,15 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
             {
                 valid_dep = 1;
                 valid_choix = 1;
-                printf("Impossible de sortir du plateau\n");
+
+                Color(15,0);
+                gotoligcol(numero_ligne+7,numero_colonne);
+                Color(15,10);
+                printf("       Deplacement impossible       ");
+                Color(15,0);
+                gotoligcol(numero_ligne+8,numero_colonne);
+
+                //printf("Impossible de sortir du plateau\n");
                 system("PAUSE");
             }
             //Si un joueur se trouve sur la case d'arrivee, on verfie que la suivante et libre et qu'il n'y a pas de barriere pour sauter
@@ -604,7 +878,19 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                         system("cls");
                         matrice_propre(matrice,player, ia);
                         menu_cote_ia(tour, player, ia);
-                        printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller a gauche (g) ou a droite (d) ?\n");
+
+                        Color(15,0);
+                        gotoligcol(numero_ligne+7,numero_colonne);
+                        Color(15,10);
+                        printf("       Vous ne pouvez pas sauter le deuxieme mur       ");
+                        Color(15,0);
+                        gotoligcol(numero_ligne+8,numero_colonne);
+                        Color(15,10);
+                        printf("  Souhaitez vous aller en haut (h) ou en bas (b) ?  ");
+                        Color(15,0);
+                        gotoligcol(numero_ligne+9,numero_colonne);
+
+                        //printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller a gauche (g) ou a droite (d) ?\n");
                         scanf("%c", &choix_decalage);
                     }
                     if(choix_decalage == 'd')
@@ -616,7 +902,20 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                             {
                                 player[0].scoreP ++;
                             }
-                            printf("Vous etes face a une barriere\nVotre piont va faire un decalage a gauche\n");
+
+                            Color(15,0);
+                            gotoligcol(numero_ligne+7,numero_colonne);
+                            Color(15,10);
+                            printf("       Vous etes face à une barriere       ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+8,numero_colonne);
+                            Color(15,10);
+                            printf("        Votre pion se decale a gauche        ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+9,numero_colonne);
+
+
+                            //printf("Vous etes face a une barriere\nVotre piont va faire un decalage a gauche\n");
                             dep[0]-=2;
                             dep[1]-=2;
                             valid_dep = 0;
@@ -643,7 +942,20 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                             {
                                 player[0].scoreP ++;
                             }
-                            printf("Vous etes face a une barriere\nVotre piont va faire un decalage a droite\n");
+
+                            Color(15,0);
+                            gotoligcol(numero_ligne+7,numero_colonne);
+                            Color(15,10);
+                            printf("       Vous etes face à une barriere       ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+8,numero_colonne);
+                            Color(15,10);
+                            printf("        Votre pion se decale a droite       ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+9,numero_colonne);
+
+
+                            //printf("Vous etes face a une barriere\nVotre piont va faire un decalage a droite\n");
                             dep[0]+=2;
                             dep[1]-=2;
                             valid_dep = 0;
@@ -683,7 +995,14 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
             {
                 valid_dep = 1;
                 valid_choix = 1;
-                printf("Impossible de sortir du plateau\n");
+
+                Color(15,0);
+                gotoligcol(numero_ligne+7,numero_colonne);
+                Color(15,10);
+                printf("       Impossible de sortir du plateau       ");
+                Color(15,0);
+                gotoligcol(numero_ligne+8,numero_colonne);
+                //printf("Impossible de sortir du plateau\n");
                 system("PAUSE");
             }
             //Si un joueur se trouve sur la case d'arrivee, on verfie que la suivante et libre et qu'il n'y a pas de barriere pour sauter
@@ -707,7 +1026,19 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                         system("cls");
                         matrice_propre(matrice,player, ia);
                         menu_cote_ia(tour, player, ia);
-                        printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller a gauche (g) ou a droite (d) ?\n");
+
+                        Color(15,0);
+                        gotoligcol(numero_ligne+7,numero_colonne);
+                        Color(15,10);
+                        printf("       Vous ne pouvez pas sauter le deuxieme mur       ");
+                        Color(15,0);
+                        gotoligcol(numero_ligne+8,numero_colonne);
+                        Color(15,10);
+                        printf("  Souhaitez vous aller a gauche (g) ou a droite (d) ?  ");
+                        Color(15,0);
+                        gotoligcol(numero_ligne+9,numero_colonne);
+
+                        //printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller a gauche (g) ou a droite (d) ?\n");
                         scanf("%c", &choix_decalage);
                     }
                     if(choix_decalage == 'd')
@@ -720,7 +1051,19 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                             {
                                 player[0].scoreP ++;
                             }
-                            printf("Vous etes face a une barriere\nVotre piont va faire un decalage a gauche\n");
+
+                            Color(15,0);
+                            gotoligcol(numero_ligne+7,numero_colonne);
+                            Color(15,10);
+                            printf("       Vous etes face à une barriere       ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+8,numero_colonne);
+                            Color(15,10);
+                            printf("        Votre pion se decale a gauche       ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+9,numero_colonne);
+
+                            //printf("Vous etes face a une barriere\nVotre piont va faire un decalage a gauche\n");
                             dep[0]-=2;
                             dep[1]+=2;
                             valid_dep = 0;
@@ -746,7 +1089,19 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                             {
                                 player[0].scoreP ++;
                             }
-                            printf("Vous etes face a une barriere\nVotre piont va faire un decalage a droite\n");
+
+                            Color(15,0);
+                            gotoligcol(numero_ligne+7,numero_colonne);
+                            Color(15,10);
+                            printf("       Vous etes face à une barriere       ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+8,numero_colonne);
+                            Color(15,10);
+                            printf("        Votre pion se decale a droite        ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+9,numero_colonne);
+
+                            //printf("Vous etes face a une barriere\nVotre piont va faire un decalage a droite\n");
                             dep[0]+=2;
                             dep[1]+=2;
                             valid_dep = 0;
@@ -786,7 +1141,13 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
             {
                 valid_dep = 1;
                 valid_choix = 1;
-                printf("Impossible de sortir du plateau\n");
+                Color(15,0);
+                gotoligcol(numero_ligne+7,numero_colonne);
+                Color(15,10);
+                printf("       Impossible de sortir du plateau       ");
+                Color(15,0);
+                gotoligcol(numero_ligne+8,numero_colonne);
+                //printf("Impossible de sortir du plateau\n");
                 system("PAUSE");
             }
             //Si un joueur se trouve sur la case d'arrivee, on verfie que la suivante et libre et qu'il n'y a pas de barriere pour sauter
@@ -810,7 +1171,19 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                         system("cls");
                         matrice_propre(matrice,player,ia);
                         menu_cote_ia(tour, player, ia);
-                        printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller en haut (h) ou en bas (b) ?\n");
+
+                        Color(15,0);
+                        gotoligcol(numero_ligne+7,numero_colonne);
+                        Color(15,10);
+                        printf("       Vous ne pouvez pas sauter le deuxieme mur       ");
+                        Color(15,0);
+                        gotoligcol(numero_ligne+8,numero_colonne);
+                        Color(15,10);
+                        printf("  Souhaitez vous aller en haut (h) ou en bas (b) ?  ");
+                        Color(15,0);
+                        gotoligcol(numero_ligne+9,numero_colonne);
+
+                        //printf("Vous ne pouvez pas sauter le deuxieme mur,\nSouhaitez vous aller en haut (h) ou en bas (b) ?\n");
                         scanf("%c", &choix_decalage);
                     }
                     if(choix_decalage == 'b')
@@ -822,7 +1195,19 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                             {
                                 player[0].scoreP ++;
                             }
-                            printf("Vous etes face a une barriere\nVotre piont va faire un decalage en haut\n");
+
+                            Color(15,0);
+                            gotoligcol(numero_ligne+7,numero_colonne);
+                            Color(15,10);
+                            printf("       Vous etes face à une barriere       ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+8,numero_colonne);
+                            Color(15,10);
+                            printf("        Votre pion se decale en haut        ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+9,numero_colonne);
+
+                            //printf("Vous etes face a une barriere\nVotre piont va faire un decalage en haut\n");
                             dep[0]-=2;
                             dep[1]-=2;
                             valid_dep = 0;
@@ -848,7 +1233,19 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                             {
                                 player[0].scoreP ++;
                             }
-                            printf("Vous etes face a une barriere\nVotre piont va faire un decalage en bas\n");
+
+                            Color(15,0);
+                            gotoligcol(numero_ligne+7,numero_colonne);
+                            Color(15,10);
+                            printf("       Vous etes face à une barriere       ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+8,numero_colonne);
+                            Color(15,10);
+                            printf("        Votre pion se decale en bas        ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+9,numero_colonne);
+
+                            //printf("Vous etes face a une barriere\nVotre piont va faire un decalage en bas\n");
                             dep[0]-=2;
                             dep[1]+=2;
                             valid_dep = 0;
@@ -888,7 +1285,15 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
             {
                 valid_dep = 1;
                 valid_choix = 1;
-                printf("Impossible de sortir du plateau\n");
+
+                Color(15,0);
+                gotoligcol(numero_ligne+7,numero_colonne);
+                Color(15,10);
+                printf("       Impossible de sortir du plateau       ");
+                Color(15,0);
+                gotoligcol(numero_ligne+8,numero_colonne);
+
+                //printf("Impossible de sortir du plateau\n");
                 system("PAUSE");
             }
             //Si un joueur se trouve sur la case d'arrivee, on verfie que la suivante et libre et qu'il n'y a pas de barriere pour sauter
@@ -924,7 +1329,19 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                             {
                                 player[0].scoreP ++;
                             }
-                            printf("Vous etes face a une barriere\nVotre piont va faire un decalage en haut\n");
+
+                            Color(15,0);
+                            gotoligcol(numero_ligne+7,numero_colonne);
+                            Color(15,10);
+                            printf("       Vous etes face à une barriere       ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+8,numero_colonne);
+                            Color(15,10);
+                            printf("        Votre pion se decale en haut        ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+9,numero_colonne);
+
+                            //printf("Vous etes face a une barriere\nVotre piont va faire un decalage en haut\n");
                             dep[0]+=2;
                             dep[1]-=2;
                             valid_dep = 0;
@@ -950,7 +1367,19 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
                             {
                                 player[0].scoreP ++;
                             }
-                            printf("Vous etes face a une barriere\nVotre piont va faire un decalage en bas\n");
+
+                            Color(15,0);
+                            gotoligcol(numero_ligne+7,numero_colonne);
+                            Color(15,10);
+                            printf("       Vous etes face à une barriere       ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+8,numero_colonne);
+                            Color(15,10);
+                            printf("        Votre pion se decale en bas        ");
+                            Color(15,0);
+                            gotoligcol(numero_ligne+9,numero_colonne);
+
+                            //printf("Vous etes face a une barriere\nVotre piont va faire un decalage en bas\n");
                             dep[0]+=2;
                             dep[1]+=2;
                             valid_dep = 0;
@@ -974,7 +1403,13 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
         ///3.5. Deplacment impossible
         else
         {
-            printf("Deplacement impossible\n");
+            Color(15,0);
+            gotoligcol(numero_ligne+7,numero_colonne);
+            Color(15,10);
+            printf("       Deplacement impossible       ");
+            Color(15,0);
+            gotoligcol(numero_ligne+8,numero_colonne);
+            //printf("Deplacement impossible\n");
             system("PAUSE");
             valid_choix = 1;
         }
