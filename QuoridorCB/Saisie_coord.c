@@ -1,5 +1,6 @@
 #include "Header_Pierre.h"
 
+///Programme permettant a l'utilisateur de saisir une case du plateau
 void saisie_coord(int saisie[2],int*Ptour,int*PnombreJ,t_joueur player[4],int mat[17][17],t_IA ia)
 {
     ///0. DDV
@@ -37,11 +38,13 @@ void saisie_coord(int saisie[2],int*Ptour,int*PnombreJ,t_joueur player[4],int ma
 }
 
 
-
+///Fonction permettant a l'utilisateur de saisir une direction
 int saisie_dir(int*Ptour,int*PnombreJ,t_joueur player[4],int mat[17][17],t_IA ia)
 {
     ///0. DDV
     char saisie;
+
+    ///1. Saisie
     do//Blindage de saisie
     {
         system("cls");

@@ -15,16 +15,16 @@
 1639133516 source:d:\pierr\documents\algo\quoridor\quoridorcb\affich_mat_avec_coord.c
 	"Header_Pierre.h"
 
-1638364644 source:d:\pierr\documents\algo\quoridor\quoridorcb\initialisationmatriceordi.c
+1639266516 source:d:\pierr\documents\algo\quoridor\quoridorcb\initialisationmatriceordi.c
 	"Header_Pierre.h"
 
 1639266448 source:d:\pierr\documents\algo\quoridor\quoridorcb\sauvegarde-charger.c
 	"Header_Pierre.h"
 
-1639264338 source:d:\pierr\documents\algo\quoridor\quoridorcb\matrice_visible.c
+1639266742 source:d:\pierr\documents\algo\quoridor\quoridorcb\matrice_visible.c
 	"Header_Pierre.h"
 
-1638809704 source:d:\pierr\documents\algo\quoridor\quoridorcb\placer_barriere.c
+1639267230 source:d:\pierr\documents\algo\quoridor\quoridorcb\placer_barriere.c
 	"Header_Pierre.h"
 
 1639249778 source:d:\pierr\documents\algo\quoridor\quoridorcb\affiregles.c
@@ -139,7 +139,7 @@
 1639252579 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\menu_cote.c
 	"Header_Pierre.h"
 
-1639259270 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_cote.c
+1639266516 source:d:\pierr\documents\algo\quoridor\quoridorcb\menu_cote.c
 	"Header_Pierre.h"
 
 1639238261 source:c:\users\maxime\onedrive\ece\informatique\projet\quoridor\quoridorcb\fin de jeu.c
