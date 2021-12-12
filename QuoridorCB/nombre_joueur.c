@@ -6,15 +6,35 @@ int nombre_joueur()
 ///0. Declaration variable
 
     int choix = -1; //Initialisation a -1 car choix impossible en pratique
-
-    system("cls");  //On efface la console pour seulement afficher le menu
+    Color(15,0);
+    //system("cls");  //On efface la console pour seulement afficher le menu
 
 ///1. Saisie du nombre de joueur
 
     do
     {
         system("cls");
-        printf("1. 2 Joueurs\n2. 4 Joueurs\n3. 1 joueurs avec IA\n");
+
+        Affichage_Du_Titre(1,35);
+
+        Color(15,2);
+            gotoligcol(10,50);
+            printf("                    ");
+            gotoligcol(11,50);
+            printf("   Saisir  1 ou 2   ");
+            gotoligcol(12,50);
+            printf("                    ");
+            Color(15,10);
+            gotoligcol(13,50);
+            printf("                    ");
+            gotoligcol(14,50);
+            printf("     1. 2 Joueurs   ");
+            gotoligcol(15,50);
+            printf("     2. 4 Joueurs   ");
+            gotoligcol(16,50);
+            printf("                    ");
+            gotoligcol(17,50);
+
         scanf("%d",&choix);
 
     }
