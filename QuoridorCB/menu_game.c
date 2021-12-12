@@ -232,7 +232,7 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                 ///5.2.1. Si le joueur n'a pas deja annulé un tour
                 if(player[*Ptour-1].A_annule == 0)
                 {
-                    ///5.2.2. Cargement de l'ancien plateau et des anciennes coordonnees
+                    ///5.2.2. Chargement de l'ancien plateau et des anciennes coordonnees
                     charger_plateau(mat_avant);
 
                     for(int i = 0; i<17; i++)
@@ -259,15 +259,15 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                         }
                         else
                         {
-                            if(*Ptour == 4)
+                            if(*Ptour == 1)
                             {
-                                player[0].coordonneX = player[0].coordonneX_av;
-                                player[0].coordonneY = player[0].coordonneY_av;
+                                player[3].coordonneX = player[3].coordonneX_av;
+                                player[3].coordonneY = player[3].coordonneY_av;
                             }
                             else
                             {
-                                player[*Ptour].coordonneX = player[*Ptour].coordonneX_av;
-                                player[*Ptour].coordonneY = player[*Ptour].coordonneY_av;
+                                player[*Ptour-2].coordonneX = player[*Ptour-2].coordonneX_av;
+                                player[*Ptour-2].coordonneY = player[*Ptour-2].coordonneY_av;
                             }
                         }
 

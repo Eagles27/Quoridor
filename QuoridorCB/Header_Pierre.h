@@ -128,9 +128,6 @@ void menu_cote_ia(int tour, t_joueur player[4], t_IA ia);
 int gagner_ia(t_joueur player[4], t_IA ia, int tour);
 
 
-
-
-
 ////////////////////////////////////////////////////////////
 
 #endif // HEADER_PIERRE_H_INCLUDED
