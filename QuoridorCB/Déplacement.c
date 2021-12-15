@@ -85,7 +85,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
         {
             ///2.1.1. En haut
             //On verifie que la case est libre (ou bonus) et qu'il n'y a pas de barriere sur le chemin
-            if(((choix=='h')||(choix=='H'))&&(dep[1]!=0)&&(((matrice[dep[1]-1][dep[0]])!=2)||((matrice[dep[1]-1][dep[0]])!=3))&&((matrice[dep[1]-2][dep[0]]==0)||(matrice[dep[1]-2][dep[0]]==4)))
+            if(((choix=='h')||(choix=='H'))&&(dep[1]!=0)&&(matrice[dep[1]-1][dep[0]]==1)&&((matrice[dep[1]-2][dep[0]]==0)||(matrice[dep[1]-2][dep[0]]==4)))
             {
                 if(matrice[dep[1]-1][dep[0]]==4)
                 {
@@ -97,7 +97,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
 
             ///2.1.2. En bas
             //On verifie que la case est libre (ou bonus) et qu'il n'y a pas de barriere sur le chemin
-            else if(((choix=='b')||(choix=='B'))&&(dep[1]!=16)&&(((matrice[dep[1]+1][dep[0]])!=2)||((matrice[dep[1]+1][dep[0]])!=3))&&((matrice[dep[1]+2][dep[0]]==0)||(matrice[dep[1]+2][dep[0]]==4)))
+            else if(((choix=='b')||(choix=='B'))&&(dep[1]!=16)&&(matrice[dep[1]+1][dep[0]]==1)&&((matrice[dep[1]+2][dep[0]]==0)||(matrice[dep[1]+2][dep[0]]==4)))
             {
                 if(matrice[dep[1]+2][dep[0]]==4)
                 {
@@ -109,7 +109,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
 
             ///2.1.3. A gauche
             //On verifie que la case est libre (ou bonus) et qu'il n'y a pas de barriere sur le chemin
-            else if(((choix=='g')||(choix=='G'))&&(dep[0]!=0)&&(((matrice[dep[1]][dep[0]-1])!=2)||((matrice[dep[1]][dep[0]-1])!=3))&&((matrice[dep[1]][dep[0]-2]==0)||(matrice[dep[1]][dep[0]-2]==4)))
+            else if(((choix=='g')||(choix=='G'))&&(dep[0]!=0)&&(matrice[dep[1]][dep[0]-1]==1)&&((matrice[dep[1]][dep[0]-2]==0)||(matrice[dep[1]][dep[0]-2]==4)))
             {
                 if(matrice[dep[1]][dep[0]-2]==4)
                 {
@@ -121,7 +121,7 @@ void deplacement(int dep[3], int matrice[17][17], int* Pnombre_joueur,int*Ptour,
 
             ///2.1.4. A droite
             //On verifie que la case est libre (ou bonus) et qu'il n'y a pas de barriere sur le chemin
-            else if(((choix=='d')||(choix=='D'))&&(dep[0]!=16)&&(((matrice[dep[1]][dep[0]+1])!=2)||((matrice[dep[1]][dep[0]+1])!=3))&&((matrice[dep[1]][dep[0]+2]==0)||(matrice[dep[1]][dep[0]+2]==4)))
+            else if(((choix=='d')||(choix=='D'))&&(dep[0]!=16)&&(matrice[dep[1]][dep[0]+1]==1)&&((matrice[dep[1]][dep[0]+2]==0)||(matrice[dep[1]][dep[0]+2]==4)))
             {
 
                 if(matrice[dep[1]][dep[0]+2]==4)
