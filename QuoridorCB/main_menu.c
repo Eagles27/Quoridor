@@ -680,11 +680,23 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                     player[tour_test].scoreP += 5;
 
-                    for(int i=0; i<*Pnombre_joueur; i++)
+                    if(*Pnombre_joueur == 2)
                     {
-                        actualisation_score(player,i);
+                        actualisation_score(player,0);
+                        actualisation_score(player,1);
+                    }
+
+                    else
+                    {
+                        actualisation_score(player,0);
+                        actualisation_score(player,1);
+                        actualisation_score(player,2);
+                        actualisation_score(player,3);
+
 
                     }
+
+
                     system("PAUSE");
                 }
 
@@ -765,12 +777,17 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                             printf("                                           ");
                             Color(15,0);
                             gotoligcol(nl+10,nc);
+
+                            if(*Pnombre_joueur == 2)
+                            {
+                                actualisation_score(player,0);
+                                actualisation_score(player,1);
+                            }
+
+
                             system("PAUSE");
 
-                            for(int i=0; i<*Pnombre_joueur; i++)
-                            {
-                                actualisation_score(player,i);  //Actualisation des scores
-                            }
+
                         }
 
                         ///Le joueur le plus avance gagne
@@ -800,11 +817,12 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                             player[gagner_barriere(player, Pnombre_joueur)].scoreP += 5;    //Actualisation des scores du vainqueur
 
 
-                            for(int i=0; i<*Pnombre_joueur; i++)        //Actualisation des scores
+                            if(*Pnombre_joueur == 2)
                             {
-                                actualisation_score(player,i);
-
+                                actualisation_score(player,0);
+                                actualisation_score(player,1);
                             }
+
 
                             system("PAUSE");
 
@@ -836,9 +854,14 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                             Color(15,0);
                             gotoligcol(nl+10,nc);
 
-                            for(int i=0; i<*Pnombre_joueur; i++)        //Actualisation des scores
+
+                            if(*Pnombre_joueur == 4)
                             {
-                                actualisation_score(player,i);
+                                actualisation_score(player,0);
+                                actualisation_score(player,1);
+                                actualisation_score(player,2);
+                                actualisation_score(player,3);
+
 
                             }
 
@@ -873,11 +896,14 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                             player[1].scoreP += 5;
                             player[2].scoreP += 5;
 
-                            for(int i=0; i<*Pnombre_joueur; i++)    //Actualisation des scores
+                            if(*Pnombre_joueur == 4)
                             {
-                                actualisation_score(player,i);
-                            }
+                                actualisation_score(player,0);
+                                actualisation_score(player,1);
+                                actualisation_score(player,2);
+                                actualisation_score(player,3);
 
+                            }
                             system("PAUSE");
 
                         }
@@ -911,9 +937,12 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                             player[1].scoreP += 5;
                             player[3].scoreP += 5;
 
-                            for(int i=0; i<*Pnombre_joueur; i++)    //Actualisation des scores
+                            if(*Pnombre_joueur == 4)
                             {
-                                actualisation_score(player,i);
+                                actualisation_score(player,0);
+                                actualisation_score(player,1);
+                                actualisation_score(player,2);
+                                actualisation_score(player,3);
                             }
 
                             system("PAUSE");
@@ -946,9 +975,14 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                             player[2].scoreP += 5;
                             player[3].scoreP += 5;
 
-                            for(int i=0; i<*Pnombre_joueur; i++)    //Actualisation des scores
+                            if(*Pnombre_joueur == 4)
                             {
-                                actualisation_score(player,i);
+                                actualisation_score(player,0);
+                                actualisation_score(player,1);
+                                actualisation_score(player,2);
+                                actualisation_score(player,3);
+
+
                             }
 
                             system("PAUSE");
@@ -980,9 +1014,14 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                             player[2].scoreP += 5;
                             player[3].scoreP += 5;
 
-                            for(int i=0; i<*Pnombre_joueur; i++)    //Actualisation des scores
+                            if(*Pnombre_joueur == 4)
                             {
-                                actualisation_score(player,i);
+                                actualisation_score(player,0);
+                                actualisation_score(player,1);
+                                actualisation_score(player,2);
+                                actualisation_score(player,3);
+
+
                             }
 
                             system("PAUSE");
@@ -1014,9 +1053,14 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                             player[0].scoreP += 5;
                             player[1].scoreP += 5;
 
-                            for(int i=0; i<*Pnombre_joueur; i++)    //Actualisation des scores
+                            if(*Pnombre_joueur == 4)
                             {
-                                actualisation_score(player,i);
+                                actualisation_score(player,0);
+                                actualisation_score(player,1);
+                                actualisation_score(player,2);
+                                actualisation_score(player,3);
+
+
                             }
                             system("PAUSE");
 
@@ -1046,9 +1090,14 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                             player[1].scoreP += 5;
                             player[2].scoreP += 5;
 
-                            for(int i=0; i<*Pnombre_joueur; i++)    //Actualisation des scores
+                            if(*Pnombre_joueur == 4)
                             {
-                                actualisation_score(player,i);
+                                actualisation_score(player,0);
+                                actualisation_score(player,1);
+                                actualisation_score(player,2);
+                                actualisation_score(player,3);
+
+
                             }
 
                             system("PAUSE");
@@ -1079,9 +1128,14 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                             player[2].scoreP += 5;
                             player[3].scoreP += 5;
 
-                            for(int i=0; i<*Pnombre_joueur; i++)    //Actualisation des scores
+                            if(*Pnombre_joueur == 4)
                             {
-                                actualisation_score(player,i);
+                                actualisation_score(player,0);
+                                actualisation_score(player,1);
+                                actualisation_score(player,2);
+                                actualisation_score(player,3);
+
+
                             }
 
                             system("PAUSE");
@@ -1112,9 +1166,14 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                             player[0].scoreP += 5;
                             player[3].scoreP += 5;
 
-                            for(int i=0; i<*Pnombre_joueur; i++)    //Actualisation des scores
+                            if(*Pnombre_joueur == 4)
                             {
-                                actualisation_score(player,i);
+                                actualisation_score(player,0);
+                                actualisation_score(player,1);
+                                actualisation_score(player,2);
+                                actualisation_score(player,3);
+
+
                             }
 
                             system("PAUSE");
@@ -1147,9 +1206,14 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                             player[0].scoreP += 5;
 
-                            for(int i=0; i<*Pnombre_joueur; i++)    //Actualisation des scores
+                            if(*Pnombre_joueur == 4)
                             {
-                                actualisation_score(player,i);
+                                actualisation_score(player,0);
+                                actualisation_score(player,1);
+                                actualisation_score(player,2);
+                                actualisation_score(player,3);
+
+
                             }
 
                             system("PAUSE");
@@ -1181,9 +1245,14 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                             player[1].scoreP += 5;
 
-                            for(int i=0; i<*Pnombre_joueur; i++)    //Actualisation des scores
+                            if(*Pnombre_joueur == 4)
                             {
-                                actualisation_score(player,i);
+                                actualisation_score(player,0);
+                                actualisation_score(player,1);
+                                actualisation_score(player,2);
+                                actualisation_score(player,3);
+
+
                             }
 
                             system("PAUSE");
@@ -1215,9 +1284,14 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                             player[2].scoreP += 5;
 
-                            for(int i=0; i<*Pnombre_joueur; i++)    //Actualisation des scores
+                            if(*Pnombre_joueur == 4)
                             {
-                                actualisation_score(player,i);
+                                actualisation_score(player,0);
+                                actualisation_score(player,1);
+                                actualisation_score(player,2);
+                                actualisation_score(player,3);
+
+
                             }
 
                             system("PAUSE");
@@ -1249,9 +1323,14 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                             player[3].scoreP += 5;
 
-                            for(int i=0; i<*Pnombre_joueur; i++)    //Actualisation des scores
+                            if(*Pnombre_joueur == 4)
                             {
-                                actualisation_score(player,i);
+                                actualisation_score(player,0);
+                                actualisation_score(player,1);
+                                actualisation_score(player,2);
+                                actualisation_score(player,3);
+
+
                             }
 
                             system("PAUSE");
@@ -1387,9 +1466,22 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                 player[tour_test].scoreP += 5;
 
-                for(int i=0; i<*Pnombre_joueur; i++)
+
+                if(*Pnombre_joueur == 2)
                 {
-                    actualisation_score(player,i);
+                    actualisation_score(player,0);
+                    actualisation_score(player,1);
+                }
+
+                else
+                {
+
+                    actualisation_score(player,0);
+                    actualisation_score(player,1);
+                    actualisation_score(player,2);
+                    actualisation_score(player,3);
+
+
 
                 }
                 system("PAUSE");
@@ -1469,11 +1561,23 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         Color(15,0);
                         gotoligcol(nl+10,nc);
 
-                        for(int i=0; i<*Pnombre_joueur; i++)
+                        if(*Pnombre_joueur == 2)
                         {
-                            actualisation_score(player,i);
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
                         }
 
+                        else
+                        {
+
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
+
+
+
+                        }
                         system("PAUSE");
                     }
 
@@ -1500,14 +1604,15 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         Color(15,0);
                         gotoligcol(nl+10,nc);
                         //printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player, Pnombre_joueur)].nomJ);
-                        player[gagner_barriere(player, Pnombre_joueur)].scoreP ++;
+                        player[gagner_barriere(player, Pnombre_joueur)].scoreP +=5;
 
-                        player[tour_test].scoreP += 5;
-
-                        for(int i=0; i<*Ptour; i++)
+                        if(*Pnombre_joueur == 2)
                         {
-                            actualisation_score(player,i);
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
                         }
+
+
                         system("PAUSE");
 
                     }
@@ -1535,10 +1640,15 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         Color(15,0);
                         gotoligcol(nl+10,nc);
 
-                        for(int i=0; i<*Ptour; i++)
+                        if(*Pnombre_joueur == 4)
                         {
-                            actualisation_score(player,i);
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
+
                         }
+
                         system("PAUSE");
                     }
 
@@ -1568,11 +1678,14 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         player[1].scoreP += 5;
                         player[2].scoreP += 5;
 
-                        for(int i=0; i<*Ptour; i++)
+                        if(*Pnombre_joueur == 4)
                         {
-                            actualisation_score(player,i);
-                        }
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
 
+                        }
                         system("PAUSE");
                     }
 
@@ -1602,9 +1715,13 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         player[1].scoreP += 5;
                         player[3].scoreP += 5;
 
-                        for(int i=0; i<*Ptour; i++)
+                        if(*Pnombre_joueur == 4)
                         {
-                            actualisation_score(player,i);
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
+
                         }
 
                         system("PAUSE");
@@ -1636,9 +1753,13 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         player[2].scoreP += 5;
                         player[3].scoreP += 5;
 
-                        for(int i=0; i<*Ptour; i++)
+                        if(*Pnombre_joueur == 4)
                         {
-                            actualisation_score(player,i);
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
+
                         }
 
                         system("PAUSE");
@@ -1670,9 +1791,13 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         player[2].scoreP += 5;
                         player[3].scoreP += 5;
 
-                        for(int i=0; i<*Ptour; i++)
+                        if(*Pnombre_joueur == 4)
                         {
-                            actualisation_score(player,i);
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
+
                         }
                         system("PAUSE");
 
@@ -1703,9 +1828,13 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         player[0].scoreP += 5;
                         player[1].scoreP += 5;
 
-                        for(int i=0; i<*Ptour; i++)
+                        if(*Pnombre_joueur == 4)
                         {
-                            actualisation_score(player,i);
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
+
                         }
                         system("PAUSE");
 
@@ -1735,9 +1864,13 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         player[1].scoreP += 5;
                         player[2].scoreP += 5;
 
-                        for(int i=0; i<*Ptour; i++)
+                        if(*Pnombre_joueur == 4)
                         {
-                            actualisation_score(player,i);
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
+
                         }
                         system("PAUSE");
 
@@ -1768,9 +1901,13 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         player[2].scoreP += 5;
                         player[3].scoreP += 5;
 
-                        for(int i=0; i<*Ptour; i++)
+                        if(*Pnombre_joueur == 4)
                         {
-                            actualisation_score(player,i);
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
+
                         }
                         system("PAUSE");
 
@@ -1800,9 +1937,13 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                         player[0].scoreP += 5;
                         player[3].scoreP += 5;
 
-                        for(int i=0; i<*Ptour; i++)
+                        if(*Pnombre_joueur == 4)
                         {
-                            actualisation_score(player,i);
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
+
                         }
                         system("PAUSE");
 
@@ -1834,9 +1975,13 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                         player[0].scoreP += 5;
 
-                        for(int i=0; i<*Ptour; i++)
+                        if(*Pnombre_joueur == 4)
                         {
-                            actualisation_score(player,i);
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
+
                         }
                         system("PAUSE");
 
@@ -1867,9 +2012,13 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                         player[1].scoreP += 5;
 
-                        for(int i=0; i<*Ptour; i++)
+                        if(*Pnombre_joueur == 4)
                         {
-                            actualisation_score(player,i);
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
+
                         }
                         system("PAUSE");
 
@@ -1900,9 +2049,13 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                         player[2].scoreP += 5;
 
-                        for(int i=0; i<*Ptour; i++)
+                        if(*Pnombre_joueur == 4)
                         {
-                            actualisation_score(player,i);
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
+
                         }
                         system("PAUSE");
 
@@ -1933,9 +2086,13 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
 
                         player[3].scoreP += 5;
 
-                        for(int i=0; i<*Ptour; i++)
+                        if(*Pnombre_joueur == 4)
                         {
-                            actualisation_score(player,i);
+                            actualisation_score(player,0);
+                            actualisation_score(player,1);
+                            actualisation_score(player,2);
+                            actualisation_score(player,3);
+
                         }
                         system("PAUSE");
 
