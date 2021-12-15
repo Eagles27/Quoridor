@@ -796,10 +796,9 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                             Color(15,0);
                             gotoligcol(nl+10,nc);
 
-                            //printf("%s a gagne la partie car c'est le plus avance sur le plateau\n",player[gagner_barriere(player, Pnombre_joueur)].nomJ);
-                            player[gagner_barriere(player, Pnombre_joueur)].scoreP ++;
 
-                            player[tour_test].scoreP += 5;
+                            player[gagner_barriere(player, Pnombre_joueur)].scoreP += 5;    //Actualisation des scores du vainqueur
+
 
                             for(int i=0; i<*Pnombre_joueur; i++)        //Actualisation des scores
                             {
