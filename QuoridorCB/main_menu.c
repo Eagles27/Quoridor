@@ -544,7 +544,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                 {
                     if(strcmp(player[i].nomJ, "RAVAUT")==0)
                     {
-                        player[i].scoreP = 10;
+                        player[i].scoreP += 10;
                     }
                     else if(strcmp(player[i].nomJ, "MAXIME")==0)
                     {
