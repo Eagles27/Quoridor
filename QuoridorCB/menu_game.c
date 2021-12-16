@@ -141,9 +141,8 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
         case 2:
         {
             ///3.1. Placement de la barriere
-            while(bool_barriere==-1)
-            {
-                if(*Pnombrejoueur == 1)
+
+                /*if(*Pnombrejoueur == 1)
                 {
                     Color(15,0);
                     system("cls");
@@ -160,11 +159,11 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
                     menu_cote(Ptour,Pnombrejoueur,player);
                     saisie_coord(saisie1,Ptour,Pnombrejoueur,player,mat,ia);
                     saisie_direction = saisie_dir(Ptour,Pnombrejoueur,player,mat,ia);
-                }
+                }*/
 
 
-                bool_barriere = placer_barriere(mat, saisie1, saisie_direction);
-            }
+            placer_barriere_v2(mat);
+
             Color(15,0);
             system("cls");
 

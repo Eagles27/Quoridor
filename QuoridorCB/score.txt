@@ -1,4 +1,4 @@
-11
+12
 PIERRE24
 ADRIEN69
 RAVAUT
@@ -17,4 +17,6 @@ PAUL
 P
 0
 M
+0
+A
 0
