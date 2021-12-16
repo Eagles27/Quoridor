@@ -480,6 +480,110 @@ int ia_v0(int dep_ia[2], int mat[17][17], t_joueur player[4], t_IA ia)
                     }
                 }
             }
+            else{
+                if(ia.barrieresR !=0)
+                {
+                    //On place une barriere devant le joueur
+                    //Si le joueur est au bord a gauche et qu'il n'y a pas deja une barriere devant
+                    if((player[0].coordonneX == 0)&&(mat[player[0].coordonneY+1][player[0].coordonneX]==1)&&(mat[player[0].coordonneY+1][player[0].coordonneX+2]==1))
+                    {
+                        mat[player[0].coordonneY+1][player[0].coordonneX] = 2;
+                        mat[player[0].coordonneY+1][player[0].coordonneX+1] = 3;
+                        mat[player[0].coordonneY+1][player[0].coordonneX+2] = 2;
+                        return 2;
+
+                    }
+                    //Si le joueur est au bord a droite et qu'il n'y a pas deja une barriere devant
+                    else if((player[0].coordonneX == 16)&&(mat[player[0].coordonneY+1][player[0].coordonneX]==1)&&(mat[player[0].coordonneY+1][player[0].coordonneX-2]==1))
+                    {
+                        mat[player[0].coordonneY+1][player[0].coordonneX] = 2;
+                        mat[player[0].coordonneY+1][player[0].coordonneX-1] = 3;
+                        mat[player[0].coordonneY+1][player[0].coordonneX-2] = 2;
+                        return 2;
+                    }
+                    //Si le joueur n'a pas de barriere devant lui et en bas a gauche
+                    else if((mat[player[0].coordonneY+1][player[0].coordonneX]==1)&&(mat[player[0].coordonneY+1][player[0].coordonneX-2]==1))
+                    {
+                        mat[player[0].coordonneY+1][player[0].coordonneX] = 2;
+                        mat[player[0].coordonneY+1][player[0].coordonneX-1] = 3;
+                        mat[player[0].coordonneY+1][player[0].coordonneX-2] = 2;
+                        return 2;
+                    }
+                    //Si le joueur n'a pas de barriere devant lui et en bas a droite
+                    else if((mat[player[0].coordonneY+1][player[0].coordonneX]==1)&&(mat[player[0].coordonneY+1][player[0].coordonneX+2]==1))
+                    {
+                        mat[player[0].coordonneY+1][player[0].coordonneX] = 2;
+                        mat[player[0].coordonneY+1][player[0].coordonneX+1] = 3;
+                        mat[player[0].coordonneY+1][player[0].coordonneX+2] = 2;
+                        return 2;
+                    }
+                    //On met une barriere juste avant la ligne d'arriv�e
+                    //On test si la premiere place est libre
+                    else if((mat[15][0]==1)&&(mat[15][2]==1))
+                    {
+                        mat[15][0] = 2;
+                        mat[15][1] = 3;
+                        mat[15][2] = 2;
+                        return 2;
+                    }
+                    //Sinon la suivante...
+                    else if((mat[15][2]==1)&&(mat[15][4]==1))
+                    {
+                        mat[15][2] = 2;
+                        mat[15][3] = 3;
+                        mat[15][4] = 2;
+                        return 2;
+                    }
+                    else if((mat[15][2]==1)&&(mat[15][4]==1))
+                    {
+                        mat[15][2] = 2;
+                        mat[15][3] = 3;
+                        mat[15][4] = 2;
+                        return 2;
+                    }
+                    else if((mat[15][4]==1)&&(mat[15][6]==1))
+                    {
+                        mat[15][4] = 2;
+                        mat[15][5] = 3;
+                        mat[15][6] = 2;
+                        return 2;
+                    }
+                    else if((mat[15][6]==1)&&(mat[15][8]==1))
+                    {
+                        mat[15][6] = 2;
+                        mat[15][7] = 3;
+                        mat[15][8] = 2;
+                        return 2;
+                    }
+                    else if((mat[15][8]==1)&&(mat[15][10]==1))
+                    {
+                        mat[15][8] = 2;
+                        mat[15][9] = 3;
+                        mat[15][10] = 2;
+                        return 2;
+                    }
+                    else if((mat[15][10]==1)&&(mat[15][12]==1))
+                    {
+                        mat[15][10] = 2;
+                        mat[15][11] = 3;
+                        mat[15][12] = 2;
+                        return 2;
+                    }
+                    else if((mat[15][12]==1)&&(mat[15][14]==1))
+                    {
+                        mat[15][12] = 2;
+                        mat[15][4] = 3;
+                        mat[15][14] = 2;
+                        return 2;
+                    }
+                }
+                //On a plus de barriere alors on passe le tour
+                else
+                {
+                    //Passe le tour
+                    return -1;
+                }
+            }
         }
         //On est  au bord du plateau a gauche
         else if(dep_ia[0]==0)

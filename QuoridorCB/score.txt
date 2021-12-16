@@ -1,4 +1,4 @@
-9
+11
 PIERRE24
 ADRIEN69
 RAVAUT
@@ -14,3 +14,7 @@ SIMOND
 0
 PAUL
 6
+P
+0
+M
+0
