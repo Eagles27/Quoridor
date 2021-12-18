@@ -142,27 +142,58 @@ void menu_game(int mat[17][17],int* Pnombrejoueur,t_joueur player[4],int* Ptour,
         {
             ///3.1. Placement de la barriere
 
-                /*if(*Pnombrejoueur == 1)
-                {
-                    Color(15,0);
-                    system("cls");
-                    matrice_propre(mat,player,ia);
-                    menu_cote_ia(2, player, ia);
-                    saisie_coord(saisie1,Ptour,Pnombrejoueur,player,mat,ia);
-                    saisie_direction = saisie_dir(Ptour,Pnombrejoueur,player,mat,ia);
-                }
-                else
-                {
-                    Color(15,0);
-                    system("cls");
-                    matrice_propre(mat,player,ia);
-                    menu_cote(Ptour,Pnombrejoueur,player);
-                    saisie_coord(saisie1,Ptour,Pnombrejoueur,player,mat,ia);
-                    saisie_direction = saisie_dir(Ptour,Pnombrejoueur,player,mat,ia);
-                }*/
+            if(*Pnombrejoueur == 1)
+            {
+                Color(15,0);
+                system("cls");
+                matrice_propre(mat,player,ia);
+                menu_cote_ia(2, player, ia);
+                Color(15,0);
+                gotoligcol(numero_ligne_action,numero_colonne_action);
+                Color(15,10);
+                printf("                                                           ");
+                Color(15,0);
+                gotoligcol(numero_ligne_action+1,numero_colonne_action);
+                Color(15,10);
+                printf("   Deplacez la barriere avec les fleches directionnelles   ");
+                gotoligcol(numero_ligne_action+2,numero_colonne_action);
+                Color(15,10);
+                printf("         Appuyez sur 'r' pour tourner la barriere          ");
 
+                Color(15,0);
+                gotoligcol(numero_ligne_action+3,numero_colonne_action);
+                Color(15,10);
+                printf("                                                           ");
+                Color(15,0);
+                gotoligcol(numero_ligne_action+4,numero_colonne_action);
+                placer_barriere_v2(mat);
+            }
+            else
+            {
+                Color(15,0);
+                system("cls");
+                matrice_propre(mat,player,ia);
+                menu_cote(Ptour,Pnombrejoueur,player);
+                Color(15,0);
+                gotoligcol(numero_ligne_action,numero_colonne_action);
+                Color(15,10);
+                printf("                                                           ");
+                Color(15,0);
+                gotoligcol(numero_ligne_action+1,numero_colonne_action);
+                Color(15,10);
+                printf("   Deplacez la barriere avec les fleches directionnelles   ");
+                gotoligcol(numero_ligne_action+2,numero_colonne_action);
+                Color(15,10);
+                printf("         Appuyez sur 'r' pour tourner la barriere          ");
 
-            placer_barriere_v2(mat);
+                Color(15,0);
+                gotoligcol(numero_ligne_action+3,numero_colonne_action);
+                Color(15,10);
+                printf("                                                           ");
+                Color(15,0);
+                gotoligcol(numero_ligne_action+4,numero_colonne_action);
+                placer_barriere_v2(mat);
+            }
 
             Color(15,0);
             system("cls");
