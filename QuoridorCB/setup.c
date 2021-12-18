@@ -43,7 +43,7 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
                 Color(15,0);
                 gotoligcol(numero_lig+3,numero_col);
                 Color(15,10);
-                printf("     Choisissez une ligne A --> Q     ");
+                printf("    Choisissez une colonne A --> Q    ");
                 Color(15,0);
                 gotoligcol(numero_lig+4,numero_col);
                 Color(15,10);
@@ -97,7 +97,7 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
                 Color(15,0);
                 gotoligcol(numero_lig+3,numero_col);
                 Color(15,10);
-                printf("     Choisissez une ligne A --> Q     ");
+                printf("    Choisissez une colonne A --> Q    ");
                 Color(15,0);
                 gotoligcol(numero_lig+4,numero_col);
                 Color(15,10);
@@ -156,7 +156,7 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
                 Color(15,0);
                 gotoligcol(numero_lig+3,numero_col);
                 Color(15,10);
-                printf("     Choisissez une ligne A --> Q     ");
+                printf("    Choisissez une colonne A --> Q    ");
                 Color(15,0);
                 gotoligcol(numero_lig+4,numero_col);
                 Color(15,10);
@@ -209,7 +209,7 @@ void setup(int *Pnombre_joueur, int debut, int mat[17][17],t_joueur player[4], i
                 Color(15,0);
                 gotoligcol(numero_lig+3,numero_col);
                 Color(15,10);
-                printf("     Choisissez une ligne A --> Q     ");
+                printf("    Choisissez une colonne A --> Q    ");
                 Color(15,0);
                 gotoligcol(numero_lig+4,numero_col);
                 Color(15,10);

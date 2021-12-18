@@ -771,6 +771,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
 {
     /// 0. DDV
     char choix;
+    int choix_int;
     char choix_decalage = 'x';
     int valid_choix = 1;
     int valid_dep = 1;
@@ -805,7 +806,7 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
             Color(15,0);
             gotoligcol(numero_ligne+4,numero_colonne);
             Color(15,10);
-            printf("  Direction de deplacement (h, b, g, d) ?  ");
+            printf("   Deplacez votre pion avec les fleches    ");
             Color(15,0);
             gotoligcol(numero_ligne+5,numero_colonne);
             Color(15,10);
@@ -813,9 +814,20 @@ void deplacement_ia(int dep[3], t_joueur player[4], int matrice[17][17], int tou
             Color(15,0);
             gotoligcol(numero_ligne+6,numero_colonne);
 
+            choix_int = getch();
+            if(choix_int == 0x48){
+                choix = 'h';
+            }
+            else if(choix_int == 0x50){
+                choix = 'b';
+            }
+            else if(choix_int == 0x4B){
+                choix = 'g';
+            }
+            else if(choix_int == 0x4D){
+                choix = 'd';
+            }
 
-            //printf("Direction de deplacement (h, b, g, d) :\n");
-            scanf("%c", &choix);
             if((choix=='h')||(choix=='b')||(choix=='g')||(choix=='d')||(choix=='H')||(choix=='B')||(choix=='G')||(choix=='D'))
             {
                 valid_choix = 0;

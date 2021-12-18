@@ -155,7 +155,7 @@ void main_menu(int* Pnombre_joueur, int mat[17][17], t_joueur player[4], t_IA ia
                     Color(15,0);
                     gotoligcol(numero_lig+11,3);
                     Color(15,10);
-                    printf("     Choisissez une ligne A --> Q     ");
+                    printf("    Choisissez une colonne A --> Q    ");
                     Color(15,0);
                     gotoligcol(numero_lig+12,3);
                     Color(15,10);
