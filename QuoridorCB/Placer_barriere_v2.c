@@ -1,5 +1,15 @@
 #include "Header_Pierre.h"
 
+/*
+
+- mur verticale : 0xB3
+- mur horizontal : 0xC4
+- mur "+" : 0xC5
+- mur verticale double : 0xBA
+- mur horizontal double : 0xCD
+- mur "+" double : 0xCE
+*/
+
 void placer_barriere_v2(int mat[17][17])
 {
 
@@ -15,12 +25,21 @@ void placer_barriere_v2(int mat[17][17])
     int y=7;
     ///0.3. Booleen justifiant la pose de la barriere
     int valid_pose = 0;
+    ///0.4. Coordonnees de placement
+    int matx_hor;
+    int maty_hor;
+    int matx_ver;
+    int maty_ver;
 
     ///1. Deplacement de la barriere
     while(valid_pose == 0)
     {
         if (r==0)
         {
+            //Coordonnees dans la matrive
+            maty_hor = y-2;
+            matx_hor = (x/2)-2;
+
             Color(4,0);
             gotoligcol(y,x);
             printf("%c%c%c%c%c%c%c",0xCD, 0xCD, 0xCD, 0xCE, 0xCD, 0xCD, 0xCD); //ligne horizontale
@@ -29,61 +48,212 @@ void placer_barriere_v2(int mat[17][17])
             {
                 r=1;
                 Color(4,0);
-                gotoligcol(y-1,x+3);
-                printf("%c",0xBA);
-                gotoligcol(y,x+3);
-                printf("%c",0xCE);
-                gotoligcol(y+1,x+3);
-                printf("%c",0xBA);
-
-                gotoligcol(y,x);
-                Color(10,0);
-                printf("%c%c%c%c%c%c%c",0xC4,0xC4,0xC4,0xC5,0xC4,0xC4,0xC4);
+                if(mat[maty_hor][matx_hor]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y,x);
+                    printf("%c%c%c",0xC4,0xC4,0xC4);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y,x);
+                    printf("%c%c%c",0xCD,0xCD,0xCD);
+                }
+                if(mat[maty_hor][matx_hor+1]==1){
+                    Color(10,0);
+                    gotoligcol(y,x+3);
+                    printf("%c%c%c",0xC5);
+                }
+                else{
+                    Color(4,0);
+                    gotoligcol(y,x+3);
+                    printf("%c%c%c",0xCE);
+                }
+                if(mat[maty_hor][matx_hor+2]==1){
+                    Color(10,0);
+                    gotoligcol(y,x+4);
+                    printf("%c%c%c",0xC4,0xC4,0xC4);
+                }
+                else{
+                    Color(4,0);
+                    gotoligcol(y,x+4);
+                    printf("%c%c%c",0xCD,0xCD,0xCD);
+                }
 
             }
             else if (touche == 0x48&&y!=YH_lim)//fleche haut
             {
-                Color(10,0);
-                gotoligcol(y,x);
-                printf("%c%c%c%c%c%c%c",0xC4,0xC4,0xC4,0xC5,0xC4,0xC4,0xC4);
+                if(mat[maty_hor][matx_hor]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y,x);
+                    printf("%c%c%c",0xC4,0xC4,0xC4);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y,x);
+                    printf("%c%c%c",0xCD,0xCD,0xCD);
+                }
+                if(mat[maty_hor][matx_hor+1]==1){
+                    Color(10,0);
+                    gotoligcol(y,x+3);
+                    printf("%c%c%c",0xC5);
+                }
+                else{
+                    Color(4,0);
+                    gotoligcol(y,x+3);
+                    printf("%c%c%c",0xCE);
+                }
+                if(mat[maty_hor][matx_hor+2]==1){
+                    Color(10,0);
+                    gotoligcol(y,x+4);
+                    printf("%c%c%c",0xC4,0xC4,0xC4);
+                }
+                else{
+                    Color(4,0);
+                    gotoligcol(y,x+4);
+                    printf("%c%c%c",0xCD,0xCD,0xCD);
+                }
+
                 y=y-2;
             }
             else if (touche == 0x50 && y!=YB_lim)//fleche bas
             {
-                Color(10,0);
-                gotoligcol(y,x);
-                printf("%c%c%c%c%c%c%c",0xC4,0xC4,0xC4,0xC5,0xC4,0xC4,0xC4);
+                if(mat[maty_hor][matx_hor]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y,x);
+                    printf("%c%c%c",0xC4,0xC4,0xC4);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y,x);
+                    printf("%c%c%c",0xCD,0xCD,0xCD);
+                }
+                if(mat[maty_hor][matx_hor+1]==1){
+                    Color(10,0);
+                    gotoligcol(y,x+3);
+                    printf("%c%c%c",0xC5);
+                }
+                else{
+                    Color(4,0);
+                    gotoligcol(y,x+3);
+                    printf("%c%c%c",0xCE);
+                }
+                if(mat[maty_hor][matx_hor+2]==1){
+                    Color(10,0);
+                    gotoligcol(y,x+4);
+                    printf("%c%c%c",0xC4,0xC4,0xC4);
+                }
+                else{
+                    Color(4,0);
+                    gotoligcol(y,x+4);
+                    printf("%c%c%c",0xCD,0xCD,0xCD);
+                }
+
                 y=y+2;
             }
             else if (touche == 0x4B && x!=XG_lim)//fleche gauche
             {
-                Color(10,0);
-                gotoligcol(y,x+3);
-                printf("%c%c%c%c",0xC5,0xC4,0xC4,0xC4);
+                if(mat[maty_hor][matx_hor]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y,x);
+                    printf("%c%c%c",0xC4,0xC4,0xC4);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y,x);
+                    printf("%c%c%c",0xCD,0xCD,0xCD);
+                }
+                if(mat[maty_hor][matx_hor+1]==1){
+                    Color(10,0);
+                    gotoligcol(y,x+3);
+                    printf("%c%c%c",0xC5);
+                }
+                else{
+                    Color(4,0);
+                    gotoligcol(y,x+3);
+                    printf("%c%c%c",0xCE);
+                }
+                if(mat[maty_hor][matx_hor+2]==1){
+                    Color(10,0);
+                    gotoligcol(y,x+4);
+                    printf("%c%c%c",0xC4,0xC4,0xC4);
+                }
+                else{
+                    Color(4,0);
+                    gotoligcol(y,x+4);
+                    printf("%c%c%c",0xCD,0xCD,0xCD);
+                }
+
                 x=x-4;
             }
             else if (touche == 0x4D && x!=XD_lim) //fleche droite
             {
-                Color(10,0);
-                gotoligcol(y,x);
-                printf("%c%c%c%c",0xC4,0xC4,0xC4,0xC5 );
+                if(mat[maty_hor][matx_hor]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y,x);
+                    printf("%c%c%c",0xC4,0xC4,0xC4);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y,x);
+                    printf("%c%c%c",0xCD,0xCD,0xCD);
+                }
+                if(mat[maty_hor][matx_hor+1]==1){
+                    Color(10,0);
+                    gotoligcol(y,x+3);
+                    printf("%c%c%c",0xC5);
+                }
+                else{
+                    Color(4,0);
+                    gotoligcol(y,x+3);
+                    printf("%c%c%c",0xCE);
+                }
+                if(mat[maty_hor][matx_hor+2]==1){
+                    Color(10,0);
+                    gotoligcol(y,x+4);
+                    printf("%c%c%c",0xC4,0xC4,0xC4);
+                }
+                else{
+                    Color(4,0);
+                    gotoligcol(y,x+4);
+                    printf("%c%c%c",0xCD,0xCD,0xCD);
+                }
+
                 x=x+4;
             }
             else if (touche == 0x0D) //return (entree)
             {
                 Color(10,0);
-                gotoligcol(y,x-1);
-                printf("%c%c%c%c%c%c%c",0xC4, 0xC5, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4); //ligne horizontale
-                printf("%d, %d", x, y);
-                system("PAUSE");
-                mat[x-4][y-12] = 3;
-                mat[x-4][y-11] = 3;
-                mat[x-4][y-10] = 3;
-                valid_pose = 1;
+                gotoligcol(y,x);
+                printf("%c%c%c%c%c%c%c",0xC4, 0xC4, 0xC4, 0xC5, 0xC4, 0xC4, 0xC4); //ligne horizontale
+                if((mat[maty_hor][matx_hor] != 3)&&(mat[maty_hor][matx_hor+1] != 3)&&(mat[maty_hor][matx_hor+2] != 3))
+                {
+                    mat[maty_hor][matx_hor] = 3;
+                    mat[maty_hor][matx_hor+1] = 3;
+                    mat[maty_hor][matx_hor+2] = 3;
+                    valid_pose = 1;
+                }
+                else
+                {
+                    valid_pose = 0;
+                }
             }
         }
         else if (r==1)
         {
+            //Coordonnees dans la matrice
+            matx_ver = (x/2)-1;
+            maty_ver = y-1;
+
             Color(4,0);
             gotoligcol(y-1,x+3);
             printf("%c",0xBA);
@@ -96,12 +266,44 @@ void placer_barriere_v2(int mat[17][17])
             {
                 r=0;
                 Color(10,0);
-                gotoligcol(y-1,x+3);
-                printf("%c",0xB3);
-                gotoligcol(y,x+3);
-                printf("%c",0xC5);
-                gotoligcol(y+1,x+3);
-                printf("%c",0xB3);
+                if(mat[maty_ver-2][matx_ver]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y-1,x+3);
+                    printf("%c",0xB3);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y-1,x+3);
+                    printf("%c",0xBA);
+                }
+
+                if(mat[maty_ver-1][matx_ver]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y,x+3);
+                    printf("%c",0xC5);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y,x+3);
+                    printf("%c",0xCE);
+                }
+
+                if(mat[maty_ver][matx_ver]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y+1,x+3);
+                    printf("%c",0xB3);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y+1,x+3);
+                    printf("%c",0xBA);
+                }
 
                 /*gotoligcol(x-1, y-1);
                 Color(10,0);
@@ -109,46 +311,174 @@ void placer_barriere_v2(int mat[17][17])
             }
             else if (touche == 0x48 && y!=YH_lim)//fleche haut
             {
-                Color(10,0);
-                gotoligcol(y-1,x+3);
-                printf("%c",0xB3);
-                gotoligcol(y,x+3);
-                printf("%c",0xC5);
-                gotoligcol(y+1,x+3);
-                printf("%c",0xB3);
+                if(mat[maty_ver-2][matx_ver]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y-1,x+3);
+                    printf("%c",0xB3);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y-1,x+3);
+                    printf("%c",0xBA);
+                }
+
+                if(mat[maty_ver-1][matx_ver]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y,x+3);
+                    printf("%c",0xC5);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y,x+3);
+                    printf("%c",0xCE);
+                }
+
+                if(mat[maty_ver][matx_ver]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y+1,x+3);
+                    printf("%c",0xB3);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y+1,x+3);
+                    printf("%c",0xBA);
+                }
+
                 y=y-2;
             }
             else if (touche == 0x50 && y!=YB_lim)//fleche bas
             {
-                Color(10,0);
-                gotoligcol(y-1,x+3);
-                printf("%c",0xB3);
-                gotoligcol(y,x+3);
-                printf("%c",0xC5);
-                gotoligcol(y+1,x+3);
-                printf("%c",0xB3);
+                if(mat[maty_ver-2][matx_ver]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y-1,x+3);
+                    printf("%c",0xB3);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y-1,x+3);
+                    printf("%c",0xBA);
+                }
+
+                if(mat[maty_ver-1][matx_ver]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y,x+3);
+                    printf("%c",0xC5);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y,x+3);
+                    printf("%c",0xCE);
+                }
+
+                if(mat[maty_ver][matx_ver]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y+1,x+3);
+                    printf("%c",0xB3);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y+1,x+3);
+                    printf("%c",0xBA);
+                }
+
                 y=y+2;
             }
             else if (touche == 0x4B && x!=XG_lim)//fleche gauche
             {
-                Color(10,0);
-                gotoligcol(y-1,x+3);
-                printf("%c",0xB3);
-                gotoligcol(y,x+3);
-                printf("%c",0xC5);
-                gotoligcol(y+1,x+3);
-                printf("%c",0xB3);
+                if(mat[maty_ver-2][matx_ver]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y-1,x+3);
+                    printf("%c",0xB3);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y-1,x+3);
+                    printf("%c",0xBA);
+                }
+
+                if(mat[maty_ver-1][matx_ver]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y,x+3);
+                    printf("%c",0xC5);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y,x+3);
+                    printf("%c",0xCE);
+                }
+
+                if(mat[maty_ver][matx_ver]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y+1,x+3);
+                    printf("%c",0xB3);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y+1,x+3);
+                    printf("%c",0xBA);
+                }
+
                 x=x-4;
             }
             else if (touche == 0x4D && x!= XD_lim) //fleche droite
             {
-                Color(10,0);
-                gotoligcol(y-1,x+3);
-                printf("%c",0xB3);
-                gotoligcol(y,x+3);
-                printf("%c",0xC5);
-                gotoligcol(y+1,x+3);
-                printf("%c",0xB3);
+                if(mat[maty_ver-2][matx_ver]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y-1,x+3);
+                    printf("%c",0xB3);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y-1,x+3);
+                    printf("%c",0xBA);
+                }
+
+                if(mat[maty_ver-1][matx_ver]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y,x+3);
+                    printf("%c",0xC5);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y,x+3);
+                    printf("%c",0xCE);
+                }
+
+                if(mat[maty_ver][matx_ver]==1)
+                {
+                    Color(10,0);
+                    gotoligcol(y+1,x+3);
+                    printf("%c",0xB3);
+                }
+                else
+                {
+                    Color(4,0);
+                    gotoligcol(y+1,x+3);
+                    printf("%c",0xBA);
+                }
+
                 x=x+4;
             }
             else if (touche == 0x0D) //return (entree)
@@ -160,11 +490,19 @@ void placer_barriere_v2(int mat[17][17])
                 printf("%c",0xBA);
                 gotoligcol(y+1,x+3);
                 printf("%c",0xBA);
+                if((mat[maty_ver][matx_ver] != 3)&&(mat[maty_ver-1][matx_ver] != 3)&&(mat[maty_ver-2][matx_ver] != 3))
+                {
 
-                mat[x+3][y-1] = 3;
-                mat[x+3][y] = 3;
-                mat[x+3][y+1] = 3;
-                valid_pose = 1;
+                    mat[maty_ver][matx_ver] = 3;
+                    mat[maty_ver-1][matx_ver] = 3;
+                    mat[maty_ver-2][matx_ver] = 3;
+                    valid_pose = 1;
+                }
+                else
+                {
+                    valid_pose = 0;
+                }
+
             }
         }
     }
